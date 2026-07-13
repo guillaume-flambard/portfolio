@@ -22,26 +22,17 @@ export default async function HomePage({
     <>
       <ArchipelagoScene islands={ISLANDS} locale={locale as Locale} />
 
-      <main
-        className="relative z-[1] flex min-h-screen flex-col items-center justify-center gap-8 overflow-hidden px-6 text-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--contour) 1px, transparent 1px), linear-gradient(90deg, var(--contour) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-          backgroundPosition: "center",
-          backgroundColor: "var(--paper)",
-        }}
-      >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, transparent 0%, var(--paper) 75%)",
-          }}
-        />
+      <main className="relative z-[1] flex min-h-screen flex-col items-center justify-center gap-8 overflow-hidden px-6 text-center">
+        <div className="relative flex flex-col items-center gap-6 px-6 py-10 sm:px-12">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-10 rounded-[3rem] backdrop-blur-[2px]"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, var(--paper) 0%, color-mix(in srgb, var(--paper) 65%, transparent) 55%, transparent 80%)",
+            }}
+          />
 
-        <div className="relative flex flex-col items-center gap-6">
           <p className="font-mono text-xs tracking-[0.3em] text-[var(--stone)] uppercase">
             {home?.titles[locale as Locale] ?? "Home Port"}
           </p>
