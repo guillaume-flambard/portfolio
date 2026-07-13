@@ -41,7 +41,14 @@ export default function Canvas3D({ islands, locale }: Canvas3DProps) {
   return (
     <Canvas
       camera={{ position: [0, 6, 16], fov: 45 }}
-      dpr={[1, 2]}
+      // Cap device pixel ratio at 1.5 (Task 13 perf budget) so retina/
+      // hi-dpi screens don't multiply fragment-shader cost for no visual
+      // gain on this background scene.
+      dpr={[1, 1.5]}
+      // Deliberately NOT `frameloop="demand"`: `Sea` and `Wake` animate
+      // continuously via `useFrame` (shader time uniform, wake decay).
+      // `demand` only re-renders on explicit `invalidate()` calls, which
+      // would freeze both animations. Default (`"always"`) is required.
       style={{ width: "100%", height: "100%" }}
     >
       <Scene islands={islands} locale={locale} />

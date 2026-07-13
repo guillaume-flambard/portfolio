@@ -6,7 +6,14 @@ import { detectWebGL } from "@/three/webgl";
 import { prefersReducedMotion } from "@/three/reducedMotion";
 import type { Island, Locale } from "@/content/islands";
 
-const Canvas3D = dynamic(() => import("@/three/Canvas3D"), { ssr: false });
+const Canvas3D = dynamic(() => import("@/three/Canvas3D"), {
+  ssr: false,
+  // Lightweight placeholder shown while the R3F/three.js chunk downloads.
+  // Just a paper-toned div — matches the page background, so there's no
+  // flash and no layout shift (the parent wrapper below is already
+  // `fixed inset-0`, so this fills the same box the canvas will occupy).
+  loading: () => <div aria-hidden className="h-full w-full bg-[var(--paper)]" />,
+});
 
 type ArchipelagoSceneProps = {
   islands: Island[];
