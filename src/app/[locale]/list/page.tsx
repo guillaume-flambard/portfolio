@@ -37,6 +37,7 @@ export default async function ListPage({
     liveDemo: t("project.liveDemo"),
     code: t("project.code"),
     demoSoon: t("project.demoSoon"),
+    viewIsland: t("nav.viewIsland"),
     kind: {
       port: t("kind.port"),
       craft: t("kind.craft"),

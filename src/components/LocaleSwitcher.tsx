@@ -18,12 +18,21 @@ export default function LocaleSwitcher() {
     <button
       type="button"
       onClick={switchLocale}
-      aria-label={`Switch to ${otherLocale === "fr" ? "French" : "English"}`}
       className="font-mono fixed top-2 right-2 z-50 rounded-sm border border-[var(--ink)] bg-[var(--paper)] px-3 py-2 text-xs tracking-wide text-[var(--ink)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beacon)]"
     >
+      {/*
+        No `aria-label` here on purpose: the accessible name is derived
+        from this content, so it always contains the visible "FR ⇄ EN"
+        text (WCAG 2.5.3 Label in Name — an `aria-label` that replaces
+        rather than extends the visible label fails this for speech
+        -input / screen-reader users, as Lighthouse's
+        `label-content-name-mismatch` audit flagged on the previous
+        `aria-label="Switch to French"` variant).
+      */}
       <span className={locale === "fr" ? "text-[var(--beacon)]" : "text-[var(--stone)]"}>FR</span>
       {" ⇄ "}
       <span className={locale === "en" ? "text-[var(--beacon)]" : "text-[var(--stone)]"}>EN</span>
+      <span className="sr-only">{`, switch to ${otherLocale === "fr" ? "French" : "English"}`}</span>
     </button>
   );
 }

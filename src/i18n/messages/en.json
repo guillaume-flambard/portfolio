@@ -6,7 +6,8 @@
   "nav": {
     "enter": "Enter the archipelago",
     "list": "List view",
-    "skipToList": "Skip to list view"
+    "skipToList": "Skip to list view",
+    "viewIsland": "View island detail"
   },
   "project": {
     "liveDemo": "Live demo",

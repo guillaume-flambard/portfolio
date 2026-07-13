@@ -7,6 +7,7 @@ const labels = {
   liveDemo: "Live demo",
   code: "Code",
   demoSoon: "Demo soon",
+  viewIsland: "View island detail",
   kind: {
     port: "Home port",
     craft: "Craft",
@@ -44,5 +45,16 @@ describe("ListView", () => {
     expect(screen.getAllByText(labels.demoSoon)).toHaveLength(
       nonLiveProjects.length,
     );
+  });
+
+  it("links every island to its /isle/[slug] detail route (keyboard-reachable when the 3D canvas doesn't mount)", () => {
+    render(<ListView islands={ISLANDS} locale="en" labels={labels} />);
+
+    const links = screen.getAllByRole("link");
+    const hrefs = links.map((link) => link.getAttribute("href"));
+
+    for (const island of ISLANDS) {
+      expect(hrefs).toContain(`/en/isle/${island.slug}`);
+    }
   });
 });

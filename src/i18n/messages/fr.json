@@ -6,7 +6,8 @@
   "nav": {
     "enter": "Entrer dans l'archipel",
     "list": "Vue en liste",
-    "skipToList": "Passer à la vue en liste"
+    "skipToList": "Passer à la vue en liste",
+    "viewIsland": "Voir le détail de l'île"
   },
   "project": {
     "liveDemo": "Démo en ligne",

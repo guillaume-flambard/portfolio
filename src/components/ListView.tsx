@@ -6,6 +6,7 @@ export type ListLabels = {
   liveDemo: string;
   code: string;
   demoSoon: string;
+  viewIsland: string;
   kind: Record<Island["kind"], string>;
 };
 
@@ -44,6 +45,14 @@ export default function ListView({
           <p className="font-body max-w-2xl text-[var(--ink)]/80">
             {island.blurb[locale]}
           </p>
+
+          <a
+            href={`/${locale}/isle/${island.slug}`}
+            className="font-mono self-start text-xs tracking-wide text-[var(--ink)] underline decoration-[var(--contour)] decoration-2 underline-offset-4 transition-colors hover:text-[var(--beacon)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beacon)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--paper)]"
+          >
+            {labels.viewIsland}
+            <span className="sr-only">{`: ${island.titles[locale]}`}</span>
+          </a>
 
           {island.projects && island.projects.length > 0 && (
             <ul className="mt-4 flex flex-col gap-4">
