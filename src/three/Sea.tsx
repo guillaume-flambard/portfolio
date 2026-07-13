@@ -2,6 +2,7 @@
 
 import { useMemo, useRef } from "react";
 import { extend, useFrame } from "@react-three/fiber";
+import type { ThreeEvent } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -96,8 +97,18 @@ declare module "@react-three/fiber" {
   }
 }
 
+type SeaProps = {
+  /**
+   * Forwarded onto the sea mesh's r3f `onPointerMove`. Used by `Wake` (via
+   * `Canvas3D`) to sample where the pointer projects onto the sea plane —
+   * r3f hands back the world-space raycast intersection as
+   * `event.point`, so no separate manual raycaster is needed.
+   */
+  onPointerMove?: (event: ThreeEvent<PointerEvent>) => void;
+};
+
 /** Large flat plane rendering the nautical-chart sea. */
-export default function Sea() {
+export default function Sea({ onPointerMove }: SeaProps) {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const geometryArgs = useMemo<[number, number, number, number]>(
     () => [80, 80, 128, 128],
@@ -111,7 +122,11 @@ export default function Sea() {
   });
 
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+    <mesh
+      rotation={[-Math.PI / 2, 0, 0]}
+      receiveShadow
+      onPointerMove={onPointerMove}
+    >
       <planeGeometry args={geometryArgs} />
       <seaMaterial ref={materialRef} uTime={0} />
     </mesh>

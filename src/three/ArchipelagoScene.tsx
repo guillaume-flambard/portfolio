@@ -37,10 +37,13 @@ export default function ArchipelagoScene({ islands, locale }: ArchipelagoScenePr
   }
 
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none fixed inset-0 z-0"
-    >
+    // `pointer-events-auto` here (Task 11) lets mouse/touch reach the
+    // canvas for island hover raycasting and the sea wake trail. This
+    // relies on `HomePage`'s `<main>` being `pointer-events-none` with
+    // only its actual interactive children (`pointer-events-auto`) —
+    // see src/app/[locale]/page.tsx — so hero links stay clickable while
+    // empty chart area still passes pointer events through to the canvas.
+    <div aria-hidden className="pointer-events-auto fixed inset-0 z-0">
       <Canvas3D islands={islands} locale={locale} />
     </div>
   );

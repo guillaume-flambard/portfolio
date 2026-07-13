@@ -1,9 +1,13 @@
 "use client";
 
+import { useCallback, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
+import type { ThreeEvent } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Sea from "@/three/Sea";
 import Island from "@/three/Island";
+import Wake, { type WakeHandle } from "@/three/Wake";
+import { useHover } from "@/three/useHover";
 import type { Island as IslandData } from "@/content/islands";
 import type { Locale } from "@/content/islands";
 
@@ -21,9 +25,21 @@ type Canvas3DProps = {
  * Task 8 added the camera/lights placeholder; Task 9 added the nautical
  * sea shader plane (`./Sea`). Task 10 maps the island registry to one
  * `<Island>` per entry, positioned at its chart coordinates with a
- * locale-aware label.
+ * locale-aware label. Task 11 wires up `useHover` (island hover →
+ * `pointer` cursor) and `Wake` (a phosphor trail following the pointer
+ * across the sea).
  */
 export default function Canvas3D({ islands, locale }: Canvas3DProps) {
+  // `hoveredSlug` isn't consumed yet — it's tracked for Task 12 (sail on
+  // click) and possible future wake emphasis. The cursor side effect
+  // (the actual Task 11 requirement) lives inside `useHover` itself.
+  const { onPointerOver, onPointerOut } = useHover();
+  const wakeRef = useRef<WakeHandle>(null);
+
+  const handleSeaPointerMove = useCallback((event: ThreeEvent<PointerEvent>) => {
+    wakeRef.current?.addPoint(event.point);
+  }, []);
+
   return (
     <Canvas
       camera={{ position: [0, 6, 16], fov: 45 }}
@@ -32,9 +48,16 @@ export default function Canvas3D({ islands, locale }: Canvas3DProps) {
     >
       <ambientLight intensity={0.6} />
       <directionalLight position={[5, 10, 5]} intensity={0.8} />
-      <Sea />
+      <Sea onPointerMove={handleSeaPointerMove} />
+      <Wake ref={wakeRef} />
       {islands.map((island) => (
-        <Island island={island} locale={locale} key={island.slug} />
+        <Island
+          island={island}
+          locale={locale}
+          key={island.slug}
+          onHoverStart={() => onPointerOver(island.slug)}
+          onHoverEnd={() => onPointerOut(island.slug)}
+        />
       ))}
       <OrbitControls enablePan={false} />
     </Canvas>
