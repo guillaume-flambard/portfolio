@@ -1,7 +1,8 @@
+import { getTranslations } from "next-intl/server";
 import type { Island, Locale } from "@/content/islands";
 import IslandCard from "@/components/IslandCard";
 
-export default function IslandDetail({
+export default async function IslandDetail({
   island,
   locale,
 }: {
@@ -9,6 +10,7 @@ export default function IslandDetail({
   locale: Locale;
 }) {
   const [lat, lng] = island.pos;
+  const t = await getTranslations("kind");
 
   return (
     <main
@@ -32,7 +34,7 @@ export default function IslandDetail({
 
       <div className="relative mx-auto flex max-w-3xl flex-col gap-6">
         <p className="font-mono text-xs tracking-[0.3em] text-[var(--stone)] uppercase">
-          {island.kind}
+          {t(island.kind)}
         </p>
 
         <h1 className="font-display text-4xl text-[var(--ink)] sm:text-5xl md:text-6xl">
