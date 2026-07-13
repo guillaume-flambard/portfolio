@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "name": "Guillaume Flambard",
+    "tagline": "Design Engineer — fullstack & IA. Je construis des produits, de l'idée au déploiement."
+  },
+  "nav": {
+    "enter": "Entrer dans l'archipel",
+    "list": "Vue en liste",
+    "skipToList": "Passer à la vue en liste"
+  }
+}
