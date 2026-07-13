@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Source_Serif_4, JetBrains_Mono } from "next/font/google";
+import { routing } from "@/i18n/routing";
 import "./globals.css";
 
 const playfairDisplay = Playfair_Display({
@@ -27,8 +28,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Root layout has no access to the [locale] segment param and must stay
+  // static (no dynamic APIs like getLocale()) so that /[locale] pages keep
+  // prerendering via generateStaticParams. The actual per-locale `lang`
+  // (and all copy) is handled by [locale]/layout.tsx and page.tsx; this is
+  // a static fallback so the document always has a valid `lang` attribute.
   return (
-    <html lang="en">
+    <html lang={routing.defaultLocale}>
       <body
         className={`${playfairDisplay.variable} ${sourceSerif4.variable} ${jetBrainsMono.variable} antialiased`}
       >
