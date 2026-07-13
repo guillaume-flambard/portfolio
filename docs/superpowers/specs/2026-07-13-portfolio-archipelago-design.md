@@ -28,10 +28,19 @@ a style skin.
 survey coordinates, a single beacon-red accent. On hover/sail, a **bioluminescent phosphor wake**
 (the real plankton of Koh Phangan) trails the pointer. Deliberately not a cartoon beach.
 
-**Palette:**
-- Vellum paper `#ece3cf`, chart ink `#25201a`, contour grey `#9c8f6e`, beacon red `#c8452f`
-- Phosphor wake accent `#39ffcf` (used sparingly, motion only)
-- Dark/immersive mode variant TBD during build (near-black sea for night register).
+**Style system (from UI/UX Pro Max db):** Portfolio/Personal → **Motion-Driven + Minimalism**,
+landing pattern **Storytelling-Driven** (fits the voyage). Secondary lens: editorial.
+
+**Palette** (warm ink + amber on cream, db-validated, reconciled with the chart register):
+- Cream paper `#FFFBEB`, warm ink `#0F172A`, stone primary `#78716C`, contour grey `#9c8f6e`
+- Amber accent `#D97706`, beacon red `#c8452f`
+- Phosphor wake `#39ffcf` (motion only, cool pop against warm)
+- Dark/night register variant decided during build (near-black sea).
+
+**Typography** — "Minimalist Monochrome Editorial" (100% serif/mono, no UI sans):
+- Display: **Playfair Display** (900, tight tracking, for heroes)
+- Body: **Source Serif 4** (300–600)
+- Mono: **JetBrains Mono** (uppercase, wide tracking — coordinates, tags, dates, island labels)
 
 ## 3. Navigation model
 
@@ -86,6 +95,23 @@ others and add them as islands over time.
 - **i18n:** next-intl, FR ⇄ EN toggle in the chart header, localized routes (`/fr`, `/en`), default
   from browser locale.
 - **Styling:** Tailwind CSS for the SSR/HTML content layer.
+- **Design intelligence:** UI/UX Pro Max skill installed at `.claude/skills/` (project scope) — its
+  CSV db drives style/color/font/chart picks. Three.js production rules to honor from `stacks/threejs`:
+  handle touch + mouse for all interaction; cursor→pointer on raycast hit; GLTFLoader `traverse` for
+  shadows/materials on every mesh child.
+
+## 5b. Claude Design — tooling status (NOT yet set up for this project)
+
+The portfolio does **not** exist as a Claude Design project yet. To be decided (see Open items):
+whether/how to use Claude Design at all for this build.
+
+Pre-existing, separate assets the owner already has in Claude Design (candidates only — none wired
+to this project): design-system projects "Weave", "Island Warm", "Echo Travel", "Blue Owl",
+"Largo IA". "Island Warm" is a 21-component travel/boating-themed library (BoardingPass, SailingOption,
+RouteSelect, tokens, bundle) that *could* seed the content layer if we choose to.
+
+Tooling done 2026-07-13: `claude-design` HTTP MCP added at user scope
+(`https://api.anthropic.com/v1/design/mcp`), auth verified. Nothing else configured.
 
 ## 6. Accessibility
 
