@@ -7,5 +7,10 @@
     "enter": "Enter the archipelago",
     "list": "List view",
     "skipToList": "Skip to list view"
+  },
+  "project": {
+    "liveDemo": "Live demo",
+    "code": "Code",
+    "demoSoon": "Demo soon"
   }
 }
