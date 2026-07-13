@@ -12,5 +12,8 @@
     "liveDemo": "Démo en ligne",
     "code": "Code",
     "demoSoon": "Démo bientôt"
+  },
+  "list": {
+    "title": "Toutes les îles"
   }
 }

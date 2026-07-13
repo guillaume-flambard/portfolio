@@ -12,5 +12,8 @@
     "liveDemo": "Live demo",
     "code": "Code",
     "demoSoon": "Demo soon"
+  },
+  "list": {
+    "title": "All Islands"
   }
 }
