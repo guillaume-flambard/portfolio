@@ -13,6 +13,12 @@ type IslandProps = {
   onHoverStart?: () => void;
   /** Called when the pointer stops hovering this island's meshes. */
   onHoverEnd?: () => void;
+  /**
+   * Called when this island is "activated" — a click on its meshes, or a
+   * click/Enter/Space on its label's focusable button (Task 12: sails the
+   * camera there, then navigates to its detail route).
+   */
+  onActivate?: () => void;
 };
 
 /**
@@ -25,7 +31,13 @@ type IslandProps = {
  * uppercase, chart style) and a fake coordinate string derived from
  * `pos` — same "N/S / E/W degrees" convention used by `IslandDetail`.
  */
-export default function Island({ island, locale, onHoverStart, onHoverEnd }: IslandProps) {
+export default function Island({
+  island,
+  locale,
+  onHoverStart,
+  onHoverEnd,
+  onActivate,
+}: IslandProps) {
   const groupRef = useRef<THREE.Group>(null);
   const [x, z] = island.pos;
 
@@ -58,6 +70,10 @@ export default function Island({ island, locale, onHoverStart, onHoverEnd }: Isl
       }}
       onPointerMove={(event: ThreeEvent<PointerEvent>) => {
         event.stopPropagation();
+      }}
+      onClick={(event: ThreeEvent<MouseEvent>) => {
+        event.stopPropagation();
+        onActivate?.();
       }}
     >
       {/* Base contour ring — widest, lowest. */}
@@ -96,9 +112,28 @@ export default function Island({ island, locale, onHoverStart, onHoverEnd }: Isl
           className="pointer-events-none flex flex-col items-center gap-0.5 whitespace-nowrap font-mono uppercase select-none"
           style={{ color: "#0F172A" }}
         >
-          <span className="text-[11px] tracking-[0.2em]">
+          {/*
+            A real `<button>` so the island is keyboard-reachable: Tab
+            order picks it up like any other focusable control, and
+            Enter/Space invoke `onClick` for free (native button
+            behavior) — no extra `onKeyDown` wiring needed. It re-enables
+            `pointer-events` (the wrapping label div opts out so hover
+            labels never intercept clicks meant for the sea/Wake behind
+            them) so it's clickable too, and `stopPropagation` keeps a
+            click here from also bubbling to the canvas' own raycast
+            path.
+          */}
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              onActivate?.();
+            }}
+            className="pointer-events-auto cursor-pointer rounded-sm border-none bg-transparent p-0 text-[11px] tracking-[0.2em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            style={{ color: "inherit", outlineColor: "#39ffcf" }}
+          >
             {island.titles[locale]}
-          </span>
+          </button>
           <span className="text-[9px] tracking-[0.1em]" style={{ color: "#78716C" }}>
             {coords}
           </span>
