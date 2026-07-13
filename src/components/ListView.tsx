@@ -1,10 +1,12 @@
 import type { Island, Locale } from "@/content/islands";
+import ProjectLink from "@/components/ProjectLink";
 
 export type ListLabels = {
   title: string;
   liveDemo: string;
   code: string;
   demoSoon: string;
+  kind: Record<Island["kind"], string>;
 };
 
 export default function ListView({
@@ -29,7 +31,7 @@ export default function ListView({
           className="flex flex-col gap-4 border-t border-[var(--contour)] pt-8"
         >
           <p className="font-mono text-xs tracking-[0.3em] text-[var(--stone)] uppercase">
-            {island.kind}
+            {labels.kind[island.kind]}
           </p>
 
           <h2
@@ -69,31 +71,7 @@ export default function ListView({
                   </ul>
 
                   <div className="flex flex-wrap items-center gap-4 pt-1">
-                    {project.live && project.url ? (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-mono rounded-sm border border-[var(--beacon)] bg-[var(--beacon)] px-3 py-2 text-xs tracking-wide text-[var(--paper)] transition-colors hover:bg-[var(--ink)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beacon)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--paper)]"
-                      >
-                        {labels.liveDemo}
-                      </a>
-                    ) : (
-                      <span className="font-mono rounded-sm border border-[var(--stone)]/40 px-3 py-2 text-xs tracking-wide text-[var(--stone)]">
-                        {labels.demoSoon}
-                      </span>
-                    )}
-
-                    {project.repo && (
-                      <a
-                        href={project.repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-mono text-xs tracking-wide text-[var(--ink)] underline decoration-[var(--contour)] decoration-2 underline-offset-4 transition-colors hover:text-[var(--beacon)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beacon)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--paper)]"
-                      >
-                        {labels.code}
-                      </a>
-                    )}
+                    <ProjectLink project={project} labels={labels} />
                   </div>
                 </li>
               ))}

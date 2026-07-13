@@ -7,6 +7,13 @@ const labels = {
   liveDemo: "Live demo",
   code: "Code",
   demoSoon: "Demo soon",
+  kind: {
+    port: "Home port",
+    craft: "Craft",
+    ventures: "Ventures",
+    ai: "AI Lab",
+    contact: "Contact",
+  },
 };
 
 describe("ListView", () => {

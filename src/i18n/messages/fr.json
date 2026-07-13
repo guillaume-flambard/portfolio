@@ -13,6 +13,13 @@
     "code": "Code",
     "demoSoon": "Démo bientôt"
   },
+  "kind": {
+    "port": "Port d’attache",
+    "craft": "Artisanat",
+    "ventures": "Ventures",
+    "ai": "Labo IA",
+    "contact": "Contact"
+  },
   "list": {
     "title": "Toutes les îles"
   }

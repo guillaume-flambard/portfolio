@@ -13,6 +13,13 @@
     "code": "Code",
     "demoSoon": "Demo soon"
   },
+  "kind": {
+    "port": "Home port",
+    "craft": "Craft",
+    "ventures": "Ventures",
+    "ai": "AI Lab",
+    "contact": "Contact"
+  },
   "list": {
     "title": "All Islands"
   }

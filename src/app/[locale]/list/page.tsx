@@ -37,6 +37,13 @@ export default async function ListPage({
     liveDemo: t("project.liveDemo"),
     code: t("project.code"),
     demoSoon: t("project.demoSoon"),
+    kind: {
+      port: t("kind.port"),
+      craft: t("kind.craft"),
+      ventures: t("kind.ventures"),
+      ai: t("kind.ai"),
+      contact: t("kind.contact"),
+    },
   };
 
   // `locale` is validated against `hasLocale` in the parent [locale]/layout.tsx
