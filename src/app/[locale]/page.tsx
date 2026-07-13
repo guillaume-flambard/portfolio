@@ -13,6 +13,8 @@ export default async function HomePage({
 
   const t = await getTranslations();
   const home = getIsland("home");
+  // `locale` is validated against `hasLocale` in the parent [locale]/layout.tsx
+  // (which calls notFound() otherwise), so this cast to `Locale` is safe here.
   const blurb = home?.blurb[locale as Locale];
 
   return (
