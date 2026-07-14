@@ -1,14 +1,16 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const router = useRouter();
 
   const otherLocale = locale === "fr" ? "en" : "fr";
+  const switchLabel = otherLocale === "fr" ? t("switchToFrench") : t("switchToEnglish");
 
   function switchLocale() {
     router.replace(pathname, { locale: otherLocale });
@@ -32,7 +34,7 @@ export default function LocaleSwitcher() {
       <span className={locale === "fr" ? "text-[var(--beacon)]" : "text-[var(--stone)]"}>FR</span>
       {" ⇄ "}
       <span className={locale === "en" ? "text-[var(--beacon)]" : "text-[var(--stone)]"}>EN</span>
-      <span className="sr-only">{`, switch to ${otherLocale === "fr" ? "French" : "English"}`}</span>
+      <span className="sr-only">{`, ${switchLabel}`}</span>
     </button>
   );
 }

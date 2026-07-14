@@ -7,6 +7,7 @@ export type ListLabels = {
   code: string;
   demoSoon: string;
   viewIsland: string;
+  stack: string;
   kind: Record<Island["kind"], string>;
 };
 
@@ -67,7 +68,7 @@ export default function ListView({
 
                   <ul
                     className="flex flex-wrap gap-2"
-                    aria-label="stack"
+                    aria-label={labels.stack}
                   >
                     {project.stack.map((tech) => (
                       <li

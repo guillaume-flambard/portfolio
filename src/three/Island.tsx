@@ -113,18 +113,23 @@ export default function Island({
           style={{ color: "#0F172A" }}
         >
           {/*
-            A real `<button>` so the island is keyboard-reachable: Tab
-            order picks it up like any other focusable control, and
-            Enter/Space invoke `onClick` for free (native button
-            behavior) — no extra `onKeyDown` wiring needed. It re-enables
-            `pointer-events` (the wrapping label div opts out so hover
-            labels never intercept clicks meant for the sea/Wake behind
-            them) so it's clickable too, and `stopPropagation` keeps a
-            click here from also bubbling to the canvas' own raycast
-            path.
+            A real `<button>` for mouse/touch activation only. It lives
+            inside the canvas wrapper's `aria-hidden` subtree (see
+            `ArchipelagoScene.tsx`), so screen readers never see it —
+            keyboard/AT users reach islands via the SSR baseline instead
+            (SkipToList → /list → /isle/[slug], which fully covers every
+            island). `tabIndex={-1}` keeps it out of the Tab order so
+            sighted keyboard users don't land on a focusable control that
+            assistive tech announces nothing for (WCAG aria-hidden-focus).
+            It re-enables `pointer-events` (the wrapping label div opts
+            out so hover labels never intercept clicks meant for the
+            sea/Wake behind them) so it's clickable too, and
+            `stopPropagation` keeps a click here from also bubbling to
+            the canvas' own raycast path.
           */}
           <button
             type="button"
+            tabIndex={-1}
             onClick={(event) => {
               event.stopPropagation();
               onActivate?.();

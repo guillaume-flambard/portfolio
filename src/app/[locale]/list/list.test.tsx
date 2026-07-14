@@ -8,6 +8,7 @@ const labels = {
   code: "Code",
   demoSoon: "Demo soon",
   viewIsland: "View island detail",
+  stack: "Tech stack",
   kind: {
     port: "Home port",
     craft: "Craft",
