@@ -22,28 +22,51 @@ type IslandProps = {
 };
 
 /**
- * Fixed ratio between a terrace's top and bottom radius (its own slight
- * "batter", the way a single stepped terrace wall slopes inward). Kept
- * constant across every terrace of every island so all terraces can share
- * one unit `CylinderGeometry` — each mesh instance just scales it via
- * `mesh.scale`, rather than allocating a bespoke geometry per terrace.
+ * KEY VISUAL PARAMS — island silhouette/material tuning, kept in one place
+ * alongside `Canvas3D.tsx`'s `SCENE` const so both can be nudged between
+ * renders without hunting through the geometry code below.
  */
-const TERRACE_TAPER = 0.94;
-/** High radial segment count so terraces read as round survey contours,
- * never hexagonal. */
-const TERRACE_RADIAL_SEGMENTS = 64;
+const ISLAND = {
+  /** Terrace count range (inclusive). More, smaller steps read as elegant
+   * contour banding under AO; too few looks like a blocky wedding cake. */
+  terraceCountMin: 8,
+  terraceCountMax: 12,
+  /** Base (bottom-most) terrace radius range. */
+  baseRadiusMin: 1.7,
+  baseRadiusMax: 2.02,
+  /** Overall height multiplier range. */
+  heightScaleMin: 0.85,
+  heightScaleMax: 1.0,
+  /** Peak radius as a fraction of the base radius. */
+  peakRadiusRatio: 0.32,
+  /** Fixed ratio between a terrace's top and bottom radius (its own slight
+   * "batter", the way a single stepped terrace wall slopes inward). Kept
+   * constant across every terrace of every island so all terraces can
+   * share one unit `CylinderGeometry` — each mesh instance just scales it
+   * via `mesh.scale`, rather than allocating a bespoke geometry per
+   * terrace. */
+  terraceTaper: 0.94,
+  /** High radial segment count so terraces read as round survey contours,
+   * never hexagonal — smooth normals here are also what let N8AO's
+   * ambient occlusion read as soft creases instead of faceted noise. */
+  radialSegments: 64,
+  /** Matte, non-metallic stone/paper material — reads premium once AO
+   * grounds the shading instead of looking like flat plastic. */
+  roughness: 0.85,
+  metalness: 0,
+};
 
 /**
- * Shared unit terrace: bottom radius 1, top radius `TERRACE_TAPER`, unit
- * height. Every `<Island>` instance reuses this exact `BufferGeometry` —
- * see the per-terrace `scale` prop below for how it becomes a specific
+ * Shared unit terrace: bottom radius 1, top radius `ISLAND.terraceTaper`,
+ * unit height. Every `<Island>` instance reuses this exact `BufferGeometry`
+ * — see the per-terrace `scale` prop below for how it becomes a specific
  * terrace's actual radius/height.
  */
 const unitTerraceGeometry = new THREE.CylinderGeometry(
-  TERRACE_TAPER,
+  ISLAND.terraceTaper,
   1,
   1,
-  TERRACE_RADIAL_SEGMENTS,
+  ISLAND.radialSegments,
 );
 
 /** Thin shared geometries for the leader line + peak dot marking each
@@ -108,15 +131,19 @@ type Terrace = {
 /**
  * Builds the N-terrace stack for one island, parameterised deterministically
  * from its slug so every island is a related but distinct landform:
- * terrace count (7–9), base radius and overall height all vary with the
- * hash, never with `Math.random`.
+ * terrace count (`ISLAND.terraceCountMin`–`terraceCountMax`), base radius
+ * and overall height all vary with the hash, never with `Math.random`.
  */
 function buildTerraces(slug: string): Terrace[] {
   const hash = hashSlug(slug);
-  const terraceCount = 7 + (hash % 3); // 7, 8 or 9
-  const baseRadius = 1.7 + ((hash >> 3) % 5) * 0.08; // 1.70 .. 2.02
-  const heightScale = 0.85 + ((hash >> 6) % 4) * 0.05; // 0.85 .. 1.00
-  const peakRadiusRatio = 0.32; // peak radius as a fraction of the base
+  const terraceSpan = ISLAND.terraceCountMax - ISLAND.terraceCountMin + 1; // 5 (8..12)
+  const terraceCount = ISLAND.terraceCountMin + (hash % terraceSpan);
+  const baseRadius =
+    ISLAND.baseRadiusMin + ((hash >> 3) % 5) * ((ISLAND.baseRadiusMax - ISLAND.baseRadiusMin) / 4);
+  const heightScale =
+    ISLAND.heightScaleMin +
+    ((hash >> 6) % 4) * ((ISLAND.heightScaleMax - ISLAND.heightScaleMin) / 3);
+  const peakRadiusRatio = ISLAND.peakRadiusRatio;
 
   const terraces: Terrace[] = [];
   let y = 0;
@@ -124,8 +151,11 @@ function buildTerraces(slug: string): Terrace[] {
     const t = i / (terraceCount - 1);
     const radius = baseRadius * (1 - (1 - peakRadiusRatio) * easeInRadius(t));
     // Height steps grow very slightly toward the peak so the silhouette
-    // keeps a gentle taper instead of uniform "wedding cake" tiers.
-    const height = heightScale * (0.16 + 0.05 * t);
+    // keeps a gentle taper instead of uniform "wedding cake" tiers. More,
+    // smaller steps (8-12 terraces) than the old 7-9 spread keeps each
+    // individual riser subtle — elegant contour banding under AO rather
+    // than a blocky wedding cake.
+    const height = heightScale * (0.13 + 0.04 * t);
     terraces.push({ radius, height, y: y + height / 2, color: terraceColor(t) });
     y += height;
   }
@@ -190,12 +220,15 @@ export default function Island({
     >
       {/*
         Concentric contour terraces: a smooth stepped bathymetric mound
-        built from `terraces.length` (7–9) thin round cylinders sharing
-        one unit geometry (`unitTerraceGeometry`, 64 radial segments — the
-        thing that used to look like a hex wedding cake now reads as a
-        survey chart's rounded contour rings). No `flatShading`: smooth
-        normals + a matte, low-metalness material read as paper-like
-        terrain rather than faceted plastic.
+        built from `terraces.length` (`ISLAND.terraceCountMin`–
+        `terraceCountMax`, i.e. 8–12) thin round cylinders sharing one unit
+        geometry (`unitTerraceGeometry`, `ISLAND.radialSegments` radial
+        segments — the thing that used to look like a hex wedding cake now
+        reads as a survey chart's rounded contour rings). No `flatShading`:
+        smooth normals + a fully matte, non-metallic material read as
+        paper-like terrain rather than faceted plastic, and are exactly
+        what N8AO's ambient occlusion needs to shade soft creases between
+        terraces instead of faceted noise.
       */}
       {terraces.map((terrace, i) => (
         <mesh
@@ -207,7 +240,11 @@ export default function Island({
           castShadow
           receiveShadow
         >
-          <meshStandardMaterial color={terrace.color} roughness={0.88} metalness={0.04} />
+          <meshStandardMaterial
+            color={terrace.color}
+            roughness={ISLAND.roughness}
+            metalness={ISLAND.metalness}
+          />
         </mesh>
       ))}
 
