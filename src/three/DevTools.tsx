@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useControls, folder, Leva } from "leva";
-import { Perf } from "r3f-perf";
 import type { SceneParams } from "@/three/Canvas3D";
 
 type DevPanelProps = {
@@ -137,10 +136,9 @@ export function DevPanel({ base, onChange }: DevPanelProps) {
 }
 
 /**
- * FPS/draw-call overlay from `r3f-perf`. Must live *inside* the R3F
- * `<Canvas>` tree (it reads `gl.info` via `useThree`/`useFrame`), unlike
- * `<DevPanel>`'s `<Leva>` panel which is plain DOM and lives outside it.
+ * FPS overlay was removed: `r3f-perf` bundles a `.woff.mjs` that breaks the
+ * Turbopack build (Next 16). Tuning is done via the Leva `<DevPanel>` instead.
  */
 export function DevPerf() {
-  return <Perf position="top-left" />;
+  return null;
 }
