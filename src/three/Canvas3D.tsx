@@ -10,6 +10,8 @@ import Island from "@/three/Island";
 import Wake, { type WakeHandle } from "@/three/Wake";
 import { useHover } from "@/three/useHover";
 import { useCameraSail } from "@/three/useCameraSail";
+import { useExploreCamera } from "@/three/useExploreCamera";
+import { useExplore } from "@/three/explore-context";
 import type { Island as IslandData } from "@/content/islands";
 import type { Locale } from "@/content/islands";
 
@@ -41,6 +43,9 @@ export default function Canvas3D({ islands, locale }: Canvas3DProps) {
   return (
     <Canvas
       camera={{ position: [0, 6, 16], fov: 45 }}
+      // Soft shadows: islands/Sea opt in per-mesh via castShadow/
+      // receiveShadow; the key light below carries the actual shadow map.
+      shadows
       // Cap device pixel ratio at 1.5 (Task 13 perf budget) so retina/
       // hi-dpi screens don't multiply fragment-shader cost for no visual
       // gain on this background scene.
@@ -61,6 +66,8 @@ function Scene({ islands, locale }: Canvas3DProps) {
   const wakeRef = useRef<WakeHandle>(null);
   const controlsRef = useRef<OrbitControlsImpl>(null);
   const { sailTo } = useCameraSail(controlsRef);
+  const { exploring } = useExplore();
+  useExploreCamera(exploring, controlsRef);
 
   const handleSeaPointerMove = useCallback((event: ThreeEvent<PointerEvent>) => {
     wakeRef.current?.addPoint(event.point);
@@ -68,8 +75,33 @@ function Scene({ islands, locale }: Canvas3DProps) {
 
   return (
     <>
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[5, 10, 5]} intensity={0.8} />
+      {/* Paper-coloured fog: distant islands melt into the horizon instead
+          of hard-clipping, a cheap but premium depth cue. Tuned so all 5
+          islands (chart coords roughly within a 6-unit radius) read clearly
+          while the far edge of the sea plane fades out. */}
+      <fog attach="fog" args={["#FFFBEB", 18, 48]} />
+
+      {/* Soft cinematic lighting: low ambient fill, one warm key light
+          (upper-side, casts the shadows), and a sky/ground hemisphere light
+          for a gentle bounce instead of flat, harsh shading. */}
+      <ambientLight intensity={0.5} />
+      <hemisphereLight args={["#FFFBEB", "#78716C", 0.35]} />
+      <directionalLight
+        position={[6, 11, 4]}
+        intensity={0.85}
+        color="#FFE8C2"
+        castShadow
+        shadow-mapSize-width={1024}
+        shadow-mapSize-height={1024}
+        shadow-camera-left={-14}
+        shadow-camera-right={14}
+        shadow-camera-top={14}
+        shadow-camera-bottom={-14}
+        shadow-camera-near={1}
+        shadow-camera-far={40}
+        shadow-bias={-0.0015}
+      />
+
       <Sea onPointerMove={handleSeaPointerMove} />
       <Wake ref={wakeRef} />
       {islands.map((island) => (
@@ -82,7 +114,18 @@ function Scene({ islands, locale }: Canvas3DProps) {
           onActivate={() => sailTo(island)}
         />
       ))}
-      <OrbitControls ref={controlsRef} enablePan={false} />
+      {/* `autoRotate` is OrbitControls' own built-in idle drift — very slow
+          here so the scene feels alive before any interaction. It naturally
+          stops contributing whenever `controls.enabled` is false (see
+          `useCameraSail`/`useExploreCamera`: both disable controls for the
+          duration of a GSAP tween), so it never fights a sail or the
+          enter-explore camera ease. */}
+      <OrbitControls
+        ref={controlsRef}
+        enablePan={false}
+        autoRotate
+        autoRotateSpeed={0.3}
+      />
     </>
   );
 }
