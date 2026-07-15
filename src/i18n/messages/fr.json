@@ -1,28 +1,4 @@
 {
-  "nav": {
-    "enter": "Entrer dans l'archipel",
-    "list": "Vue en liste",
-    "skipToList": "Passer à la vue en liste",
-    "viewIsland": "Voir le détail de l'île",
-    "switchToFrench": "Passer en français",
-    "switchToEnglish": "Passer en anglais"
-  },
-  "project": {
-    "liveDemo": "Démo en ligne",
-    "code": "Code",
-    "demoSoon": "Démo bientôt",
-    "stack": "Stack technique"
-  },
-  "kind": {
-    "port": "Port d’attache",
-    "craft": "Artisanat",
-    "ventures": "Aventures",
-    "ai": "Labo IA",
-    "contact": "Contact"
-  },
-  "list": {
-    "title": "Toutes les îles"
-  },
   "home": {
     "nav": {
       "work": "Travail",

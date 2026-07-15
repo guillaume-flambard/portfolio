@@ -1,28 +1,4 @@
 {
-  "nav": {
-    "enter": "Enter the archipelago",
-    "list": "List view",
-    "skipToList": "Skip to list view",
-    "viewIsland": "View island detail",
-    "switchToFrench": "Switch to French",
-    "switchToEnglish": "Switch to English"
-  },
-  "project": {
-    "liveDemo": "Live demo",
-    "code": "Code",
-    "demoSoon": "Demo soon",
-    "stack": "Tech stack"
-  },
-  "kind": {
-    "port": "Home port",
-    "craft": "Craft",
-    "ventures": "Ventures",
-    "ai": "AI Lab",
-    "contact": "Contact"
-  },
-  "list": {
-    "title": "All Islands"
-  },
   "home": {
     "nav": {
       "work": "Work",

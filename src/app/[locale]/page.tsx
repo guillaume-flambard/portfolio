@@ -1,6 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import type { Locale } from "@/content/islands";
 
 type Project = {
   key: "largo" | "blueowl" | "minerva";
@@ -22,7 +21,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
-  void (locale as Locale);
 
   return (
     <>
