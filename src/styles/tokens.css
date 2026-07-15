@@ -1,9 +1,12 @@
 :root {
-  --paper: #FFFBEB;
-  --ink: #0F172A;
-  --stone: #78716C;
-  --contour: #9c8f6e;
-  --amber: #D97706;
-  --beacon: #c8452f;
-  --phosphor: #39ffcf;
+  --bg: #faf9f7;
+  --ink: #16130f;
+  --muted: #6b6055;
+  --line: #e7e2da;
+  --accent: #c8672e;
+  --accent-soft: #e58a4a;
+  --surface: #ffffff;
+  --grid: rgba(22, 19, 15, 0.045);
+  --font-display: "Clash Display", system-ui, sans-serif;
+  --font-body: "General Sans", system-ui, sans-serif;
 }

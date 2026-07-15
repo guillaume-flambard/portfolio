@@ -1,8 +1,4 @@
 {
-  "hero": {
-    "name": "Guillaume Flambard",
-    "tagline": "Design Engineer — fullstack & AI. I build products, from idea to deployment."
-  },
   "nav": {
     "enter": "Enter the archipelago",
     "list": "List view",
@@ -26,5 +22,39 @@
   },
   "list": {
     "title": "All Islands"
+  },
+  "home": {
+    "nav": {
+      "work": "Work",
+      "about": "About",
+      "contact": "Contact",
+      "cta": "Get in touch"
+    },
+    "eyebrow": "Full-stack development · AI",
+    "h1a": "I design and ship products,",
+    "h1accent": "from idea to deployment.",
+    "lede": "Full-stack & AI. I design and ship complete products, from architecture to polished interface. <b>Available for a role in Europe.</b>",
+    "ctaWork": "See the work",
+    "ctaContact": "Get in touch",
+    "chip0": "Fullstack + AI",
+    "chip1": "Design → build solo",
+    "chip2": "Available in Europe",
+    "workTitle": "Selected work",
+    "workSub": "Shipped products — sites, SaaS and AI tools. Live demos.",
+    "project_largo": "Marketing site for an AI-first training agency. Dedicated design system, GSAP animation, AI-Act compliant.",
+    "project_blueowl": "Global education initiative + AI lesson generator. Turborepo monorepo, shipped product.",
+    "project_minerva": "\"Retrieval Augmented Consciousness\" — knowledge/agent RAG platform. Semantic search at scale.",
+    "aboutTitle": "Design and ship, <em>end to end.</em>",
+    "aboutP1": "<b>Guillaume Flambard</b> — full-stack & AI. Scalable B2B SaaS, clinical apps (eClinical, GDPR/FDA), AI tools — from automation to polished UI.",
+    "aboutP2": "I take a product from idea to deployment on my own: architecture, API, interface, motion. I also run my own products, including <b>Echo Travel</b> (transport & booking).",
+    "f1k": "Craft",
+    "f1v": "Full-stack development + AI",
+    "f2k": "Available",
+    "f2v": "Salaried role in Europe",
+    "f3k": "Focus",
+    "f3v": "B2B SaaS · eClinical · AI",
+    "f4k": "Languages",
+    "contactTitle": "Let's work <em>together.</em>",
+    "contactSub": "Open to a full-stack role in Europe (product, fintech) and freelance projects."
   }
 }

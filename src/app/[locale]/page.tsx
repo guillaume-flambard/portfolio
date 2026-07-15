@@ -1,78 +1,139 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { getIsland, ISLANDS } from "@/content/islands";
 import type { Locale } from "@/content/islands";
-import ArchipelagoScene from "@/three/ArchipelagoScene";
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+type Project = {
+  key: "largo" | "blueowl" | "minerva";
+  name: string;
+  url: string | null;
+  href: string | null;
+  shot: string | null;
+  thumb: "t1" | "t2" | "t3";
+  stack: string[];
+};
+
+const PROJECTS: Project[] = [
+  { key: "largo", name: "Largo IA", url: "largo-ai.vercel.app", href: "https://largo-ai.vercel.app", shot: "/shots/largo.png", thumb: "t1", stack: ["Next.js", "React", "Tailwind", "GSAP"] },
+  { key: "blueowl", name: "Blue Owl", url: "blueowl.org", href: "https://blueowl.org", shot: "/shots/blueowl.png", thumb: "t2", stack: ["Turborepo", "Next.js", "AI"] },
+  { key: "minerva", name: "minerva", url: null, href: null, shot: null, thumb: "t3", stack: ["React", "Vite", "RAG"] },
+];
+
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-
-  const t = await getTranslations();
-  const home = getIsland("home");
-  // `locale` is validated against `hasLocale` in the parent [locale]/layout.tsx
-  // (which calls notFound() otherwise), so this cast to `Locale` is safe here.
-  const blurb = home?.blurb[locale as Locale];
+  const t = await getTranslations("home");
+  void (locale as Locale);
 
   return (
     <>
-      <ArchipelagoScene islands={ISLANDS} locale={locale as Locale} />
-
-      {/*
-        `pointer-events-none` lets pointer/touch input pass through the
-        empty chart area to the 3D canvas behind (island hover + sea
-        wake, Task 11). Each actual interactive control below
-        (`Link`s) opts back in with `pointer-events-auto` so hero
-        navigation keeps working.
-      */}
-      <main className="pointer-events-none relative z-[1] flex min-h-screen flex-col items-center justify-center gap-8 overflow-hidden px-6 text-center">
-        <div className="relative flex flex-col items-center gap-6 px-6 py-10 sm:px-12">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 -z-10 rounded-[3rem] backdrop-blur-[2px]"
-            style={{
-              background:
-                "radial-gradient(ellipse at center, var(--paper) 0%, color-mix(in srgb, var(--paper) 65%, transparent) 55%, transparent 80%)",
-            }}
-          />
-
-          <p className="font-mono text-xs tracking-[0.3em] text-[var(--stone)] uppercase">
-            {home?.titles[locale as Locale] ?? "Home Port"}
-          </p>
-
-          <h1 className="font-display text-5xl text-[var(--ink)] sm:text-6xl md:text-7xl">
-            {t("hero.name")}
-          </h1>
-
-          <p className="font-mono max-w-xl text-sm text-[var(--stone)] sm:text-base">
-            {t("hero.tagline")}
-          </p>
-
-          {blurb && (
-            <p className="font-body max-w-xl text-[var(--ink)]/80">{blurb}</p>
-          )}
-
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
-            <Link
-              href="/"
-              className="font-mono pointer-events-auto rounded-sm border border-[var(--beacon)] bg-[var(--beacon)] px-5 py-3 text-sm tracking-wide text-[var(--paper)] transition-colors hover:bg-[var(--ink)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beacon)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--paper)]"
-            >
-              {t("nav.enter")}
-            </Link>
-
-            <Link
-              href="/list"
-              className="font-mono pointer-events-auto rounded-sm border border-[var(--ink)] px-5 py-3 text-sm tracking-wide text-[var(--ink)] underline decoration-[var(--contour)] decoration-2 underline-offset-4 transition-colors hover:bg-[var(--ink)] hover:text-[var(--paper)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--beacon)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--paper)]"
-            >
-              {t("nav.list")}
-            </Link>
+      <nav className="nav">
+        <div className="wrap">
+          <div className="logo">
+            <span className="mark" aria-hidden />
+            Guillaume Flambard
+          </div>
+          <div className="navlinks">
+            <a href="#work">{t("nav.work")}</a>
+            <a href="#about">{t("nav.about")}</a>
+            <a href="#contact">{t("nav.contact")}</a>
+          </div>
+          <div className="navright">
+            <span className="lang">
+              <Link href="/" locale="fr" className={locale === "fr" ? "on" : undefined}>FR</Link>
+              {" / "}
+              <Link href="/" locale="en" className={locale === "en" ? "on" : undefined}>EN</Link>
+            </span>
+            <a className="cta" href="#contact">{t("nav.cta")}</a>
           </div>
         </div>
-      </main>
+      </nav>
+
+      <header className="hero">
+        <div className="wrap">
+          <p className="eyebrow"><span className="r" />{t("eyebrow")}</p>
+          <h1 className="h">
+            {t("h1a")} <span className="acc">{t("h1accent")}</span>
+          </h1>
+          <p className="lede" dangerouslySetInnerHTML={{ __html: t.raw("lede") }} />
+          <div className="herobtns">
+            <a className="btn p" href="#work">{t("ctaWork")} →</a>
+            <a className="btn s" href="#contact">{t("ctaContact")}</a>
+          </div>
+          <div className="chips">
+            <span className="chip">{t("chip0")}</span>
+            <span className="chip">{t("chip1")}</span>
+            <span className="chip">{t("chip2")}</span>
+          </div>
+        </div>
+      </header>
+
+      <section id="work" className="sec">
+        <div className="wrap">
+          <div className="shead">
+            <h2 className="display">{t("workTitle")}</h2>
+            <p>{t("workSub")}</p>
+          </div>
+          <div className="grid">
+            {PROJECTS.map((p) => {
+              const inner = (
+                <>
+                  <div className={`thumb ${p.thumb}`}>
+                    {p.shot ? <img src={p.shot} alt={`Aperçu du site ${p.name}`} loading="lazy" /> : p.name}
+                  </div>
+                  <div className="cbody">
+                    <h3>{p.name} {p.href && <span className="arrow" aria-hidden>→</span>}</h3>
+                    <p>{t(`project_${p.key}`)}</p>
+                    <div className="stack">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
+                    {p.url && (
+                      <div className="curl"><span className="dot" aria-hidden />{p.url}<span className="arr" aria-hidden>↗</span></div>
+                    )}
+                  </div>
+                </>
+              );
+              return p.href ? (
+                <a key={p.key} className="card" href={p.href} target="_blank" rel="noopener noreferrer">{inner}</a>
+              ) : (
+                <div key={p.key} className="card">{inner}</div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="sec about">
+        <div className="wrap">
+          <div className="cols">
+            <div>
+              <h2 dangerouslySetInnerHTML={{ __html: t.raw("aboutTitle") }} />
+            </div>
+            <div className="body">
+              <p dangerouslySetInnerHTML={{ __html: t.raw("aboutP1") }} />
+              <p dangerouslySetInnerHTML={{ __html: t.raw("aboutP2") }} />
+              <div className="facts">
+                <div><span>{t("f1k")}</span><b>{t("f1v")}</b></div>
+                <div><span>{t("f2k")}</span><b>{t("f2v")}</b></div>
+                <div><span>{t("f3k")}</span><b>{t("f3v")}</b></div>
+                <div><span>{t("f4k")}</span><b>FR · EN</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="sec contact">
+        <div className="wrap">
+          <h2 dangerouslySetInnerHTML={{ __html: t.raw("contactTitle") }} />
+          <p>{t("contactSub")}</p>
+          <a className="btn p" href="mailto:g.flambard@gmail.com">g.flambard@gmail.com →</a>
+          <div className="meta">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/guillaume-flambard" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="#">Echo Travel</a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="foot">© 2026 Guillaume Flambard — Full-Stack Developer</footer>
     </>
   );
 }
