@@ -1,5 +1,9 @@
 # The Archipelago — Portfolio Implementation Plan
 
+> **SUPERSEDED 2026-07-27.** Phases 2–3 (React Three Fiber, sea shader, GSAP camera) were never
+> started and will not be. Current direction: [`docs/design-direction.md`](../design-direction.md).
+> Do not execute this plan.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Build a distinctive bilingual (FR/EN) personal portfolio where projects are islands on a freely-explorable 3D nautical chart, engineered so a rushed recruiter never gets stuck.

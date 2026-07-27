@@ -1,5 +1,9 @@
 # Portfolio — "The Archipelago" — Design Spec
 
+> **SUPERSEDED 2026-07-27.** Never built beyond the Next.js scaffold. The site now follows the
+> editorial direction in [`docs/design-direction.md`](../design-direction.md) — no 3D, no R3F.
+> Kept for reference only; do not implement from this file.
+
 **Date:** 2026-07-13
 **Owner:** Guillaume Flambard
 **Status:** Approved (design); content (project selection) to be finalized during build.
