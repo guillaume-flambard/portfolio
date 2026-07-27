@@ -54,7 +54,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </h1>
           <p className="lede" dangerouslySetInnerHTML={{ __html: t.raw("lede") }} />
           <div className="herobtns">
-            <a className="btn p" href="#work">{t("ctaWork")} →</a>
+            <a className="btn p" href="#work">{t("ctaWork")}</a>
             <a className="btn s" href="#contact">{t("ctaContact")}</a>
           </div>
           <div className="chips">
@@ -99,7 +99,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       <section id="about" className="sec about">
-        <div className="wrap">
+        <div className="wrap narrow">
           <div className="cols">
             <div>
               <h2 dangerouslySetInnerHTML={{ __html: t.raw("aboutTitle") }} />
@@ -119,10 +119,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       <section id="contact" className="sec contact">
-        <div className="wrap">
+        <div className="wrap narrow">
           <h2 dangerouslySetInnerHTML={{ __html: t.raw("contactTitle") }} />
           <p>{t("contactSub")}</p>
-          <a className="btn p" href="mailto:g.flambard@gmail.com">g.flambard@gmail.com →</a>
+          <a className="btn p" href="mailto:g.flambard@gmail.com">g.flambard@gmail.com</a>
           <div className="meta">
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/guillaume-flambard" target="_blank" rel="noopener noreferrer">GitHub</a>
