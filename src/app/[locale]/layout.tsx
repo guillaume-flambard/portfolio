@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
+import { Oswald } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Backdrop from "@/components/Backdrop";
 import "../globals.css";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-oswald",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Guillaume Flambard — Full-Stack Developer",
@@ -31,8 +40,9 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={oswald.variable}>
       <body>
+        <Backdrop />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
