@@ -1,0 +1,97 @@
+[
+  {
+    "viewport": "mobile-375",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": ".eyebrow",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": ".p.btn[href$=\"#work\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": "a[href=\"mailto:g.flambard@gmail.com\"]",
+            "summary": "Fix any of the following:"
+          }
+        ]
+      }
+    ],
+    "consoleErrors": []
+  },
+  {
+    "viewport": "tablet-768",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": ".navlinks > a[href$=\"#work\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": "a[href$=\"#about\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": ".navlinks > a[href$=\"#contact\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": ".eyebrow",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": ".p.btn[href$=\"#work\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": "a[href=\"mailto:g.flambard@gmail.com\"]",
+            "summary": "Fix any of the following:"
+          }
+        ]
+      }
+    ],
+    "consoleErrors": []
+  },
+  {
+    "viewport": "desktop-1280",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": ".navlinks > a[href$=\"#work\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": "a[href$=\"#about\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": ".navlinks > a[href$=\"#contact\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": ".p.btn[href$=\"#work\"]",
+            "summary": "Fix any of the following:"
+          },
+          {
+            "target": "a[href=\"mailto:g.flambard@gmail.com\"]",
+            "summary": "Fix any of the following:"
+          }
+        ]
+      }
+    ],
+    "consoleErrors": []
+  }
+]

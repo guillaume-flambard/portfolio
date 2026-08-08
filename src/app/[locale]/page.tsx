@@ -1,21 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-
-type Project = {
-  key: "largo" | "blueowl" | "minerva";
-  name: string;
-  url: string | null;
-  href: string | null;
-  shot: string | null;
-  thumb: "t1" | "t2" | "t3";
-  stack: string[];
-};
-
-const PROJECTS: Project[] = [
-  { key: "largo", name: "Largo IA", url: "largo-ai.vercel.app", href: "https://largo-ai.vercel.app", shot: "/shots/largo.png", thumb: "t1", stack: ["Next.js", "React", "Tailwind", "GSAP"] },
-  { key: "blueowl", name: "Blue Owl", url: "blueowl.org", href: "https://blueowl.org", shot: "/shots/blueowl.png", thumb: "t2", stack: ["Turborepo", "Next.js", "AI"] },
-  { key: "minerva", name: "minerva", url: null, href: null, shot: null, thumb: "t3", stack: ["React", "Vite", "RAG"] },
-];
+import { FEATURED } from "@/data/projects";
+import SiteNav from "@/components/SiteNav";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -24,27 +10,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <>
-      <nav className="nav">
-        <div className="wrap">
-          <div className="logo">
-            <span className="mark" aria-hidden />
-            Guillaume Flambard
-          </div>
-          <div className="navlinks">
-            <a href="#work">{t("nav.work")}</a>
-            <a href="#about">{t("nav.about")}</a>
-            <a href="#contact">{t("nav.contact")}</a>
-          </div>
-          <div className="navright">
-            <span className="lang">
-              <Link href="/" locale="fr" className={locale === "fr" ? "on" : undefined}>FR</Link>
-              {" / "}
-              <Link href="/" locale="en" className={locale === "en" ? "on" : undefined}>EN</Link>
-            </span>
-            <a className="cta" href="#contact">{t("nav.cta")}</a>
-          </div>
-        </div>
-      </nav>
+      <SiteNav />
 
       <header className="hero">
         <div className="wrap">
@@ -72,29 +38,23 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <p>{t("workSub")}</p>
           </div>
           <div className="grid">
-            {PROJECTS.map((p) => {
-              const inner = (
-                <>
-                  <div className={`thumb ${p.thumb}`}>
-                    {p.shot ? <img src={p.shot} alt={`Aperçu du site ${p.name}`} loading="lazy" /> : p.name}
-                  </div>
-                  <div className="cbody">
-                    <h3>{p.name} {p.href && <span className="arrow" aria-hidden>→</span>}</h3>
-                    <p>{t(`project_${p.key}`)}</p>
-                    <div className="stack">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
-                    {p.url && (
-                      <div className="curl"><span className="dot" aria-hidden />{p.url}<span className="arr" aria-hidden>↗</span></div>
-                    )}
-                  </div>
-                </>
-              );
-              return p.href ? (
-                <a key={p.key} className="card" href={p.href} target="_blank" rel="noopener noreferrer">{inner}</a>
-              ) : (
-                <div key={p.key} className="card">{inner}</div>
-              );
-            })}
+            {FEATURED.map((p) => (
+              <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
+                <div className={`thumb ${p.thumb}`}>
+                  {p.gallery[0] ? <img src={p.gallery[0]} alt={`Aperçu du site ${p.name}`} loading="lazy" /> : p.name}
+                </div>
+                <div className="cbody">
+                  <h3>{p.name} <span className="arrow" aria-hidden>→</span></h3>
+                  <p>{p.tagline[locale as "fr" | "en"]}</p>
+                  <div className="stack">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
+                  {p.status !== "offline" && p.links[0] && (
+                    <div className="curl"><span className="dot" aria-hidden />{p.links[0].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}<span className="arr" aria-hidden>↗</span></div>
+                  )}
+                </div>
+              </Link>
+            ))}
           </div>
+          <Link className="btn s maplink" href="/work">{t("workLibrary")}</Link>
         </div>
       </section>
 
