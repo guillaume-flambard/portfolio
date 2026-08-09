@@ -23,7 +23,7 @@
     "project_blueowl": "Initiative éducative mondiale + générateur de leçons par IA. Monorepo Turborepo, produit shippé.",
     "project_minerva": "« Retrieval Augmented Consciousness » : plateforme de connaissance/agents RAG. Recherche sémantique à grande échelle.",
     "aboutTitle": "Concevoir et livrer, <em>de bout en bout.</em>",
-    "aboutP1": "<b>Guillaume Flambard</b> : fullstack & IA. B2B SaaS scalables, apps cliniques (eClinical, GDPR/FDA), outils IA, de l'automatisation à l'UI soignée.",
+    "aboutP1": "<b>Memo Labs</b> : fullstack & IA. B2B SaaS scalables, apps cliniques (eClinical, GDPR/FDA), outils IA, de l'automatisation à l'UI soignée.",
     "aboutP2": "Je prends un produit de l'idée au déploiement en autonomie : archi, API, interface, motion. Je mène aussi mes propres produits, dont <b>Echo Travel</b> (transport & booking).",
     "f1k": "Métier",
     "f1v": "Développement fullstack + IA",
@@ -55,5 +55,11 @@
     "link_demo": "Démo",
     "stack": "Stack",
     "notFound": "Projet introuvable."
+  },
+  "lab": {
+    "eyebrow": "Memo Labs · Le lab",
+    "h1a": "Prototypes, agents &",
+    "h1accent": "WIP",
+    "lede": "Bruts sur les bords, mais réels. Les expériences de <b>Memo Labs</b> — le travail fini vit sur le <a class='txtlink' href='/fr/work'>portfolio</a>."
   }
 }

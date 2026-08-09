@@ -16,13 +16,13 @@ export default function SiteNav() {
       <div className="wrap">
         <Link href="/" className="logo">
           <span className="mark" aria-hidden />
-          Guillaume Flambard
+          Memo Labs
         </Link>
         <div className="navlinks">
           <Link href={isHome ? "#work" : "/work"}>{t("work")}</Link>
+          <Link href="/lab">{t("lab")}</Link>
           <Link href={homeLink("about")}>{t("about")}</Link>
           <Link href={homeLink("contact")}>{t("contact")}</Link>
-          <a href="https://lab.memolabs.dev" target="_blank" rel="noopener noreferrer">{t("lab")}</a>
         </div>
         <div className="navright">
           <span className="lang">

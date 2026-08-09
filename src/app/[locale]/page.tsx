@@ -91,7 +91,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
-      <footer className="foot">© 2026 Guillaume Flambard — Full-Stack Developer</footer>
+      <footer className="foot">© 2026 Memo Labs — Full-Stack Developer</footer>
     </>
   );
 }

@@ -15,9 +15,9 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Guillaume Flambard — Full-Stack Developer",
+  title: "Memo Labs — Full-Stack & AI Studio",
   description:
-    "Full-stack developer (+ AI). I design and ship products end to end. Open to a CDI in Europe and freelance.",
+    "Memo Labs — a full-stack & AI studio. Products designed and shipped end to end, from architecture to polished UI.",
 };
 
 export function generateStaticParams() {

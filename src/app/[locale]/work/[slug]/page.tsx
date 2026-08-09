@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject(slug);
   if (!project) return {};
   return {
-    title: `${project.name} — Guillaume Flambard`,
+    title: `${project.name} — Memo Labs`,
     description: project.tagline[locale as "fr" | "en"],
   };
 }
@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </article>
 
-      <footer className="foot">© 2026 Guillaume Flambard — Full-Stack Developer</footer>
+      <footer className="foot">© 2026 Memo Labs — Full-Stack Developer</footer>
     </>
   );
 }

@@ -861,7 +861,7 @@ const mapProjects: MapItem[] = [
     },
     stack: ["TypeScript", "Vite", "nginx"],
     links: [
-      { label: "live", url: "https://lab.memolabs.dev" },
+      { label: "live", url: "https://memolabs.dev/lab" },
       { label: "repo", url: "https://github.com/guillaume-flambard/lab-hub" },
     ],
     gallery: [],
