@@ -16,3 +16,17 @@
 | a11y | 0 (was 5 serious color-contrast). Root cause: `--accent: #c8672e` failed 3.67:1 on `--bg` and 3.86:1 with white CTA text. Darkened to `#ad4c16` in `src/styles/tokens.css` → 5.22:1 on bg, 5.49:1 white-on. Re-ran axe (3 viewports): 0 violations. |
 | gates | typecheck:ok · tests:1/1 (vitest) · build:ok (23/23 static pages) |
 | committed | yes (push to origin/main) |
+
+## Run — 2026-08-09 (correctif nav + galerie, bet portfolio-nav-gallery)
+
+| gate | result |
+|---|---|
+| typecheck | ok (tsc --noEmit 0 err) |
+| tests | 1/1 vitest pass |
+| build | ok (routes /fr /en /about /contact /work /work/[slug]) |
+| nav (prod) | Home présent · état actif `.on` sur la bonne page · chaque lien → bonne route |
+| /work | galerie 8 FEATURED, 7 images, 0 listing MAP |
+| /about | plus de produits nommés en redite |
+
+verdict: **DONE** — commit d6dbd9c push + deploy Coolify finished · vérifié navigateur (3 routes)
+notes: SPEC.md + tasks.md ajoutés au contrat .superflow
