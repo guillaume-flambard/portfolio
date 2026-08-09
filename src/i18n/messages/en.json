@@ -10,12 +10,12 @@
     "eyebrow": "Full-stack development · AI",
     "h1a": "I design and ship products,",
     "h1accent": "from idea to deployment.",
-    "lede": "Full-stack & AI. I design and ship complete products, from architecture to polished interface. <b>Available for a role in Europe.</b>",
+    "lede": "Full-stack & AI. I design and ship complete products, from architecture to polished UI — my own SaaS and engineering missions.",
     "ctaWork": "See the work",
     "ctaContact": "Get in touch",
     "chip0": "Fullstack + AI",
     "chip1": "Design → build solo",
-    "chip2": "Available in Europe",
+    "chip2": "Studio · missions & products",
     "workTitle": "Selected work",
     "workSub": "Shipped products. Sites, SaaS and AI tools. Live demos.",
     "workLibrary": "All projects →",
@@ -33,7 +33,7 @@
     "f3v": "B2B SaaS · eClinical · AI",
     "f4k": "Languages",
     "contactTitle": "Let's work <em>together.</em>",
-    "contactSub": "Open to a full-stack role in Europe (product, fintech) and freelance projects."
+    "contactSub": "Memo Labs takes on full-stack & AI engineering missions (product, fintech) and builds its own products. Contact: contact@memolabs.dev."
   },
   "work": {
     "title": "Library",
@@ -61,5 +61,16 @@
     "h1a": "Prototypes, agents &",
     "h1accent": "WIP",
     "lede": "Rough around the edges, but real. Experiments by <b>Memo Labs</b> — the finished work lives on the <a class='txtlink' href='/en/work'>portfolio</a>."
+  },
+  "legal": {
+    "eyebrow": "Legal notice",
+    "title": "Legal notice",
+    "editorTitle": "Site editor",
+    "editor": "Site edited by <b>Memo Labs</b> — Guillaume Flambard, French micro-entrepreneur. <br/>Contact: <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>",
+    "siren": "SIREN: <em>to be completed</em> (sole proprietorship being registered).",
+    "hostTitle": "Hosting",
+    "host": "Hosted on a Netcup VPS (159.195.213.26), managed with Coolify. The <b>memolabs.dev</b> domain is registered at Porkbun.",
+    "contactTitle": "Publication director",
+    "contact": "Guillaume Flambard — <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>"
   }
 }

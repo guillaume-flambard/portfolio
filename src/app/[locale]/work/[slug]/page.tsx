@@ -78,7 +78,10 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </article>
 
-      <footer className="foot">© 2026 Memo Labs — Full-Stack Developer</footer>
+      <footer className="foot">
+        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <Link href={`/${locale}/legal`}>Mentions légales</Link>
+      </footer>
     </>
   );
 }

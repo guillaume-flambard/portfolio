@@ -82,16 +82,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="wrap narrow">
           <h2 dangerouslySetInnerHTML={{ __html: t.raw("contactTitle") }} />
           <p>{t("contactSub")}</p>
-          <a className="btn p" href="mailto:g.flambard@gmail.com">g.flambard@gmail.com</a>
+          <a className="btn p" href="mailto:contact@memolabs.dev">contact@memolabs.dev</a>
           <div className="meta">
-            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/guillaumeflambard/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/guillaume-flambard" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="#">Echo Travel</a>
+            <a href="https://lab.memolabs.dev" target="_blank" rel="noopener noreferrer">The Lab</a>
           </div>
         </div>
       </section>
 
-      <footer className="foot">© 2026 Memo Labs — Full-Stack Developer</footer>
+      <footer className="foot">
+        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <a href={`/${locale}/legal`}>Mentions légales</a>
+      </footer>
     </>
   );
 }

@@ -10,12 +10,12 @@
     "eyebrow": "Développement fullstack · IA",
     "h1a": "Je conçois et j'expédie des produits,",
     "h1accent": "de l'idée au déploiement.",
-    "lede": "Fullstack & IA. Je conçois et je livre des produits complets, de l'architecture à l'interface soignée. <b>Disponible pour un poste en Europe.</b>",
+    "lede": "Fullstack & IA. Je conçois et je livre des produits complets, de l'architecture à l'interface soignée — mes propres SaaS et des missions d'ingénierie.",
     "ctaWork": "Voir le travail",
     "ctaContact": "Me contacter",
     "chip0": "Fullstack + IA",
     "chip1": "Design → build en solo",
-    "chip2": "Disponible en Europe",
+    "chip2": "Studio · missions & produits",
     "workTitle": "Travail sélectionné",
     "workSub": "Produits shippés. Sites, SaaS et outils IA. Démos live.",
     "workLibrary": "Tous les projets →",
@@ -33,7 +33,7 @@
     "f3v": "B2B SaaS · eClinical · IA",
     "f4k": "Langues",
     "contactTitle": "Travaillons <em>ensemble.</em>",
-    "contactSub": "Ouverture à un poste fullstack en Europe (produit, fintech) et à des missions freelance."
+    "contactSub": "Memo Labs prend des missions d'ingénierie fullstack & IA (produit, fintech) et développe ses propres produits. Contact : contact@memolabs.dev."
   },
   "work": {
     "title": "Bibliothèque",
@@ -61,5 +61,16 @@
     "h1a": "Prototypes, agents &",
     "h1accent": "WIP",
     "lede": "Bruts sur les bords, mais réels. Les expériences de <b>Memo Labs</b> — le travail fini vit sur le <a class='txtlink' href='/fr/work'>portfolio</a>."
+  },
+  "legal": {
+    "eyebrow": "Mentions légales",
+    "title": "Mentions légales",
+    "editorTitle": "Éditeur du site",
+    "editor": "Site édité par <b>Memo Labs</b> — Guillaume Flambard, micro-entrepreneur. <br/>Contact : <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>",
+    "siren": "SIREN : <em>à compléter</em> (micro-entreprise en cours d'immatriculation).",
+    "hostTitle": "Hébergement",
+    "host": "Le site est hébergé sur un VPS Netcup (159.195.213.26), administré via Coolify. La marque <b>memolabs.dev</b> est gérée chez Porkbun.",
+    "contactTitle": "Directeur de la publication",
+    "contact": "Guillaume Flambard — <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>"
   }
 }

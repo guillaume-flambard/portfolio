@@ -49,7 +49,10 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
         </div>
       </main>
 
-      <footer className="foot">© 2026 Memo Labs — Full-Stack Developer</footer>
+      <footer className="foot">
+        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <Link href={`/${locale}/legal`}>Mentions légales</Link>
+      </footer>
     </>
   );
 }

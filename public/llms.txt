@@ -1,0 +1,25 @@
+# Memo Labs
+
+> Memo Labs is a full-stack & AI studio that designs and ships complete products, from architecture to polished UI — its own SaaS and engineering missions.
+
+## About
+
+Memo Labs is the product studio and playground of Guillaume Flambard: scalable B2B SaaS, AI tools, clinical apps, and complete products shipped end to end — architecture, API, interface, motion. The studio develops its own products and takes on full-stack & AI engineering missions.
+
+## Contact
+
+- Website: https://memolabs.dev
+- Lab: https://lab.memolabs.dev
+- Email: contact@memolabs.dev
+- GitHub: https://github.com/guillaume-flambard
+
+## Flagship products
+
+- [PayKit](https://memolabs.dev/fr/work/paykit): Drop-in billing SDK for AI apps — credits, usage metering and subscriptions.
+- [Blue Owl](https://memolabs.dev/fr/work/blueowl): AI lesson generator for global education.
+- [Largo IA](https://memolabs.dev/fr/work/largo): Marketing site for an AI-first training agency.
+- [PhanganAI](https://memolabs.dev/fr/work/phanganai): Booking and events app for Koh Phangan.
+
+## Lab (WIP)
+
+- [The lab](https://lab.memolabs.dev): All projects — live products, prototypes and WIP experiments with descriptions.

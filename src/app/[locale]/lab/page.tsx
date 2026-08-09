@@ -38,7 +38,10 @@ export default async function LabPage({
         <LabGrid projects={projects} />
       </main>
 
-      <footer className="foot">© 2026 Memo Labs — Full-Stack Developer</footer>
+      <footer className="foot">
+        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <a href={`/${locale}/legal`}>Mentions légales</a>
+      </footer>
     </>
   );
 }
