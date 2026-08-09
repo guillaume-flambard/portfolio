@@ -5,7 +5,8 @@
       "about": "À propos",
       "contact": "Contact",
       "cta": "Me contacter",
-      "lab": "Lab"
+      "lab": "Lab",
+      "home": "Accueil"
     },
     "eyebrow": "Développement fullstack · IA",
     "h1a": "Je conçois et j'expédie des produits,",
@@ -60,7 +61,7 @@
     "title": "Memo Labs, <em>studio fullstack & IA.</em>",
     "lede": "Des produits complets, de l'architecture à l'interface soignée — conçus et livrés de bout en bout.",
     "p1": "<b>Memo Labs</b> est le studio et le laboratoire de <b>Guillaume Flambard</b> : développeur fullstack & IA. B2B SaaS scalables, apps cliniques (eClinical, GDPR/FDA), outils IA — de l'automatisation à l'UI soignée.",
-    "p2": "Un produit, de l'idée au déploiement, en autonomie : <b>archi, API, interface, motion</b>. Je mène aussi mes propres produits, dont <b>Echo Travel</b> (transport & booking).",
+    "p2": "Un produit, de l'idée au déploiement, en autonomie : <b>archi, API, interface, motion</b>. Je conçois et je livre — mes propres produits et des missions d'ingénierie.",
     "servicesTitle": "Services",
     "servicesP": "Missions d'ingénierie fullstack & IA pour des produits web et SaaS.",
     "s1k": "Fullstack",
@@ -72,7 +73,7 @@
     "f1k": "Terrain",
     "f1v": "B2B SaaS · eClinical · IA",
     "f2k": "Produits",
-    "f2v": "PayKit · Echo Travel · Memo Labs lab",
+    "f2v": "SaaS & outils IA (voir /work)",
     "f3k": "Langues",
     "f3v": "FR · EN",
     "cta": "Travaillons ensemble"

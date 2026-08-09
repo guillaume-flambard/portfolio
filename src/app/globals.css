@@ -58,7 +58,7 @@ h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; font-w
 .navlinks { display: flex; align-items: center; font-size: 15px; text-transform: uppercase; letter-spacing: 0.09em; }
 .navlinks a { text-decoration: none; color: var(--accent); padding: 0 22px; transition: color 0.2s; }
 .navlinks a + a { border-left: 1px solid var(--line); }
-.navlinks a:hover { color: var(--ink); }
+.navlinks a:hover, .navlinks a.on { color: var(--ink); }
 .navright { display: flex; align-items: center; gap: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.09em; }
 .lang { color: var(--muted); }
 .lang a { text-decoration: none; color: inherit; transition: color 0.2s; }

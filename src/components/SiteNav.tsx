@@ -8,18 +8,24 @@ export default function SiteNav() {
   const locale = useLocale();
   const pathname = usePathname();
 
+  const isActive = (segment: string) => {
+    if (segment === "/") return pathname === "/";
+    return pathname === segment || pathname.startsWith(`${segment}/`);
+  };
+
   return (
     <nav className="nav">
       <div className="wrap">
-        <Link href="/" className="logo">
+        <Link href="/" className="logo" aria-label={t("home")}>
           <span className="mark" aria-hidden />
           Memo Labs
         </Link>
         <div className="navlinks">
-          <Link href="/work">{t("work")}</Link>
+          <Link href="/" className={isActive("/") ? "on" : undefined}>{t("home")}</Link>
+          <Link href="/work" className={isActive("/work") ? "on" : undefined}>{t("work")}</Link>
           <a href="https://lab.memolabs.dev" target="_blank" rel="noopener noreferrer">{t("lab")}</a>
-          <Link href="/about">{t("about")}</Link>
-          <Link href="/contact">{t("contact")}</Link>
+          <Link href="/about" className={isActive("/about") ? "on" : undefined}>{t("about")}</Link>
+          <Link href="/contact" className={isActive("/contact") ? "on" : undefined}>{t("contact")}</Link>
         </div>
         <div className="navright">
           <span className="lang">

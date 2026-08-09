@@ -1,9 +1,20 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
-import { MAP } from "@/data/projects";
+import { FEATURED } from "@/data/projects";
 import SiteNav from "@/components/SiteNav";
 
-export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
+export const metadata: Metadata = {
+  title: "Work — Memo Labs",
+  description:
+    "The Memo Labs products in production — Largo, Blue Owl, PayKit and more, with live links and details.",
+};
+
+export default async function WorkPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("work");
@@ -23,29 +34,23 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
       <main className="sec">
         <div className="wrap">
-          {MAP.map((group) => (
-            <section key={group.key} className="mgroup">
-              <h2 className="mgrouptitle">{t(`category_${group.key}` as never)}</h2>
-              <div className="mlist">
-                {group.items.map((p) => (
-                  <div key={p.slug} className="mrow">
-                    <div className="mrow-name">
-                      {p.links[0] ? (
-                        <a href={p.links[0].url} target="_blank" rel="noopener noreferrer">{p.name}</a>
-                      ) : (
-                        <span>{p.name}</span>
-                      )}
-                    </div>
-                    <p className="mrow-tag">{p.tagline[lang]}</p>
-                    <div className="mrow-meta">
-                      <span className={`status s-${p.status}`}>{t(`status_${p.status}` as never)}</span>
-                      <span className="mrow-stack">{p.stack.join(" · ")}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          ))}
+          <div className="grid">
+            {FEATURED.map((p) => (
+              <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
+                <div className={`thumb ${p.thumb}`}>
+                  {p.gallery[0] ? <img src={p.gallery[0]} alt={`Aperçu du site ${p.name}`} loading="lazy" /> : p.name}
+                </div>
+                <div className="cbody">
+                  <h3>{p.name} <span className="arrow" aria-hidden>→</span></h3>
+                  <p>{p.tagline[lang]}</p>
+                  <div className="stack">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
+                  {p.status !== "offline" && p.links[0] && (
+                    <div className="curl"><span className="dot" aria-hidden />{p.links[0].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}<span className="arr" aria-hidden>↗</span></div>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </main>
 

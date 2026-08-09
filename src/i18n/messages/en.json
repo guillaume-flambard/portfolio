@@ -5,7 +5,8 @@
       "about": "About",
       "contact": "Contact",
       "cta": "Get in touch",
-      "lab": "Lab"
+      "lab": "Lab",
+      "home": "Home"
     },
     "eyebrow": "Full-stack development · AI",
     "h1a": "I design and ship products,",
@@ -60,7 +61,7 @@
     "title": "Memo Labs, <em>full-stack & AI studio.</em>",
     "lede": "Complete products, from architecture to polished UI — designed and shipped end to end.",
     "p1": "<b>Memo Labs</b> is the studio and lab of <b>Guillaume Flambard</b>: full-stack & AI engineer. Scalable B2B SaaS, clinical apps (eClinical, GDPR/FDA), AI tools — from automation to polished UI.",
-    "p2": "A product, from idea to deployment, owned end to end: <b>architecture, API, interface, motion</b>. I also build my own products, including <b>Echo Travel</b> (transport & booking).",
+    "p2": "A product, from idea to deployment, owned end to end: <b>architecture, API, interface, motion</b>. I design and ship — my own products and engineering missions.",
     "servicesTitle": "Services",
     "servicesP": "Full-stack & AI engineering missions for web and SaaS products.",
     "s1k": "Full-stack",
@@ -72,7 +73,7 @@
     "f1k": "Field",
     "f1v": "B2B SaaS · eClinical · AI",
     "f2k": "Products",
-    "f2v": "PayKit · Echo Travel · Memo Labs lab",
+    "f2v": "SaaS & AI tools (see /work)",
     "f3k": "Languages",
     "f3v": "FR · EN",
     "cta": "Let's work together"
