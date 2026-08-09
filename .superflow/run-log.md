@@ -30,3 +30,24 @@
 
 verdict: **DONE** — commit d6dbd9c push + deploy Coolify finished · vérifié navigateur (3 routes)
 notes: SPEC.md + tasks.md ajoutés au contrat .superflow
+
+## Run — 2026-08-09 (passe complète, profil node-next)
+
+| gate | result |
+|---|---|
+| typecheck | ok (tsc --noEmit 0 err) |
+| lint | N/A (aucun script `lint` dans package.json — à ajouter ?) |
+| tests | 1/1 vitest pass |
+| audit | 0 vulnerabilities (complet + omit=dev) |
+| a11y | 0 violation × 3 viewports (home + /work, axe-core) |
+| walk (12 routes) | toutes 200 · 0 console error · 0 request failed · titles cohérents |
+| /lab redirect | /fr/lab → 307 lab.memolabs.dev ✓ |
+
+### Finding corrigé
+- **P2** `/work` titre « Bibliothèque — Tous les projets, catégorisés » (périmé depuis le passage en galerie FEATURED) → **« Produits — Les produits Memo Labs en production »** (fr+en).
+
+### Debt / à suivre
+- P3 : pas de script `lint` dans le portfolio (npm run lint n'existe pas) — ajouter eslint si on veut la gate.
+- P3 : run-log T2 2026-08-08 notait audit 4 high + contrast 5 nodes — **résolus** (audit 0, a11y 0).
+
+verdict: **DONE** — gates 4 green (typecheck/tests/audit/a11y/walk) + 1 finding P2 corrigé · commit suivant
