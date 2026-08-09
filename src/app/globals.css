@@ -207,6 +207,10 @@ h1.h .acc { color: var(--accent); }
 .ldesc h2 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.04em; margin-top: 36px; }
 .ldesc p { color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 60ch; }
 .ldesc a { color: var(--accent); }
+.ldesc p b { color: var(--ink); font-weight: 500; }
+.ldesc p:first-of-type { color: var(--ink); font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.5; }
+.ldesc .facts + .facts { margin-top: 8px; }
+.ldesc .maplink { margin-top: 40px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }

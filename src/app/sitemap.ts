@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of LOCALES) {
     // Pages statiques
-    const staticPaths = ["", "/lab", "/legal", "/work"];
+    const staticPaths = ["", "/about", "/contact", "/legal", "/work"];
     for (const path of staticPaths) {
       entries.push({
         url: `${SITE}/${locale}${path}`,

@@ -20,8 +20,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </h1>
           <p className="lede" dangerouslySetInnerHTML={{ __html: t.raw("lede") }} />
           <div className="herobtns">
-            <a className="btn p" href="#work">{t("ctaWork")}</a>
-            <a className="btn s" href="#contact">{t("ctaContact")}</a>
+            <Link className="btn p" href="/work">{t("ctaWork")}</Link>
+            <Link className="btn s" href="/contact">{t("ctaContact")}</Link>
           </div>
           <div className="chips">
             <span className="chip">{t("chip0")}</span>
@@ -58,42 +58,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
-      <section id="about" className="sec about">
-        <div className="wrap narrow">
-          <div className="cols">
-            <div>
-              <h2 dangerouslySetInnerHTML={{ __html: t.raw("aboutTitle") }} />
-            </div>
-            <div className="body">
-              <p dangerouslySetInnerHTML={{ __html: t.raw("aboutP1") }} />
-              <p dangerouslySetInnerHTML={{ __html: t.raw("aboutP2") }} />
-              <div className="facts">
-                <div><span>{t("f1k")}</span><b>{t("f1v")}</b></div>
-                <div><span>{t("f2k")}</span><b>{t("f2v")}</b></div>
-                <div><span>{t("f3k")}</span><b>{t("f3v")}</b></div>
-                <div><span>{t("f4k")}</span><b>FR · EN</b></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="sec contact">
-        <div className="wrap narrow">
-          <h2 dangerouslySetInnerHTML={{ __html: t.raw("contactTitle") }} />
-          <p>{t("contactSub")}</p>
-          <a className="btn p" href="mailto:contact@memolabs.dev">contact@memolabs.dev</a>
-          <div className="meta">
-            <a href="https://www.linkedin.com/in/guillaumeflambard/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/guillaume-flambard" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://lab.memolabs.dev" target="_blank" rel="noopener noreferrer">The Lab</a>
-          </div>
-        </div>
-      </section>
-
       <footer className="foot">
         <span>© 2026 Memo Labs — Full-Stack Developer</span>
-        <a href={`/${locale}/legal`}>Mentions légales</a>
+        <Link href={`/${locale}/legal`}>Mentions légales</Link>
       </footer>
     </>
   );

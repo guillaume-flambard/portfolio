@@ -21,19 +21,7 @@
     "workLibrary": "All projects →",
     "project_largo": "Marketing site for an AI-first training agency. Dedicated design system, GSAP animation, AI-Act compliant.",
     "project_blueowl": "Global education initiative + AI lesson generator. Turborepo monorepo, shipped product.",
-    "project_minerva": "\"Retrieval Augmented Consciousness\": knowledge/agent RAG platform. Semantic search at scale.",
-    "aboutTitle": "Design and ship, <em>end to end.</em>",
-    "aboutP1": "<b>Memo Labs</b>: full-stack & AI. Scalable B2B SaaS, clinical apps (eClinical, GDPR/FDA), AI tools, from automation to polished UI.",
-    "aboutP2": "I take a product from idea to deployment on my own: architecture, API, interface, motion. I also run my own products, including <b>Echo Travel</b> (transport & booking).",
-    "f1k": "Craft",
-    "f1v": "Full-stack development + AI",
-    "f2k": "Available",
-    "f2v": "Salaried role in Europe",
-    "f3k": "Focus",
-    "f3v": "B2B SaaS · eClinical · AI",
-    "f4k": "Languages",
-    "contactTitle": "Let's work <em>together.</em>",
-    "contactSub": "Memo Labs takes on full-stack & AI engineering missions (product, fintech) and builds its own products. Contact: contact@memolabs.dev."
+    "project_minerva": "\"Retrieval Augmented Consciousness\": knowledge/agent RAG platform. Semantic search at scale."
   },
   "work": {
     "title": "Library",
@@ -56,12 +44,6 @@
     "stack": "Stack",
     "notFound": "Project not found."
   },
-  "lab": {
-    "eyebrow": "Memo Labs · The lab",
-    "h1a": "Prototypes, agents &",
-    "h1accent": "WIP",
-    "lede": "Rough around the edges, but real. Experiments by <b>Memo Labs</b> — the finished work lives on the <a class='txtlink' href='/en/work'>portfolio</a>."
-  },
   "legal": {
     "eyebrow": "Legal notice",
     "title": "Legal notice",
@@ -72,5 +54,33 @@
     "host": "Hosted on a Netcup VPS (159.195.213.26), managed with Coolify. The <b>memolabs.dev</b> domain is registered at Porkbun.",
     "contactTitle": "Publication director",
     "contact": "Guillaume Flambard — <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>"
+  },
+  "about": {
+    "eyebrow": "The studio",
+    "title": "Memo Labs, <em>full-stack & AI studio.</em>",
+    "lede": "Complete products, from architecture to polished UI — designed and shipped end to end.",
+    "p1": "<b>Memo Labs</b> is the studio and lab of <b>Guillaume Flambard</b>: full-stack & AI engineer. Scalable B2B SaaS, clinical apps (eClinical, GDPR/FDA), AI tools — from automation to polished UI.",
+    "p2": "A product, from idea to deployment, owned end to end: <b>architecture, API, interface, motion</b>. I also build my own products, including <b>Echo Travel</b> (transport & booking).",
+    "servicesTitle": "Services",
+    "servicesP": "Full-stack & AI engineering missions for web and SaaS products.",
+    "s1k": "Full-stack",
+    "s1v": "Next.js, Node, PostgreSQL — architecture, API, CI/CD, deployment",
+    "s2k": "AI",
+    "s2v": "Agents, RAG, LLM integration (Groq, Ollama), automation",
+    "s3k": "Product",
+    "s3v": "Design system, polished UI, motion — from concept to ship",
+    "f1k": "Field",
+    "f1v": "B2B SaaS · eClinical · AI",
+    "f2k": "Products",
+    "f2v": "PayKit · Echo Travel · Memo Labs lab",
+    "f3k": "Languages",
+    "f3v": "FR · EN",
+    "cta": "Let's work together"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's work <em>together.</em>",
+    "sub": "Memo Labs takes on full-stack & AI engineering missions (product, fintech) and builds its own products.",
+    "email": "contact@memolabs.dev"
   }
 }

@@ -7,9 +7,6 @@ export default function SiteNav() {
   const t = useTranslations("home.nav");
   const locale = useLocale();
   const pathname = usePathname();
-  const isHome = pathname === "/";
-
-  const homeLink = (hash: string) => (isHome ? `#${hash}` : { pathname: "/", hash });
 
   return (
     <nav className="nav">
@@ -19,10 +16,10 @@ export default function SiteNav() {
           Memo Labs
         </Link>
         <div className="navlinks">
-          <Link href={isHome ? "#work" : "/work"}>{t("work")}</Link>
-          <Link href="/lab">{t("lab")}</Link>
-          <Link href={homeLink("about")}>{t("about")}</Link>
-          <Link href={homeLink("contact")}>{t("contact")}</Link>
+          <Link href="/work">{t("work")}</Link>
+          <a href="https://lab.memolabs.dev" target="_blank" rel="noopener noreferrer">{t("lab")}</a>
+          <Link href="/about">{t("about")}</Link>
+          <Link href="/contact">{t("contact")}</Link>
         </div>
         <div className="navright">
           <span className="lang">
@@ -30,7 +27,7 @@ export default function SiteNav() {
             {" / "}
             <Link href={pathname} locale="en" className={locale === "en" ? "on" : undefined}>EN</Link>
           </span>
-          <Link className="cta" href={homeLink("contact")}>{t("cta")}</Link>
+          <Link className="cta" href="/contact">{t("cta")}</Link>
         </div>
       </div>
     </nav>

@@ -21,19 +21,7 @@
     "workLibrary": "Tous les projets →",
     "project_largo": "Site marketing d'une agence de formation AI-first. Design system dédié, animation GSAP, conforme AI Act.",
     "project_blueowl": "Initiative éducative mondiale + générateur de leçons par IA. Monorepo Turborepo, produit shippé.",
-    "project_minerva": "« Retrieval Augmented Consciousness » : plateforme de connaissance/agents RAG. Recherche sémantique à grande échelle.",
-    "aboutTitle": "Concevoir et livrer, <em>de bout en bout.</em>",
-    "aboutP1": "<b>Memo Labs</b> : fullstack & IA. B2B SaaS scalables, apps cliniques (eClinical, GDPR/FDA), outils IA, de l'automatisation à l'UI soignée.",
-    "aboutP2": "Je prends un produit de l'idée au déploiement en autonomie : archi, API, interface, motion. Je mène aussi mes propres produits, dont <b>Echo Travel</b> (transport & booking).",
-    "f1k": "Métier",
-    "f1v": "Développement fullstack + IA",
-    "f2k": "Disponibilité",
-    "f2v": "Poste salarié en Europe",
-    "f3k": "Terrain",
-    "f3v": "B2B SaaS · eClinical · IA",
-    "f4k": "Langues",
-    "contactTitle": "Travaillons <em>ensemble.</em>",
-    "contactSub": "Memo Labs prend des missions d'ingénierie fullstack & IA (produit, fintech) et développe ses propres produits. Contact : contact@memolabs.dev."
+    "project_minerva": "« Retrieval Augmented Consciousness » : plateforme de connaissance/agents RAG. Recherche sémantique à grande échelle."
   },
   "work": {
     "title": "Bibliothèque",
@@ -56,12 +44,6 @@
     "stack": "Stack",
     "notFound": "Projet introuvable."
   },
-  "lab": {
-    "eyebrow": "Memo Labs · Le lab",
-    "h1a": "Prototypes, agents &",
-    "h1accent": "WIP",
-    "lede": "Bruts sur les bords, mais réels. Les expériences de <b>Memo Labs</b> — le travail fini vit sur le <a class='txtlink' href='/fr/work'>portfolio</a>."
-  },
   "legal": {
     "eyebrow": "Mentions légales",
     "title": "Mentions légales",
@@ -72,5 +54,33 @@
     "host": "Le site est hébergé sur un VPS Netcup (159.195.213.26), administré via Coolify. La marque <b>memolabs.dev</b> est gérée chez Porkbun.",
     "contactTitle": "Directeur de la publication",
     "contact": "Guillaume Flambard — <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>"
+  },
+  "about": {
+    "eyebrow": "Le studio",
+    "title": "Memo Labs, <em>studio fullstack & IA.</em>",
+    "lede": "Des produits complets, de l'architecture à l'interface soignée — conçus et livrés de bout en bout.",
+    "p1": "<b>Memo Labs</b> est le studio et le laboratoire de <b>Guillaume Flambard</b> : développeur fullstack & IA. B2B SaaS scalables, apps cliniques (eClinical, GDPR/FDA), outils IA — de l'automatisation à l'UI soignée.",
+    "p2": "Un produit, de l'idée au déploiement, en autonomie : <b>archi, API, interface, motion</b>. Je mène aussi mes propres produits, dont <b>Echo Travel</b> (transport & booking).",
+    "servicesTitle": "Services",
+    "servicesP": "Missions d'ingénierie fullstack & IA pour des produits web et SaaS.",
+    "s1k": "Fullstack",
+    "s1v": "Next.js, Node, PostgreSQL — archi, API, CI/CD, déploiement",
+    "s2k": "IA",
+    "s2v": "Agents, RAG, intégration LLM (Groq, Ollama), automatisation",
+    "s3k": "Produit",
+    "s3v": "Design system, interface soignée, motion — du concept au ship",
+    "f1k": "Terrain",
+    "f1v": "B2B SaaS · eClinical · IA",
+    "f2k": "Produits",
+    "f2v": "PayKit · Echo Travel · Memo Labs lab",
+    "f3k": "Langues",
+    "f3v": "FR · EN",
+    "cta": "Travaillons ensemble"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Travaillons <em>ensemble.</em>",
+    "sub": "Memo Labs prend des missions d'ingénierie fullstack & IA (produit, fintech) et développe ses propres produits.",
+    "email": "contact@memolabs.dev"
   }
 }
