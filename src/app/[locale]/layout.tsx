@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US"],
     images: [
       {
-        url: "https://memolabs.dev/work/largo/hero.png",
+        url: "https://memolabs.dev/og.png",
         width: 1440,
         height: 900,
         alt: "Memo Labs — Full-Stack & AI Studio",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Memo Labs — Full-Stack & AI Studio",
     description:
       "Memo Labs is a full-stack & AI studio that designs and ships complete products, from architecture to polished UI.",
-    images: ["https://memolabs.dev/work/largo/hero.png"],
+    images: ["https://memolabs.dev/og.png"],
   },
   alternates: {
     canonical: "https://memolabs.dev",
