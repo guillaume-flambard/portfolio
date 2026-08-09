@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { FEATURED } from "@/data/projects";
 import SiteNav from "@/components/SiteNav";
+import ProjectImage from "@/components/ProjectImage";
 
 export const metadata: Metadata = {
   title: "Work — Memo Labs",
@@ -38,7 +39,7 @@ export default async function WorkPage({
             {FEATURED.map((p) => (
               <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
                 <div className={`thumb ${p.thumb}`}>
-                  {p.gallery[0] ? <img src={p.gallery[0]} alt={`Aperçu du site ${p.name}`} loading="lazy" /> : p.name}
+                  {p.gallery[0] ? <ProjectImage src={p.gallery[0]} alt={`Aperçu du site ${p.name}`} /> : p.name}
                 </div>
                 <div className="cbody">
                   <h3>{p.name} <span className="arrow" aria-hidden>→</span></h3>

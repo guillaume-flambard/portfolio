@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { ALL_PROJECTS, getProject } from "@/data/projects";
 import { routing } from "@/i18n/routing";
 import SiteNav from "@/components/SiteNav";
+import ProjectImage from "@/components/ProjectImage";
 
 export function generateStaticParams() {
   return ALL_PROJECTS.map((p) => ({ slug: p.slug }));
@@ -65,7 +66,7 @@ export default async function ProjectPage({ params }: Props) {
           {project.gallery.length > 0 && (
             <div className="pgallery">
               {project.gallery.map((src) => (
-                <img key={src} src={src} alt={project.name} loading="lazy" />
+                <ProjectImage key={src} src={src} alt={project.name} />
               ))}
             </div>
           )}

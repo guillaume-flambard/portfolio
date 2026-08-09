@@ -6,6 +6,7 @@ export default defineConfig({
     environment: "node",
     globals: true,
     passWithNoTests: true,
+    include: ["src/**/*.{test,spec}.{ts,tsx}"],
   },
   resolve: {
     alias: {
