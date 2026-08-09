@@ -849,6 +849,24 @@ const mapProjects: MapItem[] = [
     gallery: [],
     thumb: "t1",
   },
+  {
+    slug: "lab-hub",
+    name: "Memo Labs · Lab",
+    category: "web",
+    status: "live",
+    year: 2026,
+    tagline: {
+      fr: "Playground des prototypes et agents en cours — les WIP rendus vivants.",
+      en: "The playground — WIP prototypes and agents made live.",
+    },
+    stack: ["TypeScript", "Vite", "nginx"],
+    links: [
+      { label: "live", url: "https://lab.memolabs.dev" },
+      { label: "repo", url: "https://github.com/guillaume-flambard/lab-hub" },
+    ],
+    gallery: [],
+    thumb: "t5",
+  },
 ];
 
 const referenceProjects: MapItem[] = [
