@@ -51,3 +51,29 @@ notes: SPEC.md + tasks.md ajoutés au contrat .superflow
 - P3 : run-log T2 2026-08-08 notait audit 4 high + contrast 5 nodes — **résolus** (audit 0, a11y 0).
 
 verdict: **DONE** — gates 4 green (typecheck/tests/audit/a11y/walk) + 1 finding P2 corrigé · commit suivant
+
+## Run — 2026-08-09 (passe COMPLÈTE superflow, Phase 4 — toutes les gates)
+
+| gate | result |
+|---|---|
+| typecheck | ok (tsc --noEmit 0 err) |
+| **unit+property** | **14 vitest / 3 fichiers** — routing + data integrity + fast-check (invariants urls/names/stacks) |
+| **model E2E (Playwright)** | **10/10** — navigation (liens→routes, état actif `.on`, logo, Lab externe), galerie /work (8 cards, 7 img, pas de listing), about, home |
+| a11y (axe) | 0 violation × 3 viewports × 6 routes (/fr /work /about /contact /legal /work/largo) |
+| audit | 0 vulnerabilities |
+| **AppSec headers** | AJOUTÉS — CSP, HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy |
+| **perf** | **images optimisées (next/image)** — largo 220→37KB (÷6), blueowl 646→65KB (÷10), srcset responsive |
+| secrets | 0 trouvé · .env absent · .gitignore `.env*` ✓ |
+| walk (12 routes) | 200 · 0 console error · 0 failed request |
+
+### Fixes apportés (passe complète)
+1. **AppSec** : headers de sécurité manquants (CSP/HSTS/etc.) → `next.config.ts` `headers()`.
+2. **Perf (Core Web Vitals)** : `<img>` bruts (jusqu'à 650KB) → `next/image` via composant partagé `ProjectImage.tsx` (3 fichiers : home, /work, /work/[slug]).
+3. **Config** : vitest exclude `e2e/` (le dossier Playwright cassait la suite) — `include: src/**/*.{test,spec}`.
+4. **Tooling** : ajout `fast-check`, `@playwright/test`, `playwright.config.ts`, `e2e/navigation.spec.ts`, `e2e/work.spec.ts`.
+
+### Debt / à suivre
+- P3 : pas de script `lint` (npm run lint absent) — eslint non configuré.
+- P3 : pas de modèle XState formel (site statique — les E2E Playwright couvrent la nav) ; model-based optionnel si le site gagne de la complexité.
+
+verdict: **DONE** — gates: typecheck✓ unit/property 14✓ e2e 10✓ a11y 0✓ audit 0✓ appsec✓ perf✓ — commit c27c39f
