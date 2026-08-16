@@ -23,7 +23,7 @@ export default function SiteNav() {
         <div className="navlinks">
           <Link href="/" className={isActive("/") ? "on" : undefined}>{t("home")}</Link>
           <Link href="/work" className={isActive("/work") ? "on" : undefined}>{t("work")}</Link>
-          <a href="https://lab.memolabs.dev" target="_blank" rel="noopener noreferrer">{t("lab")}</a>
+          <a href={`https://lab.memolabs.dev/${locale}/`} target="_blank" rel="noopener noreferrer">{t("lab")}</a>
           <Link href="/about" className={isActive("/about") ? "on" : undefined}>{t("about")}</Link>
           <Link href="/contact" className={isActive("/contact") ? "on" : undefined}>{t("contact")}</Link>
         </div>

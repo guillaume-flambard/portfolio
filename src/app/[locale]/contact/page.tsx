@@ -35,7 +35,7 @@ export default async function ContactPage({
           <div className="meta">
             <a href="https://www.linkedin.com/in/guillaumeflambard/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/guillaume-flambard" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://lab.memolabs.dev" target="_blank" rel="noopener noreferrer">The Lab</a>
+            <a href={`https://lab.memolabs.dev/${locale}/`} target="_blank" rel="noopener noreferrer">The Lab</a>
           </div>
         </div>
       </main>
