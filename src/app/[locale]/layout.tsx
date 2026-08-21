@@ -15,13 +15,13 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Memo Labs — Full-Stack & AI Studio",
+  title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
   description:
-    "Memo Labs is a full-stack & AI studio that designs and ships complete products, from architecture to polished UI — its own SaaS and engineering missions.",
+    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Open to remote roles.",
   openGraph: {
-    title: "Memo Labs — Full-Stack & AI Studio",
+    title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
     description:
-      "Memo Labs is a full-stack & AI studio that designs and ships complete products, from architecture to polished UI — its own SaaS and engineering missions.",
+      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Open to remote roles.",
     url: "https://memolabs.dev",
     siteName: "Memo Labs",
     type: "website",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
         url: "https://memolabs.dev/og.png",
         width: 1440,
         height: 900,
-        alt: "Memo Labs — Full-Stack & AI Studio",
+        alt: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Memo Labs — Full-Stack & AI Studio",
+    title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
     description:
-      "Memo Labs is a full-stack & AI studio that designs and ships complete products, from architecture to polished UI.",
+      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end. Open to remote roles.",
     images: ["https://memolabs.dev/og.png"],
   },
   alternates: {
@@ -86,7 +86,7 @@ export default async function LocaleLayout({
                   name: "Memo Labs",
                   url: "https://memolabs.dev",
                   description:
-                    "Memo Labs is a full-stack & AI studio that designs and ships complete products, from architecture to polished UI — its own SaaS and engineering missions.",
+                    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Open to remote roles.",
                   sameAs: [
                     "https://github.com/guillaume-flambard",
                     "https://lab.memolabs.dev",
@@ -102,7 +102,7 @@ export default async function LocaleLayout({
                   "@id": "https://memolabs.dev/#person",
                   name: "Guillaume Flambard",
                   url: "https://memolabs.dev",
-                  jobTitle: "Full-Stack & AI Engineer",
+                  jobTitle: "Senior Full-Stack & AI Engineer",
                   worksFor: { "@id": "https://memolabs.dev/#org" },
                   sameAs: [
                     "https://github.com/guillaume-flambard",
