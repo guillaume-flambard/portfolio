@@ -50,7 +50,7 @@ export const FEATURED: Project[] = [
     },
     stack: ["Laravel", "Vue", "Inertia", "Postgres", "Pest"],
     links: [{ label: "live", url: "https://emargo.fr" }],
-    gallery: [],
+    gallery: ["/work/emargo/hero.png"],
     thumb: "t4",
   },
   {
@@ -70,7 +70,7 @@ export const FEATURED: Project[] = [
     },
     stack: ["Laravel", "React", "Inertia", "Omise", "Capacitor"],
     links: [{ label: "live", url: "https://echotravel.app" }],
-    gallery: [],
+    gallery: ["/work/echo-travel/hero.png"],
     thumb: "t2",
   },
   {
