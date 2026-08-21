@@ -57,31 +57,31 @@
     "contact": "Guillaume Flambard — <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>"
   },
   "about": {
-    "eyebrow": "Le studio",
-    "title": "Memo Labs, <em>studio fullstack & IA.</em>",
-    "lede": "Des produits complets, de l'architecture à l'interface soignée — conçus et livrés de bout en bout.",
-    "p1": "<b>Memo Labs</b> est le studio et le laboratoire de <b>Guillaume Flambard</b> : développeur fullstack & IA. B2B SaaS scalables, apps cliniques (eClinical, GDPR/FDA), outils IA — de l'automatisation à l'UI soignée.",
-    "p2": "Un produit, de l'idée au déploiement, en autonomie : <b>archi, API, interface, motion</b>. Je conçois et je livre — mes propres produits et des missions d'ingénierie.",
-    "servicesTitle": "Services",
-    "servicesP": "Missions d'ingénierie fullstack & IA pour des produits web et SaaS.",
-    "s1k": "Fullstack",
-    "s1v": "Next.js, Node, PostgreSQL — archi, API, CI/CD, déploiement",
+    "eyebrow": "À propos",
+    "title": "Guillaume Flambard, <em>ingénieur full-stack & IA senior.</em>",
+    "lede": "Je construis et je livre des produits complets de bout en bout, de l'architecture à l'interface soignée.",
+    "p1": "Je suis ingénieur full-stack et IA. Je travaille sur toute la stack : SaaS B2B scalables, apps cliniques (eClinical, RGPD et FDA) et outils IA, de l'automatisation à l'interface finie. Memo Labs est le nom sous lequel je publie mes propres produits.",
+    "p2": "Je prends un produit de l'idée à la production et j'en suis responsable de bout en bout : architecture, API, interface, motion. Je cherche aujourd'hui un poste en remote, en CDI, pour faire ça au sein d'une équipe.",
+    "servicesTitle": "Ce que je fais",
+    "servicesP": "Ingénierie full-stack et IA, de l'architecture à l'interface livrée.",
+    "s1k": "Full-stack",
+    "s1v": "Next.js, Node, PostgreSQL : architecture, API, CI/CD, déploiement",
     "s2k": "IA",
     "s2v": "Agents, RAG, intégration LLM (Groq, Ollama), automatisation",
     "s3k": "Produit",
-    "s3v": "Design system, interface soignée, motion — du concept au ship",
+    "s3v": "Design system, interface soignée, motion, du concept au ship",
     "f1k": "Terrain",
     "f1v": "B2B SaaS · eClinical · IA",
     "f2k": "Produits",
     "f2v": "SaaS & outils IA (voir /work)",
     "f3k": "Langues",
     "f3v": "FR · EN",
-    "cta": "Travaillons ensemble"
+    "cta": "Me contacter"
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Travaillons <em>ensemble.</em>",
-    "sub": "Memo Labs prend des missions d'ingénierie fullstack & IA (produit, fintech) et développe ses propres produits.",
+    "title": "<em>Parlons-en.</em>",
+    "sub": "Je suis ouvert à un poste en remote, en CDI, en ingénierie full-stack et IA. Écrivez-moi à l'adresse ci-dessous.",
     "email": "contact@memolabs.dev"
   }
 }

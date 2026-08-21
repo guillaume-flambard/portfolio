@@ -57,31 +57,31 @@
     "contact": "Guillaume Flambard — <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>"
   },
   "about": {
-    "eyebrow": "The studio",
-    "title": "Memo Labs, <em>full-stack & AI studio.</em>",
-    "lede": "Complete products, from architecture to polished UI — designed and shipped end to end.",
-    "p1": "<b>Memo Labs</b> is the studio and lab of <b>Guillaume Flambard</b>: full-stack & AI engineer. Scalable B2B SaaS, clinical apps (eClinical, GDPR/FDA), AI tools — from automation to polished UI.",
-    "p2": "A product, from idea to deployment, owned end to end: <b>architecture, API, interface, motion</b>. I design and ship — my own products and engineering missions.",
-    "servicesTitle": "Services",
-    "servicesP": "Full-stack & AI engineering missions for web and SaaS products.",
+    "eyebrow": "About",
+    "title": "Guillaume Flambard, <em>senior full-stack & AI engineer.</em>",
+    "lede": "I build and ship complete products end to end, from architecture to a polished interface.",
+    "p1": "I am a full-stack and AI engineer. I work across the whole stack: scalable B2B SaaS, clinical apps (eClinical, GDPR and FDA aware) and AI tools, from automation to a finished interface. Memo Labs is the name I ship my own products under.",
+    "p2": "I take a product from idea to production and own it end to end: architecture, API, interface, motion. Right now I am looking for a permanent remote role where I do that inside a team.",
+    "servicesTitle": "What I do",
+    "servicesP": "Full-stack and AI engineering, from architecture to a shipped interface.",
     "s1k": "Full-stack",
-    "s1v": "Next.js, Node, PostgreSQL — architecture, API, CI/CD, deployment",
+    "s1v": "Next.js, Node, PostgreSQL: architecture, API, CI/CD, deployment",
     "s2k": "AI",
     "s2v": "Agents, RAG, LLM integration (Groq, Ollama), automation",
     "s3k": "Product",
-    "s3v": "Design system, polished UI, motion — from concept to ship",
+    "s3v": "Design system, polished UI, motion, from concept to ship",
     "f1k": "Field",
     "f1v": "B2B SaaS · eClinical · AI",
     "f2k": "Products",
     "f2v": "SaaS & AI tools (see /work)",
     "f3k": "Languages",
     "f3v": "FR · EN",
-    "cta": "Let's work together"
+    "cta": "Get in touch"
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let's work <em>together.</em>",
-    "sub": "Memo Labs takes on full-stack & AI engineering missions (product, fintech) and builds its own products.",
+    "title": "Let's <em>talk.</em>",
+    "sub": "I am open to permanent remote roles in full-stack and AI engineering. Reach me at the address below.",
     "email": "contact@memolabs.dev"
   }
 }
