@@ -136,7 +136,7 @@ export const FEATURED: Project[] = [
       { label: "live", url: "https://weave.memolabs.dev" },
       { label: "repo", url: "https://github.com/guillaume-flambard/weave" },
     ],
-    gallery: [],
+    gallery: ["/work/weave/hero.png"],
     thumb: "t5",
   },
   {
