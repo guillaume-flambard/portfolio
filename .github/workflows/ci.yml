@@ -19,13 +19,10 @@ jobs:
       - run: npm run test || true
       - run: npm run build
 
-  deploy:
-    name: Deploy to Coolify
-    needs: ci
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Coolify deploy
-        run: |
-          curl --request GET "${{ secrets.COOLIFY_WEBHOOK }}" \
-               --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+# Le job "Deploy to Coolify" a ete retire le 2026-09-03. Coolify est supprime du
+# VPS, et ce job passait au VERT malgre tout : curl sans -f sort en 0 des qu'une
+# reponse arrive, et le Traefik-ansible repond 404. Un agent qui lisait
+# "Deploy to Coolify : success" en concluait que le deploiement avait eu lieu.
+#
+# Le deploiement vit maintenant dans build.yml : image poussee sur GHCR, puis
+# l'agent autodeploy du VPS la tire, sonde l'app et restaure si elle ne repond pas.
