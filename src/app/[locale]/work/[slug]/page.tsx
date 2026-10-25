@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ALL_PROJECTS, getProject } from "@/data/projects";
+import { getProjectJourney } from "@/data/projectNavigation";
 import { CASE_BY_SLUG } from "@/data/caseStudies";
 import { projectVisualLabel } from "@/data/projectVisuals";
 import SiteNav from "@/components/SiteNav";
@@ -36,9 +37,7 @@ export default async function ProjectPage({ params }: Props) {
 
   const lang = locale as "fr" | "en";
   const study = CASE_BY_SLUG[slug];
-  const idx = ALL_PROJECTS.findIndex((p) => p.slug === slug);
-  const prev = idx > 0 ? ALL_PROJECTS[idx - 1] : null;
-  const next = idx >= 0 && idx < ALL_PROJECTS.length - 1 ? ALL_PROJECTS[idx + 1] : null;
+  const { previous: prev, next } = getProjectJourney(slug);
 
   const linkLabel = (label: string) => t(`link_${label}` as never) as string;
 
@@ -79,7 +78,7 @@ export default async function ProjectPage({ params }: Props) {
                 {linkLabel(l.label)}
               </a>
             ))}
-            {study && <Link className="btn s" href="/contact">{t("caseContact")}</Link>}
+            {study && <Link className="btn s" href="/contact#freelance">{t("caseContact")}</Link>}
           </div>
 
           <section className="evidence-note" aria-labelledby="evidence-title">
@@ -148,11 +147,31 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
-          <div className="ppager">
-            {prev && <Link className="btn s" href={`/work/${prev.slug}`}>← {prev.name}</Link>}
+          {study && (
+            <section className="case-outro" aria-labelledby="case-outro-heading">
+              <div>
+                <h2 id="case-outro-heading">{t("caseOutroTitle")}</h2>
+                <p>{t("caseOutroBody")}</p>
+              </div>
+              <Link className="btn p" href="/contact#freelance">{t("caseContact")}</Link>
+            </section>
+          )}
+
+          <nav className="ppager" aria-label={t("projectNavigationLabel")}>
+            {prev && (
+              <Link className="btn s" href={`/work/${prev.slug}`}>
+                <span className="sr-only">{study ? t("previousCase") : t("previousProject")}: </span>
+                <span aria-hidden="true">←</span> {prev.name}
+              </Link>
+            )}
             <Link className="btn s" href="/work">{t("allProjects")}</Link>
-            {next && <Link className="btn s" href={`/work/${next.slug}`}>{next.name} →</Link>}
-          </div>
+            {next && (
+              <Link className="btn s" href={`/work/${next.slug}`}>
+                <span className="sr-only">{study ? t("nextCase") : t("nextProject")}: </span>
+                {next.name} <span aria-hidden="true">→</span>
+              </Link>
+            )}
+          </nav>
         </div>
       </article>
 
