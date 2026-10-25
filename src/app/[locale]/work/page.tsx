@@ -29,7 +29,7 @@ export default async function WorkPage({
     <>
       <SiteNav />
 
-      <header className="hero">
+      <header className="hero" id="main-content" tabIndex={-1}>
         <div className="wrap">
           <p className="eyebrow"><span className="r" />{t("title")}</p>
           <h1 className="h">{t("title")}</h1>

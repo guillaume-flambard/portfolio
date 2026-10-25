@@ -6,7 +6,12 @@
       "contact": "Contact",
       "cta": "Get in touch",
       "lab": "Lab",
-      "home": "Home"
+      "home": "Home",
+      "menu": "Menu",
+      "cv": "Resume",
+      "skip": "Skip to content",
+      "navigation": "Primary navigation",
+      "language": "Language"
     },
     "eyebrow": "Guillaume Flambard · Senior Full-Stack & AI Engineer",
     "h1a": "I ship full-stack and AI",

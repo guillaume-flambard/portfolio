@@ -24,7 +24,7 @@ export default async function CvPage({ params }: { params: Promise<{ locale: str
   return (
     <>
       <div className="print-hide"><SiteNav /></div>
-      <main className="resume wrap" id="resume">
+      <main className="resume wrap" id="main-content" tabIndex={-1}>
         <header className="resume-head">
           <p className="eyebrow print-hide"><span className="r" />{t("eyebrow")}</p>
           <h1>Guillaume Flambard</h1>

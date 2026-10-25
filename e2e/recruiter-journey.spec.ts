@@ -91,3 +91,54 @@ test("contact differentiates freelance and employment inquiries", async ({ page 
   await expect(hiring).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
   expect(await freelance.getAttribute("href")).not.toEqual(await hiring.getAttribute("href"));
 });
+
+for (const locale of locales) {
+  test.describe(`${locale}: mobile navigation works for keyboard and touch`, () => {
+    test.use({ viewport: { width: 390, height: 844 } });
+
+    test("unlocks career, work and CV on a small screen", async ({ page }) => {
+      await page.goto(`/${locale}`);
+      const menu = page.locator("details.mobile-menu");
+      const trigger = menu.locator("summary");
+      await expect(menu).not.toHaveAttribute("open", "");
+      await expect(trigger).toBeVisible();
+      await trigger.click();
+      await expect(menu).toHaveAttribute("open", "");
+      await expect(menu.getByRole("link", { name: locale === "fr" ? "Travail" : "Work" })).toBeVisible();
+      await expect(menu.getByRole("link", { name: locale === "fr" ? "À propos" : "About" })).toBeVisible();
+      await expect(menu.getByRole("link", { name: locale === "fr" ? "CV" : "Resume" })).toBeVisible();
+      await menu.getByRole("link", { name: locale === "fr" ? "À propos" : "About" }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/about$`));
+      await expect(page.locator("details.mobile-menu")).not.toHaveAttribute("open", "");
+      await assertNoHorizontalOverflow(page);
+      await page.locator("details.mobile-menu summary").focus();
+      await page.keyboard.press("Enter");
+      await expect(page.locator("details.mobile-menu")).toHaveAttribute("open", "");
+      await page.locator("details.mobile-menu").getByRole("link", { name: locale === "fr" ? "CV" : "Resume" }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/cv$`));
+      await expect(page.getByRole("heading", { name: "Guillaume Flambard" })).toBeVisible();
+    });
+
+    test("skip link moves keyboard focus to the primary content", async ({ page }) => {
+      await page.goto(`/${locale}`);
+      await page.keyboard.press("Tab");
+      await expect(page.locator(".skip-link")).toBeFocused();
+      await page.keyboard.press("Enter");
+      await expect(page.locator("#main-content")).toBeFocused();
+    });
+  });
+}
+
+test("mobile navigation fits 320px and desktop navigation is unchanged", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto("/fr");
+  await expect(page.locator("details.mobile-menu summary")).toBeVisible();
+  await assertNoHorizontalOverflow(page);
+  await page.goto("/fr/work");
+  await assertNoHorizontalOverflow(page);
+  await page.goto("/fr/work/echo-travel");
+  await assertNoHorizontalOverflow(page);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await expect(page.locator("details.mobile-menu")).toBeHidden();
+  await expect(page.locator(".navlinks").getByRole("link", { name: "Travail" })).toBeVisible();
+});

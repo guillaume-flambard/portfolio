@@ -26,7 +26,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <>
       <SiteNav />
 
-      <header className="hero">
+      <header className="hero" id="main-content" tabIndex={-1}>
         <div className="wrap">
           <p className="eyebrow"><span className="r" />{t("eyebrow")}</p>
           <h1 className="h">
