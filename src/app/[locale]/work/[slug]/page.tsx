@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <article className="pdetail">
         <div className="wrap">
-          <p className="eyebrow"><span className="r" />{t(`category_${project.category}` as never)} · {t(`status_${project.status}` as never)}</p>
+          <p className="eyebrow"><span className="r" />{t(`kind_${project.verification.kind}` as never)} · {t(`proof_${project.verification.proof}` as never)}</p>
           <h1 className="pname">{project.name}</h1>
           <p className="ptagline">{project.tagline[lang]}</p>
 
@@ -56,6 +56,12 @@ export default async function ProjectPage({ params }: Props) {
               </a>
             ))}
           </div>
+
+          <section className="evidence-note" aria-labelledby="evidence-title">
+            <h2 id="evidence-title">{t("verificationTitle")}</h2>
+            <p>{project.verification.note[lang]}</p>
+            <p className="evidence-date">{t("checkedOn")} <time dateTime={project.verification.checkedAt}>{project.verification.checkedAt}</time></p>
+          </section>
 
           <div className="pbody">
             <p className="pdesc">{project.description[lang]}</p>

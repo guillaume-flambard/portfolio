@@ -8,6 +8,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const workText = await getTranslations("work");
   const spotlight = ["echo-travel", "paykit", "blueowl"];
   const caseProjects = spotlight.flatMap((slug) => FEATURED.filter((project) => project.slug === slug));
 
@@ -50,9 +51,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <div className="cbody">
                   <h3>{p.name} <span className="arrow" aria-hidden>→</span></h3>
                   <p>{p.tagline[locale as "fr" | "en"]}</p>
+                  <p className="card-proof" aria-label={workText("proofShort")}>{workText(`kind_${p.verification.kind}` as never)} · {workText(`proof_${p.verification.proof}` as never)}</p>
                   <div className="stack">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
                   {p.status !== "offline" && p.links[0] && (
-                    <div className="curl"><span className="dot" aria-hidden />{p.links[0].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}<span className="arr" aria-hidden>↗</span></div>
+                    <div className="curl"><span>{workText(`link_${p.links[0].label}` as never)}</span><span>{p.links[0].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span><span className="arr" aria-hidden>↗</span></div>
                   )}
                 </div>
               </Link>

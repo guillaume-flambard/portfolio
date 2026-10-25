@@ -137,6 +137,17 @@ h1.h .acc { color: var(--accent); }
 .card:hover .curl { color: var(--ink); }
 .card:hover .curl .arr { opacity: 1; transform: translateX(0); }
 
+/* Project evidence: a functioning website is not proof of active customers. */
+.card-proof { margin-top: 18px !important; color: var(--ink) !important; font-size: 13px !important;
+  font-weight: 400; letter-spacing: .02em; line-height: 1.5; }
+.curl { flex-wrap: wrap; overflow-wrap: anywhere; }
+.curl > span:nth-child(2) { color: var(--muted); }
+.proof-legend { max-width: 64ch; color: var(--muted); font-size: 15px; line-height: 1.5; margin-top: 26px; }
+.evidence-note { margin-top: 38px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.evidence-note h2 { font-size: 14px; letter-spacing: .06em; margin-bottom: 12px; }
+.evidence-note p { color: var(--muted); font-size: 16px; line-height: 1.5; max-width: 80ch; }
+.evidence-note .evidence-date { font-size: 13px; margin-top: 12px; letter-spacing: .03em; }
+
 .maplink { margin-top: 32px; display: inline-flex; }
 
 /* ── project detail ───────────────────────────────────────────────────────── */
