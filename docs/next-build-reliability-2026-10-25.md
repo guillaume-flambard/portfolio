@@ -12,6 +12,12 @@ The shared `npm run build` script now calls `next build --webpack`. This means l
 
 Webpack is a reliability workaround while this Next.js Turbopack font-regression affects the pinned version, not a claim that Turbopack is generally slower or insecure. Re-evaluate after a verified Next.js upgrade; never remove the fallback until repeated full Docker image builds and public deployment validation have passed.
 
+## Second build blocker exposed by Webpack
+
+When `next build --webpack` was first enabled, the build correctly reported that `src/app/intentlane/netnewswire/article/[id]/page.tsx` had no root layout. The localized portfolio uses `src/app/[locale]/layout.tsx` and the universal-link fallback is explicitly excluded from the locale middleware, so it needs its **own** root document. Added `src/app/intentlane/layout.tsx` containing `<html lang="en"><body>...`, without altering or nesting the French/English portfolio layouts.
+
+A Chromium regression test now verifies the exact fallback URL, HTML language, fallback heading, and `noindex` metadata.
+
 ## Required acceptance
 
 - GitHub Actions CI: unit tests and production Next build success.
