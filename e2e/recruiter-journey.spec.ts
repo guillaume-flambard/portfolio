@@ -261,3 +261,16 @@ test("all 14 published project media files exist and are served as PNG", async (
     expect(response.headers()["content-type"], `Unexpected MIME for ${url}`).toMatch(/^image\/png/);
   }
 });
+
+for (const locale of locales) {
+  test(`${locale}: contact, resume and structured data point to the same verified professional profile`, async ({ page }) => {
+    const profile = "https://www.linkedin.com/in/guillaume-flambard/";
+    await page.goto(`/${locale}/contact`);
+    await expect(page.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("href", profile);
+    const raw = await page.locator('script[type="application/ld+json"]').first().textContent();
+    expect(raw).toContain(profile);
+    expect(raw).not.toContain("/guillaumeflambard/");
+    await page.goto(`/${locale}/cv`);
+    await expect(page.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("href", profile);
+  });
+}
