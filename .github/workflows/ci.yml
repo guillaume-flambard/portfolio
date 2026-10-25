@@ -16,7 +16,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run test || true
+      - run: npm run test
       - run: npm run build
 
 # Le job "Deploy to Coolify" a ete retire le 2026-09-03. Coolify est supprime du
