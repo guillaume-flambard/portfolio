@@ -99,7 +99,8 @@
     "caseOutcome": "Le résultat",
     "caseTechnicalToggle": "Lire les choix techniques et les contraintes",
     "caseTechnicalTitle": "Approche technique",
-    "screenshotAlt": "Capture d’écran {number} du projet {name}"
+    "screenshotAlt": "Capture d’écran {number} du projet {name}",
+    "cardRoleLabel": "Mon rôle"
   },
   "legal": {
     "eyebrow": "Mentions légales",
