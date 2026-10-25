@@ -1,3 +1,4 @@
+import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
@@ -5,11 +6,14 @@ import { FEATURED } from "@/data/projects";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
 
-export const metadata: Metadata = {
-  title: "Work — Memo Labs",
-  description:
-    "Client projects, independent products and open source work, with verified access and transparent evidence labels.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const [title, description] = locale === "fr"
+    ? ["Réalisations et études de cas | Memo Labs","Découvrez les projets Echo Travel, PayKit, Blue Owl et les autres réalisations techniques, avec leur niveau de preuve."]
+    : ["Selected engineering work and case studies | Memo Labs","Explore Echo Travel, PayKit, Blue Owl and other engineering work, with transparent project evidence and access status."];
+  return createRouteMetadata(locale, "/work", title, description);
+}
+
 
 export default async function WorkPage({
   params,
