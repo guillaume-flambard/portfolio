@@ -287,21 +287,21 @@ h1.h .acc { color: var(--accent); }
 .resume-section .timeline-row .timeline-role { font-size: 14px; }
 @media (max-width: 620px) { .resume-section .timeline-row { grid-template-columns: 1fr; } .resume-head .herobtns { gap: 8px; } }
 @media print {
-  @page { size: A4; margin: 12mm 16mm; }
+  @page { size: A4; margin: 13mm 16mm; }
   .print-hide, .resume .herobtns, .resume-print-hint { display: none !important; }
-  html, body { background: #fff !important; color: #111 !important; font-size: 11px !important; }
+  html, body { background: #fff !important; color: #111 !important; font-size: 12px !important; }
   .resume { max-width: none; width: auto; padding: 0; margin: 0; }
-  .resume-head { padding-bottom: 10px; }
-  .resume-head h1 { font-size: 23px; }
-  .resume-role, .resume-intro { margin-top: 6px; font-size: 11px; line-height: 1.3; }
-  .resume-links { margin-top: 6px; gap: 7px; font-size: 9px; }
-  .resume-section { margin-top: 13px; break-inside: auto; }
-  .resume-section h2 { font-size: 13px; margin-bottom: 5px; }
-  .resume-section > p { font-size: 10px; line-height: 1.3; }
-  .resume-section .timeline-row { grid-template-columns: 115px minmax(0, 1fr); padding: 7px 0; gap: 14px; break-inside: avoid; }
-  .resume-section .timeline-date { font-size: 9px; }
-  .resume-section .timeline-row h3 { font-size: 11px; }
-  .resume-section .timeline-row p, .resume-section .timeline-row .timeline-role { font-size: 9.5px; margin-top: 2px; line-height: 1.3; }
+  .resume-head { padding-bottom: 13px; }
+  .resume-head h1 { font-size: 29px; }
+  .resume-role, .resume-intro { margin-top: 7px; font-size: 13px; line-height: 1.38; }
+  .resume-links { margin-top: 7px; gap: 9px; font-size: 11px; }
+  .resume-section { margin-top: 18px; break-inside: auto; }
+  .resume-section h2 { font-size: 16px; margin-bottom: 7px; }
+  .resume-section > p { font-size: 12px; line-height: 1.4; }
+  .resume-section .timeline-row { grid-template-columns: 122px minmax(0, 1fr); padding: 9px 0; gap: 15px; break-inside: avoid; }
+  .resume-section .timeline-date { font-size: 11px; }
+  .resume-section .timeline-row h3 { font-size: 13.5px; }
+  .resume-section .timeline-row p, .resume-section .timeline-row .timeline-role { font-size: 11.5px; margin-top: 3px; line-height: 1.4; }
   .resume a { color: inherit; text-decoration: none; }
 }
 

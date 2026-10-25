@@ -66,6 +66,8 @@ for (const locale of locales) {
       const pdf = await page.pdf({ format: "A4", printBackground: true });
       expect(pdf.subarray(0, 4).toString()).toBe("%PDF");
       expect(pdf.length).toBeGreaterThan(10_000);
+      const pageObjects = pdf.toString("latin1").match(/\/Type\s*\/Page\b/g) ?? [];
+      expect(pageObjects.length, "Resume must remain a single A4 page").toBe(1);
       await testInfo.attach(`${locale}-cv-print.pdf`, { body: pdf, contentType: "application/pdf" });
     });
   });
