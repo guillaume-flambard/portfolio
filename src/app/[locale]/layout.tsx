@@ -43,13 +43,6 @@ export const metadata: Metadata = {
       "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end. Available for remote freelance projects and open to remote roles.",
     images: ["https://memolabs.dev/og.png"],
   },
-  alternates: {
-    canonical: "https://memolabs.dev",
-    languages: {
-      "fr-FR": "https://memolabs.dev/fr",
-      "en-US": "https://memolabs.dev/en",
-    },
-  },
 };
 
 export function generateStaticParams() {

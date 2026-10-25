@@ -1,12 +1,17 @@
+import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import SiteNav from "@/components/SiteNav";
 
-export const metadata: Metadata = {
-  title: "Contact — Memo Labs",
-  description: "Contact Memo Labs for full-stack & AI engineering missions.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const [title, description] = locale === "fr"
+    ? ["Contact — Freelance et recrutement remote | Memo Labs","Contacter Guillaume Flambard pour des missions freelance React/TypeScript ou des postes full-stack remote."]
+    : ["Contact — Freelance and remote hiring | Memo Labs","Contact Guillaume Flambard about remote React/TypeScript freelance projects or full-stack hiring opportunities."];
+  return createRouteMetadata(locale, "/contact", title, description);
+}
+
 
 export default async function ContactPage({
   params,

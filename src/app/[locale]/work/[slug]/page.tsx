@@ -1,3 +1,4 @@
+import { createRouteMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
@@ -17,11 +18,13 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const project = getProject(slug);
-  if (!project) return {};
-  return {
-    title: `${project.name} — Memo Labs`,
-    description: project.tagline[locale as "fr" | "en"],
-  };
+  if (!project) return { robots: { index: false } };
+  return createRouteMetadata(
+    locale,
+    `/work/${slug}`,
+    `${project.name} — Memo Labs`,
+    project.tagline[locale as "fr" | "en"],
+  );
 }
 
 export default async function ProjectPage({ params }: Props) {

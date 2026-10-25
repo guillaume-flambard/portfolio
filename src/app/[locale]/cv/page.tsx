@@ -1,3 +1,4 @@
+import { createRouteMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import SiteNav from "@/components/SiteNav";
@@ -5,10 +6,14 @@ import PrintCvButton from "@/components/PrintCvButton";
 import { Link } from "@/i18n/navigation";
 import { EXPERIENCES } from "@/data/experience";
 
-export const metadata: Metadata = {
-  title: "CV — Guillaume Flambard",
-  description: "Professional experience, skills and selected work by Guillaume Flambard, full-stack React and TypeScript engineer.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const [title, description] = locale === "fr"
+    ? ["CV — Guillaume Flambard | React et TypeScript","CV de Guillaume Flambard : développeur full-stack React et TypeScript, expériences, formation et réalisations."]
+    : ["Resume — Guillaume Flambard | React and TypeScript","Resume of Guillaume Flambard: full-stack React and TypeScript engineer, professional experience and selected work."];
+  return createRouteMetadata(locale, "/cv", title, description);
+}
+
 
 export default async function CvPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

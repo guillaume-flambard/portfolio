@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
+import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FEATURED } from "@/data/projects";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const [title, description] = locale === "fr"
+    ? ["Guillaume Flambard — Ingénieur React & TypeScript | Memo Labs","Portfolio d'ingénierie full-stack React, TypeScript et Next.js : expériences, projets clients, études de cas et missions freelance remote."]
+    : ["Guillaume Flambard — React & TypeScript Engineer | Memo Labs","React, TypeScript and Next.js engineering portfolio: client work, case studies, professional experience and remote freelance availability."];
+  return createRouteMetadata(locale, "", title, description);
+}
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
