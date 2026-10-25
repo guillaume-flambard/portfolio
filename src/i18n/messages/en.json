@@ -52,7 +52,7 @@
   },
   "work": {
     "title": "Selected work",
-    "subtitle": "Client projects, products and open source. Explore my contribution, technical choices and available websites, demos or repositories.",
+    "subtitle": "Start with three documented case studies: the problem, my contribution, the outcome and accessible evidence. Then explore other projects and contributions.",
     "back": "Back",
     "allProjects": "All projects",
     "category_produits": "Products & apps",
@@ -103,7 +103,13 @@
     "cardRoleLabel": "My role",
     "galleryTitle": "Project visuals",
     "galleryEvidenceNote": "These visuals introduce the project. On their own, they do not prove a payment, private feature or full user journey has been tested.",
-    "openGalleryImage": "Open visual {number} of {name} at full resolution (new tab)"
+    "openGalleryImage": "Open visual {number} of {name} at full resolution (new tab)",
+    "caseListKicker": "01 / Case studies",
+    "caseListTitle": "Three projects, explained",
+    "caseListIntro": "One client engagement, one independent product and one collaboration. Each describes my role and what public evidence can—and cannot—establish.",
+    "otherListKicker": "02 / More work",
+    "otherListTitle": "Four additional projects",
+    "otherListIntro": "Products, websites and open source tools. Each page distinguishes public evidence from features that cannot be verified without private access."
   },
   "legal": {
     "eyebrow": "Legal notice",
