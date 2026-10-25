@@ -17,12 +17,13 @@
     "chip0": "Full-stack + IA",
     "chip1": "Livré en production, solo",
     "chip2": "Missions freelance · postes remote",
-    "workTitle": "Travail sélectionné",
-    "workSub": "Projets clients, produits indépendants et open source : une sélection de réalisations et de décisions techniques.",
-    "workLibrary": "Tous les projets →",
+    "workTitle": "Trois études de cas",
+    "workSub": "Réservation et paiements réels, intégrations TypeScript et interface IA : mon rôle, mes décisions et les preuves disponibles.",
+    "workLibrary": "Voir tous les projets →",
     "project_largo": "Site marketing d'une agence de formation AI-first. Design system dédié, animation GSAP, conforme AI Act.",
     "project_blueowl": "Initiative éducative mondiale + générateur de leçons par IA. Monorepo Turborepo, produit shippé.",
-    "project_minerva": "« Retrieval Augmented Consciousness » : plateforme de connaissance/agents RAG. Recherche sémantique à grande échelle."
+    "project_minerva": "« Retrieval Augmented Consciousness » : plateforme de connaissance/agents RAG. Recherche sémantique à grande échelle.",
+    "ctaAbout": "Voir mon parcours"
   },
   "work": {
     "title": "Réalisations",
@@ -43,7 +44,16 @@
     "link_npm": "npm",
     "link_demo": "Démo",
     "stack": "Stack",
-    "notFound": "Projet introuvable."
+    "notFound": "Projet introuvable.",
+    "caseEyebrow": "Étude de cas",
+    "caseTitle": "Du besoin à la solution",
+    "caseContext": "Contexte",
+    "caseOwnership": "Ma contribution",
+    "caseConstraint": "Contraintes",
+    "caseDecision": "Choix techniques",
+    "caseResult": "Résultat et éléments observables",
+    "caseNote": "Limites des preuves :",
+    "caseContact": "Discuter d'un projet"
   },
   "legal": {
     "eyebrow": "Mentions légales",
@@ -76,7 +86,12 @@
     "f2v": "SaaS & outils IA (voir /work)",
     "f3k": "Langues",
     "f3v": "FR · EN",
-    "cta": "Me contacter"
+    "cta": "Me contacter",
+    "experienceTitle": "Parcours professionnel",
+    "experienceIntro": "Des produits en exploitation aux interfaces métier réglementées. Les expériences ci-dessous reflètent mon CV d'octobre 2026.",
+    "educationTitle": "Formation",
+    "educationBody": "OpenClassrooms, développeur front-end RNCP niveau 6 (2023) · WebForce3, développement full-stack (2020).",
+    "cvCta": "Voir mon CV"
   },
   "contact": {
     "eyebrow": "Contact",
@@ -91,5 +106,22 @@
     "jobBody": "Ouvert aux postes remote en développement frontend React et full-stack TypeScript, avec une forte implication produit.",
     "jobCta": "Parler d'un poste",
     "jobSubject": "Recrutement remote — Memo Labs"
+  },
+  "cv": {
+    "eyebrow": "CV · Octobre 2026",
+    "role": "Développeur full-stack · React · TypeScript · Node.js",
+    "intro": "Développeur full-stack avec environ cinq ans d'expérience professionnelle. Je livre des interfaces, des services et des intégrations jusqu'à leur utilisation réelle. Missions freelance ou poste remote.",
+    "print": "Enregistrer en PDF / imprimer",
+    "printHint": "L'export PDF utilise la fonction d'impression de votre navigateur, avec une mise en page dédiée.",
+    "contact": "Me contacter",
+    "stackTitle": "Compétences techniques",
+    "stack": "React · TypeScript · Next.js · JavaScript · Node.js · NestJS · Fastify · API REST · PostgreSQL · Laravel · Symfony · Docker · GitHub Actions · Playwright",
+    "experienceTitle": "Expériences",
+    "projectsTitle": "Réalisations choisies",
+    "projects": "Echo Travel : plateforme de réservation et d'opérations. PayKit : SDK React/TypeScript, webhooks Stripe et crédits PostgreSQL. Blue Owl : interface éducative Next.js et passerelle IA NestJS/Fastify.",
+    "educationTitle": "Formation et langues",
+    "education": "OpenClassrooms — Développeur front-end, RNCP niveau 6 (2023) · WebForce3 — Développement web full-stack (2020).",
+    "languages": "Français : natif · Anglais : professionnel.",
+    "about": "À propos"
   }
 }
