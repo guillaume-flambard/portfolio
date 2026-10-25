@@ -194,9 +194,8 @@ for (const locale of locales) {
         await expect(technical).toHaveAttribute("open", "");
         await expect(technical.locator(".case-facts > div")).toHaveCount(2);
         await expect(technical.locator(".pstack .stack span").first()).toBeVisible();
-        await expect(page.getByRole("link", {
-          name: locale === "fr" ? "Parler d’un projet similaire" : "Discuss a similar project"
-        })).toHaveAttribute("href", new RegExp(`/${locale}/contact$`));
+        await expect(page.locator(".plinks .btn.s")).toHaveAttribute("href", `/${locale}/contact#freelance`);
+        await expect(page.locator(".case-outro .btn.p")).toHaveAttribute("href", `/${locale}/contact#freelance`);
         await assertNoHorizontalOverflow(page);
         await page.setViewportSize({ width: 320, height: 720 });
         await assertNoHorizontalOverflow(page);
@@ -350,6 +349,41 @@ for (const locale of locales) {
       await expect(page.locator(".contact-direct a")).toHaveAttribute("href", "mailto:contact@memolabs.dev");
       await expect(page.locator(".foot").getByRole("link", { name: locale === "fr" ? "Mentions légales" : "Legal notice" }))
         .toHaveAttribute("href", `/${locale}/legal`);
+      await assertNoHorizontalOverflow(page);
+    });
+  });
+}
+
+for (const locale of locales) {
+  test.describe(`${locale}: case study pager follows the evidence-first grouping`, () => {
+    test.use({ viewport: { width: 390, height: 844 } });
+
+    test("starts Echo Travel → PayKit → Blue Owl, never a weaker case", async ({ page }) => {
+      await page.goto(`/${locale}/work/echo-travel`);
+      const pager = page.locator(".ppager");
+      await expect(pager).toHaveAttribute("aria-label", locale === "fr" ? "Parcourir les réalisations" : "Browse portfolio projects");
+      await expect(pager.getByRole("link", { name: /PayKit/ })).toHaveAttribute("href", `/${locale}/work/paykit`);
+      expect(await pager.locator('a[href*="emargo"]').count()).toBe(0);
+
+      await pager.getByRole("link", { name: /PayKit/ }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/work/paykit$`));
+      await expect(page.locator(".ppager").getByRole("link", { name: /Blue Owl/ })).toBeVisible();
+      await page.locator(".ppager").getByRole("link", { name: /Blue Owl/ }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/work/blueowl$`));
+      expect(await page.locator(".ppager").locator('a[href*="emargo"]').count()).toBe(0);
+      await expect(page.locator(".case-outro h2")).toHaveText(
+        locale === "fr" ? "Vous travaillez sur un problème similaire ?" : "Working on a similar problem?"
+      );
+      await expect(page.locator(".case-outro .btn.p")).toHaveAttribute("href", `/${locale}/contact#freelance`);
+      await assertNoHorizontalOverflow(page);
+    });
+
+    test("supporting projects stay in their own four-project sequence", async ({ page }) => {
+      await page.setViewportSize({ width: 320, height: 720 });
+      await page.goto(`/${locale}/work/emargo`);
+      await expect(page.locator(".ppager").getByRole("link", { name: /weave/ })).toHaveAttribute("href", `/${locale}/work/weave`);
+      expect(await page.locator(".case-outro").count()).toBe(0);
+      expect(await page.locator(".ppager").locator('a[href*="blueowl"]').count()).toBe(0);
       await assertNoHorizontalOverflow(page);
     });
   });
