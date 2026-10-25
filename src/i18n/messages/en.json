@@ -99,7 +99,8 @@
     "caseOutcome": "The outcome",
     "caseTechnicalToggle": "Explore technical decisions and constraints",
     "caseTechnicalTitle": "Technical approach",
-    "screenshotAlt": "Screenshot {number} of {name}"
+    "screenshotAlt": "Screenshot {number} of {name}",
+    "cardRoleLabel": "My role"
   },
   "legal": {
     "eyebrow": "Legal notice",
