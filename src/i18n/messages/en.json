@@ -73,12 +73,12 @@
     "eyebrow": "Legal notice",
     "title": "Legal notice",
     "editorTitle": "Site editor",
-    "editor": "Site edited by <b>Memo Labs</b> — Guillaume Flambard, French micro-entrepreneur. <br/>Contact: <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>",
-    "siren": "SIREN: <em>to be completed</em> (sole proprietorship being registered).",
+    "editor": "Website published by <b>Guillaume Flambard</b>, French sole proprietor (entrepreneur individuel, EI), operating under the trade name <b>Memo Labs</b>.",
+    "siren": "SIREN registration number: <b>924 107 469</b>. <a class='txtlink' href='https://annuaire-entreprises.data.gouv.fr/entreprise/924107469' target='_blank' rel='noopener noreferrer'>Check the business register</a>.",
     "hostTitle": "Hosting",
-    "host": "Hosted on a Netcup VPS (159.195.213.26), managed with Coolify. The <b>memolabs.dev</b> domain is registered at Porkbun.",
+    "host": "Hosting provider: <b>netcup GmbH</b>, Emmy-Noether-Straße 10, 76131 Karlsruhe, Germany. Phone: <a class='txtlink' href='tel:+4972175407550'>+49 721 7540755-0</a>. <a class='txtlink' href='https://www.netcup.com/en/contact/legal-notice' target='_blank' rel='noopener noreferrer'>Official hosting provider details</a>.",
     "contactTitle": "Publication director",
-    "contact": "Guillaume Flambard — <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>"
+    "contact": "Guillaume Flambard. Email: <a class='txtlink' href='mailto:contact@memolabs.dev'>contact@memolabs.dev</a>."
   },
   "about": {
     "eyebrow": "About",
