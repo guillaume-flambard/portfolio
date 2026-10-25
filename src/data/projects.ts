@@ -57,8 +57,8 @@ export const FEATURED: Project[] = [
       note: {"fr":"Site public accessible le 25/10/2026. Les espaces authentifiés et le volume d'utilisation ne sont pas vérifiés publiquement.","en":"Public website accessible on 25 Oct 2026. Authenticated workflows and usage volume were not publicly verified."},
     },
     tagline: {
-      fr: "SaaS en production pour profs indépendants, construit en solo.",
-      en: "Production SaaS for independent tutors, built solo.",
+      fr: "SaaS métier pour professeurs indépendants, développé en solo.",
+      en: "Business SaaS for independent tutors, built solo.",
     },
     description: {
       fr: "Émargo est le back-office d'un professeur particulier déclaré en Service à la Personne, où la difficulté n'est pas la facturation mais le maintien du crédit d'impôt de 50 % pour la famille. L'éligibilité se décide séance par séance, et l'attestation fiscale annuelle se calcule sur les sommes encaissées dans l'année, pas sur les factures émises. Je l'ai construit et livré en solo : Laravel et Vue sur Postgres, multi-tenant, PDF Factur-X conformes, export URSSAF, portail famille en magic-link, 227 tests et CI verte. En ligne sur emargo.fr.",
@@ -83,8 +83,8 @@ export const FEATURED: Project[] = [
       note: {"fr":"Site de réservation public accessible le 25/10/2026. L'activité et le volume saisonnier sont rapportés par l'opérateur, sans audit indépendant.","en":"Public booking site accessible on 25 Oct 2026. Operations and seasonal volume are operator-reported, not independently audited."},
     },
     tagline: {
-      fr: "Plateforme de réservation et paiement en production, 150 passagers par jour.",
-      en: "Production booking and payments platform, 150 passengers a day.",
+      fr: "Plateforme de réservation et paiements pour un opérateur maritime en Thaïlande.",
+      en: "Booking and payments platform for a Thai boat-transfer operator.",
     },
     description: {
       fr: "Echo Travel est un opérateur de transferts en bateau rapide dans les îles du golfe de Thaïlande. J'ai construit et j'exploite la plateforme de réservation comme prestataire technique : prototypée avec le fondateur Michael, puis passée en code de production par moi. Une app Laravel et React, un flux de paiement Omise et une synchro à sens unique depuis la marketplace 12Go. Elle transporte environ 150 passagers par jour, de vraies réservations et de vrai argent, en saisonnier. En ligne sur echotravel.app.",
@@ -113,8 +113,8 @@ export const FEATURED: Project[] = [
       en: "Billing toolkit for AI apps, in early access.",
     },
     description: {
-      fr: "PayKit est un SDK de facturation prêt à l'emploi pour les apps IA : Stripe Checkout, webhooks, comptage d'usage, soldes de crédits, déduction atomique dans Postgres, SDK React en trois lignes et embed sans code via une balise script. C'est ma preuve la plus forte de jugement produit fullstack pour une audience de développeurs.",
-      en: "PayKit is a drop-in billing SDK for AI apps: Stripe Checkout, webhooks, usage metering, credit balances, atomic deduction in Postgres, a three-line React SDK and a no-code script-tag embed. It is my strongest proof of full-stack product judgment for a developer audience.",
+      fr: "PayKit est un toolkit de facturation conçu pour les apps IA : Stripe Checkout, webhooks, comptage d'usage, soldes de crédits, déduction atomique dans Postgres, SDK React en trois lignes et embed sans code via une balise script. C'est ma preuve la plus forte de jugement produit fullstack pour une audience de développeurs.",
+      en: "PayKit is a billing toolkit designed for AI apps: Stripe Checkout, webhooks, usage metering, credit balances, atomic deduction in Postgres, a three-line React SDK and a no-code script-tag embed. It is my strongest proof of full-stack product judgment for a developer audience.",
     },
     stack: ["TypeScript", "Stripe", "Postgres", "React", "Next.js"],
     links: [
@@ -225,8 +225,8 @@ export const FEATURED: Project[] = [
       en: "Marketing site for an AI-first training agency.",
     },
     description: {
-      fr: "Largo IA est une agence de formation à l'ingénierie AI-first. J'ai conçu et livré le site de bout en bout : architecture Next.js, design system dédié, animation GSAP et conformité AI Act. La plateforme pousse aussi du contenu long-format en MDX avec authentification et base de données Postgres.",
-      en: "Largo IA is a training agency for AI-first engineering. I designed and shipped the site end to end: Next.js architecture, dedicated design system, GSAP motion and AI Act compliance. The platform also publishes long-form MDX content with authentication and a Postgres database.",
+      fr: "Largo IA est une agence de formation à l'ingénierie AI-first. J'ai conçu et livré le site de bout en bout : architecture Next.js, design system dédié, animation GSAP et contenus autour de l’AI Act. La plateforme pousse aussi du contenu long-format en MDX avec authentification et base de données Postgres.",
+      en: "Largo IA is a training agency for AI-first engineering. I designed and shipped the site end to end: Next.js architecture, dedicated design system, GSAP motion and AI Act-related content. The platform also publishes long-form MDX content with authentication and a Postgres database.",
     },
     stack: ["Next.js", "TypeScript", "Drizzle", "Neon", "GSAP", "MDX"],
     links: [
