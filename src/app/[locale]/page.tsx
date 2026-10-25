@@ -8,6 +8,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("home");
+  const spotlight = ["echo-travel", "paykit", "blueowl"];
+  const caseProjects = spotlight.flatMap((slug) => FEATURED.filter((project) => project.slug === slug));
 
   return (
     <>
@@ -23,6 +25,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="herobtns">
             <Link className="btn p" href="/work">{t("ctaWork")}</Link>
             <Link className="btn s" href="/contact">{t("ctaContact")}</Link>
+            <Link className="btn s" href="/about#experience">{t("ctaAbout")}</Link>
           </div>
           <div className="chips">
             <span className="chip">{t("chip0")}</span>
@@ -39,7 +42,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <p>{t("workSub")}</p>
           </div>
           <div className="grid">
-            {FEATURED.map((p) => (
+            {caseProjects.map((p) => (
               <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
                 <div className={`thumb ${p.thumb}`}>
                   {p.gallery[0] ? <ProjectImage src={p.gallery[0]} alt={`Aperçu du site ${p.name}`} /> : p.name}
