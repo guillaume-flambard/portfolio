@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ALL_PROJECTS, getProject } from "@/data/projects";
+import { CASE_BY_SLUG } from "@/data/caseStudies";
 import { routing } from "@/i18n/routing";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
@@ -31,6 +32,7 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   const lang = locale as "fr" | "en";
+  const study = CASE_BY_SLUG[slug];
   const idx = ALL_PROJECTS.findIndex((p) => p.slug === slug);
   const prev = idx > 0 ? ALL_PROJECTS[idx - 1] : null;
   const next = idx >= 0 && idx < ALL_PROJECTS.length - 1 ? ALL_PROJECTS[idx + 1] : null;
@@ -62,6 +64,22 @@ export default async function ProjectPage({ params }: Props) {
               <div className="stack">{project.stack.map((s) => <span key={s}>{s}</span>)}</div>
             </div>
           </div>
+
+          {study && (
+            <section className="case-study" aria-labelledby="case-study-heading">
+              <p className="eyebrow"><span className="r" />{t("caseEyebrow")}</p>
+              <h2 id="case-study-heading">{t("caseTitle")}</h2>
+              <dl className="case-facts">
+                <div><dt>{t("caseContext")}</dt><dd>{study.context[lang]}</dd></div>
+                <div><dt>{t("caseOwnership")}</dt><dd>{study.ownership[lang]}</dd></div>
+                <div><dt>{t("caseConstraint")}</dt><dd>{study.constraint[lang]}</dd></div>
+                <div><dt>{t("caseDecision")}</dt><dd>{study.decision[lang]}</dd></div>
+                <div><dt>{t("caseResult")}</dt><dd>{study.result[lang]}</dd></div>
+              </dl>
+              <p className="case-note"><strong>{t("caseNote")}</strong> {study.caveat[lang]}</p>
+              <Link className="btn s maplink" href="/contact">{t("caseContact")}</Link>
+            </section>
+          )}
 
           {project.gallery.length > 0 && (
             <div className="pgallery">
