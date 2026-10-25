@@ -195,6 +195,21 @@ h1.h .acc { color: var(--accent); }
 .contact p { color: #b8afa4; margin-top: 24px; font-size: 1.2rem; font-weight: 300; max-width: 44ch; margin-inline: auto; }
 .contact .btn.p { margin-top: 48px; }
 .contact .btn.p:hover { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+.contact-tracks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left;
+  border-top: 1px solid color-mix(in srgb, var(--bg) 22%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); }
+.contact-track { padding: 32px; }
+.contact-track + .contact-track { border-left: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); }
+.contact-track h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); line-height: 1.15; }
+.contact-track p { font-size: 16px; line-height: 1.5; margin-top: 18px; max-width: 36ch; margin-inline: 0; }
+.contact-tracks .btn.p { margin-top: 28px; }
+.contact .contact-direct { margin-top: 32px; font-size: 16px; }
+.contact-direct a { color: var(--bg); text-underline-offset: 4px; }
+@media (max-width: 680px) {
+  .contact-tracks { grid-template-columns: 1fr; }
+  .contact-track { padding: 28px 0; }
+  .contact-track + .contact-track { border-left: 0; border-top: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); }
+}
 .contact .meta { margin-top: 56px; display: flex; gap: 0; justify-content: center; flex-wrap: wrap;
   font-size: 13px; text-transform: uppercase; letter-spacing: 0.09em; }
 .contact .meta a { color: #d8d0c6; text-decoration: none; padding: 0 22px; transition: color 0.2s; }
