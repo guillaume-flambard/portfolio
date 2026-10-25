@@ -14,7 +14,7 @@ describe("Recruiter-facing evidence", () => {
   });
 
   it("does not leave untranslated or empty evidence fields", () => {
-    const fields = ["context", "ownership", "constraint", "decision", "result", "caveat"] as const;
+    const fields = ["preview", "role", "context", "ownership", "constraint", "decision", "result", "caveat"] as const;
     for (const study of CASE_STUDIES) {
       for (const field of fields) {
         expect(study[field].fr.trim().length).toBeGreaterThan(25);

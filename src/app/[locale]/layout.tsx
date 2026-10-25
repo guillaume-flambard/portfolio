@@ -15,13 +15,13 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
+  title: "Guillaume Flambard · React & TypeScript Developer",
   description:
-    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Available for remote freelance projects and open to remote roles.",
+    "Guillaume Flambard is an independent React & TypeScript developer. Memo Labs is his practice for web interfaces, APIs, payments and integrations. Available for remote freelance work and open to remote roles.",
   openGraph: {
-    title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
+    title: "Guillaume Flambard · React & TypeScript Developer",
     description:
-      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Available for remote freelance projects and open to remote roles.",
+      "Guillaume Flambard is an independent React & TypeScript developer. Memo Labs is his practice for web interfaces, APIs, payments and integrations. Available for remote freelance work and open to remote roles.",
     url: "https://memolabs.dev",
     siteName: "Memo Labs",
     type: "website",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
         url: "https://memolabs.dev/og.png",
         width: 1440,
         height: 900,
-        alt: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
+        alt: "Guillaume Flambard · React & TypeScript Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
+    title: "Guillaume Flambard · React & TypeScript Developer",
     description:
-      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end. Available for remote freelance projects and open to remote roles.",
+      "React & TypeScript engineering for business web applications. Guillaume Flambard is available for remote freelance work and remote roles.",
     images: ["https://memolabs.dev/og.png"],
   },
 };
@@ -79,7 +79,7 @@ export default async function LocaleLayout({
                   name: "Memo Labs",
                   url: "https://memolabs.dev",
                   description:
-                    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Available for remote freelance projects and open to remote roles.",
+                    "Guillaume Flambard is an independent React & TypeScript developer. Memo Labs is his practice for web interfaces, APIs, payments and integrations. Available for remote freelance work and open to remote roles.",
                   sameAs: [
                     "https://github.com/guillaume-flambard",
                     "https://lab.memolabs.dev",
@@ -87,7 +87,7 @@ export default async function LocaleLayout({
                   contactPoint: {
                     "@type": "ContactPoint",
                     email: "contact@memolabs.dev",
-                    contactType: "customer support",
+                    contactType: "business inquiries",
                   },
                 },
                 {
@@ -95,7 +95,7 @@ export default async function LocaleLayout({
                   "@id": "https://memolabs.dev/#person",
                   name: "Guillaume Flambard",
                   url: "https://memolabs.dev",
-                  jobTitle: "Senior Full-Stack & AI Engineer",
+                  jobTitle: "React & TypeScript Developer",
                   worksFor: { "@id": "https://memolabs.dev/#org" },
                   sameAs: [
                     "https://github.com/guillaume-flambard",

@@ -19,9 +19,9 @@ export default defineConfig({
   },
   projects: [{ name: "chromium", use: { browserName: "chromium" } }],
   webServer: process.env.PW_BASE_URL ? undefined : {
-    command: `npm run dev -- --hostname 127.0.0.1 --port ${port}`,
+    command: `npm run start -- --hostname 127.0.0.1 --port ${port}`,
     url: baseURL + "/fr",
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 120_000,
   },
 });
