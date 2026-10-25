@@ -209,7 +209,12 @@ test("gallery requests full-width responsive images and gives unique description
   const images = page.locator(".pgallery img");
   expect(await images.count()).toBeGreaterThan(0);
   await expect(images.first()).toHaveAttribute("sizes", /1184px/);
-  await expect(images.first()).toHaveAttribute("alt", /Capture d’écran 1 du projet PayKit/);
+  await expect(images.first()).toHaveAttribute("alt", /Visuel de présentation de PayKit/);
+  await expect(page.locator(".project-figure")).toHaveCount(2);
+  await expect(page.locator(".project-figure figcaption").first()).toContainText("Visuel de présentation de PayKit");
+  await expect(page.locator(".project-visual-link").first()).toHaveAttribute("href", "/work/paykit/hero.png");
+  await expect(page.locator(".project-visual-link").first()).toHaveAttribute("target", "_blank");
+  await expect(page.locator(".project-gallery-intro")).toContainText("ne prouvent pas");
 });
 
 test("work listing states a specific contribution for each documented case", async ({ page }) => {
@@ -222,3 +227,26 @@ test("work listing states a specific contribution for each documented case", asy
   }
   await expect(cards.first()).toBeVisible();
 });
+
+for (const locale of locales) {
+  test(`${locale}: media gallery is accessible and honest on all featured projects`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    for (const slug of ["emargo", "echo-travel", "paykit", "blueowl", "weave", "n8n-nodes-opn", "largo"]) {
+      const response = await page.goto(`/${locale}/work/${slug}`);
+      expect(response?.status()).toBe(200);
+      const figures = page.locator(".project-gallery .project-figure");
+      expect(await figures.count()).toBeGreaterThan(0);
+      await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Aperçus du projet" : "Project visuals" })).toBeVisible();
+      await expect(page.locator(".project-gallery-intro")).toContainText(locale === "fr" ? "ne prouvent pas" : "do not prove");
+      for (const figure of await figures.all()) {
+        const image = figure.locator("img");
+        await expect(image).toHaveAttribute("alt", /.+/);
+        await expect(figure.locator("figcaption")).toContainText(/.+/);
+        const link = figure.locator("a.project-visual-link");
+        await expect(link).toHaveAttribute("href", /^\/work\/.+\.png$/);
+        await expect(link).toHaveAttribute("target", "_blank");
+      }
+      await assertNoHorizontalOverflow(page);
+    }
+  });
+}
