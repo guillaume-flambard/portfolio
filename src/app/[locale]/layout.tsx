@@ -1,3 +1,4 @@
+import { PUBLIC_LINKS } from "@/data/publicLinks";
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -81,7 +82,7 @@ export default async function LocaleLayout({
                   description:
                     "Guillaume Flambard is an independent React & TypeScript developer. Memo Labs is his practice for web interfaces, APIs, payments and integrations. Available for remote freelance work and open to remote roles.",
                   sameAs: [
-                    "https://github.com/guillaume-flambard",
+                    PUBLIC_LINKS.github,
                     "https://lab.memolabs.dev",
                   ],
                   contactPoint: {
@@ -98,8 +99,8 @@ export default async function LocaleLayout({
                   jobTitle: "React & TypeScript Developer",
                   worksFor: { "@id": "https://memolabs.dev/#org" },
                   sameAs: [
-                    "https://github.com/guillaume-flambard",
-                    "https://www.linkedin.com/in/guillaumeflambard/",
+                    PUBLIC_LINKS.github,
+                    PUBLIC_LINKS.linkedin,
                   ],
                 },
                 {

@@ -100,7 +100,10 @@
     "caseTechnicalToggle": "Explore technical decisions and constraints",
     "caseTechnicalTitle": "Technical approach",
     "screenshotAlt": "Screenshot {number} of {name}",
-    "cardRoleLabel": "My role"
+    "cardRoleLabel": "My role",
+    "galleryTitle": "Project visuals",
+    "galleryEvidenceNote": "These visuals introduce the project. On their own, they do not prove a payment, private feature or full user journey has been tested.",
+    "openGalleryImage": "Open visual {number} of {name} at full resolution (new tab)"
   },
   "legal": {
     "eyebrow": "Legal notice",
