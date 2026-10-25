@@ -78,7 +78,7 @@
     "caseDecision": "Technical choices",
     "caseResult": "Results and observable evidence",
     "caseNote": "Evidence limits:",
-    "caseContact": "Discuss a project",
+    "caseContact": "Discuss a similar project",
     "kind_client": "Client project",
     "kind_independent": "Independent product",
     "kind_collaboration": "Collaboration",
@@ -92,7 +92,14 @@
     "verificationTitle": "What can be verified",
     "checkedOn": "Access last checked:",
     "proofLegend": "The labels below distinguish an accessible website from a product in real-world use; they are not independent certification.",
-    "proofShort": "Project type and evidence"
+    "proofShort": "Project type and evidence",
+    "caseSummaryTitle": "The project at a glance",
+    "caseProblem": "The problem",
+    "caseIntervention": "My contribution",
+    "caseOutcome": "The outcome",
+    "caseTechnicalToggle": "Explore technical decisions and constraints",
+    "caseTechnicalTitle": "Technical approach",
+    "screenshotAlt": "Screenshot {number} of {name}"
   },
   "legal": {
     "eyebrow": "Legal notice",
