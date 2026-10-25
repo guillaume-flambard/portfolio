@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { PROJECT_VISUALS } from "../src/data/projectVisuals";
 
 const locales = ["fr", "en"] as const;
 const mobile = { width: 390, height: 844 };
@@ -250,3 +251,13 @@ for (const locale of locales) {
     }
   });
 }
+
+test("all 14 published project media files exist and are served as PNG", async ({ request }) => {
+  const assets = Object.keys(PROJECT_VISUALS);
+  expect(assets).toHaveLength(14);
+  for (const url of assets) {
+    const response = await request.get(url);
+    expect(response.status(), `Missing portfolio asset ${url}`).toBe(200);
+    expect(response.headers()["content-type"], `Unexpected MIME for ${url}`).toMatch(/^image\/png/);
+  }
+});
