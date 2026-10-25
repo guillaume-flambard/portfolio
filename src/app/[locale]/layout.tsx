@@ -17,11 +17,11 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
   description:
-    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Open to remote roles.",
+    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Available for remote freelance projects and open to remote roles.",
   openGraph: {
     title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
     description:
-      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Open to remote roles.",
+      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Available for remote freelance projects and open to remote roles.",
     url: "https://memolabs.dev",
     siteName: "Memo Labs",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Guillaume Flambard · Senior Full-Stack & AI Engineer",
     description:
-      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end. Open to remote roles.",
+      "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end. Available for remote freelance projects and open to remote roles.",
     images: ["https://memolabs.dev/og.png"],
   },
   alternates: {
@@ -86,7 +86,7 @@ export default async function LocaleLayout({
                   name: "Memo Labs",
                   url: "https://memolabs.dev",
                   description:
-                    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Open to remote roles.",
+                    "Guillaume Flambard, senior full-stack and AI engineer. I ship production software end to end: React and Next.js on the front, typed APIs, payments and AI features that run. Available for remote freelance projects and open to remote roles.",
                   sameAs: [
                     "https://github.com/guillaume-flambard",
                     "https://lab.memolabs.dev",
