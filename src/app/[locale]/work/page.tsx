@@ -2,7 +2,7 @@ import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
-import { FEATURED } from "@/data/projects";
+import { CASE_PROJECTS, SUPPORTING_PROJECTS } from "@/data/projectNavigation";
 import { CASE_BY_SLUG } from "@/data/caseStudies";
 import { projectVisualLabel } from "@/data/projectVisuals";
 import SiteNav from "@/components/SiteNav";
@@ -24,8 +24,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
   // Case studies have a written account of the problem, contribution and outcome.
   // Other projects still belong in the portfolio, but should not look equally substantiated.
-  const caseProjects = FEATURED.filter((p) => !!CASE_BY_SLUG[p.slug]);
-  const otherProjects = FEATURED.filter((p) => !CASE_BY_SLUG[p.slug]);
+  const caseProjects = CASE_PROJECTS;
+  const otherProjects = SUPPORTING_PROJECTS;
 
   return (
     <>

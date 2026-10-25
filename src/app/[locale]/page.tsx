@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { FEATURED } from "@/data/projects";
+import { CASE_PROJECTS } from "@/data/projectNavigation";
 import { CASE_BY_SLUG, type Lang } from "@/data/caseStudies";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
@@ -21,8 +21,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const lang = locale as Lang;
   const t = await getTranslations("home");
   const workText = await getTranslations("work");
-  const spotlight = ["echo-travel", "paykit", "blueowl"];
-  const caseProjects = spotlight.flatMap((slug) => FEATURED.filter((project) => project.slug === slug));
+  const caseProjects = CASE_PROJECTS;
 
   return (
     <>
