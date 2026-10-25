@@ -218,15 +218,19 @@ test("gallery requests full-width responsive images and gives unique description
   await expect(page.locator(".project-gallery-intro")).toContainText("ne prouvent pas");
 });
 
-test("work listing states a specific contribution for each documented case", async ({ page }) => {
+test("work listing leads with the three documented cases and keeps four projects in a compact index", async ({ page }) => {
   await page.goto("/fr/work");
-  const cards = page.locator(".grid .card");
-  await expect(cards).toHaveCount(7);
-  for (const project of ["Echo Travel", "PayKit", "Blue Owl"]) {
-    const card = cards.filter({ has: page.getByRole("heading", { name: project }) });
+  const cases = page.locator('[data-testid="case-projects"] .card');
+  await expect(cases).toHaveCount(3);
+  await expect(cases.locator("h3")).toHaveText(["Echo Travel", "PayKit", "Blue Owl"]);
+  for (const card of await cases.all()) {
     await expect(card).toContainText("Mon rôle");
   }
-  await expect(cards.first()).toBeVisible();
+  const secondary = page.locator(".work-other-list li");
+  await expect(secondary).toHaveCount(4);
+  await expect(secondary.locator("strong")).toHaveText(["Émargo", "Weave", "n8n-nodes-opn", "Largo IA"]);
+  await expect(page.locator(".work-other img")).toHaveCount(0);
+  await expect(page.locator(".work-other .proof-legend")).toBeVisible();
 });
 
 for (const locale of locales) {
@@ -272,5 +276,22 @@ for (const locale of locales) {
     expect(raw).not.toContain("/guillaumeflambard/");
     await page.goto(`/${locale}/cv`);
     await expect(page.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("href", profile);
+  });
+}
+
+for (const locale of locales) {
+  test(`${locale}: evidence-first work index stays readable and navigable at 320px`, async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 720 });
+    await page.goto(`/${locale}/work`);
+    const label = locale === "fr" ? "Trois projets expliqués" : "Three projects, explained";
+    await expect(page.getByRole("heading", { name: label, level: 2 })).toBeVisible();
+    await expect(page.locator(".work-other-list li")).toHaveCount(4);
+    await expect(page.locator('[data-testid="case-projects"] .card')).toHaveCount(3);
+    await assertNoHorizontalOverflow(page);
+    await page.locator('[data-testid="case-projects"] .card').first().click();
+    await expect(page).toHaveURL(new RegExp(`/${locale}/work/echo-travel$`));
+    await page.goto(`/${locale}/work`);
+    await page.locator(".work-other-link").first().click();
+    await expect(page).toHaveURL(new RegExp(`/${locale}/work/emargo$`));
   });
 }
