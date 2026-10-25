@@ -1,10 +1,16 @@
+import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 
-export const metadata: Metadata = {
-  title: "Mentions légales — Memo Labs",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const [title, description] = locale === "fr"
+    ? ["Mentions légales | Memo Labs","Mentions légales et contact du site Memo Labs."]
+    : ["Legal notice | Memo Labs","Legal notice and website contact information for Memo Labs."];
+  return createRouteMetadata(locale, "/legal", title, description);
+}
+
 
 export default async function LegalPage({
   params,
