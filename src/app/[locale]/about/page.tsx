@@ -63,7 +63,7 @@ export default async function AboutPage({
               </div>
               <ol className="timeline">
                 {EXPERIENCES.map((job) => (
-                  <li key={job.organization} className="timeline-row">
+                  <li key={job.organization} className="timeline-row" id={job.organization === "Medsharing" ? "experience-medsharing" : job.organization === "Symbyoz" ? "experience-symbyoz" : undefined}>
                     <div className="timeline-date">{job.dates[lang]}</div>
                     <div>
                       <h3>{job.organization}</h3>
