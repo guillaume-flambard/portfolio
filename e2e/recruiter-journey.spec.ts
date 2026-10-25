@@ -1,0 +1,91 @@
+import { expect, test } from "@playwright/test";
+
+const locales = ["fr", "en"] as const;
+const mobile = { width: 390, height: 844 };
+const desktop = { width: 1440, height: 900 };
+
+async function assertNoHorizontalOverflow(page: import("@playwright/test").Page) {
+  const dimensions = await page.evaluate(() => ({
+    viewport: window.innerWidth,
+    document: document.documentElement.scrollWidth,
+    body: document.body.scrollWidth,
+  }));
+  expect(
+    Math.max(dimensions.document, dimensions.body),
+    `Unexpected horizontal overflow: ${JSON.stringify(dimensions)}`,
+  ).toBeLessThanOrEqual(dimensions.viewport + 1);
+}
+
+for (const locale of locales) {
+  test.describe(`${locale}: recruiter experience at 390px`, () => {
+    test.use({ viewport: mobile });
+
+    for (const path of ["", "/about", "/work", "/contact", "/cv", "/work/echo-travel"]) {
+      test(`/${locale}${path || "/"} fits a mobile viewport`, async ({ page }, testInfo) => {
+        const response = await page.goto(`/${locale}${path}`, { waitUntil: "domcontentloaded" });
+        expect(response?.status()).toBe(200);
+        await expect(page.locator("html")).toHaveAttribute("lang", locale);
+        await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+        await assertNoHorizontalOverflow(page);
+        const nav = await page.locator("nav.nav").boundingBox();
+        expect(nav).not.toBeNull();
+        expect(nav!.x).toBeGreaterThanOrEqual(-1);
+        expect(nav!.x + nav!.width).toBeLessThanOrEqual(mobile.width + 1);
+        if (path === "" || path === "/cv") {
+          await testInfo.attach(`${locale}-mobile-${path || "home"}`, {
+            body: await page.screenshot({ fullPage: true }),
+            contentType: "image/png",
+          });
+        }
+      });
+    }
+
+    test("home links to a real bilingual resume and offers direct contact", async ({ page }) => {
+      await page.goto(`/${locale}`);
+      await page.getByRole("link", { name: locale === "fr" ? "Consulter mon CV" : "View resume" }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/cv$`));
+      await expect(page.getByRole("heading", { name: "Guillaume Flambard" })).toBeVisible();
+      await expect(page.getByText("Medsharing", { exact: true })).toBeVisible();
+      await expect(page.getByRole("button", { name: locale === "fr" ? "Enregistrer en PDF / imprimer" : "Save as PDF / print" })).toBeVisible();
+    });
+  });
+
+  test.describe(`${locale}: resume print output`, () => {
+    test.use({ viewport: desktop });
+    test("renders A4 PDF and hides screen-only controls in print CSS", async ({ page }, testInfo) => {
+      const response = await page.goto(`/${locale}/cv`);
+      expect(response?.status()).toBe(200);
+      await expect(page.getByRole("heading", { name: "Guillaume Flambard" })).toBeVisible();
+      await assertNoHorizontalOverflow(page);
+      await testInfo.attach(`${locale}-cv-desktop`, {
+        body: await page.screenshot({ fullPage: true }),
+        contentType: "image/png",
+      });
+      await page.emulateMedia({ media: "print" });
+      await expect(page.locator(".print-hide").first()).toHaveCSS("display", "none");
+      const pdf = await page.pdf({ format: "A4", printBackground: true });
+      expect(pdf.subarray(0, 4).toString()).toBe("%PDF");
+      expect(pdf.length).toBeGreaterThan(10_000);
+      await testInfo.attach(`${locale}-cv-print.pdf`, { body: pdf, contentType: "application/pdf" });
+    });
+  });
+}
+
+test("project case study distinguishes visible evidence from assumptions", async ({ page }) => {
+  await page.goto("/fr/work/paykit");
+  await expect(page.getByText("Accès anticipé", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("La page publique propose un accès anticipé", { exact: false })).toBeVisible();
+  await page.goto("/fr/work/weave");
+  await expect(page.getByText("Code source uniquement", { exact: true })).toBeVisible();
+  const links = await page.locator('a[href="https://weave.memolabs.dev"]').count();
+  expect(links).toBe(0);
+});
+
+test("contact differentiates freelance and employment inquiries", async ({ page }) => {
+  await page.goto("/fr/contact");
+  const freelance = page.getByRole("link", { name: "Parler d'une mission" });
+  const hiring = page.getByRole("link", { name: "Parler d'un poste" });
+  await expect(freelance).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
+  await expect(hiring).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
+  expect(await freelance.getAttribute("href")).not.toEqual(await hiring.getAttribute("href"));
+});
