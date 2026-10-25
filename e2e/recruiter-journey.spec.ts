@@ -168,3 +168,46 @@ for (const locale of locales) {
     });
   });
 }
+
+for (const locale of locales) {
+  test.describe(`${locale}: case study can be understood in one glance`, () => {
+    for (const slug of ["echo-travel", "paykit", "blueowl"]) {
+      test(`${slug}: problem, personal contribution, result before technical details`, async ({ page }) => {
+        await page.setViewportSize({ width: 390, height: 844 });
+        const response = await page.goto(`/${locale}/work/${slug}`);
+        expect(response?.status()).toBe(200);
+        const snapshot = page.locator(".case-snapshot");
+        await expect(snapshot).toBeVisible();
+        await expect(snapshot.locator("dl > div")).toHaveCount(3);
+        await expect(snapshot.locator("dt")).toHaveText(locale === "fr"
+          ? ["Le besoin", "Mon intervention", "Le résultat"]
+          : ["The problem", "My contribution", "The outcome"]);
+        await expect(snapshot.locator("dd")).toHaveCount(3);
+        for (const dd of await snapshot.locator("dd").all()) {
+          expect((await dd.innerText()).trim().length).toBeGreaterThan(35);
+        }
+        await expect(snapshot.locator(".case-snapshot-caveat")).toBeVisible();
+        const technical = page.locator("details.case-technical");
+        await expect(technical).not.toHaveAttribute("open", "");
+        await technical.locator("summary").click();
+        await expect(technical).toHaveAttribute("open", "");
+        await expect(technical.locator(".case-facts > div")).toHaveCount(2);
+        await expect(technical.locator(".pstack .stack span").first()).toBeVisible();
+        await expect(page.getByRole("link", {
+          name: locale === "fr" ? "Parler d’un projet similaire" : "Discuss a similar project"
+        })).toHaveAttribute("href", new RegExp(`/${locale}/contact$`));
+        await assertNoHorizontalOverflow(page);
+        await page.setViewportSize({ width: 320, height: 720 });
+        await assertNoHorizontalOverflow(page);
+      });
+    }
+  });
+}
+
+test("gallery requests full-width responsive images and gives unique descriptions", async ({ page }) => {
+  await page.goto("/fr/work/paykit");
+  const images = page.locator(".pgallery img");
+  expect(await images.count()).toBeGreaterThan(0);
+  await expect(images.first()).toHaveAttribute("sizes", /1184px/);
+  await expect(images.first()).toHaveAttribute("alt", /Capture d’écran 1 du projet PayKit/);
+});
