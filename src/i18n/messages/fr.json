@@ -100,7 +100,10 @@
     "caseTechnicalToggle": "Lire les choix techniques et les contraintes",
     "caseTechnicalTitle": "Approche technique",
     "screenshotAlt": "Capture d’écran {number} du projet {name}",
-    "cardRoleLabel": "Mon rôle"
+    "cardRoleLabel": "Mon rôle",
+    "galleryTitle": "Aperçus du projet",
+    "galleryEvidenceNote": "Ces visuels servent à présenter le projet. Ils ne prouvent pas, à eux seuls, qu'un paiement, une fonctionnalité privée ou un parcours complet a été testé.",
+    "openGalleryImage": "Ouvrir le visuel {number} de {name} en taille originale (nouvel onglet)"
   },
   "legal": {
     "eyebrow": "Mentions légales",
