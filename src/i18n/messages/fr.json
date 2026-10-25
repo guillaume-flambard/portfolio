@@ -6,7 +6,12 @@
       "contact": "Contact",
       "cta": "Me contacter",
       "lab": "Lab",
-      "home": "Accueil"
+      "home": "Accueil",
+      "menu": "Menu",
+      "cv": "CV",
+      "skip": "Aller au contenu",
+      "navigation": "Navigation principale",
+      "language": "Langue"
     },
     "eyebrow": "Guillaume Flambard · Ingénieur Full-Stack & IA senior",
     "h1a": "Je livre des produits full-stack et IA",
