@@ -388,3 +388,15 @@ for (const locale of locales) {
     });
   });
 }
+
+test("unlocalized NetNewsWire universal-link fallback has an isolated root layout", async ({ page }) => {
+  const response = await page.goto("/intentlane/netnewswire/article/test-reference", {
+    waitUntil: "domcontentloaded",
+  });
+  expect(response?.status()).toBe(200);
+  await expect(page).toHaveURL(/\/intentlane\/netnewswire\/article\/test-reference$/);
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.getByRole("heading", { name: "Open in NetNewsWire" })).toBeVisible();
+  await expect(page.getByText("Reference: test-reference")).toBeVisible();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
+});
