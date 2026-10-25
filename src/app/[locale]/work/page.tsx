@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { FEATURED } from "@/data/projects";
+import { CASE_BY_SLUG } from "@/data/caseStudies";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
 
@@ -41,14 +42,15 @@ export default async function WorkPage({
       <main className="sec">
         <div className="wrap">
           <div className="grid">
-            {FEATURED.map((p) => (
+            {FEATURED.map((p) => { const study = CASE_BY_SLUG[p.slug]; return (
               <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
                 <div className={`thumb ${p.thumb}`}>
                   {p.gallery[0] ? <ProjectImage src={p.gallery[0]} alt={`Aperçu du site ${p.name}`} /> : p.name}
                 </div>
                 <div className="cbody">
                   <h3>{p.name} <span className="arrow" aria-hidden>→</span></h3>
-                  <p>{p.tagline[lang]}</p>
+                  <p>{study ? study.preview[lang] : p.tagline[lang]}</p>
+                  {study && <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {study.role[lang]}</p>}
                   <p className="card-proof" aria-label={t("proofShort")}>{t(`kind_${p.verification.kind}` as never)} · {t(`proof_${p.verification.proof}` as never)}</p>
                   <div className="stack">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
                   {p.status !== "offline" && p.links[0] && (
@@ -56,7 +58,7 @@ export default async function WorkPage({
                   )}
                 </div>
               </Link>
-            ))}
+            ); })}
           </div>
         </div>
       </main>
