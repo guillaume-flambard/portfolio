@@ -42,7 +42,7 @@ for (const locale of locales) {
 
     test("home links to a real bilingual resume and offers direct contact", async ({ page }) => {
       await page.goto(`/${locale}`);
-      await page.getByRole("link", { name: locale === "fr" ? "Consulter mon CV" : "View resume" }).click();
+      await page.getByRole("link", { name: locale === "fr" ? "Voir mon CV" : "View my resume" }).click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/cv$`));
       await expect(page.getByRole("heading", { name: "Guillaume Flambard" })).toBeVisible();
       await expect(page.getByText("Medsharing", { exact: true })).toBeVisible();
@@ -85,8 +85,8 @@ test("project case study distinguishes visible evidence from assumptions", async
 
 test("contact differentiates freelance and employment inquiries", async ({ page }) => {
   await page.goto("/fr/contact");
-  const freelance = page.getByRole("link", { name: "Parler d'une mission" });
-  const hiring = page.getByRole("link", { name: "Parler d'un poste" });
+  const freelance = page.getByRole("link", { name: "Décrire votre mission" });
+  const hiring = page.getByRole("link", { name: "Proposer un poste" });
   await expect(freelance).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
   await expect(hiring).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
   expect(await freelance.getAttribute("href")).not.toEqual(await hiring.getAttribute("href"));
@@ -142,3 +142,29 @@ test("mobile navigation fits 320px and desktop navigation is unchanged", async (
   await expect(page.locator("details.mobile-menu")).toBeHidden();
   await expect(page.locator(".navlinks").getByRole("link", { name: "Travail" })).toBeVisible();
 });
+
+for (const locale of locales) {
+  test.describe(`${locale}: recruiter understands the offer`, () => {
+    test.use({ viewport: { width: 390, height: 844 } });
+
+    test("identifies the engineer, service, experience and next step", async ({ page }) => {
+      await page.goto(`/${locale}`);
+      const role = locale === "fr" ? "Développeur React & TypeScript" : "React & TypeScript developer";
+      await expect(page.getByRole("heading", { level: 1 })).toContainText(role);
+      await expect(page.locator(".hero-identity")).toContainText("Memo Labs");
+      await expect(page.locator(".hero-facts")).toContainText("Medsharing");
+      await expect(page.locator(".hero-facts")).toContainText("Echo Travel");
+      await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Sur quoi je peux vous aider" : "How I can help" })).toBeVisible();
+      await expect(page.locator(".focus-grid > li")).toHaveCount(3);
+      await expect(page.locator(".featured-section .card")).toHaveCount(3);
+      await expect(page.locator(".featured-section .card").first()).toContainText(locale === "fr" ? "Mon rôle" : "My role");
+      const contact = page.locator(".hero-actions").getByRole("link", {
+        name: locale === "fr" ? "Discuter d’une mission" : "Discuss a project"
+      });
+      await expect(contact).toHaveAttribute("href", new RegExp(`/${locale}/contact$`));
+      await assertNoHorizontalOverflow(page);
+      await contact.click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/contact$`));
+    });
+  });
+}
