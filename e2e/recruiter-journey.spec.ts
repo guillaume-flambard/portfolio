@@ -230,6 +230,7 @@ test("work listing leads with the three documented cases and keeps four projects
   await expect(secondary).toHaveCount(4);
   await expect(secondary.locator("strong")).toHaveText(["Émargo", "weave", "n8n-nodes-opn", "Largo IA"]);
   await expect(page.locator(".work-other img")).toHaveCount(0);
+  await expect(cases.locator(".thumb img").first()).toHaveAttribute("sizes", /1056px/);
   await expect(page.locator(".work-other .proof-legend")).toBeVisible();
 });
 
