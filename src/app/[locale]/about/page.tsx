@@ -2,6 +2,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import SiteNav from "@/components/SiteNav";
+import { EXPERIENCES } from "@/data/experience";
 
 export const metadata: Metadata = {
   title: "About — Memo Labs",
@@ -17,6 +18,7 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("about");
+  const lang = locale as "fr" | "en";
 
   return (
     <>
@@ -50,7 +52,30 @@ export default async function AboutPage({
               <div><span>{t("f3k")}</span><b>{t("f3v")}</b></div>
             </div>
 
-            <Link className="btn p maplink" href="/contact">{t("cta")}</Link>
+            <section className="experience" id="experience" aria-labelledby="experience-title">
+              <div className="shead">
+                <h2 id="experience-title">{t("experienceTitle")}</h2>
+                <p>{t("experienceIntro")}</p>
+              </div>
+              <ol className="timeline">
+                {EXPERIENCES.map((job) => (
+                  <li key={job.organization} className="timeline-row">
+                    <div className="timeline-date">{job.dates[lang]}</div>
+                    <div>
+                      <h3>{job.organization}</h3>
+                      <p className="timeline-role">{job.role[lang]}</p>
+                      <p>{job.description[lang]}</p>
+                      <div className="stack">{job.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <p className="education"><strong>{t("educationTitle")}</strong> {t("educationBody")}</p>
+              <div className="herobtns">
+                <Link className="btn p" href="/cv">{t("cvCta")}</Link>
+                <Link className="btn s" href="/contact">{t("cta")}</Link>
+              </div>
+            </section>
           </div>
         </div>
       </main>
