@@ -242,6 +242,9 @@ h1.h .acc { color: var(--accent); }
 
 .experience { margin-top: clamp(72px, 10vw, 120px); border-top: 1px solid var(--line); padding-top: 60px; }
 .experience .shead { margin-bottom: 28px; }
+.experience .shead h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.ldesc .experience .timeline-row p { font-size: 16px; line-height: 1.5; margin: 8px 0 0; color: var(--muted); max-width: none; }
+.ldesc .experience .timeline-row .timeline-role { font-size: 15px; font-weight: 500; color: var(--accent); }
 .timeline { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .timeline-row { display: grid; grid-template-columns: minmax(140px, 205px) minmax(0, 1fr);
   gap: 26px; padding: 26px 0; border-bottom: 1px solid var(--line); }
