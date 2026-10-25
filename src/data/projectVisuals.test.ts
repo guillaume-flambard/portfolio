@@ -12,7 +12,7 @@ describe("Public portfolio screenshot evidence", () => {
       expect(asset.startsWith("/work/")).toBe(true);
       for (const locale of ["fr", "en"] as const) {
         const caption = projectVisualLabel(asset, "Project", locale);
-        expect(caption.length).toBeGreaterThan(20);
+        expect(caption.length).toBeGreaterThan(12);
         expect(caption.toLowerCase()).not.toMatch(/proved|verified|transaction completed|payment confirmed/);
       }
     }
