@@ -90,7 +90,6 @@ h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; font-w
     position: absolute; top: 100%; inset-inline: 0;
     background: var(--bg); border-bottom: 1px solid var(--line);
     padding: 8px clamp(20px, 4vw, 48px) 24px; display: flex; flex-direction: column;
-    box-shadow: 0 12px 20px rgb(22 19 15 / 8%);
   }
   .mobile-menu-panel a {
     padding: 12px 2px; border-bottom: 1px solid var(--line); text-decoration: none;
