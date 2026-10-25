@@ -5,6 +5,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ALL_PROJECTS, getProject } from "@/data/projects";
 import { CASE_BY_SLUG } from "@/data/caseStudies";
+import { projectVisualLabel } from "@/data/projectVisuals";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
 
@@ -113,16 +114,38 @@ export default async function ProjectPage({ params }: Props) {
           )}
 
           {project.gallery.length > 0 && (
-            <div className="pgallery">
-              {project.gallery.map((src, index) => (
-                <ProjectImage
-                  key={src}
-                  src={src}
-                  alt={t("screenshotAlt", { name: project.name, number: index + 1 })}
-                  sizes="(max-width: 820px) 100vw, (max-width: 1280px) 85vw, 1184px"
-                />
-              ))}
-            </div>
+            <section className="project-gallery" aria-labelledby="project-gallery-heading">
+              <div className="project-gallery-intro">
+                <h2 id="project-gallery-heading">{t("galleryTitle")}</h2>
+                <p>{t("galleryEvidenceNote")}</p>
+              </div>
+              <div className="pgallery">
+                {project.gallery.map((src, index) => {
+                  const caption = projectVisualLabel(src, project.name, lang);
+                  return (
+                    <figure className="project-figure" key={src}>
+                      <a
+                        className="project-visual-link"
+                        href={src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={t("openGalleryImage", { name: project.name, number: index + 1 })}
+                      >
+                        <ProjectImage
+                          src={src}
+                          alt={caption}
+                          sizes="(max-width: 820px) 100vw, (max-width: 1280px) 85vw, 1184px"
+                        />
+                      </a>
+                      <figcaption>
+                        <span className="project-figure-number">{String(index + 1).padStart(2, "0")} / {String(project.gallery.length).padStart(2, "0")}</span>
+                        <span>{caption}</span>
+                      </figcaption>
+                    </figure>
+                  );
+                })}
+              </div>
+            </section>
           )}
 
           <div className="ppager">
