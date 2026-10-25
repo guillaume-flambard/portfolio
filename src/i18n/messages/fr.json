@@ -52,7 +52,7 @@
   },
   "work": {
     "title": "Réalisations",
-    "subtitle": "Projets clients, produits et open source. Découvrez mon rôle, les choix techniques et les liens disponibles vers les sites, démos ou dépôts.",
+    "subtitle": "Commencez par trois études de cas : le besoin, mon intervention, le résultat et les preuves accessibles. Retrouvez ensuite mes autres projets et contributions.",
     "back": "Retour",
     "allProjects": "Tous les projets",
     "category_produits": "Produits & apps",
@@ -103,7 +103,13 @@
     "cardRoleLabel": "Mon rôle",
     "galleryTitle": "Aperçus du projet",
     "galleryEvidenceNote": "Ces visuels servent à présenter le projet. Ils ne prouvent pas, à eux seuls, qu'un paiement, une fonctionnalité privée ou un parcours complet a été testé.",
-    "openGalleryImage": "Ouvrir le visuel {number} de {name} en taille originale (nouvel onglet)"
+    "openGalleryImage": "Ouvrir le visuel {number} de {name} en taille originale (nouvel onglet)",
+    "caseListKicker": "01 / Études de cas",
+    "caseListTitle": "Trois projets expliqués",
+    "caseListIntro": "Une mission client, un produit indépendant et une collaboration. Pour chaque projet, découvrez précisément mon rôle et les limites des preuves publiques.",
+    "otherListKicker": "02 / Autres réalisations",
+    "otherListTitle": "Quatre projets complémentaires",
+    "otherListIntro": "Des produits, sites et outils open source. Les fiches distinguent ce qui est public de ce qui n'a pas été vérifié sans accès privé."
   },
   "legal": {
     "eyebrow": "Mentions légales",
