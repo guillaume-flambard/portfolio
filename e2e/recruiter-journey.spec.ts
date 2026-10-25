@@ -73,10 +73,10 @@ for (const locale of locales) {
 
 test("project case study distinguishes visible evidence from assumptions", async ({ page }) => {
   await page.goto("/fr/work/paykit");
-  await expect(page.getByText("Accès anticipé", { exact: true }).first()).toBeVisible();
-  await expect(page.getByText("La page publique propose un accès anticipé", { exact: false })).toBeVisible();
+  await expect(page.locator(".pdetail .eyebrow")).toContainText("Accès anticipé");
+  await expect(page.locator(".evidence-note")).toContainText("La page publique propose un accès anticipé");
   await page.goto("/fr/work/weave");
-  await expect(page.getByText("Code source uniquement", { exact: true })).toBeVisible();
+  await expect(page.locator(".pdetail .eyebrow")).toContainText("Code source uniquement");
   const links = await page.locator('a[href="https://weave.memolabs.dev"]').count();
   expect(links).toBe(0);
 });
