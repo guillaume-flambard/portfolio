@@ -1,4 +1,13 @@
+/** Link availability only; never infer production maturity from this status. */
 export type ProjectStatus = "live" | "repo" | "offline";
+export type ProjectKind = "client" | "independent" | "collaboration" | "open-source" | "experimental";
+export type ProjectProof = "reported-operation" | "public-website" | "early-access" | "source-only" | "published-package";
+export type ProjectVerification = {
+  kind: ProjectKind;
+  proof: ProjectProof;
+  checkedAt: string;
+  note: { fr: string; en: string };
+};
 
 export type LinkLabel = "live" | "repo" | "npm" | "demo";
 
@@ -22,6 +31,7 @@ export type Project = {
   featured?: boolean;
   status: ProjectStatus;
   year: number;
+  verification: ProjectVerification;
   tagline: { fr: string; en: string };
   description: { fr: string; en: string };
   stack: string[];
@@ -30,7 +40,7 @@ export type Project = {
   thumb: string;
 };
 
-export type MapItem = Omit<Project, "description">;
+export type MapItem = Omit<Project, "description" | "verification">;
 
 export const FEATURED: Project[] = [
   {
@@ -40,6 +50,12 @@ export const FEATURED: Project[] = [
     featured: true,
     status: "live",
     year: 2026,
+    verification: {
+      kind: "independent",
+      proof: "public-website",
+      checkedAt: "2026-10-25",
+      note: {"fr":"Site public accessible le 25/10/2026. Les espaces authentifiés et le volume d'utilisation ne sont pas vérifiés publiquement.","en":"Public website accessible on 25 Oct 2026. Authenticated workflows and usage volume were not publicly verified."},
+    },
     tagline: {
       fr: "SaaS en production pour profs indépendants, construit en solo.",
       en: "Production SaaS for independent tutors, built solo.",
@@ -60,6 +76,12 @@ export const FEATURED: Project[] = [
     featured: true,
     status: "live",
     year: 2026,
+    verification: {
+      kind: "client",
+      proof: "reported-operation",
+      checkedAt: "2026-10-25",
+      note: {"fr":"Site de réservation public accessible le 25/10/2026. L'activité et le volume saisonnier sont rapportés par l'opérateur, sans audit indépendant.","en":"Public booking site accessible on 25 Oct 2026. Operations and seasonal volume are operator-reported, not independently audited."},
+    },
     tagline: {
       fr: "Plateforme de réservation et paiement en production, 150 passagers par jour.",
       en: "Production booking and payments platform, 150 passengers a day.",
@@ -80,9 +102,15 @@ export const FEATURED: Project[] = [
     featured: true,
     status: "live",
     year: 2026,
+    verification: {
+      kind: "independent",
+      proof: "early-access",
+      checkedAt: "2026-10-25",
+      note: {"fr":"La page publique propose un accès anticipé (25/10/2026). Le site ne démontre ni clients actifs ni revenus.","en":"The public page offers early access (25 Oct 2026). It does not establish paying customers or production adoption."},
+    },
     tagline: {
-      fr: "Billing pour applications IA, construit de zéro en solo.",
-      en: "Billing for AI apps, built from zero solo.",
+      fr: "Kit de facturation pour applications IA, en accès anticipé.",
+      en: "Billing toolkit for AI apps, in early access.",
     },
     description: {
       fr: "PayKit est un SDK de facturation prêt à l'emploi pour les apps IA : Stripe Checkout, webhooks, comptage d'usage, soldes de crédits, déduction atomique dans Postgres, SDK React en trois lignes et embed sans code via une balise script. C'est ma preuve la plus forte de jugement produit fullstack pour une audience de développeurs.",
@@ -103,9 +131,15 @@ export const FEATURED: Project[] = [
     featured: true,
     status: "live",
     year: 2026,
+    verification: {
+      kind: "collaboration",
+      proof: "public-website",
+      checkedAt: "2026-10-25",
+      note: {"fr":"Le site public du projet éducatif répond (25/10/2026). Le parcours complet du générateur IA n'a pas été validé sans compte.","en":"The education project's public website responds (25 Oct 2026). End-to-end AI generator access was not verified without an account."},
+    },
     tagline: {
-      fr: "Produit éducatif mondial, générateur de leçons par IA.",
-      en: "Global education product with an AI lesson generator.",
+      fr: "Plateforme éducative et service Web IA en TypeScript.",
+      en: "Education website and TypeScript AI web service.",
     },
     description: {
       fr: "Blue Owl est un produit éducatif mondial avec un générateur de leçons par IA. Le moteur d'agents expérimental derrière (2600 fichiers), je l'ai construit avec Michael ; le service de production est de moi seul. J'ai pris ce moteur et l'ai livré en service web : une gateway hexagonale NestJS et Fastify avec le moteur en sous-module git, tenue en TypeScript uniquement, sans file de messages, sans vector DB, sans Kubernetes, déployée en Docker Compose sur une VM. L'application Next.js stream la sortie et exporte en MD, HTML et PDF.",
@@ -121,19 +155,24 @@ export const FEATURED: Project[] = [
     name: "weave",
     category: "produits",
     featured: true,
-    status: "live",
+    status: "repo",
     year: 2026,
+    verification: {
+      kind: "experimental",
+      proof: "source-only",
+      checkedAt: "2026-10-25",
+      note: {"fr":"Le site Web affiche « hors ligne » malgré HTTP 200 (25/10/2026). Code source public disponible ; aucun lien vers une démo fonctionnelle n'est annoncé.","en":"The website displays 'offline' despite HTTP 200 (25 Oct 2026). Public source code is available; no working demo is claimed."},
+    },
     tagline: {
       fr: "Runtime cognitif : mémoire d'équipe partagée en Rust.",
       en: "Cognitive runtime: shared team memory in Rust.",
     },
     description: {
-      fr: "weave est un prototype de runtime cognitif : une mémoire d'équipe partagée d'où émergent des compétences réutilisables, avec une provenance par couche, du perso à l'org. Je l'ai construit en solo en Rust sur Postgres et pgvector, exposé via MCP. C'est là que je travaille la façon dont le savoir d'une organisation se capture en faits puis se promeut en compétences utilisables par un agent. En ligne sur weave.memolabs.dev.",
-      en: "weave is a prototype cognitive runtime: shared team memory that lets reusable skills emerge from activity, with per-layer provenance from personal to org. I built it solo in Rust on Postgres and pgvector, exposed over MCP. It is where I work out how an organization's knowledge gets captured as facts and promoted into skills an agent can use. Live at weave.memolabs.dev.",
+      fr: "weave est un prototype de runtime cognitif : une mémoire d'équipe partagée d'où émergent des compétences réutilisables, avec une provenance par couche, du perso à l'org. Je l'ai construit en solo en Rust sur Postgres et pgvector, exposé via MCP. C'est là que je travaille la façon dont le savoir d'une organisation se capture en faits puis se promeut en compétences utilisables par un agent. Le code source est public ; l’interface Web est actuellement hors ligne.",
+      en: "weave is a prototype cognitive runtime: shared team memory that lets reusable skills emerge from activity, with per-layer provenance from personal to org. I built it solo in Rust on Postgres and pgvector, exposed over MCP. It is where I work out how an organization's knowledge gets captured as facts and promoted into skills an agent can use. Source code is public; the web interface is currently offline.",
     },
     stack: ["Rust", "Postgres", "pgvector", "MCP"],
     links: [
-      { label: "live", url: "https://weave.memolabs.dev" },
       { label: "repo", url: "https://github.com/guillaume-flambard/weave" },
     ],
     gallery: ["/work/weave/hero.png"],
@@ -144,8 +183,14 @@ export const FEATURED: Project[] = [
     name: "n8n-nodes-opn",
     category: "ia",
     featured: true,
-    status: "live",
+    status: "repo",
     year: 2026,
+    verification: {
+      kind: "open-source",
+      proof: "published-package",
+      checkedAt: "2026-10-25",
+      note: {"fr":"Dépôt public accessible. Package n8n-nodes-opn répertorié sur npm ; npm.com bloque parfois les contrôles automatisés (403).","en":"Public repository accessible. Package listed on npm; npm.com sometimes blocks automated requests (403)."},
+    },
     tagline: {
       fr: "Node communautaire n8n pour Opn Payments, publié sur npm.",
       en: "n8n community node for Opn Payments, published on npm.",
@@ -169,6 +214,12 @@ export const FEATURED: Project[] = [
     featured: true,
     status: "live",
     year: 2026,
+    verification: {
+      kind: "client",
+      proof: "public-website",
+      checkedAt: "2026-10-25",
+      note: {"fr":"Site public accessible en français le 25/10/2026. Les parcours privés et les éventuelles métriques commerciales ne sont pas audités.","en":"French public site accessible on 25 Oct 2026. Private workflows and commercial metrics have not been audited."},
+    },
     tagline: {
       fr: "Site marketing pour une agence de formation AI-first.",
       en: "Marketing site for an AI-first training agency.",
@@ -874,8 +925,7 @@ const mapProjects: MapItem[] = [
     },
     stack: ["TypeScript", "Vite", "nginx"],
     links: [
-      { label: "live", url: "https://memolabs.dev/lab" },
-      { label: "repo", url: "https://github.com/guillaume-flambard/lab-hub" },
+      { label: "live", url: "https://lab.memolabs.dev/fr/" },
     ],
     gallery: [],
     thumb: "t5",
