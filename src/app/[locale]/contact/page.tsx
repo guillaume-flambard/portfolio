@@ -1,3 +1,4 @@
+import { PUBLIC_LINKS } from "@/data/publicLinks";
 import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
@@ -50,8 +51,8 @@ export default async function ContactPage({
           </div>
           <p className="contact-direct"><a href={`mailto:${t("email")}`}>{t("email")}</a></p>
           <div className="meta">
-            <a href="https://www.linkedin.com/in/guillaumeflambard/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com/guillaume-flambard" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href={PUBLIC_LINKS.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href={PUBLIC_LINKS.github} target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href={`https://lab.memolabs.dev/${locale}/`} target="_blank" rel="noopener noreferrer">The Lab</a>
           </div>
         </div>
