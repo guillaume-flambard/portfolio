@@ -109,7 +109,14 @@
     "caseListIntro": "One client engagement, one independent product and one collaboration. Each describes my role and what public evidence can—and cannot—establish.",
     "otherListKicker": "02 / More work",
     "otherListTitle": "Four additional projects",
-    "otherListIntro": "Products, websites and open source tools. Each page distinguishes public evidence from features that cannot be verified without private access."
+    "otherListIntro": "Products, websites and open source tools. Each page distinguishes public evidence from features that cannot be verified without private access.",
+    "caseOutroTitle": "Working on a similar problem?",
+    "caseOutroBody": "I can help scope a React / TypeScript feature, integration or product improvement. Share the need and constraints; you'll talk directly with me.",
+    "projectNavigationLabel": "Browse portfolio projects",
+    "previousCase": "Previous case study",
+    "nextCase": "Next case study",
+    "previousProject": "Previous supporting project",
+    "nextProject": "Next supporting project"
   },
   "legal": {
     "eyebrow": "Legal notice",
