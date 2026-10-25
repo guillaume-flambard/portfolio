@@ -22,7 +22,7 @@ describe("Bilingual SEO URLs", () => {
     expect(meta.alternates?.canonical).toBe("https://memolabs.dev/en/work/echo-travel");
     expect(meta.openGraph?.url).toBe("https://memolabs.dev/en/work/echo-travel");
     expect(meta.openGraph?.locale).toBe("en_US");
-    expect(meta.twitter?.card).toBe("summary_large_image");
+    expect(meta.twitter).toMatchObject({ card: "summary_large_image" });
   });
 
   it("does not accept a malformed locale or unnormalized pathname", () => {
