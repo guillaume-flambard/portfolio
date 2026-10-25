@@ -1,0 +1,33 @@
+name: Public project evidence access audit
+
+on:
+  schedule:
+    # Monday 07:15 UTC. Public endpoints only; does not inspect private workflows.
+    - cron: "15 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-links:
+    name: Check public links and official npm registry
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Test conservative link classifications
+        run: node --test scripts/audit-public-evidence.test.mjs
+      - name: Verify featured project links without private actions
+        run: node scripts/audit-public-evidence.mjs --strict
+      - name: Preserve dated machine-readable results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-evidence-link-report
+          path: evidence-reports/
+          retention-days: 21
+          if-no-files-found: warn
