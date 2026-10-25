@@ -38,16 +38,16 @@ export default async function ContactPage({
       <main className="sec contact">
         <div className="wrap narrow">
           <div className="contact-tracks">
-            <div className="contact-track">
-              <h2>{t("freelanceTitle")}</h2>
+            <section className="contact-track" id="freelance" aria-labelledby="freelance-title">
+              <h2 id="freelance-title">{t("freelanceTitle")}</h2>
               <p>{t("freelanceBody")}</p>
               <a className="btn p" href={`mailto:${t("email")}?subject=${encodeURIComponent(t("freelanceSubject"))}`}>{t("freelanceCta")}</a>
-            </div>
-            <div className="contact-track">
-              <h2>{t("jobTitle")}</h2>
+            </section>
+            <section className="contact-track" id="recruitment" aria-labelledby="recruitment-title">
+              <h2 id="recruitment-title">{t("jobTitle")}</h2>
               <p>{t("jobBody")}</p>
               <a className="btn p" href={`mailto:${t("email")}?subject=${encodeURIComponent(t("jobSubject"))}`}>{t("jobCta")}</a>
-            </div>
+            </section>
           </div>
           <p className="contact-direct"><a href={`mailto:${t("email")}`}>{t("email")}</a></p>
           <div className="meta">
@@ -60,7 +60,7 @@ export default async function ContactPage({
 
       <footer className="foot">
         <span>© 2026 Memo Labs — Full-Stack Developer</span>
-        <Link href={`/${locale}/legal`}>Mentions légales</Link>
+        <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
       </footer>
     </>
   );

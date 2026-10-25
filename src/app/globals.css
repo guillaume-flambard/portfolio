@@ -157,6 +157,22 @@ h1.h .acc { color: var(--accent); }
 }
 .hero-facts dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; font-weight: 400; }
 .hero-facts dd { margin: 7px 0 0; color: var(--ink); font-size: 16px; line-height: 1.4; }
+.hero-evidence-links { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 8px; }
+.hero-evidence-links a, .hero-recruiter-link {
+  color: inherit; text-decoration: underline; text-decoration-color: var(--line);
+  text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.hero-evidence-links a:hover, .hero-recruiter-link:hover { color: var(--accent); text-decoration-color: currentColor; }
+.focus-evidence a {
+  color: inherit; text-decoration: underline; text-decoration-color: var(--line);
+  text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.focus-evidence a:hover { color: var(--accent); text-decoration-color: currentColor; }
+#experience-medsharing, #experience-symbyoz,
+#freelance, #recruitment { scroll-margin-top: 104px; }
+#freelance:target, #recruitment:target {
+  background: color-mix(in srgb, var(--bg) 5%, transparent);
+}
 
 .focus-section { padding: clamp(62px, 8vw, 108px) 0; border-bottom: 1px solid var(--line); }
 .focus-section .shead { margin-bottom: 32px; }

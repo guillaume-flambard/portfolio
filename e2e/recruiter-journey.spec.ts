@@ -162,10 +162,10 @@ for (const locale of locales) {
       const contact = page.locator(".hero-actions").getByRole("link", {
         name: locale === "fr" ? "Discuter d’une mission" : "Discuss a project"
       });
-      await expect(contact).toHaveAttribute("href", new RegExp(`/${locale}/contact$`));
+      await expect(contact).toHaveAttribute("href", new RegExp(`/${locale}/contact#freelance$`));
       await assertNoHorizontalOverflow(page);
       await contact.click();
-      await expect(page).toHaveURL(new RegExp(`/${locale}/contact$`));
+      await expect(page).toHaveURL(new RegExp(`/${locale}/contact#freelance$`));
     });
   });
 }
@@ -294,5 +294,63 @@ for (const locale of locales) {
     await page.goto(`/${locale}/work`);
     await page.locator(".work-other-link").first().click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/work/emargo$`));
+  });
+}
+
+for (const locale of locales) {
+  test.describe(`${locale}: recruiter evidence and contact deep links`, () => {
+    test.use({ viewport: { width: 390, height: 844 } });
+
+    test("employer names link to the right experience or case study", async ({ page }) => {
+      await page.goto(`/${locale}`);
+      const links = page.locator(".hero-evidence-links");
+      await expect(links.getByRole("link")).toHaveCount(3);
+      await expect(links.getByRole("link", { name: "Medsharing" })).toHaveAttribute("href", `/${locale}/about#experience-medsharing`);
+      await expect(links.getByRole("link", { name: "Echo Travel" })).toHaveAttribute("href", `/${locale}/work/echo-travel`);
+      await expect(links.getByRole("link", { name: "Symbyoz" })).toHaveAttribute("href", `/${locale}/about#experience-symbyoz`);
+
+      await links.getByRole("link", { name: "Medsharing" }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/about#experience-medsharing$`));
+      await expect(page.locator("#experience-medsharing")).toContainText("Medsharing");
+
+      await page.goto(`/${locale}`);
+      await links.getByRole("link", { name: "Symbyoz" }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/about#experience-symbyoz$`));
+      await expect(page.locator("#experience-symbyoz")).toContainText("Symbyoz");
+      await assertNoHorizontalOverflow(page);
+    });
+
+    test("service proof links reach specific project or employment evidence", async ({ page }) => {
+      await page.goto(`/${locale}`);
+      const links = page.locator(".focus-evidence a");
+      await expect(links).toHaveCount(3);
+      await expect(links.nth(0)).toHaveAttribute("href", `/${locale}/about#experience-medsharing`);
+      await expect(links.nth(1)).toHaveAttribute("href", `/${locale}/work/echo-travel`);
+      await expect(links.nth(2)).toHaveAttribute("href", `/${locale}/work/paykit`);
+      await links.nth(2).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/work/paykit$`));
+      await expect(page.locator(".case-snapshot")).toBeVisible();
+    });
+
+    test("freelance buyers and recruiters land in their correct contact section", async ({ page }) => {
+      await page.goto(`/${locale}`);
+      await page.locator(".hero-actions .btn.p").click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/contact#freelance$`));
+      await expect(page.locator("#freelance")).toBeVisible();
+
+      await page.goto(`/${locale}`);
+      await page.locator(".hero-recruiter-link").click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/contact#recruitment$`));
+      await expect(page.locator("#recruitment")).toBeVisible();
+      const freelance = await page.locator("#freelance .btn.p").getAttribute("href");
+      const recruitment = await page.locator("#recruitment .btn.p").getAttribute("href");
+      expect(freelance).toMatch(/^mailto:contact@memolabs\.dev\?subject=/);
+      expect(recruitment).toMatch(/^mailto:contact@memolabs\.dev\?subject=/);
+      expect(freelance).not.toBe(recruitment);
+      await expect(page.locator(".contact-direct a")).toHaveAttribute("href", "mailto:contact@memolabs.dev");
+      await expect(page.locator(".foot").getByRole("link", { name: locale === "fr" ? "Mentions légales" : "Legal notice" }))
+        .toHaveAttribute("href", `/${locale}/legal`);
+      await assertNoHorizontalOverflow(page);
+    });
   });
 }

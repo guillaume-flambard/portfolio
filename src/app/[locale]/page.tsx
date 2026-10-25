@@ -37,13 +37,22 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <p className="lede">{t("lede")}</p>
           <p className="hero-identity">{t("identity")}</p>
           <div className="herobtns hero-actions">
-            <Link className="btn p" href="/contact">{t("ctaContact")}</Link>
+            <Link className="btn p" href="/contact#freelance">{t("ctaContact")}</Link>
             <Link className="btn s" href="/cv">{t("ctaAbout")}</Link>
             <Link className="hero-inline-link" href="#projects">{t("ctaWork")}</Link>
           </div>
           <dl className="hero-facts">
-            <div><dt>{t("proofLabel")}</dt><dd>{t("proofValue")}</dd></div>
-            <div><dt>{t("availabilityLabel")}</dt><dd>{t("availabilityValue")}</dd></div>
+            <div>
+              <dt>{t("proofLabel")}</dt>
+              <dd className="hero-evidence-links">
+                <Link href="/about#experience-medsharing">Medsharing</Link>
+                <span aria-hidden="true">·</span>
+                <Link href="/work/echo-travel">Echo Travel</Link>
+                <span aria-hidden="true">·</span>
+                <Link href="/about#experience-symbyoz">Symbyoz</Link>
+              </dd>
+            </div>
+            <div><dt>{t("availabilityLabel")}</dt><dd><Link className="hero-recruiter-link" href="/contact#recruitment">{t("availabilityValue")} <span aria-hidden="true">↗</span></Link></dd></div>
           </dl>
         </div>
       </header>
@@ -59,19 +68,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <span className="focus-number" aria-hidden="true">01</span>
               <h3>{t("service1Title")}</h3>
               <p>{t("service1Body")}</p>
-              <p className="focus-evidence">{t("service1Evidence")}</p>
+              <p className="focus-evidence"><Link href="/about#experience-medsharing">{t("service1Evidence")} <span aria-hidden="true">↗</span></Link></p>
             </li>
             <li>
               <span className="focus-number" aria-hidden="true">02</span>
               <h3>{t("service2Title")}</h3>
               <p>{t("service2Body")}</p>
-              <p className="focus-evidence">{t("service2Evidence")}</p>
+              <p className="focus-evidence"><Link href="/work/echo-travel">{t("service2Evidence")} <span aria-hidden="true">↗</span></Link></p>
             </li>
             <li>
               <span className="focus-number" aria-hidden="true">03</span>
               <h3>{t("service3Title")}</h3>
               <p>{t("service3Body")}</p>
-              <p className="focus-evidence">{t("service3Evidence")}</p>
+              <p className="focus-evidence"><Link href="/work/paykit">{t("service3Evidence")} <span aria-hidden="true">↗</span></Link></p>
             </li>
           </ol>
         </div>
@@ -112,7 +121,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <h2 id="end-cta-title">{t("closingTitle")}</h2>
             <p>{t("closingBody")}</p>
           </div>
-          <Link className="btn p" href="/contact">{t("closingCta")}</Link>
+          <Link className="btn p" href="/contact#freelance">{t("closingCta")}</Link>
         </div>
       </section>
 
