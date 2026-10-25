@@ -5,7 +5,6 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ALL_PROJECTS, getProject } from "@/data/projects";
 import { CASE_BY_SLUG } from "@/data/caseStudies";
-import { routing } from "@/i18n/routing";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
 
@@ -52,12 +51,34 @@ export default async function ProjectPage({ params }: Props) {
           <h1 className="pname">{project.name}</h1>
           <p className="ptagline">{project.tagline[lang]}</p>
 
+          {study && (
+            <section className="case-snapshot" aria-labelledby="case-snapshot-title">
+              <h2 id="case-snapshot-title">{t("caseSummaryTitle")}</h2>
+              <dl className="case-snapshot-grid">
+                <div>
+                  <dt>{t("caseProblem")}</dt>
+                  <dd>{study.context[lang]}</dd>
+                </div>
+                <div>
+                  <dt>{t("caseIntervention")}</dt>
+                  <dd>{study.ownership[lang]}</dd>
+                </div>
+                <div>
+                  <dt>{t("caseOutcome")}</dt>
+                  <dd>{study.result[lang]}</dd>
+                </div>
+              </dl>
+              <p className="case-snapshot-caveat"><strong>{t("caseNote")}</strong> {study.caveat[lang]}</p>
+            </section>
+          )}
+
           <div className="plinks">
             {project.links.map((l) => (
               <a key={l.label} className="btn p" href={l.url} target="_blank" rel="noopener noreferrer">
                 {linkLabel(l.label)}
               </a>
             ))}
+            {study && <Link className="btn s" href="/contact">{t("caseContact")}</Link>}
           </div>
 
           <section className="evidence-note" aria-labelledby="evidence-title">
@@ -66,34 +87,40 @@ export default async function ProjectPage({ params }: Props) {
             <p className="evidence-date">{t("checkedOn")} <time dateTime={project.verification.checkedAt}>{project.verification.checkedAt}</time></p>
           </section>
 
-          <div className="pbody">
-            <p className="pdesc">{project.description[lang]}</p>
-            <div className="pstack">
-              <h2>{t("stack")}</h2>
-              <div className="stack">{project.stack.map((s) => <span key={s}>{s}</span>)}</div>
+          {study ? (
+            <details className="case-technical">
+              <summary>{t("caseTechnicalToggle")}</summary>
+              <div className="case-technical-body">
+                <h2>{t("caseTechnicalTitle")}</h2>
+                <dl className="case-facts">
+                  <div><dt>{t("caseConstraint")}</dt><dd>{study.constraint[lang]}</dd></div>
+                  <div><dt>{t("caseDecision")}</dt><dd>{study.decision[lang]}</dd></div>
+                </dl>
+                <div className="pstack">
+                  <h3>{t("stack")}</h3>
+                  <div className="stack">{project.stack.map((tech) => <span key={tech}>{tech}</span>)}</div>
+                </div>
+              </div>
+            </details>
+          ) : (
+            <div className="pbody">
+              <p className="pdesc">{project.description[lang]}</p>
+              <div className="pstack">
+                <h2>{t("stack")}</h2>
+                <div className="stack">{project.stack.map((tech) => <span key={tech}>{tech}</span>)}</div>
+              </div>
             </div>
-          </div>
-
-          {study && (
-            <section className="case-study" aria-labelledby="case-study-heading">
-              <p className="eyebrow"><span className="r" />{t("caseEyebrow")}</p>
-              <h2 id="case-study-heading">{t("caseTitle")}</h2>
-              <dl className="case-facts">
-                <div><dt>{t("caseContext")}</dt><dd>{study.context[lang]}</dd></div>
-                <div><dt>{t("caseOwnership")}</dt><dd>{study.ownership[lang]}</dd></div>
-                <div><dt>{t("caseConstraint")}</dt><dd>{study.constraint[lang]}</dd></div>
-                <div><dt>{t("caseDecision")}</dt><dd>{study.decision[lang]}</dd></div>
-                <div><dt>{t("caseResult")}</dt><dd>{study.result[lang]}</dd></div>
-              </dl>
-              <p className="case-note"><strong>{t("caseNote")}</strong> {study.caveat[lang]}</p>
-              <Link className="btn s maplink" href="/contact">{t("caseContact")}</Link>
-            </section>
           )}
 
           {project.gallery.length > 0 && (
             <div className="pgallery">
-              {project.gallery.map((src) => (
-                <ProjectImage key={src} src={src} alt={project.name} />
+              {project.gallery.map((src, index) => (
+                <ProjectImage
+                  key={src}
+                  src={src}
+                  alt={t("screenshotAlt", { name: project.name, number: index + 1 })}
+                  sizes="(max-width: 820px) 100vw, (max-width: 1280px) 85vw, 1184px"
+                />
               ))}
             </div>
           )}
@@ -108,7 +135,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <footer className="foot">
         <span>© 2026 Memo Labs — Full-Stack Developer</span>
-        <Link href={`/${locale}/legal`}>Mentions légales</Link>
+        <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
       </footer>
     </>
   );
