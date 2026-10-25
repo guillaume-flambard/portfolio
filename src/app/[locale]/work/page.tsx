@@ -8,7 +8,7 @@ import ProjectImage from "@/components/ProjectImage";
 export const metadata: Metadata = {
   title: "Work — Memo Labs",
   description:
-    "The Memo Labs products in production — Largo, Blue Owl, PayKit and more, with live links and details.",
+    "Client projects, independent products and open source work, with verified access and transparent evidence labels.",
 };
 
 export default async function WorkPage({
@@ -30,6 +30,7 @@ export default async function WorkPage({
           <p className="eyebrow"><span className="r" />{t("title")}</p>
           <h1 className="h">{t("title")}</h1>
           <p className="lede">{t("subtitle")}</p>
+          <p className="proof-legend">{t("proofLegend")}</p>
         </div>
       </header>
 
@@ -44,9 +45,10 @@ export default async function WorkPage({
                 <div className="cbody">
                   <h3>{p.name} <span className="arrow" aria-hidden>→</span></h3>
                   <p>{p.tagline[lang]}</p>
+                  <p className="card-proof" aria-label={t("proofShort")}>{t(`kind_${p.verification.kind}` as never)} · {t(`proof_${p.verification.proof}` as never)}</p>
                   <div className="stack">{p.stack.map((s) => <span key={s}>{s}</span>)}</div>
                   {p.status !== "offline" && p.links[0] && (
-                    <div className="curl"><span className="dot" aria-hidden />{p.links[0].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}<span className="arr" aria-hidden>↗</span></div>
+                    <div className="curl"><span>{t(`link_${p.links[0].label}` as never)}</span><span>{p.links[0].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}</span><span className="arr" aria-hidden>↗</span></div>
                   )}
                 </div>
               </Link>
