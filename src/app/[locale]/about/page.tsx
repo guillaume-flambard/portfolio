@@ -1,14 +1,18 @@
+import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import SiteNav from "@/components/SiteNav";
 import { EXPERIENCES } from "@/data/experience";
 
-export const metadata: Metadata = {
-  title: "About — Memo Labs",
-  description:
-    "Memo Labs is a full-stack & AI studio that designs and ships complete products, from architecture to polished UI — its own SaaS and engineering missions.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const [title, description] = locale === "fr"
+    ? ["Parcours professionnel de Guillaume Flambard | Memo Labs","Expériences chez Medsharing, Symbyoz et Echo Travel, produits web et compétences React, TypeScript, Next.js et Node.js."]
+    : ["Guillaume Flambard — Career and experience | Memo Labs","Professional experience at Medsharing, Symbyoz and Echo Travel, web products and React, TypeScript, Next.js and Node.js skills."];
+  return createRouteMetadata(locale, "/about", title, description);
+}
+
 
 export default async function AboutPage({
   params,
