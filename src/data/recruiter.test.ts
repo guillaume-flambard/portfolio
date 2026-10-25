@@ -13,6 +13,14 @@ describe("Recruiter-facing evidence", () => {
     }
   });
 
+  it("separates three explained case studies from four supporting projects", () => {
+    const explained = FEATURED.filter((project) => CASE_STUDIES.some((study) => study.slug === project.slug));
+    const supporting = FEATURED.filter((project) => !CASE_STUDIES.some((study) => study.slug === project.slug));
+    expect(explained.map((project) => project.slug)).toEqual(["echo-travel", "paykit", "blueowl"]);
+    expect(supporting.map((project) => project.slug)).toEqual(["emargo", "weave", "n8n-nodes-opn", "largo"]);
+    expect(new Set([...explained, ...supporting].map((project) => project.slug)).size).toBe(FEATURED.length);
+  });
+
   it("does not leave untranslated or empty evidence fields", () => {
     const fields = ["preview", "role", "context", "ownership", "constraint", "decision", "result", "caveat"] as const;
     for (const study of CASE_STUDIES) {
