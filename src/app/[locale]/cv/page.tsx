@@ -1,3 +1,4 @@
+import { PUBLIC_LINKS } from "@/data/publicLinks";
 import { createRouteMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
@@ -33,9 +34,9 @@ export default async function CvPage({ params }: { params: Promise<{ locale: str
           <p className="resume-links">
             <a href="mailto:contact@memolabs.dev">contact@memolabs.dev</a>
             <span aria-hidden="true">·</span>
-            <a href="https://github.com/guillaume-flambard">GitHub</a>
+            <a href={PUBLIC_LINKS.github}>GitHub</a>
             <span aria-hidden="true">·</span>
-            <a href="https://www.linkedin.com/in/guillaumeflambard/">LinkedIn</a>
+            <a href={PUBLIC_LINKS.linkedin}>LinkedIn</a>
             <span aria-hidden="true">·</span>
             <a href="https://memolabs.dev">memolabs.dev</a>
           </p>
