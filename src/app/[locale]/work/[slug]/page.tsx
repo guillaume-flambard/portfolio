@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: Props) {
     <>
       <SiteNav />
 
-      <article className="pdetail">
+      <article className="pdetail" id="main-content" tabIndex={-1}>
         <div className="wrap">
           <p className="eyebrow"><span className="r" />{t(`kind_${project.verification.kind}` as never)} · {t(`proof_${project.verification.proof}` as never)}</p>
           <h1 className="pname">{project.name}</h1>
