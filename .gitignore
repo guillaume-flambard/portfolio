@@ -41,3 +41,6 @@ yarn-error.log*
 next-env.d.ts
 test-results/
 playwright-report/
+
+# Generated public-link reports (retained as CI artifacts, not committed)
+/evidence-reports/
