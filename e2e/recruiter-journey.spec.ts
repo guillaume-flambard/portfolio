@@ -134,6 +134,10 @@ test("mobile navigation fits 320px and desktop navigation is unchanged", async (
   await page.goto("/fr");
   await expect(page.locator("details.mobile-menu summary")).toBeVisible();
   await assertNoHorizontalOverflow(page);
+  await page.goto("/fr/work");
+  await assertNoHorizontalOverflow(page);
+  await page.goto("/fr/work/echo-travel");
+  await assertNoHorizontalOverflow(page);
   await page.setViewportSize({ width: 1440, height: 900 });
   await expect(page.locator("details.mobile-menu")).toBeHidden();
   await expect(page.locator(".navlinks").getByRole("link", { name: "Travail" })).toBeVisible();
