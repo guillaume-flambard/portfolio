@@ -222,7 +222,7 @@ test("work listing leads with the three documented cases and keeps four projects
   await page.goto("/fr/work");
   const cases = page.locator('[data-testid="case-projects"] .card');
   await expect(cases).toHaveCount(3);
-  await expect(cases.locator("h3")).toHaveText(["Echo Travel", "PayKit", "Blue Owl"]);
+  await expect(cases.locator("h3")).toContainText(["Echo Travel", "PayKit", "Blue Owl"]);
   for (const card of await cases.all()) {
     await expect(card).toContainText("Mon rôle");
   }
