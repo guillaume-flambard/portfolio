@@ -31,7 +31,19 @@ export default async function ContactPage({
 
       <main className="sec contact">
         <div className="wrap narrow">
-          <a className="btn p" href={`mailto:${t("email")}`}>{t("email")}</a>
+          <div className="contact-tracks">
+            <div className="contact-track">
+              <h2>{t("freelanceTitle")}</h2>
+              <p>{t("freelanceBody")}</p>
+              <a className="btn p" href={`mailto:${t("email")}?subject=${encodeURIComponent(t("freelanceSubject"))}`}>{t("freelanceCta")}</a>
+            </div>
+            <div className="contact-track">
+              <h2>{t("jobTitle")}</h2>
+              <p>{t("jobBody")}</p>
+              <a className="btn p" href={`mailto:${t("email")}?subject=${encodeURIComponent(t("jobSubject"))}`}>{t("jobCta")}</a>
+            </div>
+          </div>
+          <p className="contact-direct"><a href={`mailto:${t("email")}`}>{t("email")}</a></p>
           <div className="meta">
             <a href="https://www.linkedin.com/in/guillaumeflambard/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://github.com/guillaume-flambard" target="_blank" rel="noopener noreferrer">GitHub</a>
