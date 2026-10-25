@@ -67,6 +67,41 @@ h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; font-w
 .cta { background: var(--ink); color: var(--bg); text-decoration: none; padding: 11px 20px; white-space: nowrap;
   font-weight: 400; font-size: 14px; transition: background 0.3s ease-in-out; }
 .cta:hover { background: var(--accent); }
+.mobile-menu { display: none; }
+.skip-link {
+  position: fixed; z-index: 100; top: 12px; left: 12px; padding: 10px 16px;
+  color: var(--bg); background: var(--ink); transform: translateY(-180%);
+  text-decoration: none; font-weight: 500; transition: transform .15s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+:where(a, button, summary):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+#main-content { scroll-margin-top: 88px; }
+@media (max-width: 760px) {
+  .mobile-menu { display: block; }
+  .mobile-menu-trigger {
+    list-style: none; cursor: pointer; padding: 12px 4px;
+    text-transform: uppercase; color: var(--ink); font-size: 13px;
+    font-weight: 500; letter-spacing: .07em;
+  }
+  .mobile-menu-trigger::-webkit-details-marker { display: none; }
+  .mobile-menu-trigger::after { content: " +"; color: var(--accent); }
+  .mobile-menu[open] .mobile-menu-trigger::after { content: " −"; }
+  .mobile-menu-panel {
+    position: absolute; top: 100%; inset-inline: 0;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    padding: 8px clamp(20px, 4vw, 48px) 24px; display: flex; flex-direction: column;
+    box-shadow: 0 12px 20px rgb(22 19 15 / 8%);
+  }
+  .mobile-menu-panel a {
+    padding: 12px 2px; border-bottom: 1px solid var(--line); text-decoration: none;
+    font-size: 16px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink);
+  }
+  .mobile-menu-panel a[aria-current="page"] { color: var(--accent); font-weight: 500; }
+  .nav .wrap { gap: 12px; }
+}
+@media (max-width: 480px) {
+  .navright .cta { display: none; }
+}
 @media (max-width: 760px) {
   .navlinks { display: none; }
   .logo { font-size: 14px; gap: 9px; white-space: nowrap; }
