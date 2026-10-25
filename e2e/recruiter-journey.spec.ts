@@ -211,3 +211,14 @@ test("gallery requests full-width responsive images and gives unique description
   await expect(images.first()).toHaveAttribute("sizes", /1184px/);
   await expect(images.first()).toHaveAttribute("alt", /Capture d’écran 1 du projet PayKit/);
 });
+
+test("work listing states a specific contribution for each documented case", async ({ page }) => {
+  await page.goto("/fr/work");
+  const cards = page.locator(".grid .card");
+  await expect(cards).toHaveCount(7);
+  for (const project of ["Echo Travel", "PayKit", "Blue Owl"]) {
+    const card = cards.filter({ has: page.getByRole("heading", { name: project }) });
+    await expect(card).toContainText("Mon rôle");
+  }
+  await expect(cards.first()).toBeVisible();
+});
