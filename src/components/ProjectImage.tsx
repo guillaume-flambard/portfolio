@@ -8,10 +8,12 @@ export default function ProjectImage({
   src,
   alt,
   className,
+  sizes = "(max-width: 820px) 100vw, 33vw",
 }: {
   src: string;
   alt: string;
   className?: string;
+  sizes?: string;
 }) {
   return (
     <Image
@@ -19,7 +21,7 @@ export default function ProjectImage({
       alt={alt}
       width={1440}
       height={900}
-      sizes="(max-width: 820px) 100vw, 33vw"
+      sizes={sizes}
       className={className}
       loading="lazy"
     />

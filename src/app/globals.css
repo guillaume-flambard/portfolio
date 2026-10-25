@@ -335,16 +335,37 @@ h1.h .acc { color: var(--accent); }
 .ldesc .maplink { margin-top: 40px; }
 
 /* ── recruiter timeline, case studies & printable CV ──────────────────────── */
-.case-study { margin-top: clamp(64px, 9vw, 112px); padding-top: 54px; border-top: 1px solid var(--line); }
-.case-study h2 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin-bottom: 36px; }
-.case-study .eyebrow { margin-bottom: 20px; }
+/* Reading-first case studies: problem → contribution → outcome. */
+.case-snapshot { margin-top: clamp(40px, 6vw, 68px); border-top: 1px solid var(--line); }
+.case-snapshot > h2 { padding-top: 24px; font-size: clamp(1.45rem, 2.6vw, 2.2rem); line-height: 1.15; }
+.case-snapshot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.case-snapshot-grid > div { padding: 22px clamp(16px, 2.4vw, 30px) 26px; min-width: 0; }
+.case-snapshot-grid > div:first-child { padding-left: 0; }
+.case-snapshot-grid > div:last-child { padding-right: 0; }
+.case-snapshot-grid > div + div { border-left: 1px solid var(--line); }
+.case-snapshot-grid dt { color: var(--accent); font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
+.case-snapshot-grid dd { margin: 12px 0 0; font-size: clamp(1rem, 1.45vw, 1.1rem); line-height: 1.5; overflow-wrap: anywhere; }
+.case-snapshot-caveat { max-width: 88ch; margin-top: 20px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.case-snapshot-caveat strong { font-weight: 500; color: var(--ink); }
+.case-snapshot + .plinks { margin-top: 26px; }
+.case-technical { margin-top: 30px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.case-technical > summary { cursor: pointer; padding: 19px 0; color: var(--ink); font-size: 15px; font-weight: 500; text-underline-offset: 4px; }
+.case-technical > summary::marker { color: var(--accent); }
+.case-technical[open] > summary { border-bottom: 1px solid var(--line); }
+.case-technical-body { padding: 26px 0 34px; }
+.case-technical-body > h2 { font-size: clamp(1.5rem, 2.7vw, 2rem); margin-bottom: 22px; }
 .case-facts { border-top: 1px solid var(--line); }
-.case-facts > div { display: grid; grid-template-columns: minmax(135px, 220px) minmax(0, 1fr);
-  gap: clamp(20px, 4vw, 60px); padding: 24px 0; border-bottom: 1px solid var(--line); }
-.case-facts dt { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.09em; color: var(--accent); }
-.case-facts dd { margin: 0; font-size: clamp(1rem, 1.7vw, 1.2rem); line-height: 1.5; max-width: 64ch; }
-.case-note { margin-top: 30px; color: var(--muted); line-height: 1.55; font-size: 15px; max-width: 82ch; }
-.case-note strong { color: var(--ink); font-weight: 500; }
+.case-facts > div { display: grid; grid-template-columns: minmax(125px, 200px) minmax(0, 1fr);
+  gap: clamp(18px, 4vw, 54px); padding: 20px 0; border-bottom: 1px solid var(--line); }
+.case-facts dt { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .09em; color: var(--accent); }
+.case-facts dd { margin: 0; font-size: clamp(1rem, 1.7vw, 1.15rem); line-height: 1.5; max-width: 68ch; }
+.case-technical-body .pstack { margin-top: 28px; }
+.case-technical-body .pstack h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 500; }
+@media (max-width: 820px) {
+  .case-snapshot-grid { grid-template-columns: 1fr; }
+  .case-snapshot-grid > div, .case-snapshot-grid > div:first-child, .case-snapshot-grid > div:last-child { padding: 18px 0; }
+  .case-snapshot-grid > div + div { border-left: 0; border-top: 1px solid var(--line); }
+}
 @media (max-width: 620px) { .case-facts > div { grid-template-columns: 1fr; gap: 8px; } }
 
 .experience { margin-top: clamp(72px, 10vw, 120px); border-top: 1px solid var(--line); padding-top: 60px; }

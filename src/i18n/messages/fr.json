@@ -78,7 +78,7 @@
     "caseDecision": "Choix techniques",
     "caseResult": "Résultat et éléments observables",
     "caseNote": "Limites des preuves :",
-    "caseContact": "Discuter d'un projet",
+    "caseContact": "Parler d’un projet similaire",
     "kind_client": "Projet client",
     "kind_independent": "Produit indépendant",
     "kind_collaboration": "Collaboration",
@@ -92,7 +92,15 @@
     "verificationTitle": "Ce qui est vérifiable",
     "checkedOn": "Dernier contrôle des accès :",
     "proofLegend": "Les mentions ci-dessous distinguent un site accessible d'un produit effectivement utilisé. Elles ne constituent pas une certification indépendante.",
-    "proofShort": "Nature et niveau de preuve"
+    "proofShort": "Nature et niveau de preuve",
+    "caseSummaryTitle": "Le projet en 30 secondes",
+    "caseProblem": "Le besoin",
+    "caseIntervention": "Mon intervention",
+    "caseOutcome": "Le résultat",
+    "caseTechnicalToggle": "Lire les choix techniques et les contraintes",
+    "caseTechnicalTitle": "Approche technique",
+    "screenshotAlt": "Capture d’écran {number} du projet {name}",
+    "cardRoleLabel": "Mon rôle"
   },
   "legal": {
     "eyebrow": "Mentions légales",
