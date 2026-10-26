@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   selectMergedContributions,
+  selectExternalContributions,
+  selectNewPublicProjects,
   selectShowcaseProjects,
   type GithubPullRequest,
   type GithubRepository,
@@ -16,6 +18,7 @@ function repository(overrides: Partial<GithubRepository> = {}): GithubRepository
     description: "Local-first tools built for macOS",
     language: "TypeScript",
     pushed_at: "2026-10-25T10:00:00Z",
+    created_at: "2026-10-20T10:00:00Z",
     topics: [],
     fork: false,
     archived: false,
@@ -30,7 +33,10 @@ function pr(overrides: Partial<GithubPullRequest> = {}): GithubPullRequest {
     title: "Fix keyboard navigation",
     html_url: "https://github.com/nextcloud/text/pull/9159",
     repository_url: "https://api.github.com/repos/nextcloud/text",
+    state: "closed",
+    created_at: "2026-09-10T10:00:00Z",
     closed_at: "2026-10-25T10:00:00Z",
+    pull_request: { merged_at: "2026-10-25T10:00:00Z" },
     user: { login: "guillaume-flambard" },
     ...overrides,
   };
@@ -84,7 +90,7 @@ describe("public repository discovery", () => {
 });
 
 describe("accepted external contributions", () => {
-  it("shows only authored external PRs, once per upstream repository", () => {
+  it("preserves multiple accepted PRs in the same upstream", () => {
     const result = selectMergedContributions([
       pr(),
       pr({ html_url: "https://github.com/nextcloud/text/pull/9161" }),
@@ -97,7 +103,7 @@ describe("accepted external contributions", () => {
         user: { login: "someone-else" } }),
     ]);
     expect(result.map((entry) => entry.repository)).toEqual([
-      "nextcloud/text", "twentyhq/twenty",
+      "nextcloud/text", "nextcloud/text", "twentyhq/twenty",
     ]);
   });
 
@@ -107,5 +113,77 @@ describe("accepted external contributions", () => {
       pr({ html_url: "https://github.com/nextcloud/text/issues/123" }),
       pr({ repository_url: "https://evil.example/repos/nextcloud/text" }),
     ])).toHaveLength(0);
+  });
+});
+
+
+describe("newly published repositories appear without a manual topic", () => {
+  it("automatically finds fresh public work but not archives, forks or private/internal repos", () => {
+    const good = repository({
+      name: "my-new-app",
+      full_name: "guillaume-flambard/my-new-app",
+      html_url: "https://github.com/guillaume-flambard/my-new-app",
+      topics: [],
+      created_at: "2026-10-26T07:30:00Z",
+    });
+    const repos = [
+      good,
+      repository({ ...good, full_name: "guillaume-flambard/old-app", name: "old-app",
+        html_url: "https://github.com/guillaume-flambard/old-app",
+        created_at: "2026-01-01T00:00:00Z" }),
+      repository({ ...good, private: true }),
+      repository({ ...good, fork: true }),
+      repository({ ...good, archived: true }),
+      repository({ ...good, name: "lab-infra", full_name: "guillaume-flambard/lab-infra",
+        html_url: "https://github.com/guillaume-flambard/lab-infra" }),
+      repository({ ...good, topics: ["memo-internal"] }),
+    ];
+    expect(selectNewPublicProjects(repos, NOW).map((p) => p.fullName)).toEqual([
+      "guillaume-flambard/my-new-app",
+    ]);
+  });
+
+  it("does not promote freshly published repositories into the featured editorial selection", () => {
+    const repo = repository({
+      full_name: "memolabs-dev/new-project",
+      name: "new-project",
+      html_url: "https://github.com/memolabs-dev/new-project",
+    });
+    expect(selectShowcaseProjects([repo], NOW)).toEqual([]);
+    expect(selectNewPublicProjects([repo], NOW)).toHaveLength(1);
+  });
+});
+
+describe("upstream status and source validation", () => {
+  it("treats closed-but-unmerged PRs as neither merged nor open", () => {
+    const closed = pr({ state: "closed", pull_request: { merged_at: null } });
+    expect(selectExternalContributions([closed], "merged")).toEqual([]);
+    expect(selectExternalContributions([closed], "open")).toEqual([]);
+  });
+
+  it("shows open upstream PRs as proposals and never as accepted", () => {
+    const open = pr({ state: "open", pull_request: { merged_at: null },
+      closed_at: null, created_at: "2026-10-22T00:00:00Z" });
+    expect(selectExternalContributions([open], "open")).toMatchObject([{
+      status: "open", mergedAt: null, repository: "nextcloud/text",
+    }]);
+    expect(selectMergedContributions([open])).toEqual([]);
+  });
+
+  it("rejects mismatched upstream URL and handles duplicate API results", () => {
+    const mismatch = pr({ html_url: "https://github.com/twentyhq/twenty/pull/1" });
+    const merged = pr();
+    expect(selectMergedContributions([mismatch, merged, merged])).toHaveLength(1);
+  });
+
+  it("sorts by actual merge date rather than GitHub issue updated date", () => {
+    const older = pr({ html_url: "https://github.com/nextcloud/text/pull/9000",
+      pull_request: { merged_at: "2026-09-01T00:00:00Z" } });
+    const newer = pr({ html_url: "https://github.com/nextcloud/text/pull/9001",
+      pull_request: { merged_at: "2026-10-26T00:00:00Z" } });
+    expect(selectMergedContributions([older, newer]).map((p) => p.url)).toEqual([
+      "https://github.com/nextcloud/text/pull/9001",
+      "https://github.com/nextcloud/text/pull/9000",
+    ]);
   });
 });
