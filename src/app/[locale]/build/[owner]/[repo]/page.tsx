@@ -38,7 +38,7 @@ export default async function BuildLogPage({ params }: Props) {
 
   const [t, timeline] = await Promise.all([
     getTranslations("build"),
-    getProjectTimeline(project),
+    getProjectTimeline(project, locale as "fr" | "en"),
   ]);
   const formatter = new Intl.DateTimeFormat(locale === "fr" ? "fr-FR" : "en-GB", {
     day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
@@ -77,6 +77,7 @@ export default async function BuildLogPage({ params }: Props) {
                       <p className="build-event-kind">{label(event.kind)}</p>
                       <h3>{event.title}</h3>
                       <p className="build-event-explanation">{t(`note_${event.kind}` as never)}</p>
+                      {event.detail ? <p className="build-event-detail">{event.detail}</p> : null}
                       <a href={event.url} target="_blank" rel="noopener noreferrer">
                         {t("source")} <span aria-hidden="true">↗</span>
                       </a>

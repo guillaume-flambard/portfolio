@@ -17,7 +17,7 @@ export default defineConfig({
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
   },
-  projects: [{ name: "chromium", use: { browserName: "chromium" } }],
+  projects: [{ name: "chromium", use: { browserName: "chromium", ...(process.env.CI ? { channel: "chrome" } : {}) } }],
   webServer: process.env.PW_BASE_URL ? undefined : {
     command: `npm run start -- --hostname 127.0.0.1 --port ${port}`,
     url: baseURL + "/fr",

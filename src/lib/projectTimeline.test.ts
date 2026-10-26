@@ -82,3 +82,25 @@ describe("verifiable project timeline", () => {
     expect(history.events.map((event) => event.kind)).toEqual(["origin"]);
   });
 });
+
+
+describe("source-linked product storytelling", () => {
+  it("retains a documented prototype even if frequent PR merges fill recent history", () => {
+    const prs = Array.from({ length: 20 }, (_, index) => pull({
+      html_url: "https://github.com/memolabs-dev/drop/pull/" + (200 + index),
+      merged_at: "2026-10-24T11:00:00Z",
+    }));
+    const history = buildProjectTimeline(project, prs, [], [{
+      kind: "prototype",
+      date: "2026-02-01",
+      title: { fr: "Premier prototype documenté", en: "Documented first prototype" },
+      detail: { fr: "Un test simple", en: "A focused test" },
+      evidenceUrl: "https://github.com/memolabs-dev/drop/pull/100",
+    }], "en");
+    expect(history.events.find((event) => event.kind === "prototype")).toEqual({
+      kind: "prototype", date: "2026-02-01", title: "Documented first prototype",
+      detail: "A focused test", url: "https://github.com/memolabs-dev/drop/pull/100",
+    });
+    expect(history.events.at(-1)?.kind).toBe("origin");
+  });
+});

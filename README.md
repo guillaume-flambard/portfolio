@@ -125,3 +125,51 @@ not an SLA. Users may see changes after the scheduler, raw CDN and Next ISR
 caches have propagated. Monitor the **Public GitHub activity snapshot**
 workflow; do not count Vercel deploy success as the VPS production check.
 `npm run test:snapshot` exercises fallback and corruption cases.
+
+## Optional source-linked product milestones (per repository)
+
+An ongoing public project can publish a small versioned manifest **in its own
+repository** at `.portfolio/milestones.json`. The portfolio discovers it
+automatically when rendering the project's `/build/{owner}/{repo}` page.
+**No manual portfolio code change or deployment is needed for new milestones.**
+
+Example **schema only** (replace all sample data with real, dated evidence):
+
+```json
+{
+  "version": 1,
+  "milestones": [
+    {
+      "kind": "prototype",
+      "date": "2026-09-01",
+      "title": {
+        "fr": "Premier prototype documenté",
+        "en": "First documented prototype"
+      },
+      "detail": {
+        "fr": "Ce qui a réellement été démontré.",
+        "en": "What was actually demonstrated."
+      },
+      "evidenceUrl": "https://github.com/OWNER/REPOSITORY/commit/FULL_40_CHAR_SHA"
+    }
+  ]
+}
+```
+
+Allowed `kind` values: `prototype`, `demo`, `deployment`. Dates must
+be real ISO calendar days no later than the current date and no earlier than
+GitHub repo creation. Titles need both FR and EN; descriptions are optional.
+Evidence must link to a **specific commit, merged or open pull request, release
+tag or Actions run in the exact same repository**. A demo can alternatively
+link to a YouTube or Vimeo video. Arbitrary hosts, cross-repo references,
+duplicates and invalid dates are ignored; only six milestones are presented.
+
+**Evidence semantics:** these are *maintainer-reported and source-linked*
+milestones. A green Actions run, commit or release cannot independently
+demonstrate that a product is live, a workflow works end-to-end, or users
+adopted it. The UI labels prototypes, demos and deployments accordingly.
+Unsubstantiated dates are never filled automatically. Merged PRs, releases,
+repository creation and editorially checked public pages continue to appear
+without any manifest. Add a milestone only when its real date and evidence
+are known. The optional manifest is read server-side through the public
+GitHub Contents API, with an existing hourly cache and 50 KB size cap.
