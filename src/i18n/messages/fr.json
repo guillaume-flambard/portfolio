@@ -242,7 +242,8 @@
     "kind_deployment": "Déploiement déclaré",
     "note_prototype": "Jalon fourni par le dépôt du projet et associé à une preuve GitHub. Une date de code ne suffit pas à prouver que le prototype était utilisable.",
     "note_demo": "Jalon décrit dans le dépôt, avec un lien public. La vidéo ou le code ne certifie pas à lui seul un parcours fonctionnel.",
-    "note_deployment": "Déploiement déclaré par le mainteneur, avec une référence publique. Une exécution CI ou une release ne prouve pas une production fonctionnelle."
+    "note_deployment": "Déploiement déclaré par le mainteneur, avec une référence publique. Une exécution CI ou une release ne prouve pas une production fonctionnelle.",
+    "tryDemo": "Essayer la démonstration"
   },
   "openSource": {
     "eyebrow": "GitHub · contributions externes",

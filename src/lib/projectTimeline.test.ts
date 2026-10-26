@@ -96,10 +96,12 @@ describe("source-linked product storytelling", () => {
       title: { fr: "Premier prototype documenté", en: "Documented first prototype" },
       detail: { fr: "Un test simple", en: "A focused test" },
       evidenceUrl: "https://github.com/memolabs-dev/drop/pull/100",
+      demoUrl: "https://memolabs-dev.github.io/drop/",
     }], "en");
     expect(history.events.find((event) => event.kind === "prototype")).toEqual({
       kind: "prototype", date: "2026-02-01", title: "Documented first prototype",
       detail: "A focused test", url: "https://github.com/memolabs-dev/drop/pull/100",
+      demoUrl: "https://memolabs-dev.github.io/drop/",
     });
     expect(history.events.at(-1)?.kind).toBe("origin");
   });

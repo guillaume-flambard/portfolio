@@ -14,6 +14,7 @@ export type TimelineEvent = {
   title: string;
   url: string;
   detail?: string;
+  demoUrl?: string;
 };
 
 export type ProjectTimeline = {
@@ -120,6 +121,7 @@ export function buildProjectTimeline(
     title: entry.title[locale],
     url: entry.evidenceUrl,
     detail: entry.detail?.[locale],
+    ...(entry.demoUrl ? { demoUrl: entry.demoUrl } : {}),
   }));
   events.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
   const recent = [...events.slice(0, 12), ...documented].sort(

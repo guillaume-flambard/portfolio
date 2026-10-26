@@ -14,6 +14,7 @@ export type ProductMilestone = {
   title: { fr: string; en: string };
   detail: { fr: string; en: string } | null;
   evidenceUrl: string;
+  demoUrl?: string;
 };
 
 function textPair(value: unknown, max: number): { fr: string; en: string } | null {
@@ -23,6 +24,13 @@ function textPair(value: unknown, max: number): { fr: string; en: string } | nul
   const fr = obj.fr.trim(), en = obj.en.trim();
   if (!fr || !en || fr.length > max || en.length > max) return null;
   return { fr, en };
+}
+
+function publicDemoUrlAllowed(url: string, project: ShowcaseProject): boolean {
+  const parts = project.fullName.split("/");
+  if (parts.length !== 2) return false;
+  const canonical = "https://" + parts[0].toLowerCase() + ".github.io/" + parts[1].toLowerCase() + "/";
+  return url.toLowerCase() === canonical;
 }
 
 function evidenceAllowed(kind: ProductMilestoneKind, url: string, repoUrl: string): boolean {
@@ -66,10 +74,21 @@ export function validateProductMilestones(
     if (!title || (entry.detail !== undefined && !detail)) return [];
     if (typeof entry.evidenceUrl !== "string" ||
         !evidenceAllowed(kind, entry.evidenceUrl, project.url)) return [];
+    // A separate demo link must belong to this repository's public GitHub Pages
+    // namespace, or be identical to the validated video proof. Never accept
+    // arbitrary URLs from a remotely fetched manifest.
+    let demoUrl: string | undefined;
+    if (entry.demoUrl !== undefined) {
+      if (kind !== "demo" || typeof entry.demoUrl !== "string") return [];
+      if (!publicDemoUrlAllowed(entry.demoUrl, project) &&
+          !(entry.demoUrl === entry.evidenceUrl &&
+            evidenceAllowed("demo", entry.evidenceUrl, project.url))) return [];
+      demoUrl = entry.demoUrl;
+    }
     const key = kind + ":" + entry.evidenceUrl;
     if (seen.has(key)) return [];
     seen.add(key);
-    return [{ kind, date: entry.date, title, detail, evidenceUrl: entry.evidenceUrl }];
+    return [{ kind, date: entry.date, title, detail, evidenceUrl: entry.evidenceUrl, ...(demoUrl ? { demoUrl } : {}) }];
   }).sort((a, b) => Date.parse(b.date) - Date.parse(a.date)).slice(0, 6);
 }
 

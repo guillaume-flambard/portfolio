@@ -78,9 +78,14 @@ export default async function BuildLogPage({ params }: Props) {
                       <h3>{event.title}</h3>
                       <p className="build-event-explanation">{t(`note_${event.kind}` as never)}</p>
                       {event.detail ? <p className="build-event-detail">{event.detail}</p> : null}
-                      <a href={event.url} target="_blank" rel="noopener noreferrer">
-                        {t("source")} <span aria-hidden="true">↗</span>
-                      </a>
+                      <div className="build-event-links">
+                        <a href={event.url} target="_blank" rel="noopener noreferrer">
+                          {t("source")} <span aria-hidden="true">↗</span>
+                        </a>
+                        {event.demoUrl ? <a href={event.demoUrl} target="_blank" rel="noopener noreferrer">
+                          {t("tryDemo")} <span aria-hidden="true">↗</span>
+                        </a> : null}
+                      </div>
                     </div>
                   </li>
                 ))}
