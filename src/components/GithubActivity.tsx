@@ -14,6 +14,10 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
   const formatter = new Intl.DateTimeFormat(locale === "fr" ? "fr-FR" : "en-GB", {
     day: "numeric", month: "short", year: "numeric", timeZone: "UTC",
   });
+  const syncFormatter = new Intl.DateTimeFormat(locale === "fr" ? "fr-FR" : "en-GB", {
+    day: "numeric", month: "short", year: "numeric",
+    hour: "2-digit", minute: "2-digit", hourCycle: "h23", timeZone: "UTC",
+  });
 
   return (
     <section className="github-activity sec" id="github-activity" aria-labelledby="github-heading">
@@ -122,7 +126,14 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
         </div>
         <p className="github-disclaimer" data-testid="github-sync-status">
           {activity.sync.source === "snapshot" ? t("snapshotSource") : t("liveSource")}
-          {activity.sync.updatedAt ? " · " + t("syncedAt") + " " + formatter.format(new Date(activity.sync.updatedAt)) : ""}
+          {activity.sync.updatedAt ? (
+            <>
+              {" · "}{t("syncedAt")}{" "}
+              <time dateTime={activity.sync.updatedAt} data-testid="github-sync-timestamp">
+                {syncFormatter.format(new Date(activity.sync.updatedAt))} UTC
+              </time>
+            </>
+          ) : null}
           {activity.sync.degraded ? " · " + t("snapshotStale") : ""}
         </p>
         <p className="github-disclaimer">{t("disclaimer")}</p>

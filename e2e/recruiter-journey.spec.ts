@@ -404,6 +404,20 @@ test("unlocalized NetNewsWire universal-link fallback has an isolated root layou
 });
 
 for (const locale of locales) {
+  test(`${locale}: GitHub sync clearly shows the recorded minute and timezone`, async ({ page }) => {
+    await page.goto("/" + locale);
+    const status = page.locator('[data-testid="github-sync-status"]');
+    await expect(status).toBeVisible();
+    const timestamp = status.locator('[data-testid="github-sync-timestamp"]');
+    if (await timestamp.count()) {
+      // Direct-live reads can deliberately omit a snapshot timestamp.
+      await expect(timestamp).toHaveAttribute("datetime", /^20\d\d-\d\d-\d\dT\d\d:\d\d:\d\d/);
+      await expect(timestamp).toContainText(/\d{1,2}:\d{2}\s+UTC/);
+    }
+  });
+}
+
+for (const locale of locales) {
   test(`${locale}: project development journals are accessible from the living homepage`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`/${locale}`);
