@@ -199,8 +199,15 @@
     "mergedPr": "Merged PR",
     "projectsEmpty": "No qualifying projects are available right now. Explore all public repositories on GitHub.",
     "contributionsEmpty": "Contributions are temporarily unavailable. Explore the history on GitHub.",
-    "disclaimer": "Code activity does not prove a production deployment. Only selected public repositories and genuinely merged PRs appear here. GitHub data is cached for up to one hour.",
-    "buildLogCta": "Explore verified progress"
+    "disclaimer": "Automatically synced from GitHub (cached for up to one hour). Newly published repositories are public code, not claims of production readiness. Open PRs are proposals; merged PRs are accepted contributions.",
+    "buildLogCta": "Explore verified progress",
+    "newProjectsTitle": "Recently published repositories",
+    "newProjectsCaption": "Automatic discovery · 90 days",
+    "newRepoStatus": "Recent public code · not audited",
+    "newProjectsEmpty": "No new qualifying public repositories right now.",
+    "openContributionsTitle": "Contributions under review",
+    "openPr": "Open PR · not yet merged",
+    "allContributions": "All my open-source contributions"
   },
   "build": {
     "eyebrow": "Engineering log · public evidence",
@@ -226,5 +233,20 @@
     "empty": "No qualifying public events are available for this project.",
     "incomplete": "Not all GitHub API requests succeeded; this timeline may be incomplete.",
     "limitations": "This is a selective history, not a measurement of hours worked or engineering speed. Prototype, demo and deployment milestones appear only once a verifiable date and public evidence link exist."
+  },
+  "openSource": {
+    "eyebrow": "GitHub · external contributions",
+    "title": "Open-source contributions",
+    "intro": "Fixes and features I proposed to external projects. Accepted PRs are separate from those still under review. Every item links to GitHub evidence and updates automatically.",
+    "back": "Back to the portfolio",
+    "mergedTitle": "Merged contributions",
+    "mergedSubtitle": "Accepted upstream",
+    "mergedLabel": "Merged PR",
+    "openTitle": "Work under review",
+    "openSubtitle": "Open · not yet accepted",
+    "openLabel": "Open PR",
+    "empty": "No merged contributions were retrieved right now.",
+    "emptyOpen": "No open contributions were retrieved right now.",
+    "disclaimer": "This feed uses public GitHub results (up to 100 most recent PRs per state). It is refreshed on site visits after up to one hour of caching. Merge does not prove production adoption or business impact. GitHub API outages may temporarily limit the displayed items."
   }
 }
