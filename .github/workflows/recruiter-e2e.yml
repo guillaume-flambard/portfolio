@@ -18,7 +18,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
+      # ubuntu-latest already ships Google Chrome; avoid a network-dependent browser download.
+      - run: google-chrome --version
       - run: npx playwright test e2e/recruiter-journey.spec.ts
         env:
           CI: "true"
