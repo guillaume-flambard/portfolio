@@ -270,6 +270,33 @@ export function validateSnapshot(input: unknown): GithubSnapshot | null {
   return input as GithubSnapshot;
 }
 
+const SNAPSHOT_MAX_AGE_MS = 2 * 60 * 60 * 1000;
+
+/** A healthy recent section is preferred; a stale section may be refreshed live. */
+export function isFreshSnapshotSection(
+  section: { healthy: boolean; syncedAt: string },
+  now = Date.now(),
+): boolean {
+  const at = Date.parse(section.syncedAt);
+  return section.healthy && Number.isFinite(at) &&
+    at <= now + 5 * 60 * 1000 && now - at <= SNAPSHOT_MAX_AGE_MS;
+}
+
+export async function chooseSnapshotOrLive<T>(
+  cached: T | null,
+  snapshotFresh: boolean,
+  readLive: () => Promise<T | null>,
+): Promise<{ data: T; source: "snapshot" | "live" } | null> {
+  if (cached !== null && snapshotFresh) return { data: cached, source: "snapshot" };
+  try {
+    const live = await readLive();
+    if (live !== null) return { data: live, source: "live" };
+  } catch {
+    // Never replace last-known-good data with a failed live request.
+  }
+  return cached === null ? null : { data: cached, source: "snapshot" };
+}
+
 const getSnapshot = cache(async (): Promise<GithubSnapshot | null> => {
   try {
     const response = await fetch(SNAPSHOT_URL, {
@@ -302,16 +329,26 @@ async function liveRepositories(): Promise<GithubRepository[] | null> {
   });
 }
 
-const loadPublicRepositories = cache(async (): Promise<GithubRepository[]> => {
+const loadRepositoryFeed = cache(async (): Promise<{
+  data: GithubRepository[]; source: "snapshot" | "live";
+}> => {
   const snapshot = await getSnapshot();
-  if (snapshot) return snapshot.sections.repositories.items;
-  const repos = await liveRepositories();
-  if (repos === null) {
-    // Fail the regeneration instead of overwriting the last cached HTML with an empty feed.
+  const section = snapshot?.sections.repositories;
+  const result = await chooseSnapshotOrLive(
+    section?.items ?? null,
+    !!section && isFreshSnapshotSection(section),
+    liveRepositories,
+  );
+  if (!result) {
+    // Fail regeneration rather than publishing an empty or fabricated feed.
     throw new Error("No usable GitHub snapshot or repository data");
   }
-  return repos;
+  return result;
 });
+
+const loadPublicRepositories = cache(async (): Promise<GithubRepository[]> =>
+  (await loadRepositoryFeed()).data,
+);
 
 export async function getGithubSync(): Promise<GithubSync> {
   const snapshot = await getSnapshot();
@@ -321,11 +358,19 @@ export async function getGithubSync(): Promise<GithubSync> {
     snapshot.sections.merged.syncedAt,
     snapshot.sections.open.syncedAt,
   ].sort()[0];
+  // Preserve an honest stale-scheduler warning even when live fallback succeeds.
+  const degraded = Object.values(snapshot.sections).some((section) =>
+    !isFreshSnapshotSection(section),
+  );
+  const [repo, contributions] = await Promise.allSettled([
+    loadRepositoryFeed(), getExternalContributions(),
+  ]);
+  const live = repo.status === "fulfilled" && repo.value.source === "live" &&
+    contributions.status === "fulfilled" && contributions.value.source === "live";
   return {
-    source: "snapshot",
-    updatedAt: oldest,
-    degraded: Object.values(snapshot.sections).some((section) => !section.healthy) ||
-      Date.now() - Date.parse(oldest) > 2 * 60 * 60 * 1000,
+    source: live ? "live" : "snapshot",
+    updatedAt: live ? null : oldest,
+    degraded,
   };
 }
 
@@ -339,29 +384,34 @@ export async function getShowcaseProjects(limit = 4): Promise<ShowcaseProject[]>
 export const getExternalContributions = cache(async (): Promise<{
   merged: OpenSourceContribution[];
   open: OpenSourceContribution[];
+  source: "snapshot" | "live";
 }> => {
   const snapshot = await getSnapshot();
-  if (snapshot) {
+  const mergedSection = snapshot?.sections.merged;
+  const openSection = snapshot?.sections.open;
+  const cached = mergedSection && openSection ? {
+    merged: selectExternalContributions(mergedSection.items, "merged"),
+    open: selectExternalContributions(openSection.items, "open"),
+  } : null;
+  const fresh = !!mergedSection && !!openSection &&
+    isFreshSnapshotSection(mergedSection) && isFreshSnapshotSection(openSection);
+  const result = await chooseSnapshotOrLive(cached, fresh, async () => {
+    const base = "author:guillaume-flambard is:pr -user:guillaume-flambard -org:memolabs-dev";
+    const urls = [
+      "https://api.github.com/search/issues?q=" + encodeURIComponent(base + " is:merged") + "&sort=updated&order=desc&per_page=100",
+      "https://api.github.com/search/issues?q=" + encodeURIComponent(base + " is:open") + "&sort=created&order=desc&per_page=100",
+    ];
+    const [merged, open] = await Promise.all(urls.map((url) => githubJson<{
+      items?: GithubPullRequest[];
+    }>(url)));
+    if (!Array.isArray(merged?.items) || !Array.isArray(open?.items)) return null;
     return {
-      merged: selectExternalContributions(snapshot.sections.merged.items, "merged"),
-      open: selectExternalContributions(snapshot.sections.open.items, "open"),
+      merged: selectExternalContributions(merged.items, "merged"),
+      open: selectExternalContributions(open.items, "open"),
     };
-  }
-  const base = "author:guillaume-flambard is:pr -user:guillaume-flambard -org:memolabs-dev";
-  const urls = [
-    "https://api.github.com/search/issues?q=" + encodeURIComponent(base + " is:merged") + "&sort=updated&order=desc&per_page=100",
-    "https://api.github.com/search/issues?q=" + encodeURIComponent(base + " is:open") + "&sort=created&order=desc&per_page=100",
-  ];
-  const [merged, open] = await Promise.all(urls.map((url) => githubJson<{
-    items?: GithubPullRequest[];
-  }>(url)));
-  if (!Array.isArray(merged?.items) || !Array.isArray(open?.items)) {
-    throw new Error("No usable GitHub snapshot or contribution feed");
-  }
-  return {
-    merged: selectExternalContributions(merged.items, "merged"),
-    open: selectExternalContributions(open.items, "open"),
-  };
+  });
+  if (!result) throw new Error("No usable GitHub snapshot or contribution feed");
+  return { ...result.data, source: result.source };
 });
 
 export async function getGithubActivity(): Promise<GithubActivity> {
