@@ -1,0 +1,69 @@
+name: Public GitHub activity snapshot
+
+on:
+  schedule:
+    - cron: "13,43 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-github-activity
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    name: Refresh public GitHub evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Restore previous successful snapshot
+        shell: bash
+        run: |
+          if git fetch origin refs/heads/github-activity:refs/remotes/origin/github-activity; then
+            git show origin/github-activity:data/github-snapshot.json > "$RUNNER_TEMP/github-previous.json" || true
+          fi
+
+      - name: Refresh each section, preserving valid prior data on API failure
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-github-activity.mjs "$RUNNER_TEMP/github-snapshot.json" "$RUNNER_TEMP/github-previous.json"
+
+      # Separate from main: no PR spam or application redeploy on data refresh.
+      - name: Publish snapshot on isolated github-activity branch
+        shell: bash
+        run: |
+          cp "$RUNNER_TEMP/github-snapshot.json" "$RUNNER_TEMP/published-snapshot.json"
+          if git show-ref --verify --quiet refs/remotes/origin/github-activity; then
+            git switch -c github-activity --track origin/github-activity
+          else
+            git switch --orphan github-activity
+            git rm -rf --quiet . || true
+          fi
+          mkdir -p data
+          cp "$RUNNER_TEMP/published-snapshot.json" data/github-snapshot.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/github-snapshot.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(snapshot): update public GitHub evidence [skip ci]"
+            git push origin HEAD:refs/heads/github-activity
+          fi
+
+      - name: Signal upstream API degradation
+        shell: bash
+        run: |
+          if [ -s "$RUNNER_TEMP/github-snapshot.json.warnings" ]; then
+            echo "::error::GitHub API synchronization degraded. Last known good state was retained."
+            cat "$RUNNER_TEMP/github-snapshot.json.warnings"
+            exit 1
+          fi

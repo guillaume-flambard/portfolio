@@ -207,7 +207,11 @@
     "newProjectsEmpty": "Aucun nouveau dépôt public éligible pour le moment.",
     "openContributionsTitle": "Contributions en cours de revue",
     "openPr": "PR ouverte · en attente de fusion",
-    "allContributions": "Toutes mes contributions open source"
+    "allContributions": "Toutes mes contributions open source",
+    "snapshotSource": "Données conservées dans un instantané GitHub",
+    "liveSource": "Lecture directe de l’API GitHub (instantané non encore disponible)",
+    "syncedAt": "Dernière synchronisation complète",
+    "snapshotStale": "Synchronisation retardée : dernières données valides conservées"
   },
   "build": {
     "eyebrow": "Journal de développement · preuves publiques",
@@ -247,6 +251,10 @@
     "openLabel": "PR ouverte",
     "empty": "Aucune contribution fusionnée récupérée pour le moment.",
     "emptyOpen": "Aucune proposition ouverte récupérée pour le moment.",
-    "disclaimer": "Cette liste provient des résultats publics GitHub (jusqu’aux 100 PR les plus récentes de chaque statut). Le cache est actualisé jusqu’à une fois par heure après une nouvelle visite. Une contribution fusionnée ne prouve ni l’utilisation en production ni le succès commercial. Une indisponibilité de l’API peut limiter temporairement la liste."
+    "disclaimer": "Cette liste provient des résultats publics GitHub (jusqu’aux 100 PR les plus récentes de chaque statut). Le cache est actualisé jusqu’à une fois par heure après une nouvelle visite. Une contribution fusionnée ne prouve ni l’utilisation en production ni le succès commercial. Une indisponibilité de l’API peut limiter temporairement la liste.",
+    "snapshotSource": "Historique sauvegardé et conservé entre deux synchronisations",
+    "liveSource": "Lecture directe de GitHub avant initialisation du cache permanent",
+    "syncedAt": "Dernière synchronisation complète",
+    "snapshotStale": "Synchronisation retardée ; données précédentes conservées"
   }
 }

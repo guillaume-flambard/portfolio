@@ -104,3 +104,24 @@ editorial proof with a date and verifiable public URL; never derive them
 from commit or PR counts.
 
 Validation: `npm test`, `npm run build`, and the Playwright recruiter E2E.
+
+## Durable autonomous GitHub synchronization (30-minute schedule)
+
+`.github/workflows/github-activity.yml` uses `GITHUB_TOKEN` to collect public
+repositories and external PRs every 30 minutes, **without a visitor**.
+It commits `data/github-snapshot.json` on an isolated `github-activity`
+branch, keeping periodic data churn away from `main`, CI and GHCR deploys.
+
+The site first reads that persisted snapshot through GitHub's static raw-file
+endpoint (Next cache 15 minutes). Until the first scheduled run, it falls back
+to live public GitHub requests. Each section has `syncedAt` and `healthy`
+metadata; transient API errors preserve previously published data, raise a
+dedicated scheduled-workflow failure, and expose a degraded/stale note. A
+missing snapshot AND failed live API read throws so an existing ISR page
+remains available rather than publishing a fabricated empty feed.
+
+Schedule timing is best-effort (GitHub may delay or drop scheduled workflows),
+not an SLA. Users may see changes after the scheduler, raw CDN and Next ISR
+caches have propagated. Monitor the **Public GitHub activity snapshot**
+workflow; do not count Vercel deploy success as the VPS production check.
+`npm run test:snapshot` exercises fallback and corruption cases.

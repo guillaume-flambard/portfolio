@@ -17,6 +17,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test
+      - run: npm run test:snapshot
       - run: npm run test:evidence
       - run: npm run build
 
