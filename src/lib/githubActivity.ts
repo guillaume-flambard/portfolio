@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { readFile, stat } from "node:fs/promises";
 
 /** Public evidence: curated work, newly-created repositories and external PRs. */
 const GITHUB_USER = "guillaume-flambard";
@@ -270,6 +271,39 @@ export function validateSnapshot(input: unknown): GithubSnapshot | null {
   return input as GithubSnapshot;
 }
 
+const VPS_SNAPSHOT_PATH = "/run/github-activity/github-snapshot.json";
+const MAX_SNAPSHOT_BYTES = 2 * 1024 * 1024;
+
+/**
+ * A VPS timer can refresh public evidence without any GitHub credentials.
+ * Only its fixed, read-only bind mount is accepted: no arbitrary file paths.
+ * The normal GitHub branch remains the fallback for Vercel/local development.
+ */
+async function readVpsSnapshot(): Promise<GithubSnapshot | null> {
+  if (process.env.GITHUB_SNAPSHOT_FILE !== VPS_SNAPSHOT_PATH) return null;
+  try {
+    const info = await stat(VPS_SNAPSHOT_PATH);
+    if (!info.isFile() || info.size < 10 || info.size > MAX_SNAPSHOT_BYTES) return null;
+    return validateSnapshot(JSON.parse(await readFile(VPS_SNAPSHOT_PATH, "utf8")));
+  } catch {
+    return null;
+  }
+}
+
+/** Prefer the newest valid source, not a GitHub cron that happens to exist. */
+export function preferSnapshot(
+  local: GithubSnapshot | null,
+  github: GithubSnapshot | null,
+): GithubSnapshot | null {
+  if (!local) return github;
+  if (!github) return local;
+  const a = Date.parse(local.generatedAt);
+  const b = Date.parse(github.generatedAt);
+  if (!Number.isFinite(a)) return github;
+  if (!Number.isFinite(b)) return local;
+  return a >= b ? local : github;
+}
+
 const SNAPSHOT_MAX_AGE_MS = 2 * 60 * 60 * 1000;
 
 /** A healthy recent section is preferred; a stale section may be refreshed live. */
@@ -298,16 +332,22 @@ export async function chooseSnapshotOrLive<T>(
 }
 
 const getSnapshot = cache(async (): Promise<GithubSnapshot | null> => {
-  try {
-    const response = await fetch(SNAPSHOT_URL, {
-      next: { revalidate: 15 * 60 },
-      signal: AbortSignal.timeout(5500),
-    });
-    if (!response.ok) return null;
-    return validateSnapshot(await response.json());
-  } catch {
-    return null;
-  }
+  const [local, github] = await Promise.all([
+    readVpsSnapshot(),
+    (async () => {
+      try {
+        const response = await fetch(SNAPSHOT_URL, {
+          next: { revalidate: 15 * 60 },
+          signal: AbortSignal.timeout(5500),
+        });
+        if (!response.ok) return null;
+        return validateSnapshot(await response.json());
+      } catch {
+        return null;
+      }
+    })(),
+  ]);
+  return preferSnapshot(local, github);
 });
 
 async function liveRepositories(): Promise<GithubRepository[] | null> {
