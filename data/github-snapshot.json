@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-26T09:48:18.642Z",
+  "generatedAt": "2026-10-26T13:02:43.546Z",
   "sections": {
     "repositories": {
       "items": [
@@ -10,7 +10,7 @@
           "html_url": "https://github.com/guillaume-flambard/algo-observatory",
           "description": "Laboratoire interactif : modifiez une règle de classement et voyez 24 recommandations publiques Tournesol changer de rang, avec la raison de chaque mouvement.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-26T09:38:24Z",
+          "pushed_at": "2026-10-26T11:15:39Z",
           "created_at": "2026-10-25T14:38:16Z",
           "topics": [
             "algorithmic-transparency",
@@ -25,7 +25,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1059
+          "size": 1501
         },
         {
           "name": "mediterranean-rescue",
@@ -33,13 +33,13 @@
           "html_url": "https://github.com/guillaume-flambard/mediterranean-rescue",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-25T15:11:40Z",
+          "pushed_at": "2026-10-26T11:00:10Z",
           "created_at": "2026-10-24T10:50:52Z",
           "topics": [],
           "fork": true,
           "archived": false,
           "private": false,
-          "size": 1892
+          "size": 1898
         },
         {
           "name": ".github",
@@ -573,7 +573,7 @@
           "html_url": "https://github.com/guillaume-flambard/foldready",
           "description": "Fold-Ready Score + porting engine for iOS apps on the iPhone Fold (iOS 27). Swift CLI + Next.js web.",
           "language": "HTML",
-          "pushed_at": "2026-10-25T21:26:51Z",
+          "pushed_at": "2026-10-26T10:43:56Z",
           "created_at": "2026-08-10T16:22:59Z",
           "topics": [
             "developer-tools",
@@ -585,7 +585,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 798
+          "size": 801
         },
         {
           "name": "open-design",
@@ -987,13 +987,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-26T09:47:12Z",
+          "pushed_at": "2026-10-26T13:00:33Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 8109
+          "size": 8089
         },
         {
           "name": "n8n-nodes-opn",
@@ -1141,13 +1141,13 @@
           "html_url": "https://github.com/guillaume-flambard/guillaume-flambard",
           "description": "Profile README",
           "language": null,
-          "pushed_at": "2026-10-26T09:36:20Z",
+          "pushed_at": "2026-10-26T11:00:14Z",
           "created_at": "2026-02-20T11:19:08Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 156
+          "size": 160
         },
         {
           "name": "nope",
@@ -1491,7 +1491,7 @@
           "html_url": "https://github.com/memolabs-dev/mediterranean-rescue",
           "description": "Rescue operations at sea, documented with their source: SOS MEDITERRANEE's public records on one map, checked by volunteers.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-26T09:10:19Z",
+          "pushed_at": "2026-10-26T11:46:33Z",
           "created_at": "2026-10-25T11:23:59Z",
           "topics": [
             "django",
@@ -1505,7 +1505,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1682
+          "size": 1757
         },
         {
           "name": "freelance-growth",
@@ -1527,13 +1527,13 @@
           "html_url": "https://github.com/memolabs-dev/project-template",
           "description": "Template of new Memo Labs projects (memo-bridge project_create): CI, Mergify, gate paths",
           "language": "JavaScript",
-          "pushed_at": "2026-10-18T13:19:16Z",
+          "pushed_at": "2026-10-26T11:02:32Z",
           "created_at": "2026-10-18T13:19:12Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 4
+          "size": 6
         },
         {
           "name": "mergify-config",
@@ -1555,13 +1555,13 @@
           "html_url": "https://github.com/memolabs-dev/mobile-explorer",
           "description": "Permission-based iOS app observation and specification tool for macOS",
           "language": "Swift",
-          "pushed_at": "2026-10-26T09:47:30Z",
+          "pushed_at": "2026-10-26T12:55:34Z",
           "created_at": "2026-10-16T12:14:27Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 22
+          "size": 90
         },
         {
           "name": "rebuild-radar",
@@ -1569,13 +1569,13 @@
           "html_url": "https://github.com/memolabs-dev/rebuild-radar",
           "description": "Evidence-driven tracker of open-source software rebuilds and alternatives",
           "language": "JavaScript",
-          "pushed_at": "2026-10-26T09:46:12Z",
+          "pushed_at": "2026-10-26T11:45:42Z",
           "created_at": "2026-10-16T12:14:17Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 33
+          "size": 826
         },
         {
           "name": "memo-bridge",
@@ -1583,13 +1583,13 @@
           "html_url": "https://github.com/memolabs-dev/memo-bridge",
           "description": "Independent open-source MCP bridge for Memo Labs — secure multi-host control",
           "language": "JavaScript",
-          "pushed_at": "2026-10-26T09:45:36Z",
+          "pushed_at": "2026-10-26T13:00:10Z",
           "created_at": "2026-10-13T15:19:33Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3142
+          "size": 3244
         },
         {
           "name": ".github",
@@ -1597,13 +1597,13 @@
           "html_url": "https://github.com/memolabs-dev/.github",
           "description": "Memo Labs organization automation, GitHub App migration and shared CI",
           "language": "Python",
-          "pushed_at": "2026-10-25T11:42:54Z",
+          "pushed_at": "2026-10-26T10:59:15Z",
           "created_at": "2026-10-13T09:04:40Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 486
+          "size": 494
         },
         {
           "name": "lab-hub",
@@ -1644,7 +1644,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-10-26T09:47:54Z",
+          "pushed_at": "2026-10-26T11:41:29Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1663,7 +1663,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12389
+          "size": 12369
         },
         {
           "name": "trufflo",
@@ -1764,7 +1764,7 @@
           "html_url": "https://github.com/memolabs-dev/kollio-mac",
           "description": "Kollio: native macOS SwiftUI canvas for living visual documents and reviewable AI-proposed changes (prototype).",
           "language": "Swift",
-          "pushed_at": "2026-10-25T11:34:02Z",
+          "pushed_at": "2026-10-26T11:34:11Z",
           "created_at": "2026-09-25T18:14:39Z",
           "topics": [
             "ai-agents",
@@ -1778,7 +1778,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1710
+          "size": 1712
         },
         {
           "name": "intentlane",
@@ -1809,7 +1809,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-26T09:46:51Z",
+          "pushed_at": "2026-10-26T12:52:39Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1828,7 +1828,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3320
+          "size": 2981
         },
         {
           "name": "uni-protocol",
@@ -1909,7 +1909,7 @@
           "size": 62
         }
       ],
-      "syncedAt": "2026-10-26T09:48:18.642Z",
+      "syncedAt": "2026-10-26T13:02:43.546Z",
       "healthy": true
     },
     "merged": {
@@ -2307,7 +2307,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-26T09:48:18.642Z",
+      "syncedAt": "2026-10-26T13:02:43.546Z",
       "healthy": true
     },
     "open": {
@@ -2551,7 +2551,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-26T09:48:18.642Z",
+      "syncedAt": "2026-10-26T13:02:43.546Z",
       "healthy": true
     }
   }
