@@ -120,6 +120,11 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
           </div>
 
         </div>
+        <p className="github-disclaimer" data-testid="github-sync-status">
+          {activity.sync.source === "snapshot" ? t("snapshotSource") : t("liveSource")}
+          {activity.sync.updatedAt ? " · " + t("syncedAt") + " " + formatter.format(new Date(activity.sync.updatedAt)) : ""}
+          {activity.sync.degraded ? " · " + t("snapshotStale") : ""}
+        </p>
         <p className="github-disclaimer">{t("disclaimer")}</p>
       </div>
     </section>
