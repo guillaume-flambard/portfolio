@@ -173,3 +173,12 @@ repository creation and editorially checked public pages continue to appear
 without any manifest. Add a milestone only when its real date and evidence
 are known. The optional manifest is read server-side through the public
 GitHub Contents API, with an existing hourly cache and 50 KB size cap.
+
+A `demo` milestone may optionally specify `"demoUrl"` alongside the
+documented source PR or commit. Accepted URLs are deliberately restricted to
+the exact owning repository's GitHub Pages root
+(`https://OWNER.github.io/REPOSITORY/`) or the same approved YouTube/Vimeo
+video used as its evidence. The build log then presents two distinct actions:
+**view source evidence** and **try the public demo**. The live demo is only
+represented as accessible public software, **not a claim of user adoption or
+production usage**. Arbitrary outbound links and mismatched projects are rejected.
