@@ -1,17 +1,19 @@
 import { FEATURED } from "@/data/projects";
 import { githubJson, type ShowcaseProject } from "./githubActivity";
+import { getProductMilestones, type ProductMilestone } from "./productMilestones";
 
 /**
  * An evidence timeline is NOT a deployment history.
  * PR merge, GitHub release, repo creation and verified public site are separate facts.
  */
-export type TimelineKind = "feature" | "fix" | "change" | "release" | "origin" | "public-page";
+export type TimelineKind = "feature" | "fix" | "change" | "release" | "origin" | "public-page" | "prototype" | "demo" | "deployment";
 
 export type TimelineEvent = {
   kind: TimelineKind;
   date: string;
   title: string;
   url: string;
+  detail?: string;
 };
 
 export type ProjectTimeline = {
@@ -65,6 +67,8 @@ export function buildProjectTimeline(
   project: ShowcaseProject,
   pulls: GithubProjectPull[] | null,
   releases: GithubProjectRelease[] | null,
+  milestones: ProductMilestone[] = [],
+  locale: "fr" | "en" = "fr",
 ): ProjectTimeline {
   const events: TimelineEvent[] = [];
   const seen = new Set<string>();
@@ -108,8 +112,19 @@ export function buildProjectTimeline(
   const publicPage = getEditorialPublicPage(project);
   if (publicPage) events.push(publicPage);
 
+  // Product milestones are deliberate, sourced declarations from the repo.
+  // Keep them visible even when frequent PR merges fill the recent activity list.
+  const documented = milestones.map((entry): TimelineEvent => ({
+    kind: entry.kind,
+    date: entry.date,
+    title: entry.title[locale],
+    url: entry.evidenceUrl,
+    detail: entry.detail?.[locale],
+  }));
   events.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
-  const recent = events.slice(0, 12);
+  const recent = [...events.slice(0, 12), ...documented].sort(
+    (a, b) => Date.parse(b.date) - Date.parse(a.date),
+  );
 
   // Creation is an observable GitHub fact, NOT proof that a prototype existed on this date.
   if (validDate(project.createdAt)) {
@@ -127,19 +142,22 @@ export function buildProjectTimeline(
   };
 }
 
-export async function getProjectTimeline(project: ShowcaseProject): Promise<ProjectTimeline> {
+export async function getProjectTimeline(project: ShowcaseProject, locale: "fr" | "en" = "fr"): Promise<ProjectTimeline> {
   if (!/^[a-z\d_.-]+\/[a-z\d_.-]+$/i.test(project.fullName) ||
       project.url !== `https://github.com/${project.fullName}`) {
     return { events: [], incomplete: true };
   }
   const api = `https://api.github.com/repos/${project.fullName}`;
-  const [pulls, releases] = await Promise.all([
+  const [pulls, releases, milestones] = await Promise.all([
     githubJson<GithubProjectPull[]>(`${api}/pulls?state=closed&sort=updated&direction=desc&per_page=60`),
     githubJson<GithubProjectRelease[]>(`${api}/releases?per_page=15`),
+    getProductMilestones(project),
   ]);
   return buildProjectTimeline(
     project,
     Array.isArray(pulls) ? pulls : null,
     Array.isArray(releases) ? releases : null,
+    milestones,
+    locale,
   );
 }
