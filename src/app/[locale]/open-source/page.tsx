@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { createRouteMetadata } from "@/lib/seo";
-import { getExternalContributions, type OpenSourceContribution } from "@/lib/githubActivity";
+import { getExternalContributions, getGithubSync, type OpenSourceContribution } from "@/lib/githubActivity";
 import SiteNav from "@/components/SiteNav";
 
 export const revalidate = 3600;
@@ -23,9 +23,10 @@ export default async function OpenSourcePage({ params }: {
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const [t, feed] = await Promise.all([
+  const [t, feed, sync] = await Promise.all([
     getTranslations("openSource"),
     getExternalContributions(),
+    getGithubSync(),
   ]);
   const formatter = new Intl.DateTimeFormat(locale === "fr" ? "fr-FR" : "en-GB", {
     year: "numeric", month: "short", day: "numeric", timeZone: "UTC",
@@ -79,6 +80,11 @@ export default async function OpenSourcePage({ params }: {
               <span>{t("openSubtitle")}</span>
             </div>
             {feed.open.length > 0 ? items(feed.open, "open") : <p className="github-empty">{t("emptyOpen")}</p>}
+            <p className="github-disclaimer" data-testid="github-sync-status">
+              {sync.source === "snapshot" ? t("snapshotSource") : t("liveSource")}
+              {sync.updatedAt ? " · " + t("syncedAt") + " " + formatter.format(new Date(sync.updatedAt)) : ""}
+              {sync.degraded ? " · " + t("snapshotStale") : ""}
+            </p>
             <p className="github-disclaimer">{t("disclaimer")}</p>
           </div>
         </section>
