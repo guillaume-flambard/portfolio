@@ -19,7 +19,16 @@ jobs:
       - run: npm run test
       - run: npm run test:snapshot
       - run: npm run test:evidence
-      - run: npm run build
+      - name: Build with bounded retry for intermittent Google Fonts transport failures
+        shell: bash
+        run: |
+          for attempt in 1 2 3; do
+            if npm run build; then exit 0; fi
+            echo "::warning::Build attempt $attempt failed; retrying after clearing generated output."
+            rm -rf .next
+            sleep $((attempt * 4))
+          done
+          exit 1
 
 # Le job "Deploy to Coolify" a ete retire le 2026-09-03. Coolify est supprime du
 # VPS, et ce job passait au VERT malgre tout : curl sans -f sort en 0 des qu'une
