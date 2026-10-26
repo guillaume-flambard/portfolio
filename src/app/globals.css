@@ -634,3 +634,6 @@ h1.h .acc { color: var(--accent); }
   .backdrop .topo, .backdrop .leaves { opacity: 1; }
   .backdrop .branch path { stroke-dashoffset: 0; }
 }
+
+/* Product milestones: description remains restrained and source-first. */
+.build-event-detail { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--ink); overflow-wrap: anywhere; }
