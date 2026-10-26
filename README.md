@@ -62,3 +62,27 @@ remains usable and shows a neutral fallback rather than fabricated activity.
 
 Run `npm test`, `npm run build`, then `npm run test:e2e` before publishing. Verify
 that both locale pages render and that the public GitHub links remain accurate.
+
+## Evidence-based project development journals
+
+Every qualifying public repository in the living homepage now links to
+`/{fr|en}/build/{owner}/{repo}`. The route is restricted to the public,
+non-archived, non-forked, opted-in/editorially selected repositories — never
+a dynamic browser for private GitHub content.
+
+The journal is a **selective, verifiable history**, not a productivity score:
+- GitHub repository creation date is labeled *repository created*, **not** first prototype.
+- Recent authored PRs display as **merged into the codebase**, **not** deployed features.
+- Releases display as **published on GitHub**, **not** production deployments.
+- An existing verified public site may be linked at its **check date**, without
+  implying it is a working demo (currently inherited from the curated project evidence).
+- CI-only, bot-authored, drafts, invalid or cross-repository events are excluded.
+- An API outage produces a plainly marked partial history, not invented milestones.
+
+GitHub requests are server-only, limited and cached for an hour. Changes are
+picked up automatically after revalidation; pages do not expose arbitrary
+GitHub repos. Prototype/demo/production milestones require additional
+editorial proof with a date and verifiable public URL; never derive them
+from commit or PR counts.
+
+Validation: `npm test`, `npm run build`, and the Playwright recruiter E2E.
