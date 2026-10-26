@@ -52,10 +52,15 @@ internal/infrastructure-named repositories are excluded. `memo-hide` and
 section displays up to four entries, ordered by GitHub creation date. GitHub
 does not guarantee a push is a production release.
 
-The editorial *In progress* area still shows up to four reviewed repositories
-(sorted by latest push). For established repositories, add the optional topic
-`memo-showcase` to opt in, or update `EDITORIAL_REPOS`. These editorial picks
-are **not** automatically promoted from new public repositories.
+The editorial *In progress* section highlights up to five selected public
+repositories, ranked by published evidence rather than latest push
+(`EDITORIAL_ORDER` in `src/lib/githubActivity.ts`). It currently prioritizes
+Mediterranean Rescue, Algo Observatory, Memo Bridge, Drop and FoldReady.
+Their evidence is explicitly scoped: a public homepage, merged code or a
+maintainer-only demo does not establish external adoption or complete deployment.
+Other public repos can opt in via `memo-showcase` and follow the editorial picks
+by recent activity when space permits. New public projects continue to appear
+automatically in their separate discovery section.
 
 Open-source PRs are automatically searched across GitHub, **without** listing
 upstream repositories or contribution URLs in this codebase. The homepage shows
@@ -66,13 +71,15 @@ is kept, including multiple real contributions to the same upstream project.
 Merge status comes from `pull_request.merged_at`, not merely `closed_at`.
 PRs still under review are clearly marked **open**, not merged.
 
-Public GitHub data is cached for up to one hour and refreshed on a site visit
-after that interval. GitHub availability, API rate limits, the API search result
-window (100 per status), and indexing latency mean this is *eventually consistent*,
-not a guaranteed instantaneous or exhaustive stream. Optional server-only
-`GITHUB_READ_TOKEN` helps with rate limits. To get stronger delivery guarantees,
-add a monitored scheduled sync with retry and a persisted last-known-good feed,
-instead of relying exclusively on public live API responses.
+The isolated `github-activity` snapshot is refreshed by the scheduled
+workflow when GitHub delivers its cron event, and then read by the portfolio
+with a 15-minute revalidation cache. GitHub API access, index latency, job
+scheduling and the 100-item PR search window make this *eventually consistent*,
+not an instantaneous or exhaustive feed. Each snapshot section retains its
+last-known-good contents on an API failure, and the site explicitly labels
+data older than two hours as degraded. Live API fallback is used only when
+the persisted snapshot is unavailable; a site visit does not itself refresh
+an old but structurally valid snapshot.
 
 This feature reads **public GitHub API data only**. An optional server-side
 `GITHUB_READ_TOKEN` can increase API rate limits; never expose it using a
@@ -105,7 +112,13 @@ from commit or PR counts.
 
 Validation: `npm test`, `npm run build`, and the Playwright recruiter E2E.
 
-## Durable autonomous GitHub synchronization (30-minute schedule)
+## Durable autonomous GitHub synchronization (best-effort 30-minute schedule)
+
+The off-hour UTC cron (`17,47 * * * *`) was re-registered on 26 October
+2026 after the workflow had succeeded manually but produced no scheduled
+runs. This is a scheduler re-registration, **not** evidence that GitHub will
+deliver the next scheduled event; check the workflow event type and latest
+snapshot timestamp to confirm actual recurring execution.
 
 `.github/workflows/github-activity.yml` uses `GITHUB_TOKEN` to collect public
 repositories and external PRs every 30 minutes, **without a visitor**.

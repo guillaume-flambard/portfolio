@@ -2,7 +2,8 @@ name: Public GitHub activity snapshot
 
 on:
   schedule:
-    - cron: "13,43 * * * *"
+    # Off-hour UTC minutes reduce contention and also re-register the schedule actor.
+    - cron: "17,47 * * * *"
   workflow_dispatch: {}
 
 permissions:
