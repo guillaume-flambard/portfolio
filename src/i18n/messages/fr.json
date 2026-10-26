@@ -199,6 +199,32 @@
     "mergedPr": "PR fusionnée",
     "projectsEmpty": "Aucun projet qualifié n'est disponible pour le moment. Retrouvez tous mes dépôts publics sur GitHub.",
     "contributionsEmpty": "Les contributions ne sont pas disponibles pour le moment. Consultez leur historique sur GitHub.",
-    "disclaimer": "Une mise à jour de code ne prouve pas un déploiement en production. Seuls les dépôts publics sélectionnés et les PR effectivement fusionnées sont présentés. Synchronisation GitHub mise en cache jusqu'à une heure."
+    "disclaimer": "Une mise à jour de code ne prouve pas un déploiement en production. Seuls les dépôts publics sélectionnés et les PR effectivement fusionnées sont présentés. Synchronisation GitHub mise en cache jusqu'à une heure.",
+    "buildLogCta": "Voir l'évolution vérifiable"
+  },
+  "build": {
+    "eyebrow": "Journal de développement · preuves publiques",
+    "defaultDescription": "Un projet construit et amélioré au fil des itérations.",
+    "repoCta": "Consulter le dépôt",
+    "back": "Retour aux projets actifs",
+    "sectionEyebrow": "Versions · changements · preuves",
+    "timelineTitle": "Comment ce projet évolue",
+    "timelineIntro": "Une sélection chronologique de changements réellement fusionnés, de versions publiées sur GitHub et, lorsqu'elle existe, d'une page publique vérifiée. Chaque entrée renvoie à sa source.",
+    "kind_feature": "Fonctionnalité fusionnée",
+    "kind_fix": "Correction fusionnée",
+    "kind_change": "Évolution du code fusionnée",
+    "kind_release": "Version publiée sur GitHub",
+    "kind_origin": "Dépôt créé",
+    "kind_public_page": "Page publique vérifiée",
+    "note_feature": "Changement intégré au dépôt ; cela ne prouve pas son déploiement en production.",
+    "note_fix": "Correction intégrée au dépôt ; son effet en production n'est pas établi ici.",
+    "note_change": "Évolution intégrée au code source ; les résultats en production ne sont pas déduits.",
+    "note_release": "Version officiellement publiée dans les releases GitHub, sans supposer son déploiement.",
+    "note_origin": "Date de création du dépôt GitHub, pas date attestée du premier prototype.",
+    "note_public_page": "Page web contrôlée à la date indiquée dans l'étude de cas ; pas nécessairement une démo fonctionnelle.",
+    "source": "Consulter la preuve",
+    "empty": "Aucune étape publique qualifiée n'est disponible pour ce projet.",
+    "incomplete": "L'API GitHub n'a pas répondu à toutes les demandes : ce journal peut être incomplet.",
+    "limitations": "Ce journal est volontairement sélectif : il ne mesure pas toutes les heures de travail ni la vitesse réelle de développement. Les prototypes, démonstrations et déploiements ne seront ajoutés comme étapes que lorsqu'un lien et une date vérifiables existent."
   }
 }
