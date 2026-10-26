@@ -26,7 +26,7 @@ What we did not borrow: their green palette, `text-justify`, Bootstrap.
 ## Tokens
 
 `src/styles/tokens.css` is the single source of truth. Warm palette, unchanged from the previous
-design: `--bg #faf9f7`, `--ink #16130f`, `--muted #6b6055`, `--line #e7e2da`, `--accent #c8672e`,
+design: `--bg #faf9f7`, `--ink #16130f`, `--muted #6b6055`, `--line #e7e2da`, `--accent #ad4c16`,
 `--accent-soft #e58a4a`, `--surface #ffffff`. Rhythm: `--sec-y`, `--narrow`.
 
 ## Where things live
@@ -42,3 +42,31 @@ design: `--bg #faf9f7`, `--ink #16130f`, `--muted #6b6055`, `--line #e7e2da`, `-
 - Both `/fr` and `/en` render; no string moved into CSS `content` except decorative arrows.
 - 390px: no horizontal overflow, nav fits one line, backdrop hidden.
 - No external font or asset requests at runtime.
+
+## Open Design / Memo Bridge handoff (2026-10-26)
+
+This brief is an **input contract for mockups**, not permission to redesign the website. The truth remains the
+current app and `src/styles/tokens.css`; outdated archives and Open Design default presets must not override it.
+Open Design projects are isolated: paste the applicable tokens and this direction into the prompt unless repository
+access has been verified. Never assume the agent has read this file merely because the project exists on GitHub.
+
+**Prompt for a portfolio prototype (FR):** « Conçois une proposition pour le portfolio bilingue Memo Labs,
+avec la direction éditoriale condensée déjà en production. Typographie Oswald unique ; capitales via CSS,
+jamais dans les traductions ; aplats sans ombres ni rayons ; filets de 1 px ; larges blancs structurants ;
+accent réel `#ad4c16` issu des tokens ; illustration SVG discrète facultative, masquée sur mobile et avec
+mouvement réduit. Travaille d'abord la compréhension du positionnement et les preuves des projets,
+pas des cartes SaaS ni des statistiques inventées. Garde une expérience cohérente pour /fr et /en.
+Produis des écrans maquettes vérifiables, sans ajouter de dépendance réseau. »
+
+For each proposed screen, specify the user question answered, actual project evidence available, navigation,
+focus and hover states, long FR/EN copy, empty/unavailable state where relevant, and a mobile alternative.
+Do not fabricate GitHub metrics, external contributions, employer logos, client testimonials or testimonials.
+Any integration into Next.js must be a separately reviewed change; do not copy standalone prototype HTML
+directly over React components.
+
+**Validation:** review desktop at 1440 px, compact 1000 px and mobile 390 px; verify rendering, keyboard focus,
+layout overflow and browser-console errors. The Mac `od-check <runId>` command supplies an HTML/Chromium
+smoke and screenshots, **not** visual approval. This portfolio currently uses a light-first design; a
+`theme_variation_verified:false` result is only blocking if a dark theme was explicitly requested.
+For app changes also run `npm run build`, `npm test`, inspect both `/fr` and `/en`, ensure the
+mobile nav fits and no runtime third-party asset request is introduced.
