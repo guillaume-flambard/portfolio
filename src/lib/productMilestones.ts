@@ -51,7 +51,7 @@ export function validateProductMilestones(
       (input as Record<string, unknown>).version !== 1) return [];
   const entries = (input as { milestones: unknown[] }).milestones.slice(0, 24);
   const seen = new Set<string>();
-  return entries.flatMap((raw) => {
+  return entries.flatMap((raw): ProductMilestone[] => {
     if (!raw || typeof raw !== "object") return [];
     const entry = raw as Record<string, unknown>;
     if (entry.kind !== "prototype" && entry.kind !== "demo" && entry.kind !== "deployment") return [];
