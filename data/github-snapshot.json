@@ -1,0 +1,2558 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-26T09:48:18.642Z",
+  "sections": {
+    "repositories": {
+      "items": [
+        {
+          "name": "algo-observatory",
+          "full_name": "guillaume-flambard/algo-observatory",
+          "html_url": "https://github.com/guillaume-flambard/algo-observatory",
+          "description": "Laboratoire interactif : modifiez une règle de classement et voyez 24 recommandations publiques Tournesol changer de rang, avec la raison de chaque mouvement.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-26T09:38:24Z",
+          "created_at": "2026-10-25T14:38:16Z",
+          "topics": [
+            "algorithmic-transparency",
+            "data-visualization",
+            "education",
+            "open-data",
+            "react",
+            "recommender-systems",
+            "tournesol",
+            "typescript"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 1059
+        },
+        {
+          "name": "mediterranean-rescue",
+          "full_name": "guillaume-flambard/mediterranean-rescue",
+          "html_url": "https://github.com/guillaume-flambard/mediterranean-rescue",
+          "description": null,
+          "language": "Python",
+          "pushed_at": "2026-10-25T15:11:40Z",
+          "created_at": "2026-10-24T10:50:52Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 1892
+        },
+        {
+          "name": ".github",
+          "full_name": "guillaume-flambard/.github",
+          "html_url": "https://github.com/guillaume-flambard/.github",
+          "description": "Default community health files for repositories that do not carry their own",
+          "language": null,
+          "pushed_at": "2026-09-29T11:26:43Z",
+          "created_at": "2026-09-29T11:26:39Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 3
+        },
+        {
+          "name": "world-lab",
+          "full_name": "guillaume-flambard/world-lab",
+          "html_url": "https://github.com/guillaume-flambard/world-lab",
+          "description": "A living software world experiment with observable physics, beliefs and causal memory.",
+          "language": "JavaScript",
+          "pushed_at": "2026-09-26T22:59:45Z",
+          "created_at": "2026-09-26T22:35:50Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 35
+        },
+        {
+          "name": "outline",
+          "full_name": "guillaume-flambard/outline",
+          "html_url": "https://github.com/guillaume-flambard/outline",
+          "description": "The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.",
+          "language": null,
+          "pushed_at": "2026-09-30T09:48:58Z",
+          "created_at": "2026-09-24T16:05:30Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 333278
+        },
+        {
+          "name": "primitives",
+          "full_name": "guillaume-flambard/primitives",
+          "html_url": "https://github.com/guillaume-flambard/primitives",
+          "description": "Netlify platform primitives and local dev emulation",
+          "language": null,
+          "pushed_at": "2026-10-02T09:40:12Z",
+          "created_at": "2026-09-24T13:28:12Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 4711
+        },
+        {
+          "name": "kuzzle-admin-console",
+          "full_name": "guillaume-flambard/kuzzle-admin-console",
+          "html_url": "https://github.com/guillaume-flambard/kuzzle-admin-console",
+          "description": "A SPA to administrate your Kuzzle: index and collection management, document creation, realtime subscription and permissions management",
+          "language": null,
+          "pushed_at": "2026-09-30T10:42:29Z",
+          "created_at": "2026-09-24T13:28:12Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 27384
+        },
+        {
+          "name": "Ghost",
+          "full_name": "guillaume-flambard/Ghost",
+          "html_url": "https://github.com/guillaume-flambard/Ghost",
+          "description": "Independent technology for modern publishing, memberships, subscriptions and newsletters.",
+          "language": null,
+          "pushed_at": "2026-09-21T13:22:19Z",
+          "created_at": "2026-09-21T13:22:10Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 600122
+        },
+        {
+          "name": "payload",
+          "full_name": "guillaume-flambard/payload",
+          "html_url": "https://github.com/guillaume-flambard/payload",
+          "description": "Payload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Payload as a headless CMS or for building powerful applications.",
+          "language": null,
+          "pushed_at": "2026-09-22T08:51:30Z",
+          "created_at": "2026-09-21T13:04:39Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 217295
+        },
+        {
+          "name": "kollio",
+          "full_name": "guillaume-flambard/kollio",
+          "html_url": "https://github.com/guillaume-flambard/kollio",
+          "description": "Decision workspace for private teams using AI. Parked: the macOS prototype is kollio-mac.",
+          "language": "Python",
+          "pushed_at": "2026-10-12T22:46:09Z",
+          "created_at": "2026-09-11T20:13:11Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 8719
+        },
+        {
+          "name": "OpenSpec",
+          "full_name": "guillaume-flambard/OpenSpec",
+          "html_url": "https://github.com/guillaume-flambard/OpenSpec",
+          "description": "Spec-driven development (SDD) for AI coding assistants.",
+          "language": null,
+          "pushed_at": "2026-09-22T18:28:41Z",
+          "created_at": "2026-09-11T04:53:36Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 9761
+        },
+        {
+          "name": "spec-guard",
+          "full_name": "guillaume-flambard/spec-guard",
+          "html_url": "https://github.com/guillaume-flambard/spec-guard",
+          "description": "Deterministically report which OpenSpec scenarios are covered by a Vitest or Jest test. Never runs the tests, never calls an LLM.",
+          "language": "JavaScript",
+          "pushed_at": "2026-10-02T13:36:09Z",
+          "created_at": "2026-09-10T18:03:15Z",
+          "topics": [
+            "jest",
+            "openspec",
+            "spec-driven-development",
+            "test-coverage",
+            "traceability",
+            "typescript",
+            "vitest"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 3196
+        },
+        {
+          "name": "ios",
+          "full_name": "guillaume-flambard/ios",
+          "html_url": "https://github.com/guillaume-flambard/ios",
+          "description": "📱 Nextcloud iOS App",
+          "language": null,
+          "pushed_at": "2026-09-06T17:06:01Z",
+          "created_at": "2026-09-06T17:05:17Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 1076641
+        },
+        {
+          "name": "mastra",
+          "full_name": "guillaume-flambard/mastra",
+          "html_url": "https://github.com/guillaume-flambard/mastra",
+          "description": "Mastra is the modern TypeScript framework for AI-powered applications and agents.",
+          "language": null,
+          "pushed_at": "2026-09-05T22:55:42Z",
+          "created_at": "2026-09-04T12:10:12Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 1712258
+        },
+        {
+          "name": "react-components",
+          "full_name": "guillaume-flambard/react-components",
+          "html_url": "https://github.com/guillaume-flambard/react-components",
+          "description": "A set of components based on Vanilla Framework",
+          "language": null,
+          "pushed_at": "2026-10-01T06:46:25Z",
+          "created_at": "2026-09-02T20:12:37Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 35903
+        },
+        {
+          "name": "langfuse-js",
+          "full_name": "guillaume-flambard/langfuse-js",
+          "html_url": "https://github.com/guillaume-flambard/langfuse-js",
+          "description": "🪢 Langfuse JS/TS SDKs - Instrument your LLM app and get detailed tracing/observability. Works with any LLM or framework",
+          "language": null,
+          "pushed_at": "2026-09-30T11:27:32Z",
+          "created_at": "2026-09-02T19:34:36Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 5881
+        },
+        {
+          "name": "langfuse",
+          "full_name": "guillaume-flambard/langfuse",
+          "html_url": "https://github.com/guillaume-flambard/langfuse",
+          "description": "🪢 Open source AI engineering platform: LLM evals, observability, metrics, prompt management, playground, datasets. Integrates with OpenTelemetry, LangChain, OpenAI SDK, LiteLLM, and more. 🍊YC W23 ",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-02T13:53:39Z",
+          "created_at": "2026-09-02T14:29:11Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 226841
+        },
+        {
+          "name": "documenso",
+          "full_name": "guillaume-flambard/documenso",
+          "html_url": "https://github.com/guillaume-flambard/documenso",
+          "description": "The Open Source DocuSign Alternative.",
+          "language": null,
+          "pushed_at": "2026-09-02T14:12:02Z",
+          "created_at": "2026-09-02T13:09:55Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 288304
+        },
+        {
+          "name": "skills",
+          "full_name": "guillaume-flambard/skills",
+          "html_url": "https://github.com/guillaume-flambard/skills",
+          "description": "Set of skills for AI agents",
+          "language": null,
+          "pushed_at": "2026-09-02T12:27:44Z",
+          "created_at": "2026-09-02T12:27:36Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 28
+        },
+        {
+          "name": "clever-tools",
+          "full_name": "guillaume-flambard/clever-tools",
+          "html_url": "https://github.com/guillaume-flambard/clever-tools",
+          "description": "The official command line interface for Clever Cloud ",
+          "language": null,
+          "pushed_at": "2026-09-02T12:20:28Z",
+          "created_at": "2026-09-02T12:19:31Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 11662
+        },
+        {
+          "name": "vanilla-framework",
+          "full_name": "guillaume-flambard/vanilla-framework",
+          "html_url": "https://github.com/guillaume-flambard/vanilla-framework",
+          "description": "From community websites to web applications, this CSS framework will help you achieve a consistent look and feel.",
+          "language": null,
+          "pushed_at": "2026-09-02T10:12:29Z",
+          "created_at": "2026-09-02T10:12:27Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 14103
+        },
+        {
+          "name": "text",
+          "full_name": "guillaume-flambard/text",
+          "html_url": "https://github.com/guillaume-flambard/text",
+          "description": "📑 Collaborative document editing using Markdown",
+          "language": null,
+          "pushed_at": "2026-09-28T12:52:27Z",
+          "created_at": "2026-09-02T09:38:01Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 3305346
+        },
+        {
+          "name": "juju-dashboard",
+          "full_name": "guillaume-flambard/juju-dashboard",
+          "html_url": "https://github.com/guillaume-flambard/juju-dashboard",
+          "description": "View the real-time status of your Juju or JAAS environment.",
+          "language": null,
+          "pushed_at": "2026-09-30T10:17:15Z",
+          "created_at": "2026-09-02T09:10:58Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 24144
+        },
+        {
+          "name": "storage",
+          "full_name": "guillaume-flambard/storage",
+          "html_url": "https://github.com/guillaume-flambard/storage",
+          "description": "S3 compatible object storage service that stores metadata in Postgres",
+          "language": null,
+          "pushed_at": "2026-09-22T19:26:42Z",
+          "created_at": "2026-09-02T08:03:08Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 17871
+        },
+        {
+          "name": "fs-xattr",
+          "full_name": "guillaume-flambard/fs-xattr",
+          "html_url": "https://github.com/guillaume-flambard/fs-xattr",
+          "description": "🔖 Node.js module for manipulating extended attributes",
+          "language": null,
+          "pushed_at": "2026-09-02T07:52:16Z",
+          "created_at": "2026-09-02T07:51:56Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 136
+        },
+        {
+          "name": "metorial-node",
+          "full_name": "guillaume-flambard/metorial-node",
+          "html_url": "https://github.com/guillaume-flambard/metorial-node",
+          "description": "Official TypeScript SDK for the Metorial API ✨📡 ",
+          "language": null,
+          "pushed_at": "2026-08-28T14:12:34Z",
+          "created_at": "2026-08-28T14:11:09Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 2735
+        },
+        {
+          "name": "windmill",
+          "full_name": "guillaume-flambard/windmill",
+          "html_url": "https://github.com/guillaume-flambard/windmill",
+          "description": "Open-source developer platform to power your entire infra and turn scripts into webhooks, workflows and UIs. Fastest workflow engine (13x vs Airflow). Open-source alternative to Retool and Temporal.",
+          "language": null,
+          "pushed_at": "2026-08-28T13:50:50Z",
+          "created_at": "2026-08-28T13:47:53Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 255251
+        },
+        {
+          "name": "windmill-vscode",
+          "full_name": "guillaume-flambard/windmill-vscode",
+          "html_url": "https://github.com/guillaume-flambard/windmill-vscode",
+          "description": null,
+          "language": null,
+          "pushed_at": "2026-08-28T13:50:48Z",
+          "created_at": "2026-08-28T13:47:35Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 4142
+        },
+        {
+          "name": "Rocket.Chat",
+          "full_name": "guillaume-flambard/Rocket.Chat",
+          "html_url": "https://github.com/guillaume-flambard/Rocket.Chat",
+          "description": "The Secure CommsOS™ for mission-critical operations",
+          "language": null,
+          "pushed_at": "2026-08-27T13:53:37Z",
+          "created_at": "2026-08-27T13:53:25Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 2108099
+        },
+        {
+          "name": "novu",
+          "full_name": "guillaume-flambard/novu",
+          "html_url": "https://github.com/guillaume-flambard/novu",
+          "description": "The open-source communication infrastructure for agents and products",
+          "language": null,
+          "pushed_at": "2026-09-22T19:25:58Z",
+          "created_at": "2026-08-27T13:32:29Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 498220
+        },
+        {
+          "name": "medusa",
+          "full_name": "guillaume-flambard/medusa",
+          "html_url": "https://github.com/guillaume-flambard/medusa",
+          "description": "The world's most flexible commerce platform for agents and developers",
+          "language": null,
+          "pushed_at": "2026-09-24T11:30:31Z",
+          "created_at": "2026-08-27T11:58:24Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 872464
+        },
+        {
+          "name": "supervision",
+          "full_name": "guillaume-flambard/supervision",
+          "html_url": "https://github.com/guillaume-flambard/supervision",
+          "description": "We write your reusable computer vision tools. 💜",
+          "language": null,
+          "pushed_at": "2026-09-02T15:34:47Z",
+          "created_at": "2026-08-27T10:53:13Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 3982316
+        },
+        {
+          "name": "meilisearch-js",
+          "full_name": "guillaume-flambard/meilisearch-js",
+          "html_url": "https://github.com/guillaume-flambard/meilisearch-js",
+          "description": "JavaScript/TypeScript client for Meilisearch",
+          "language": null,
+          "pushed_at": "2026-09-22T19:25:50Z",
+          "created_at": "2026-08-26T09:57:41Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 14846
+        },
+        {
+          "name": "clausework",
+          "full_name": "guillaume-flambard/clausework",
+          "html_url": "https://github.com/guillaume-flambard/clausework",
+          "description": "Engineering method for n8n automations: four contracts that refuse a request before it costs a week",
+          "language": "Shell",
+          "pushed_at": "2026-08-17T07:15:10Z",
+          "created_at": "2026-08-17T07:15:06Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 101
+        },
+        {
+          "name": "keelwork",
+          "full_name": "guillaume-flambard/keelwork",
+          "html_url": "https://github.com/guillaume-flambard/keelwork",
+          "description": "A BMAD module for the situation where the vision belongs to someone else. Captures intent, gates it, then builds.",
+          "language": null,
+          "pushed_at": "2026-08-15T17:04:22Z",
+          "created_at": "2026-08-15T16:36:43Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 75
+        },
+        {
+          "name": "ctaio-radar",
+          "full_name": "guillaume-flambard/ctaio-radar",
+          "html_url": "https://github.com/guillaume-flambard/ctaio-radar",
+          "description": "Four-step agentic pipeline: real release notes to a publish-ready editorial brief for ctaio.dev. Built for the WTF Sr Agentic Engineer assessment.",
+          "language": "JavaScript",
+          "pushed_at": "2026-08-15T08:47:24Z",
+          "created_at": "2026-08-15T08:10:25Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 13
+        },
+        {
+          "name": "python-sdk",
+          "full_name": "guillaume-flambard/python-sdk",
+          "html_url": "https://github.com/guillaume-flambard/python-sdk",
+          "description": "The official Python SDK for Model Context Protocol servers and clients",
+          "language": null,
+          "pushed_at": "2026-08-11T13:48:57Z",
+          "created_at": "2026-08-11T13:47:47Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 14304
+        },
+        {
+          "name": "leclebard.fr",
+          "full_name": "guillaume-flambard/leclebard.fr",
+          "html_url": "https://github.com/guillaume-flambard/leclebard.fr",
+          "description": "Refonte du site Le Clébard (bar à bières, Montreuil) — Next.js 16 + design system Open Design",
+          "language": "TypeScript",
+          "pushed_at": "2026-08-11T12:46:43Z",
+          "created_at": "2026-08-10T21:12:35Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 1638
+        },
+        {
+          "name": "perfect-london-massage",
+          "full_name": "guillaume-flambard/perfect-london-massage",
+          "html_url": "https://github.com/guillaume-flambard/perfect-london-massage",
+          "description": "Perfect London Massage — Next.js marketing site + therapist console, SEO/GEO-ready",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-12T07:18:02Z",
+          "created_at": "2026-08-10T18:32:19Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 25721
+        },
+        {
+          "name": "foldready",
+          "full_name": "guillaume-flambard/foldready",
+          "html_url": "https://github.com/guillaume-flambard/foldready",
+          "description": "Fold-Ready Score + porting engine for iOS apps on the iPhone Fold (iOS 27). Swift CLI + Next.js web.",
+          "language": "HTML",
+          "pushed_at": "2026-10-25T21:26:51Z",
+          "created_at": "2026-08-10T16:22:59Z",
+          "topics": [
+            "developer-tools",
+            "foldable",
+            "ios",
+            "open-source",
+            "swiftui"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 798
+        },
+        {
+          "name": "open-design",
+          "full_name": "guillaume-flambard/open-design",
+          "html_url": "https://github.com/guillaume-flambard/open-design",
+          "description": "🎨 The open-source Claude Design alternative. 🖥️ Local-first desktop app. 🖼️ Your coding agent becomes the design engine: prototypes, landing pages, dashboards, slides, images & video — real files, HTML/PDF/PPTX/MP4 export. 🤖 Claude Code / Codex / Cursor / Gemini / OpenCode / Qwen & 20+ CLIs via BYOK.",
+          "language": null,
+          "pushed_at": "2026-08-10T10:20:02Z",
+          "created_at": "2026-08-10T10:19:48Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 1765800
+        },
+        {
+          "name": "activity-server",
+          "full_name": "guillaume-flambard/activity-server",
+          "html_url": "https://github.com/guillaume-flambard/activity-server",
+          "description": null,
+          "language": "JavaScript",
+          "pushed_at": "2026-08-09T20:21:14Z",
+          "created_at": "2026-08-09T16:33:37Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 5
+        },
+        {
+          "name": "fluxa",
+          "full_name": "guillaume-flambard/fluxa",
+          "html_url": "https://github.com/guillaume-flambard/fluxa",
+          "description": "Fluxa - raw WebGL2 fluid design system",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-12T07:21:29Z",
+          "created_at": "2026-08-09T10:18:13Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 398
+        },
+        {
+          "name": "career-ops",
+          "full_name": "guillaume-flambard/career-ops",
+          "html_url": "https://github.com/guillaume-flambard/career-ops",
+          "description": "Open-source AI job search: scan job portals, evaluate listings with a structured A-F rubric into a 1.0-5.0 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Code, Codex, OpenCode, Antigravity…)",
+          "language": null,
+          "pushed_at": "2026-09-03T11:06:11Z",
+          "created_at": "2026-08-08T09:43:55Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 63493
+        },
+        {
+          "name": "mastra-feedback-agent",
+          "full_name": "guillaume-flambard/mastra-feedback-agent",
+          "html_url": "https://github.com/guillaume-flambard/mastra-feedback-agent",
+          "description": "Mastra agent that reads a product feedback board and tells a founder what to build next. Runs fully on a local LLM (Ollama) — no API key.",
+          "language": "TypeScript",
+          "pushed_at": "2026-08-07T21:55:36Z",
+          "created_at": "2026-08-07T21:55:28Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 43
+        },
+        {
+          "name": "featurebase-feedback-analyzer",
+          "full_name": "guillaume-flambard/featurebase-feedback-analyzer",
+          "html_url": "https://github.com/guillaume-flambard/featurebase-feedback-analyzer",
+          "description": "Analyze a Featurebase public feedback board: theme clustering + demand prioritization, output a founder-ready Markdown report.",
+          "language": "Python",
+          "pushed_at": "2026-08-07T21:47:41Z",
+          "created_at": "2026-08-07T21:47:34Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 10
+        },
+        {
+          "name": "sku-regulator",
+          "full_name": "guillaume-flambard/sku-regulator",
+          "html_url": "https://github.com/guillaume-flambard/sku-regulator",
+          "description": "From a stubborn EU portal to compliant, multi-country product data. EU health-claims register → Postgres/pgvector → hybrid RAG → compliance dashboard.",
+          "language": "Python",
+          "pushed_at": "2026-10-25T10:52:27Z",
+          "created_at": "2026-08-07T10:44:21Z",
+          "topics": [
+            "compliance",
+            "data-engineering",
+            "fastapi",
+            "human-in-the-loop",
+            "nextjs",
+            "pgvector",
+            "postgresql",
+            "python",
+            "rag"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 1237
+        },
+        {
+          "name": "knockport",
+          "full_name": "guillaume-flambard/knockport",
+          "html_url": "https://github.com/guillaume-flambard/knockport",
+          "description": "A hiring journey you type into. Candidates explore the company in a terminal before they apply, and recruiters get evidence instead of a score.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-25T10:39:14Z",
+          "created_at": "2026-08-07T06:11:43Z",
+          "topics": [
+            "accessibility",
+            "developer-tools",
+            "fullstack",
+            "nextjs",
+            "nodejs",
+            "react",
+            "recruitment",
+            "typescript"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 10862
+        },
+        {
+          "name": "triagepath",
+          "full_name": "guillaume-flambard/triagepath",
+          "html_url": "https://github.com/guillaume-flambard/triagepath",
+          "description": "Automation ROI analyst: ingest brand ops, score time/money, recommend what to automate first, human-reviewed report. Bilingual FR/EN.",
+          "language": "Python",
+          "pushed_at": "2026-10-12T07:29:49Z",
+          "created_at": "2026-08-02T07:00:03Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 464
+        },
+        {
+          "name": "memo-ui",
+          "full_name": "guillaume-flambard/memo-ui",
+          "html_url": "https://github.com/guillaume-flambard/memo-ui",
+          "description": "Personal design system with soul: precision + warmth (React, Tailwind v4, Storybook, Vitest)",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-12T07:29:59Z",
+          "created_at": "2026-08-01T13:26:25Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 472
+        },
+        {
+          "name": "trigger.dev",
+          "full_name": "guillaume-flambard/trigger.dev",
+          "html_url": "https://github.com/guillaume-flambard/trigger.dev",
+          "description": "Trigger.dev – build and deploy fully‑managed AI agents and workflows",
+          "language": null,
+          "pushed_at": "2026-07-28T16:14:18Z",
+          "created_at": "2026-07-28T17:12:11Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 177998
+        },
+        {
+          "name": "activepieces",
+          "full_name": "guillaume-flambard/activepieces",
+          "html_url": "https://github.com/guillaume-flambard/activepieces",
+          "description": "AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agents",
+          "language": null,
+          "pushed_at": "2026-07-28T16:52:01Z",
+          "created_at": "2026-07-28T16:43:08Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 609624
+        },
+        {
+          "name": "litellm",
+          "full_name": "guillaume-flambard/litellm",
+          "html_url": "https://github.com/guillaume-flambard/litellm",
+          "description": "The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI, vLLM, Nvidia NIM]",
+          "language": null,
+          "pushed_at": "2026-10-02T09:57:05Z",
+          "created_at": "2026-07-27T13:48:02Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 1548502
+        },
+        {
+          "name": "continue",
+          "full_name": "guillaume-flambard/continue",
+          "html_url": "https://github.com/guillaume-flambard/continue",
+          "description": "open-source coding agent",
+          "language": null,
+          "pushed_at": "2026-07-29T14:25:25Z",
+          "created_at": "2026-07-27T11:40:53Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 872074
+        },
+        {
+          "name": "agents",
+          "full_name": "guillaume-flambard/agents",
+          "html_url": "https://github.com/guillaume-flambard/agents",
+          "description": "Build and deploy AI Agents on Cloudflare ",
+          "language": null,
+          "pushed_at": "2026-07-27T11:11:48Z",
+          "created_at": "2026-07-27T11:13:00Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 26927
+        },
+        {
+          "name": "drizzle-orm",
+          "full_name": "guillaume-flambard/drizzle-orm",
+          "html_url": "https://github.com/guillaume-flambard/drizzle-orm",
+          "description": "ORM",
+          "language": null,
+          "pushed_at": "2026-07-24T17:49:02Z",
+          "created_at": "2026-07-27T10:29:42Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 55639
+        },
+        {
+          "name": "qonto-mcp-server",
+          "full_name": "guillaume-flambard/qonto-mcp-server",
+          "html_url": "https://github.com/guillaume-flambard/qonto-mcp-server",
+          "description": "Qonto MCP Server",
+          "language": null,
+          "pushed_at": "2026-09-08T08:10:07Z",
+          "created_at": "2026-07-27T09:57:16Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 20
+        },
+        {
+          "name": "n8n-docs",
+          "full_name": "guillaume-flambard/n8n-docs",
+          "html_url": "https://github.com/guillaume-flambard/n8n-docs",
+          "description": "Documentation for n8n, a fair-code licensed automation tool with a free community edition and powerful enterprise options. Build AI functionality into your workflows.",
+          "language": null,
+          "pushed_at": "2026-07-27T22:08:41Z",
+          "created_at": "2026-07-27T09:36:44Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 906518
+        },
+        {
+          "name": "better-auth",
+          "full_name": "guillaume-flambard/better-auth",
+          "html_url": "https://github.com/guillaume-flambard/better-auth",
+          "description": "The most comprehensive authentication framework",
+          "language": null,
+          "pushed_at": "2026-09-24T11:09:11Z",
+          "created_at": "2026-07-27T09:26:32Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 149341
+        },
+        {
+          "name": "oss-miner",
+          "full_name": "guillaume-flambard/oss-miner",
+          "html_url": "https://github.com/guillaume-flambard/oss-miner",
+          "description": "Mine GitHub for contributable issues across watched repos, auto-vet them against a 5-gate method, and score on employer leverage, AI/MCP ecosystem, and personal use.",
+          "language": "JavaScript",
+          "pushed_at": "2026-08-08T14:42:55Z",
+          "created_at": "2026-07-27T09:21:40Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 40
+        },
+        {
+          "name": "scalar",
+          "full_name": "guillaume-flambard/scalar",
+          "html_url": "https://github.com/guillaume-flambard/scalar",
+          "description": "Scalar is an open-source API platform:　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　🌐 Modern REST API Client　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　📖 Beautiful API References　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　✨ 1st-Class OpenAPI/Swagger Support",
+          "language": null,
+          "pushed_at": "2026-08-03T14:17:20Z",
+          "created_at": "2026-07-26T19:16:41Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 360813
+        },
+        {
+          "name": "twenty",
+          "full_name": "guillaume-flambard/twenty",
+          "html_url": "https://github.com/guillaume-flambard/twenty",
+          "description": "The open alternative to Salesforce, designed for AI.",
+          "language": null,
+          "pushed_at": "2026-09-24T08:06:16Z",
+          "created_at": "2026-07-26T18:17:53Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 1890797
+        },
+        {
+          "name": "opencti",
+          "full_name": "guillaume-flambard/opencti",
+          "html_url": "https://github.com/guillaume-flambard/opencti",
+          "description": "Open Cyber Threat Intelligence Platform",
+          "language": null,
+          "pushed_at": "2026-09-24T11:09:11Z",
+          "created_at": "2026-07-26T09:30:23Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 457882
+        },
+        {
+          "name": "n8n-community-toolkit",
+          "full_name": "guillaume-flambard/n8n-community-toolkit",
+          "html_url": "https://github.com/guillaume-flambard/n8n-community-toolkit",
+          "description": "Six read-only tools for the n8n community backlog: leverage-based issue triage measured against n8n's own labelling, a PR preflight that reads n8n's contribution rules at run time, a contribution gate, a reproduction sandbox, an execution health monitor, and a node schema differ.",
+          "language": "TypeScript",
+          "pushed_at": "2026-07-24T16:02:47Z",
+          "created_at": "2026-07-24T11:33:11Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 122
+        },
+        {
+          "name": "n8n-node-vetter",
+          "full_name": "guillaume-flambard/n8n-node-vetter",
+          "html_url": "https://github.com/guillaume-flambard/n8n-node-vetter",
+          "description": "Vet an n8n community node against the verified-node standards and get a severity-ranked review. Zero runtime deps, CI, ships its own AI review layer.",
+          "language": "TypeScript",
+          "pushed_at": "2026-07-27T08:30:11Z",
+          "created_at": "2026-07-23T10:26:27Z",
+          "topics": [
+            "cli",
+            "code-review",
+            "community-nodes",
+            "developer-tools",
+            "linter",
+            "n8n",
+            "n8n-community-node",
+            "typescript",
+            "verified-nodes",
+            "zero-dependencies"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 203
+        },
+        {
+          "name": "EeveeSpotifyReincarnated",
+          "full_name": "guillaume-flambard/EeveeSpotifyReincarnated",
+          "html_url": "https://github.com/guillaume-flambard/EeveeSpotifyReincarnated",
+          "description": "Enhancing your Spotify experience on iOS",
+          "language": null,
+          "pushed_at": "2026-07-15T01:33:38Z",
+          "created_at": "2026-07-17T17:57:01Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 28062
+        },
+        {
+          "name": "portfolio",
+          "full_name": "guillaume-flambard/portfolio",
+          "html_url": "https://github.com/guillaume-flambard/portfolio",
+          "description": null,
+          "language": "Python",
+          "pushed_at": "2026-10-26T09:47:12Z",
+          "created_at": "2026-07-15T12:55:26Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 8109
+        },
+        {
+          "name": "n8n-nodes-opn",
+          "full_name": "guillaume-flambard/n8n-nodes-opn",
+          "html_url": "https://github.com/guillaume-flambard/n8n-nodes-opn",
+          "description": "n8n community node for Opn Payments (formerly Omise): charges, refunds, customers, and a webhook trigger that re-fetches each event before emitting, since Opn webhooks are unsigned. No runtime dependencies.",
+          "language": "TypeScript",
+          "pushed_at": "2026-08-08T14:48:23Z",
+          "created_at": "2026-07-13T12:20:21Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 114
+        },
+        {
+          "name": "n8n",
+          "full_name": "guillaume-flambard/n8n",
+          "html_url": "https://github.com/guillaume-flambard/n8n",
+          "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+          "language": null,
+          "pushed_at": "2026-07-24T13:27:31Z",
+          "created_at": "2026-07-07T20:47:33Z",
+          "topics": [],
+          "fork": true,
+          "archived": false,
+          "private": false,
+          "size": 526782
+        },
+        {
+          "name": "n8n-community-leverage",
+          "full_name": "guillaume-flambard/n8n-community-leverage",
+          "html_url": "https://github.com/guillaume-flambard/n8n-community-leverage",
+          "description": "Ranks the open n8n backlog by leverage (severity, reach, recency), clusters it into themes, and turns the top ones into contributor-ready briefs. Runs as n8n workflows with a local LLM.",
+          "language": "TypeScript",
+          "pushed_at": "2026-07-24T11:04:50Z",
+          "created_at": "2026-07-07T20:17:59Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 181
+        },
+        {
+          "name": "browser-router",
+          "full_name": "guillaume-flambard/browser-router",
+          "html_url": "https://github.com/guillaume-flambard/browser-router",
+          "description": "Native macOS menubar app that routes URLs between browsers: local dev URLs open in Chrome, everything else in Safari. Swift.",
+          "language": "Swift",
+          "pushed_at": "2026-07-04T10:39:00Z",
+          "created_at": "2026-07-04T09:40:07Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 433
+        },
+        {
+          "name": "weave",
+          "full_name": "guillaume-flambard/weave",
+          "html_url": "https://github.com/guillaume-flambard/weave",
+          "description": "Cognitive Runtime (prototype MVP) — shared team memory that makes reusable skills emerge from activity, with per-layer provenance (perso→org). Rust, Postgres/pgvector, MCP.",
+          "language": "Rust",
+          "pushed_at": "2026-10-12T07:21:37Z",
+          "created_at": "2026-07-01T22:40:04Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 9507
+        },
+        {
+          "name": "paykit",
+          "full_name": "guillaume-flambard/paykit",
+          "html_url": "https://github.com/guillaume-flambard/paykit",
+          "description": "PayKit — drop-in credits, usage metering & subscriptions for AI apps",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-12T07:21:33Z",
+          "created_at": "2026-06-23T12:28:14Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 578
+        },
+        {
+          "name": "largo-ai",
+          "full_name": "guillaume-flambard/largo-ai",
+          "html_url": "https://github.com/guillaume-flambard/largo-ai",
+          "description": "Largo IA: French generative-AI training for small and mid-size businesses. 100% remote, jargon-free, AI-Act and GDPR aware. Marketing site in Next.js.",
+          "language": "TypeScript",
+          "pushed_at": "2026-08-08T10:00:48Z",
+          "created_at": "2026-06-16T07:01:37Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 2015
+        },
+        {
+          "name": "agentdex",
+          "full_name": "guillaume-flambard/agentdex",
+          "html_url": "https://github.com/guillaume-flambard/agentdex",
+          "description": "Web app where you own AI agents as collectible cards: usable on real tasks, personal to you, and evolving over time. Next.js + Prisma.",
+          "language": "TypeScript",
+          "pushed_at": "2026-07-30T08:02:34Z",
+          "created_at": "2026-03-18T06:37:25Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 83
+        },
+        {
+          "name": "uni",
+          "full_name": "guillaume-flambard/uni",
+          "html_url": "https://github.com/guillaume-flambard/uni",
+          "description": "UNI - Universal Neural Interface for Production-Grade LLM Systems",
+          "language": "Python",
+          "pushed_at": "2026-03-03T14:21:18Z",
+          "created_at": "2026-03-03T14:21:05Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 253
+        },
+        {
+          "name": "aperto",
+          "full_name": "guillaume-flambard/aperto",
+          "html_url": "https://github.com/guillaume-flambard/aperto",
+          "description": "Universal project orchestrator CLI: analyze, test, and develop across any stack, with AI-assisted test generation and code analysis.",
+          "language": "JavaScript",
+          "pushed_at": "2026-03-03T14:41:43Z",
+          "created_at": "2026-03-03T06:32:15Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 201
+        },
+        {
+          "name": "guillaume-flambard",
+          "full_name": "guillaume-flambard/guillaume-flambard",
+          "html_url": "https://github.com/guillaume-flambard/guillaume-flambard",
+          "description": "Profile README",
+          "language": null,
+          "pushed_at": "2026-10-26T09:36:20Z",
+          "created_at": "2026-02-20T11:19:08Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 156
+        },
+        {
+          "name": "nope",
+          "full_name": "guillaume-flambard/nope",
+          "html_url": "https://github.com/guillaume-flambard/nope",
+          "description": "Open-source AI that calls companies so you don't have to. Cancel, negotiate, complain — hands free.",
+          "language": "TypeScript",
+          "pushed_at": "2026-08-09T22:23:50Z",
+          "created_at": "2026-02-19T10:24:59Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 334
+        },
+        {
+          "name": "island-code",
+          "full_name": "guillaume-flambard/island-code",
+          "html_url": "https://github.com/guillaume-flambard/island-code",
+          "description": "Island Code for Locals: learn to build websites and use AI, for the people of Koh Phangan.",
+          "language": "CSS",
+          "pushed_at": "2026-02-05T14:28:00Z",
+          "created_at": "2025-11-06T06:06:54Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 62
+        },
+        {
+          "name": "moon-family",
+          "full_name": "guillaume-flambard/moon-family",
+          "html_url": "https://github.com/guillaume-flambard/moon-family",
+          "description": "Three independent websites for Moon Family: Mama Homemade, Moon Spoon, and Moonland Bar in Haad Rin, Koh Phangan",
+          "language": "Svelte",
+          "pushed_at": "2026-02-05T14:28:39Z",
+          "created_at": "2025-11-03T12:21:23Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 960
+        },
+        {
+          "name": "mama-moon-restaurant",
+          "full_name": "guillaume-flambard/mama-moon-restaurant",
+          "html_url": "https://github.com/guillaume-flambard/mama-moon-restaurant",
+          "description": "Mama Homemade Restaurant - Authentic Thai cuisine website",
+          "language": "Svelte",
+          "pushed_at": "2025-11-04T14:43:17Z",
+          "created_at": "2025-11-03T11:01:58Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 2305
+        },
+        {
+          "name": "th-comissions",
+          "full_name": "guillaume-flambard/th-comissions",
+          "html_url": "https://github.com/guillaume-flambard/th-comissions",
+          "description": "Trackly: B2B commission tracking for Thailand's tourism sector, with a Capacitor mobile app.",
+          "language": "TypeScript",
+          "pushed_at": "2026-08-08T14:21:16Z",
+          "created_at": "2025-10-18T07:19:27Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 671
+        },
+        {
+          "name": "th-compliance-app",
+          "full_name": "guillaume-flambard/th-compliance-app",
+          "html_url": "https://github.com/guillaume-flambard/th-compliance-app",
+          "description": null,
+          "language": "TypeScript",
+          "pushed_at": "2026-02-05T14:29:19Z",
+          "created_at": "2025-10-17T05:18:12Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 299
+        },
+        {
+          "name": "siame-vat-watch",
+          "full_name": "guillaume-flambard/siame-vat-watch",
+          "html_url": "https://github.com/guillaume-flambard/siame-vat-watch",
+          "description": "🇹🇭 Thailand VAT Compliance Platform for Non-Resident SaaS Companies - Automates 7% VAT calculations, B2B/B2C classification, and P.P.30.9 declarations",
+          "language": "PHP",
+          "pushed_at": "2025-10-10T07:38:58Z",
+          "created_at": "2025-10-10T07:17:07Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 395
+        },
+        {
+          "name": "liquid-ui",
+          "full_name": "guillaume-flambard/liquid-ui",
+          "html_url": "https://github.com/guillaume-flambard/liquid-ui",
+          "description": "🌊 The first Apple Liquid Glass library for React - Authentic glass morphism effects with environmental blending",
+          "language": "TypeScript",
+          "pushed_at": "2025-09-14T17:56:33Z",
+          "created_at": "2025-09-12T08:54:10Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 129906
+        },
+        {
+          "name": "sun-chasers",
+          "full_name": "guillaume-flambard/sun-chasers",
+          "html_url": "https://github.com/guillaume-flambard/sun-chasers",
+          "description": null,
+          "language": "HTML",
+          "pushed_at": "2026-02-05T14:29:09Z",
+          "created_at": "2025-08-02T10:20:20Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 38485
+        },
+        {
+          "name": "pacs-dog-map",
+          "full_name": "guillaume-flambard/pacs-dog-map",
+          "html_url": "https://github.com/guillaume-flambard/pacs-dog-map",
+          "description": "PACS Dog Map: professional animal sterilization tracker. Python.",
+          "language": "Python",
+          "pushed_at": "2025-08-05T05:39:25Z",
+          "created_at": "2025-07-30T05:35:38Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 1470
+        },
+        {
+          "name": "portsense",
+          "full_name": "guillaume-flambard/portsense",
+          "html_url": "https://github.com/guillaume-flambard/portsense",
+          "description": "PortSense: AI-assisted maritime container tracking SaaS. Real-time tracking with AI insights. Next.js and Prisma.",
+          "language": "TypeScript",
+          "pushed_at": "2025-07-27T07:51:49Z",
+          "created_at": "2025-07-26T05:31:16Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 526
+        },
+        {
+          "name": "straysafe",
+          "full_name": "guillaume-flambard/straysafe",
+          "html_url": "https://github.com/guillaume-flambard/straysafe",
+          "description": "StraySafe: mobile-first collaborative app to monitor, manage, and protect stray or fostered dogs in a region.",
+          "language": "TypeScript",
+          "pushed_at": "2026-02-05T14:29:04Z",
+          "created_at": "2025-07-20T06:19:05Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 2254
+        },
+        {
+          "name": "agents_liminals",
+          "full_name": "guillaume-flambard/agents_liminals",
+          "html_url": "https://github.com/guillaume-flambard/agents_liminals",
+          "description": "Agents Liminals: an AI-guided spiritual and psychological consultation platform. Next.js 15.",
+          "language": "TypeScript",
+          "pushed_at": "2026-08-08T12:11:39Z",
+          "created_at": "2025-07-14T16:10:13Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 732
+        },
+        {
+          "name": "agentfabric",
+          "full_name": "guillaume-flambard/agentfabric",
+          "html_url": "https://github.com/guillaume-flambard/agentfabric",
+          "description": null,
+          "language": "Svelte",
+          "pushed_at": "2026-02-05T14:27:25Z",
+          "created_at": "2025-06-16T02:22:21Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 132
+        },
+        {
+          "name": "carousel-gen",
+          "full_name": "guillaume-flambard/carousel-gen",
+          "html_url": "https://github.com/guillaume-flambard/carousel-gen",
+          "description": null,
+          "language": null,
+          "pushed_at": "2025-06-09T13:03:56Z",
+          "created_at": "2025-06-09T05:19:42Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 351
+        },
+        {
+          "name": "brandmedia",
+          "full_name": "guillaume-flambard/brandmedia",
+          "html_url": "https://github.com/guillaume-flambard/brandmedia",
+          "description": null,
+          "language": null,
+          "pushed_at": "2025-06-03T11:27:08Z",
+          "created_at": "2025-06-03T11:23:28Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 75
+        },
+        {
+          "name": "n8n-docker",
+          "full_name": "guillaume-flambard/n8n-docker",
+          "html_url": "https://github.com/guillaume-flambard/n8n-docker",
+          "description": null,
+          "language": "Dockerfile",
+          "pushed_at": "2025-06-02T06:11:10Z",
+          "created_at": "2025-06-02T06:04:57Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 1
+        },
+        {
+          "name": "deckbuddy",
+          "full_name": "guillaume-flambard/deckbuddy",
+          "html_url": "https://github.com/guillaume-flambard/deckbuddy",
+          "description": null,
+          "language": "C++",
+          "pushed_at": "2026-02-05T14:27:41Z",
+          "created_at": "2025-05-07T06:46:03Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 282
+        },
+        {
+          "name": "menu-snap",
+          "full_name": "guillaume-flambard/menu-snap",
+          "html_url": "https://github.com/guillaume-flambard/menu-snap",
+          "description": "Menu Snap: turn a photographed restaurant menu into a structured digital menu.",
+          "language": "TypeScript",
+          "pushed_at": "2025-05-03T02:29:57Z",
+          "created_at": "2025-05-03T02:29:55Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 84
+        },
+        {
+          "name": "accordo",
+          "full_name": "guillaume-flambard/accordo",
+          "html_url": "https://github.com/guillaume-flambard/accordo",
+          "description": "Accordo: a contract negotiation assistant. Next.js 15 and TypeScript.",
+          "language": "TypeScript",
+          "pushed_at": "2026-02-05T14:27:20Z",
+          "created_at": "2025-04-30T11:48:59Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 193
+        },
+        {
+          "name": "docusync",
+          "full_name": "guillaume-flambard/docusync",
+          "html_url": "https://github.com/guillaume-flambard/docusync",
+          "description": "DocuSync: B2B micro-SaaS that automatically syncs Google Workspace documents (Docs, Sheets, Slides).",
+          "language": "TypeScript",
+          "pushed_at": "2025-04-30T10:41:37Z",
+          "created_at": "2025-04-30T09:26:20Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 115
+        },
+        {
+          "name": "stripe2telegram",
+          "full_name": "guillaume-flambard/stripe2telegram",
+          "html_url": "https://github.com/guillaume-flambard/stripe2telegram",
+          "description": "Forward Stripe payment events to Telegram notifications.",
+          "language": "TypeScript",
+          "pushed_at": "2025-04-20T06:10:49Z",
+          "created_at": "2025-04-20T06:09:35Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 82
+        },
+        {
+          "name": "agent-gpt-teacher",
+          "full_name": "guillaume-flambard/agent-gpt-teacher",
+          "html_url": "https://github.com/guillaume-flambard/agent-gpt-teacher",
+          "description": null,
+          "language": "TypeScript",
+          "pushed_at": "2026-10-24T10:45:01Z",
+          "created_at": "2024-01-10T18:40:28Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 40542
+        },
+        {
+          "name": "mojolink-site",
+          "full_name": "guillaume-flambard/mojolink-site",
+          "html_url": "https://github.com/guillaume-flambard/mojolink-site",
+          "description": null,
+          "language": "HTML",
+          "pushed_at": "2026-02-05T14:28:30Z",
+          "created_at": "2025-01-13T04:54:25Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 158
+        },
+        {
+          "name": "mediterranean-rescue",
+          "full_name": "memolabs-dev/mediterranean-rescue",
+          "html_url": "https://github.com/memolabs-dev/mediterranean-rescue",
+          "description": "Rescue operations at sea, documented with their source: SOS MEDITERRANEE's public records on one map, checked by volunteers.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-26T09:10:19Z",
+          "created_at": "2026-10-25T11:23:59Z",
+          "topics": [
+            "django",
+            "humanitarian",
+            "maplibre",
+            "open-data",
+            "postgis",
+            "react",
+            "search-and-rescue"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 1682
+        },
+        {
+          "name": "freelance-growth",
+          "full_name": "memolabs-dev/freelance-growth",
+          "html_url": "https://github.com/memolabs-dev/freelance-growth",
+          "description": "Memo Labs freelance strategy, remote mission acquisition, partnerships and technical accompaniment",
+          "language": "Python",
+          "pushed_at": "2026-10-23T22:12:51Z",
+          "created_at": "2026-10-19T17:51:24Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 917
+        },
+        {
+          "name": "project-template",
+          "full_name": "memolabs-dev/project-template",
+          "html_url": "https://github.com/memolabs-dev/project-template",
+          "description": "Template of new Memo Labs projects (memo-bridge project_create): CI, Mergify, gate paths",
+          "language": "JavaScript",
+          "pushed_at": "2026-10-18T13:19:16Z",
+          "created_at": "2026-10-18T13:19:12Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 4
+        },
+        {
+          "name": "mergify-config",
+          "full_name": "memolabs-dev/mergify-config",
+          "html_url": "https://github.com/memolabs-dev/mergify-config",
+          "description": "Shared Mergify merge policy of the memolabs-dev organization (extends: mergify-config)",
+          "language": null,
+          "pushed_at": "2026-10-19T23:19:05Z",
+          "created_at": "2026-10-18T10:40:57Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 2
+        },
+        {
+          "name": "mobile-explorer",
+          "full_name": "memolabs-dev/mobile-explorer",
+          "html_url": "https://github.com/memolabs-dev/mobile-explorer",
+          "description": "Permission-based iOS app observation and specification tool for macOS",
+          "language": "Swift",
+          "pushed_at": "2026-10-26T09:47:30Z",
+          "created_at": "2026-10-16T12:14:27Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 22
+        },
+        {
+          "name": "rebuild-radar",
+          "full_name": "memolabs-dev/rebuild-radar",
+          "html_url": "https://github.com/memolabs-dev/rebuild-radar",
+          "description": "Evidence-driven tracker of open-source software rebuilds and alternatives",
+          "language": "JavaScript",
+          "pushed_at": "2026-10-26T09:46:12Z",
+          "created_at": "2026-10-16T12:14:17Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 33
+        },
+        {
+          "name": "memo-bridge",
+          "full_name": "memolabs-dev/memo-bridge",
+          "html_url": "https://github.com/memolabs-dev/memo-bridge",
+          "description": "Independent open-source MCP bridge for Memo Labs — secure multi-host control",
+          "language": "JavaScript",
+          "pushed_at": "2026-10-26T09:45:36Z",
+          "created_at": "2026-10-13T15:19:33Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 3142
+        },
+        {
+          "name": ".github",
+          "full_name": "memolabs-dev/.github",
+          "html_url": "https://github.com/memolabs-dev/.github",
+          "description": "Memo Labs organization automation, GitHub App migration and shared CI",
+          "language": "Python",
+          "pushed_at": "2026-10-25T11:42:54Z",
+          "created_at": "2026-10-13T09:04:40Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 486
+        },
+        {
+          "name": "lab-hub",
+          "full_name": "memolabs-dev/lab-hub",
+          "html_url": "https://github.com/memolabs-dev/lab-hub",
+          "description": "Memo Labs public website and projects",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-19T23:22:44Z",
+          "created_at": "2026-10-12T21:15:55Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 30
+        },
+        {
+          "name": "problem-intelligence-engine",
+          "full_name": "memolabs-dev/problem-intelligence-engine",
+          "html_url": "https://github.com/memolabs-dev/problem-intelligence-engine",
+          "description": "Memo Labs Dev — evidence-first problem discovery and corroboration engine",
+          "language": "JavaScript",
+          "pushed_at": "2026-10-24T10:59:32Z",
+          "created_at": "2026-10-12T09:57:47Z",
+          "topics": [
+            "ai-agents",
+            "memolabs-dev",
+            "pgvector",
+            "problem-discovery"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 507
+        },
+        {
+          "name": "drop",
+          "full_name": "memolabs-dev/drop",
+          "html_url": "https://github.com/memolabs-dev/drop",
+          "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-26T09:47:54Z",
+          "created_at": "2026-10-08T14:17:18Z",
+          "topics": [
+            "a2a",
+            "agent-security",
+            "ai-agents",
+            "consent",
+            "end-to-end-encryption",
+            "human-in-the-loop",
+            "local-first",
+            "mcp",
+            "model-context-protocol",
+            "privacy",
+            "tauri",
+            "typescript"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 12389
+        },
+        {
+          "name": "trufflo",
+          "full_name": "memolabs-dev/trufflo",
+          "html_url": "https://github.com/memolabs-dev/trufflo",
+          "description": null,
+          "language": "Swift",
+          "pushed_at": "2026-10-19T23:18:00Z",
+          "created_at": "2026-10-04T12:02:00Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 6806
+        },
+        {
+          "name": "agent-reality-bench",
+          "full_name": "memolabs-dev/agent-reality-bench",
+          "html_url": "https://github.com/memolabs-dev/agent-reality-bench",
+          "description": "Measuring when an agent's knowledge, observations and actions stop describing the same reality",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-19T23:22:55Z",
+          "created_at": "2026-09-29T12:08:48Z",
+          "topics": [
+            "ai-agents",
+            "alignment",
+            "benchmark",
+            "developer-tools",
+            "evaluation",
+            "verification"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 128
+        },
+        {
+          "name": "cuesheet",
+          "full_name": "memolabs-dev/cuesheet",
+          "html_url": "https://github.com/memolabs-dev/cuesheet",
+          "description": "Invariants discovered by running a personal agent control plane, extracted once they survived real work.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-24T10:58:25Z",
+          "created_at": "2026-09-29T10:22:17Z",
+          "topics": [
+            "agent-orchestration",
+            "ai-agents",
+            "developer-tools",
+            "orchestration",
+            "ownership",
+            "spec-driven-development",
+            "typescript"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 2804
+        },
+        {
+          "name": "valve",
+          "full_name": "memolabs-dev/valve",
+          "html_url": "https://github.com/memolabs-dev/valve",
+          "description": "System Zero cognitive scheduler for agentic systems: decide whether cognition should happen, and what kind, before any LLM is called. Research, no trained model yet.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-19T23:23:52Z",
+          "created_at": "2026-09-27T22:30:55Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 246
+        },
+        {
+          "name": "world-kernel",
+          "full_name": "memolabs-dev/world-kernel",
+          "html_url": "https://github.com/memolabs-dev/world-kernel",
+          "description": "Rust crate for admitting grounded changes, with receipts and pre-registered stop conditions",
+          "language": "Rust",
+          "pushed_at": "2026-10-19T23:23:26Z",
+          "created_at": "2026-09-27T21:09:31Z",
+          "topics": [
+            "agents",
+            "evidence",
+            "reproducibility",
+            "research",
+            "rust",
+            "state-machine",
+            "verification"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 601
+        },
+        {
+          "name": "kollio-mac",
+          "full_name": "memolabs-dev/kollio-mac",
+          "html_url": "https://github.com/memolabs-dev/kollio-mac",
+          "description": "Kollio: native macOS SwiftUI canvas for living visual documents and reviewable AI-proposed changes (prototype).",
+          "language": "Swift",
+          "pushed_at": "2026-10-25T11:34:02Z",
+          "created_at": "2026-09-25T18:14:39Z",
+          "topics": [
+            "ai-agents",
+            "canvas",
+            "document-editor",
+            "human-in-the-loop",
+            "local-first",
+            "macos",
+            "swiftui"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 1710
+        },
+        {
+          "name": "intentlane",
+          "full_name": "memolabs-dev/intentlane",
+          "html_url": "https://github.com/memolabs-dev/intentlane",
+          "description": "Audit an iOS or macOS app's Siri and App Intents surface, then generate the native code",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-25T10:46:07Z",
+          "created_at": "2026-09-21T14:17:27Z",
+          "topics": [
+            "app-intents",
+            "apple-intelligence",
+            "codegen",
+            "expo",
+            "ios",
+            "macos",
+            "siri",
+            "swift"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 2567
+        },
+        {
+          "name": "navirox",
+          "full_name": "memolabs-dev/navirox",
+          "html_url": "https://github.com/memolabs-dev/navirox",
+          "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-26T09:46:51Z",
+          "created_at": "2026-09-17T11:38:39Z",
+          "topics": [
+            "android",
+            "cli",
+            "codegen",
+            "cross-platform",
+            "ios",
+            "migration",
+            "mobile",
+            "monorepo",
+            "react-native",
+            "typescript",
+            "vue",
+            "web-to-native"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 3320
+        },
+        {
+          "name": "uni-protocol",
+          "full_name": "memolabs-dev/uni-protocol",
+          "html_url": "https://github.com/memolabs-dev/uni-protocol",
+          "description": "Verify that agent work did what it claimed: contracts, verifiers, evidence, deterministic decision.",
+          "language": "Rust",
+          "pushed_at": "2026-10-24T11:24:56Z",
+          "created_at": "2026-09-14T14:05:46Z",
+          "topics": [
+            "agent-tooling",
+            "ai-agents",
+            "ci-cd",
+            "rust",
+            "spec-driven-development",
+            "test-automation",
+            "verification"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 2866
+        },
+        {
+          "name": "aidd-guard",
+          "full_name": "memolabs-dev/aidd-guard",
+          "html_url": "https://github.com/memolabs-dev/aidd-guard",
+          "description": "Reports which AIDD acceptance criteria are covered by a test. Deterministic, no LLM, never runs your tests.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-19T23:21:13Z",
+          "created_at": "2026-09-11T06:31:44Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 136
+        },
+        {
+          "name": "life-os",
+          "full_name": "memolabs-dev/life-os",
+          "html_url": "https://github.com/memolabs-dev/life-os",
+          "description": "Local-first, spec-driven life coach. Human by default, expert optional. AGPL-3.0.",
+          "language": "Rust",
+          "pushed_at": "2026-10-19T23:22:55Z",
+          "created_at": "2026-08-31T15:47:24Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 2090
+        },
+        {
+          "name": "stasis",
+          "full_name": "memolabs-dev/stasis",
+          "html_url": "https://github.com/memolabs-dev/stasis",
+          "description": "Multi-project scoring and sprint orchestrator: an anti-scatter meta-layer that scores your projects, tells you which one to commit to, and holds you to it. TypeScript CLI + desktop app.",
+          "language": "TypeScript",
+          "pushed_at": "2026-10-19T23:23:46Z",
+          "created_at": "2026-07-04T11:05:43Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 620
+        },
+        {
+          "name": "memo-cc",
+          "full_name": "memolabs-dev/memo-cc",
+          "html_url": "https://github.com/memolabs-dev/memo-cc",
+          "description": "Guillaume's Claude Code plugin: vault-enrich and new-project skills, plus personal-archivist and vault-librarian agents.",
+          "language": "Shell",
+          "pushed_at": "2026-10-19T23:23:10Z",
+          "created_at": "2026-06-29T07:14:55Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 62
+        }
+      ],
+      "syncedAt": "2026-10-26T09:48:18.642Z",
+      "healthy": true
+    },
+    "merged": {
+      "items": [
+        {
+          "title": "fix(contextual-menu): route Tab into the menu when opened with the mouse",
+          "html_url": "https://github.com/canonical/react-components/pull/1418",
+          "repository_url": "https://api.github.com/repos/canonical/react-components",
+          "state": "closed",
+          "created_at": "2026-09-02T20:13:25Z",
+          "closed_at": "2026-10-01T14:47:14Z",
+          "pull_request": {
+            "merged_at": "2026-10-01T14:47:14Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix: show invalid JSON errors in admin forms",
+          "html_url": "https://github.com/kuzzleio/kuzzle-admin-console/pull/1092",
+          "repository_url": "https://api.github.com/repos/kuzzleio/kuzzle-admin-console",
+          "state": "closed",
+          "created_at": "2026-09-24T13:29:15Z",
+          "closed_at": "2026-10-01T08:54:50Z",
+          "pull_request": {
+            "merged_at": "2026-10-01T08:54:50Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(image): keep data: URI images on markdown round-trip",
+          "html_url": "https://github.com/nextcloud/text/pull/9159",
+          "repository_url": "https://api.github.com/repos/nextcloud/text",
+          "state": "closed",
+          "created_at": "2026-09-02T09:38:57Z",
+          "closed_at": "2026-09-28T13:18:39Z",
+          "pull_request": {
+            "merged_at": "2026-09-28T13:18:39Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix: ignore inherited Object keys when validating locales and normalize the x-locale header",
+          "html_url": "https://github.com/twentyhq/twenty/pull/24919",
+          "repository_url": "https://api.github.com/repos/twentyhq/twenty",
+          "state": "closed",
+          "created_at": "2026-08-27T11:41:18Z",
+          "closed_at": "2026-09-24T08:32:09Z",
+          "pull_request": {
+            "merged_at": "2026-09-24T08:32:09Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "docs(community): add openspec-guard",
+          "html_url": "https://github.com/Fission-AI/OpenSpec/pull/1845",
+          "repository_url": "https://api.github.com/repos/Fission-AI/OpenSpec",
+          "state": "closed",
+          "created_at": "2026-09-11T04:54:13Z",
+          "closed_at": "2026-09-22T23:46:07Z",
+          "pull_request": {
+            "merged_at": "2026-09-22T23:46:07Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix: size the account settings avatar to the window, not the device screen",
+          "html_url": "https://github.com/nextcloud/ios/pull/4285",
+          "repository_url": "https://api.github.com/repos/nextcloud/ios",
+          "state": "closed",
+          "created_at": "2026-09-06T17:07:18Z",
+          "closed_at": "2026-09-22T06:27:50Z",
+          "pull_request": {
+            "merged_at": "2026-09-22T06:27:50Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(shared): getEnvVariable returns empty string for a missing variable",
+          "html_url": "https://github.com/novuhq/novu/pull/12477",
+          "repository_url": "https://api.github.com/repos/novuhq/novu",
+          "state": "closed",
+          "created_at": "2026-08-27T13:32:46Z",
+          "closed_at": "2026-09-10T10:22:24Z",
+          "pull_request": {
+            "merged_at": "2026-09-10T10:22:24Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "Test request timeout abort deterministically with a mocked fetch",
+          "html_url": "https://github.com/meilisearch/meilisearch-js/pull/2227",
+          "repository_url": "https://api.github.com/repos/meilisearch/meilisearch-js",
+          "state": "closed",
+          "created_at": "2026-08-26T10:12:56Z",
+          "closed_at": "2026-09-09T04:47:21Z",
+          "pull_request": {
+            "merged_at": "2026-09-09T04:47:21Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "Add get and delete methods for individual chat workspaces",
+          "html_url": "https://github.com/meilisearch/meilisearch-js/pull/2226",
+          "repository_url": "https://api.github.com/repos/meilisearch/meilisearch-js",
+          "state": "closed",
+          "created_at": "2026-08-26T09:58:01Z",
+          "closed_at": "2026-09-09T05:15:02Z",
+          "pull_request": {
+            "merged_at": "2026-09-09T05:15:02Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(mastracode): stop advertising Bedrock models that need a non-Converse transport",
+          "html_url": "https://github.com/mastra-ai/mastra/pull/23061",
+          "repository_url": "https://api.github.com/repos/mastra-ai/mastra",
+          "state": "closed",
+          "created_at": "2026-09-04T12:10:51Z",
+          "closed_at": "2026-09-05T23:06:42Z",
+          "pull_request": {
+            "merged_at": "2026-09-05T23:06:41Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(doctor): make doctor CLI-resolution tests hermetic against .env leak",
+          "html_url": "https://github.com/career-ops-hq/career-ops/pull/2617",
+          "repository_url": "https://api.github.com/repos/career-ops-hq/career-ops",
+          "state": "closed",
+          "created_at": "2026-08-08T09:44:56Z",
+          "closed_at": "2026-09-05T04:07:58Z",
+          "pull_request": {
+            "merged_at": "2026-09-05T04:07:58Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(file): use the sync xattr API, the async path of fs-xattr leaks",
+          "html_url": "https://github.com/supabase/storage/pull/1357",
+          "repository_url": "https://api.github.com/repos/supabase/storage",
+          "state": "closed",
+          "created_at": "2026-09-02T08:04:23Z",
+          "closed_at": "2026-09-02T19:27:51Z",
+          "pull_request": {
+            "merged_at": "2026-09-02T19:27:51Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(detection): stop `xcycwh_to_xyxy` truncating integer boxes",
+          "html_url": "https://github.com/roboflow/supervision/pull/2515",
+          "repository_url": "https://api.github.com/repos/roboflow/supervision",
+          "state": "closed",
+          "created_at": "2026-08-27T10:53:33Z",
+          "closed_at": "2026-09-02T16:12:35Z",
+          "pull_request": {
+            "merged_at": "2026-09-02T16:12:35Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(detection): stop `denormalize_boxes` truncating integer boxes",
+          "html_url": "https://github.com/roboflow/supervision/pull/2516",
+          "repository_url": "https://api.github.com/repos/roboflow/supervision",
+          "state": "closed",
+          "created_at": "2026-08-27T11:05:08Z",
+          "closed_at": "2026-09-02T12:05:17Z",
+          "pull_request": {
+            "merged_at": "2026-09-02T12:05:17Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "ci: déploiement via Dokploy — retirer le deploy SSH cassé des pipelines",
+          "html_url": "https://github.com/kemimk/echohub/pull/2",
+          "repository_url": "https://api.github.com/repos/kemimk/echohub",
+          "state": "closed",
+          "created_at": "2026-08-09T10:48:30Z",
+          "closed_at": "2026-08-09T11:28:17Z",
+          "pull_request": {
+            "merged_at": "2026-08-09T11:28:17Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(api-reference): stop recursive discriminator rendering for allOf variants",
+          "html_url": "https://github.com/scalar/scalar/pull/9791",
+          "repository_url": "https://api.github.com/repos/scalar/scalar",
+          "state": "closed",
+          "created_at": "2026-07-29T15:43:30Z",
+          "closed_at": "2026-08-03T15:05:19Z",
+          "pull_request": {
+            "merged_at": "2026-08-03T15:05:19Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(api-reference): resolve axe ARIA violations in sidebar and client tabs",
+          "html_url": "https://github.com/scalar/scalar/pull/9783",
+          "repository_url": "https://api.github.com/repos/scalar/scalar",
+          "state": "closed",
+          "created_at": "2026-07-28T19:09:40Z",
+          "closed_at": "2026-08-03T09:18:30Z",
+          "pull_request": {
+            "merged_at": "2026-08-03T09:18:30Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "docs: use N8N_WEBHOOK_URL over deprecated WEBHOOK_URL, clarify endpoint paths",
+          "html_url": "https://github.com/n8n-io/n8n-docs/pull/5107",
+          "repository_url": "https://api.github.com/repos/n8n-io/n8n-docs",
+          "state": "closed",
+          "created_at": "2026-07-27T09:39:05Z",
+          "closed_at": "2026-07-27T22:11:21Z",
+          "pull_request": {
+            "merged_at": "2026-07-27T22:11:21Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(workspace-store): read x-scalar-secret extensions on apiKey and http schemes",
+          "html_url": "https://github.com/scalar/scalar/pull/9767",
+          "repository_url": "https://api.github.com/repos/scalar/scalar",
+          "state": "closed",
+          "created_at": "2026-07-26T19:36:32Z",
+          "closed_at": "2026-07-27T13:10:58Z",
+          "pull_request": {
+            "merged_at": "2026-07-27T13:10:58Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(api-reference): name the collapsible section trigger and fix its aria-controls",
+          "html_url": "https://github.com/scalar/scalar/pull/9766",
+          "repository_url": "https://api.github.com/repos/scalar/scalar",
+          "state": "closed",
+          "created_at": "2026-07-26T19:30:59Z",
+          "closed_at": "2026-07-27T12:42:14Z",
+          "pull_request": {
+            "merged_at": "2026-07-27T12:42:13Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(emails): bump @react-email/render to ^2.0.6 to fix empty transactional email bodies",
+          "html_url": "https://github.com/twentyhq/twenty/pull/23323",
+          "repository_url": "https://api.github.com/repos/twentyhq/twenty",
+          "state": "closed",
+          "created_at": "2026-07-26T18:18:16Z",
+          "closed_at": "2026-07-27T09:37:10Z",
+          "pull_request": {
+            "merged_at": "2026-07-27T09:37:10Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(front): add accessible labels to icon-only options dropdown triggers",
+          "html_url": "https://github.com/twentyhq/twenty/pull/23325",
+          "repository_url": "https://api.github.com/repos/twentyhq/twenty",
+          "state": "closed",
+          "created_at": "2026-07-26T19:26:01Z",
+          "closed_at": "2026-07-27T07:11:40Z",
+          "pull_request": {
+            "merged_at": "2026-07-27T07:11:40Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "Add Claude Code GitHub Workflow",
+          "html_url": "https://github.com/kemimk/echohub/pull/1",
+          "repository_url": "https://api.github.com/repos/kemimk/echohub",
+          "state": "closed",
+          "created_at": "2025-10-04T06:39:09Z",
+          "closed_at": "2025-10-04T06:39:18Z",
+          "pull_request": {
+            "merged_at": "2025-10-04T06:39:18Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "addeventlistener touch",
+          "html_url": "https://github.com/Nexidel/EnfantsOpeVR/pull/11",
+          "repository_url": "https://api.github.com/repos/Nexidel/EnfantsOpeVR",
+          "state": "closed",
+          "created_at": "2021-11-22T12:23:38Z",
+          "closed_at": "2021-11-22T12:23:47Z",
+          "pull_request": {
+            "merged_at": "2021-11-22T12:23:47Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "test click",
+          "html_url": "https://github.com/Nexidel/EnfantsOpeVR/pull/10",
+          "repository_url": "https://api.github.com/repos/Nexidel/EnfantsOpeVR",
+          "state": "closed",
+          "created_at": "2021-11-22T12:13:31Z",
+          "closed_at": "2021-11-22T12:13:40Z",
+          "pull_request": {
+            "merged_at": "2021-11-22T12:13:40Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "message confirm",
+          "html_url": "https://github.com/Nexidel/EnfantsOpeVR/pull/9",
+          "repository_url": "https://api.github.com/repos/Nexidel/EnfantsOpeVR",
+          "state": "closed",
+          "created_at": "2021-11-22T11:50:13Z",
+          "closed_at": "2021-11-22T11:51:37Z",
+          "pull_request": {
+            "merged_at": "2021-11-22T11:51:36Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "btn && message confirm",
+          "html_url": "https://github.com/Nexidel/EnfantsOpeVR/pull/8",
+          "repository_url": "https://api.github.com/repos/Nexidel/EnfantsOpeVR",
+          "state": "closed",
+          "created_at": "2021-11-22T11:45:50Z",
+          "closed_at": "2021-11-22T11:46:13Z",
+          "pull_request": {
+            "merged_at": "2021-11-22T11:46:13Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "Guillaume",
+          "html_url": "https://github.com/Nexidel/EnfantsOpeVR/pull/5",
+          "repository_url": "https://api.github.com/repos/Nexidel/EnfantsOpeVR",
+          "state": "closed",
+          "created_at": "2021-11-22T09:36:55Z",
+          "closed_at": "2021-11-22T09:53:08Z",
+          "pull_request": {
+            "merged_at": "2021-11-22T09:53:08Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        }
+      ],
+      "syncedAt": "2026-10-26T09:48:18.642Z",
+      "healthy": true
+    },
+    "open": {
+      "items": [
+        {
+          "title": "fix(edge-functions-dev): remove obsolete Deno flag",
+          "html_url": "https://github.com/netlify/primitives/pull/790",
+          "repository_url": "https://api.github.com/repos/netlify/primitives",
+          "state": "open",
+          "created_at": "2026-09-24T13:29:14Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(logging): truncate base64 data URIs in error_information.error_message",
+          "html_url": "https://github.com/BerriAI/litellm/pull/34783",
+          "repository_url": "https://api.github.com/repos/BerriAI/litellm",
+          "state": "open",
+          "created_at": "2026-07-27T13:48:59Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(ModelTable): keep cloud/region logo and text on one line",
+          "html_url": "https://github.com/canonical/juju-dashboard/pull/2469",
+          "repository_url": "https://api.github.com/repos/canonical/juju-dashboard",
+          "state": "open",
+          "created_at": "2026-09-02T09:12:23Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "Added a config allowlist for internal webhook hosts",
+          "html_url": "https://github.com/TryGhost/Ghost/pull/30920",
+          "repository_url": "https://api.github.com/repos/TryGhost/Ghost",
+          "state": "open",
+          "created_at": "2026-09-21T13:22:54Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(frontend): render non-hex label colors correctly (#17238)",
+          "html_url": "https://github.com/OpenCTI-Platform/opencti/pull/17331",
+          "repository_url": "https://api.github.com/repos/OpenCTI-Platform/opencti",
+          "state": "open",
+          "created_at": "2026-07-26T09:34:10Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "feat(basic-section): container_class for the image config",
+          "html_url": "https://github.com/canonical/vanilla-framework/pull/5845",
+          "repository_url": "https://api.github.com/repos/canonical/vanilla-framework",
+          "state": "open",
+          "created_at": "2026-09-02T10:13:16Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix: traverse localized group and tab children in locale-resolved documents",
+          "html_url": "https://github.com/payloadcms/payload/pull/18232",
+          "repository_url": "https://api.github.com/repos/payloadcms/payload",
+          "state": "open",
+          "created_at": "2026-09-21T13:05:04Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(organization): type member/invitation role as comma-joined and custom-role output",
+          "html_url": "https://github.com/better-auth/better-auth/pull/10558",
+          "repository_url": "https://api.github.com/repos/better-auth/better-auth",
+          "state": "open",
+          "created_at": "2026-07-27T13:05:11Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "test(web): regression tests for dialogs opened from dashboard row actions",
+          "html_url": "https://github.com/langfuse/langfuse/pull/16978",
+          "repository_url": "https://api.github.com/repos/langfuse/langfuse",
+          "state": "open",
+          "created_at": "2026-09-02T18:29:52Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(web): name the prompt variable rule accurately",
+          "html_url": "https://github.com/langfuse/langfuse/pull/17748",
+          "repository_url": "https://api.github.com/repos/langfuse/langfuse",
+          "state": "open",
+          "created_at": "2026-09-21T17:37:28Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "chore(tests): bootstrap a pytest suite, and pin mcp to v1 so the package imports",
+          "html_url": "https://github.com/qonto/qonto-mcp-server/pull/19",
+          "repository_url": "https://api.github.com/repos/qonto/qonto-mcp-server",
+          "state": "open",
+          "created_at": "2026-09-08T08:10:44Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(core): recognise Windows backslash paths in grep_search output",
+          "html_url": "https://github.com/continuedev/continue/pull/13037",
+          "repository_url": "https://api.github.com/repos/continuedev/continue",
+          "state": "open",
+          "created_at": "2026-07-27T11:45:53Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(invoices): send `page` as the pagination query param, not `current_page`",
+          "html_url": "https://github.com/qonto/qonto-mcp-server/pull/17",
+          "repository_url": "https://api.github.com/repos/qonto/qonto-mcp-server",
+          "state": "open",
+          "created_at": "2026-07-27T10:00:11Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix: unescapeHTML decodes astral numeric HTML entities",
+          "html_url": "https://github.com/RocketChat/Rocket.Chat/pull/41967",
+          "repository_url": "https://api.github.com/repos/RocketChat/Rocket.Chat",
+          "state": "open",
+          "created_at": "2026-08-27T13:53:52Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(ci): add linux/arm64 platform for Apple Silicon support",
+          "html_url": "https://github.com/qonto/qonto-mcp-server/pull/18",
+          "repository_url": "https://api.github.com/repos/qonto/qonto-mcp-server",
+          "state": "open",
+          "created_at": "2026-09-03T14:55:06Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix(sdk): fail fast on client errors in waitForSetupSession",
+          "html_url": "https://github.com/metorial/metorial-node/pull/53",
+          "repository_url": "https://api.github.com/repos/metorial/metorial-node",
+          "state": "open",
+          "created_at": "2026-08-28T14:12:36Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix: free value buffer, data struct and async work in the async path",
+          "html_url": "https://github.com/LinusU/fs-xattr/pull/48",
+          "repository_url": "https://api.github.com/repos/LinusU/fs-xattr",
+          "state": "open",
+          "created_at": "2026-09-02T07:53:09Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        }
+      ],
+      "syncedAt": "2026-10-26T09:48:18.642Z",
+      "healthy": true
+    }
+  }
+}
