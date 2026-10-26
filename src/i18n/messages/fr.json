@@ -209,8 +209,8 @@
     "openPr": "PR ouverte · en attente de fusion",
     "allContributions": "Toutes mes contributions open source",
     "snapshotSource": "Données conservées dans un instantané GitHub",
-    "liveSource": "Lecture directe de l’API GitHub (instantané non encore disponible)",
-    "syncedAt": "Dernière synchronisation complète",
+    "liveSource": "Lecture directe de l’API GitHub (instantané indisponible ou trop ancien)",
+    "syncedAt": "Horodatage le plus ancien des données",
     "snapshotStale": "Synchronisation retardée : dernières données valides conservées"
   },
   "build": {
