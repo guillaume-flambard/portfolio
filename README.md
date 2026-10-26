@@ -43,17 +43,36 @@ The homepage is a portfolio with two evidence layers:
   It shows recently updated public repositories and merged pull requests in external projects.
   A code update does **not** imply a working demo, green CI, or production usage.
 
-To add a **new public project** to the automatically refreshed "In progress" section,
-add the GitHub repository topic `memo-showcase`. No site code change is needed.
-The repository must not be archived, forked, private, empty, or without a push in
-the last 120 days. Add `memo-hide` to keep a repository off the homepage. A few
-established repositories are seeded in `EDITORIAL_REPOS` to make the initial
-section useful. Only four projects are shown at once, ordered by most recent code
-update, so a newly tagged project may replace an older project.
+**New public repositories are discovered automatically without a topic or manual
+portfolio changes.** The homepage shows a separate *Recently published*
+section for eligible public repositories created in the last 90 days, with an
+explicit *public code / not audited* label. Private, archived, forked, empty,
+internal/infrastructure-named repositories are excluded. `memo-hide` and
+`memo-internal` topics opt out of automatic discovery. The recent-discovery
+section displays up to four entries, ordered by GitHub creation date. GitHub
+does not guarantee a push is a production release.
 
-Merged PRs are discovered by GitHub search, filtered to the authenticated author's
-public upstream contributions and deduplicated by upstream repository. Counts are
-not used as a quality score.
+The editorial *In progress* area still shows up to four reviewed repositories
+(sorted by latest push). For established repositories, add the optional topic
+`memo-showcase` to opt in, or update `EDITORIAL_REPOS`. These editorial picks
+are **not** automatically promoted from new public repositories.
+
+Open-source PRs are automatically searched across GitHub, **without** listing
+upstream repositories or contribution URLs in this codebase. The homepage shows
+the five most recently merged external PRs plus two open proposals. The
+bilingual `/fr/open-source` and `/en/open-source` routes show the full retrieved
+feed (up to 100 merged and 100 open PRs via each GitHub Search result). Each PR
+is kept, including multiple real contributions to the same upstream project.
+Merge status comes from `pull_request.merged_at`, not merely `closed_at`.
+PRs still under review are clearly marked **open**, not merged.
+
+Public GitHub data is cached for up to one hour and refreshed on a site visit
+after that interval. GitHub availability, API rate limits, the API search result
+window (100 per status), and indexing latency mean this is *eventually consistent*,
+not a guaranteed instantaneous or exhaustive stream. Optional server-only
+`GITHUB_READ_TOKEN` helps with rate limits. To get stronger delivery guarantees,
+add a monitored scheduled sync with retry and a persisted last-known-good feed,
+instead of relying exclusively on public live API responses.
 
 This feature reads **public GitHub API data only**. An optional server-side
 `GITHUB_READ_TOKEN` can increase API rate limits; never expose it using a
@@ -65,10 +84,9 @@ that both locale pages render and that the public GitHub links remain accurate.
 
 ## Evidence-based project development journals
 
-Every qualifying public repository in the living homepage now links to
-`/{fr|en}/build/{owner}/{repo}`. The route is restricted to the public,
-non-archived, non-forked, opted-in/editorially selected repositories — never
-a dynamic browser for private GitHub content.
+Every qualifying curated or newly discovered public repository on the
+homepage can link to `/{fr|en}/build/{owner}/{repo}`. The route checks current
+eligible public repositories; private, archived and forked code stays excluded.
 
 The journal is a **selective, verifiable history**, not a productivity score:
 - GitHub repository creation date is labeled *repository created*, **not** first prototype.
