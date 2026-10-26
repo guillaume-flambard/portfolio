@@ -209,8 +209,8 @@
     "openPr": "Open PR · not yet merged",
     "allContributions": "All my open-source contributions",
     "snapshotSource": "Saved GitHub snapshot",
-    "liveSource": "Live GitHub API (snapshot not yet available)",
-    "syncedAt": "Last full sync",
+    "liveSource": "Live GitHub API (snapshot unavailable or too old)",
+    "syncedAt": "Oldest recorded sync",
     "snapshotStale": "Sync delayed; last known good data retained"
   },
   "build": {
