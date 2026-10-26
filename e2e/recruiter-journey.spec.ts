@@ -150,8 +150,10 @@ for (const locale of locales) {
 
     test("identifies the engineer, service, experience and next step", async ({ page }) => {
       await page.goto(`/${locale}`);
-      const role = locale === "fr" ? "Développeur React & TypeScript" : "React & TypeScript developer";
-      await expect(page.getByRole("heading", { level: 1 })).toContainText(role);
+      const positioning = locale === "fr" ? "Du prototype au produit" : "From prototype to product";
+      await expect(page.getByRole("heading", { level: 1 })).toContainText(positioning);
+      await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Ce que je construis maintenant" : "What I'm building now" })).toBeVisible();
+      await expect(page.locator("#github-activity a[href=\"https://github.com/guillaume-flambard\"]")).toBeVisible();
       await expect(page.locator(".hero-identity")).toContainText("Memo Labs");
       await expect(page.locator(".hero-facts")).toContainText("Medsharing");
       await expect(page.locator(".hero-facts")).toContainText("Echo Travel");

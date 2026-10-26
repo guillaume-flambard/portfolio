@@ -6,12 +6,15 @@ import { CASE_PROJECTS } from "@/data/projectNavigation";
 import { CASE_BY_SLUG, type Lang } from "@/data/caseStudies";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
+import GithubActivity from "@/components/GithubActivity";
+
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Guillaume Flambard — Développeur React & TypeScript freelance", "Développeur React, Next.js et TypeScript : interfaces métier, API, paiements et intégrations. Expérience Medsharing et Echo Travel. Missions freelance à distance ou poste remote."]
-    : ["Guillaume Flambard — React & TypeScript developer", "React, Next.js and TypeScript developer for business interfaces, APIs, payments and integrations. Experience at Medsharing and Echo Travel. Remote freelance or employment."];
+    ? ["Guillaume Flambard — Product engineer React & TypeScript", "Du prototype au produit : ingénierie React et TypeScript, applications utilisables, livraisons et contributions open source vérifiables sur GitHub."]
+    : ["Guillaume Flambard — React & TypeScript product engineer", "From prototype to working software: React and TypeScript engineering, shipped projects and verifiable open-source contributions on GitHub."];
   return createRouteMetadata(locale, "", title, description);
 }
 
@@ -38,7 +41,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="herobtns hero-actions">
             <Link className="btn p" href="/contact#freelance">{t("ctaContact")}</Link>
             <Link className="btn s" href="/cv">{t("ctaAbout")}</Link>
-            <Link className="hero-inline-link" href="#projects">{t("ctaWork")}</Link>
+            <Link className="hero-inline-link" href="#github-activity">{t("ctaWork")}</Link>
           </div>
           <dl className="hero-facts">
             <div>
@@ -55,6 +58,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </dl>
         </div>
       </header>
+
+      <GithubActivity locale={lang} />
 
       <section className="focus-section" aria-labelledby="focus-heading">
         <div className="wrap">
