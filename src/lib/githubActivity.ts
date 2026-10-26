@@ -9,14 +9,23 @@ const REVALIDATE_SECONDS = 3600;
 const RECENT_DAYS = 120;
 const NEW_REPO_DAYS = 90;
 
-const EDITORIAL_REPOS = new Set([
+/**
+ * Evidence-first, deliberately limited project order. These are editorial
+ * priorities, not inferred product success or a count of commits. Client case
+ * studies have their own separate section; new public repos stay automatic.
+ */
+const EDITORIAL_ORDER = [
+  "memolabs-dev/mediterranean-rescue",
   "guillaume-flambard/algo-observatory",
+  "memolabs-dev/memo-bridge",
+  "memolabs-dev/drop",
   "guillaume-flambard/foldready",
   "guillaume-flambard/paykit",
-  "memolabs-dev/drop",
-  "memolabs-dev/mediterranean-rescue",
-  "memolabs-dev/memo-bridge",
-]);
+] as const;
+const EDITORIAL_REPOS = new Set<string>(EDITORIAL_ORDER);
+const EDITORIAL_RANK = new Map<string, number>(
+  EDITORIAL_ORDER.map((name, index) => [name, index]),
+);
 
 export type GithubRepository = {
   name: string;
@@ -125,11 +134,11 @@ function presentRepo(repo: GithubRepository): ShowcaseProject {
   };
 }
 
-/** Existing editorial feature set; activity is not proof of production readiness. */
+/** Editorial picks first; opt-in topic projects follow by real recent activity. */
 export function selectShowcaseProjects(
   repositories: GithubRepository[],
   now = Date.now(),
-  limit = 4,
+  limit = 5,
 ): ShowcaseProject[] {
   const threshold = now - RECENT_DAYS * 86400000;
   const seen = new Set<string>();
@@ -142,7 +151,12 @@ export function selectShowcaseProjects(
       const topics = Array.isArray(repo.topics) ? repo.topics : [];
       return EDITORIAL_REPOS.has(key) || topics.includes(SHOWCASE_TOPIC);
     })
-    .sort((a, b) => Date.parse(b.pushed_at!) - Date.parse(a.pushed_at!))
+    .sort((a, b) => {
+      const rankA = EDITORIAL_RANK.get(a.full_name.toLowerCase()) ?? Number.MAX_SAFE_INTEGER;
+      const rankB = EDITORIAL_RANK.get(b.full_name.toLowerCase()) ?? Number.MAX_SAFE_INTEGER;
+      return rankA - rankB ||
+        Date.parse(b.pushed_at!) - Date.parse(a.pushed_at!);
+    })
     .slice(0, Math.max(0, Math.min(limit, 100)))
     .map(presentRepo);
 }
