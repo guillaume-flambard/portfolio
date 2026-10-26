@@ -402,3 +402,22 @@ test("unlocalized NetNewsWire universal-link fallback has an isolated root layou
   await expect(page.getByText("Reference: test-reference")).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
 });
+
+for (const locale of locales) {
+  test(`${locale}: project development journals are accessible from the living homepage`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(`/${locale}`);
+    const journals = page.locator(".github-project-list .github-build-log-link");
+    if ((await journals.count()) === 0) {
+      // GitHub can rate-limit public unauthenticated requests in CI.
+      await expect(page.locator(".github-empty").first()).toBeVisible();
+      return;
+    }
+    await expect(journals.first()).toHaveAttribute("href", new RegExp(`^/${locale}/build/[^/]+/[^/]+$`));
+    await journals.first().click();
+    await expect(page).toHaveURL(new RegExp(`/${locale}/build/[^/]+/[^/]+$`));
+    await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Comment ce projet évolue" : "How this project evolved" })).toBeVisible();
+    await expect(page.locator(".build-log-limitation")).toBeVisible();
+    await assertNoHorizontalOverflow(page);
+  });
+}
