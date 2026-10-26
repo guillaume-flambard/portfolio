@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   selectMergedContributions,
+  validateSnapshot,
   selectExternalContributions,
   selectNewPublicProjects,
   selectShowcaseProjects,
@@ -185,5 +186,30 @@ describe("upstream status and source validation", () => {
       "https://github.com/nextcloud/text/pull/9001",
       "https://github.com/nextcloud/text/pull/9000",
     ]);
+  });
+});
+
+
+describe("durable GitHub snapshot input validation", () => {
+  const valid = {
+    version: 1,
+    generatedAt: "2026-10-26T08:00:00Z",
+    sections: {
+      repositories: { items: [], syncedAt: "2026-10-26T08:00:00Z", healthy: true },
+      merged: { items: [], syncedAt: "2026-10-26T08:00:00Z", healthy: true },
+      open: { items: [], syncedAt: "2026-10-26T08:00:00Z", healthy: false },
+    },
+  };
+  it("accepts a versioned, section-by-section persisted snapshot", () => {
+    expect(validateSnapshot(valid)?.sections.open.healthy).toBe(false);
+  });
+  it("rejects corruption, oversized data and missing dates", () => {
+    expect(validateSnapshot({ ...valid, version: 999 })).toBeNull();
+    expect(validateSnapshot({ ...valid, sections: { ...valid.sections, open: {
+      items: Array(251).fill({}), syncedAt: "2026-10-26T08:00:00Z", healthy: true,
+    } } })).toBeNull();
+    expect(validateSnapshot({ ...valid, sections: { ...valid.sections, merged: {
+      items: [], healthy: true,
+    } } })).toBeNull();
   });
 });
