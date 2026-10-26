@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 /** Public evidence: curated work, newly-created repositories and external PRs. */
 const GITHUB_USER = "guillaume-flambard";
 const GITHUB_ORG = "memolabs-dev";
@@ -61,11 +63,28 @@ export type OpenSourceContribution = {
   mergedAt: string | null;
 };
 
+export type GithubSync = {
+  source: "snapshot" | "live";
+  updatedAt: string | null;
+  degraded: boolean;
+};
+
+export type GithubSnapshot = {
+  version: number;
+  generatedAt: string;
+  sections: {
+    repositories: { items: GithubRepository[]; syncedAt: string; healthy: boolean };
+    merged: { items: GithubPullRequest[]; syncedAt: string; healthy: boolean };
+    open: { items: GithubPullRequest[]; syncedAt: string; healthy: boolean };
+  };
+};
+
 export type GithubActivity = {
   projects: ShowcaseProject[];
   newProjects: ShowcaseProject[];
   contributions: OpenSourceContribution[];
   openContributions: OpenSourceContribution[];
+  sync: GithubSync;
 };
 
 function isDate(value: unknown): value is string {
@@ -219,7 +238,38 @@ export async function githubJson<T>(url: string): Promise<T | null> {
   }
 }
 
-async function loadPublicRepositories(): Promise<GithubRepository[]> {
+const SNAPSHOT_URL =
+  "https://raw.githubusercontent.com/guillaume-flambard/portfolio/github-activity/data/github-snapshot.json";
+
+/** A separate, versioned branch is the durable last-known-good store. */
+export function validateSnapshot(input: unknown): GithubSnapshot | null {
+  if (!input || typeof input !== "object") return null;
+  const obj = input as Record<string, unknown>;
+  if (obj.version !== 1 || !isDate(obj.generatedAt) ||
+      !obj.sections || typeof obj.sections !== "object") return null;
+  const sections = obj.sections as Record<string, unknown>;
+  for (const key of ["repositories", "merged", "open"]) {
+    const item = sections[key] as Record<string, unknown> | undefined;
+    if (!item || !Array.isArray(item.items) || item.items.length > 250 ||
+        !isDate(item.syncedAt) || typeof item.healthy !== "boolean") return null;
+  }
+  return input as GithubSnapshot;
+}
+
+const getSnapshot = cache(async (): Promise<GithubSnapshot | null> => {
+  try {
+    const response = await fetch(SNAPSHOT_URL, {
+      next: { revalidate: 15 * 60 },
+      signal: AbortSignal.timeout(5500),
+    });
+    if (!response.ok) return null;
+    return validateSnapshot(await response.json());
+  } catch {
+    return null;
+  }
+});
+
+async function liveRepositories(): Promise<GithubRepository[] | null> {
   const urls = [
     "https://api.github.com/users/" + GITHUB_USER + "/repos?type=owner&sort=pushed&direction=desc&per_page=100",
     "https://api.github.com/users/" + GITHUB_USER + "/repos?type=owner&sort=created&direction=desc&per_page=100",
@@ -227,14 +277,42 @@ async function loadPublicRepositories(): Promise<GithubRepository[]> {
     "https://api.github.com/orgs/" + GITHUB_ORG + "/repos?type=public&sort=created&direction=desc&per_page=100",
   ];
   const batches = await Promise.all(urls.map((url) => githubJson<GithubRepository[]>(url)));
+  if (batches.some((batch) => !Array.isArray(batch))) return null;
   const seen = new Set<string>();
-  return batches.flatMap((batch) => Array.isArray(batch) ? batch : []).filter((repo) => {
+  return batches.flatMap((batch) => batch as GithubRepository[]).filter((repo) => {
     if (typeof repo?.full_name !== "string") return false;
     const key = repo.full_name.toLowerCase();
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
   });
+}
+
+const loadPublicRepositories = cache(async (): Promise<GithubRepository[]> => {
+  const snapshot = await getSnapshot();
+  if (snapshot) return snapshot.sections.repositories.items;
+  const repos = await liveRepositories();
+  if (repos === null) {
+    // Fail the regeneration instead of overwriting the last cached HTML with an empty feed.
+    throw new Error("No usable GitHub snapshot or repository data");
+  }
+  return repos;
+});
+
+export async function getGithubSync(): Promise<GithubSync> {
+  const snapshot = await getSnapshot();
+  if (!snapshot) return { source: "live", updatedAt: null, degraded: false };
+  const oldest = [
+    snapshot.sections.repositories.syncedAt,
+    snapshot.sections.merged.syncedAt,
+    snapshot.sections.open.syncedAt,
+  ].sort()[0];
+  return {
+    source: "snapshot",
+    updatedAt: oldest,
+    degraded: Object.values(snapshot.sections).some((section) => !section.healthy) ||
+      Date.now() - Date.parse(oldest) > 2 * 60 * 60 * 1000,
+  };
 }
 
 export async function getShowcaseProjects(limit = 4): Promise<ShowcaseProject[]> {
@@ -244,10 +322,17 @@ export async function getShowcaseProjects(limit = 4): Promise<ShowcaseProject[]>
   return [...selected, ...discovered].slice(0, Math.max(0, Math.min(limit, 100)));
 }
 
-export async function getExternalContributions(): Promise<{
+export const getExternalContributions = cache(async (): Promise<{
   merged: OpenSourceContribution[];
   open: OpenSourceContribution[];
-}> {
+}> => {
+  const snapshot = await getSnapshot();
+  if (snapshot) {
+    return {
+      merged: selectExternalContributions(snapshot.sections.merged.items, "merged"),
+      open: selectExternalContributions(snapshot.sections.open.items, "open"),
+    };
+  }
   const base = "author:guillaume-flambard is:pr -user:guillaume-flambard -org:memolabs-dev";
   const urls = [
     "https://api.github.com/search/issues?q=" + encodeURIComponent(base + " is:merged") + "&sort=updated&order=desc&per_page=100",
@@ -256,21 +341,26 @@ export async function getExternalContributions(): Promise<{
   const [merged, open] = await Promise.all(urls.map((url) => githubJson<{
     items?: GithubPullRequest[];
   }>(url)));
+  if (!Array.isArray(merged?.items) || !Array.isArray(open?.items)) {
+    throw new Error("No usable GitHub snapshot or contribution feed");
+  }
   return {
-    merged: selectExternalContributions(Array.isArray(merged?.items) ? merged.items : [], "merged"),
-    open: selectExternalContributions(Array.isArray(open?.items) ? open.items : [], "open"),
+    merged: selectExternalContributions(merged.items, "merged"),
+    open: selectExternalContributions(open.items, "open"),
   };
-}
+});
 
 export async function getGithubActivity(): Promise<GithubActivity> {
-  const [repos, contributionFeed] = await Promise.all([
+  const [repos, contributionFeed, sync] = await Promise.all([
     loadPublicRepositories(),
     getExternalContributions(),
+    getGithubSync(),
   ]);
   return {
     projects: selectShowcaseProjects(repos),
     newProjects: selectNewPublicProjects(repos),
     contributions: contributionFeed.merged.slice(0, 5),
     openContributions: contributionFeed.open.slice(0, 2),
+    sync,
   };
 }
