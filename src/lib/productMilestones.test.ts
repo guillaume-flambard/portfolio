@@ -58,4 +58,38 @@ describe("versioned public product milestones", () => {
     expect(validateProductMilestones({ version: 1, milestones: items }, project)).toHaveLength(6);
     expect(validateProductMilestones({ version: 1, milestones: [milestone(), milestone()] }, project)).toHaveLength(1);
   });
+
+  it("permits an exact repository-owned GitHub Pages demo with a separate documented source PR", () => {
+    const results = validateProductMilestones({ version: 1, milestones: [
+      milestone({
+        kind: "demo",
+        evidenceUrl: "https://github.com/memolabs-dev/drop/pull/7",
+        demoUrl: "https://memolabs-dev.github.io/drop/",
+      }),
+    ] }, project);
+    expect(results).toMatchObject([{
+      kind: "demo",
+      evidenceUrl: "https://github.com/memolabs-dev/drop/pull/7",
+      demoUrl: "https://memolabs-dev.github.io/drop/",
+    }]);
+  });
+
+  it("does not allow other domains, repositories or kinds to impersonate a demo", () => {
+    const urls = [
+      "https://memolabs-dev.github.io/drop.evil/",
+      "https://evil.github.io/drop/",
+      "https://memolabs-dev.github.io/other/",
+      "https://memolabs-dev.github.io/drop/?redirect=evil",
+      "http://memolabs-dev.github.io/drop/",
+    ];
+    for (const demoUrl of urls) {
+      expect(validateProductMilestones({ version: 1, milestones: [
+        milestone({ kind: "demo", demoUrl, evidenceUrl: "https://github.com/memolabs-dev/drop/pull/7" }),
+      ] }, project)).toEqual([]);
+    }
+    expect(validateProductMilestones({ version: 1, milestones: [
+      milestone({ kind: "deployment", demoUrl: "https://memolabs-dev.github.io/drop/" }),
+    ] }, project)).toEqual([]);
+  });
+
 });
