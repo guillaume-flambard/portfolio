@@ -55,32 +55,6 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
             ) : <p className="github-empty">{t("projectsEmpty")}</p>}
           </div>
 
-          <div className="github-activity-block github-discovery-block">
-            <div className="github-block-heading">
-              <h3>{t("newProjectsTitle")}</h3>
-              <span>{t("newProjectsCaption")}</span>
-            </div>
-            {activity.newProjects.length > 0 ? (
-              <ul className="github-project-list" data-testid="github-auto-discovered">
-                {activity.newProjects.map((project) => (
-                  <li key={project.fullName}>
-                    <a className="github-project-link" href={project.url} target="_blank" rel="noopener noreferrer">
-                      <span className="github-item-title">{project.name}<span aria-hidden="true">↗</span></span>
-                      {project.description ? <span className="github-project-description">{project.description}</span> : null}
-                      <span className="github-meta">
-                        <span>{t("newRepoStatus")}</span>
-                        {project.createdAt ? <span>{formatter.format(new Date(project.createdAt))}</span> : null}
-                      </span>
-                    </a>
-                    <Link className="github-build-log-link" href={"/build/" + project.fullName}>
-                      {t("buildLogCta")} <span aria-hidden="true">→</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : <p className="github-empty">{t("newProjectsEmpty")}</p>}
-          </div>
-
           <div className="github-activity-block">
             <div className="github-block-heading">
               <h3>{t("contributionsTitle")}</h3>
@@ -119,6 +93,32 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
               {t("allContributions")} <span aria-hidden="true">→</span>
             </Link>
           </div>
+          <div className="github-activity-block github-discovery-block">
+            <div className="github-block-heading">
+              <h3>{t("newProjectsTitle")}</h3>
+              <span>{t("newProjectsCaption")}</span>
+            </div>
+            {activity.newProjects.length > 0 ? (
+              <ul className="github-project-list" data-testid="github-auto-discovered">
+                {activity.newProjects.map((project) => (
+                  <li key={project.fullName}>
+                    <a className="github-project-link" href={project.url} target="_blank" rel="noopener noreferrer">
+                      <span className="github-item-title">{project.name}<span aria-hidden="true">↗</span></span>
+                      {project.description ? <span className="github-project-description">{project.description}</span> : null}
+                      <span className="github-meta">
+                        <span>{t("newRepoStatus")}</span>
+                        {project.createdAt ? <span>{formatter.format(new Date(project.createdAt))}</span> : null}
+                      </span>
+                    </a>
+                    <Link className="github-build-log-link" href={"/build/" + project.fullName}>
+                      {t("buildLogCta")} <span aria-hidden="true">→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : <p className="github-empty">{t("newProjectsEmpty")}</p>}
+          </div>
+
         </div>
         <p className="github-disclaimer">{t("disclaimer")}</p>
       </div>
