@@ -236,7 +236,13 @@
     "source": "View evidence",
     "empty": "No qualifying public events are available for this project.",
     "incomplete": "Not all GitHub API requests succeeded; this timeline may be incomplete.",
-    "limitations": "This is a selective history, not a measurement of hours worked or engineering speed. Prototype, demo and deployment milestones appear only once a verifiable date and public evidence link exist."
+    "limitations": "A selective history: GitHub provides repository, merge and release dates. Additional product milestones are source-linked maintainer statements, not independent certification. Shipping, deployment and user adoption are never inferred from code activity.",
+    "kind_prototype": "Documented prototype (self-reported)",
+    "kind_demo": "Published demonstration (self-reported)",
+    "kind_deployment": "Reported deployment",
+    "note_prototype": "A repository-authored milestone backed by a GitHub source. A code date alone does not prove the prototype was usable.",
+    "note_demo": "A self-reported milestone with a public source. Video or source code alone cannot certify a working user journey.",
+    "note_deployment": "A deployment milestone reported by the maintainer and linked to public evidence. Green CI or a release does not prove a production system is operational."
   },
   "openSource": {
     "eyebrow": "GitHub · external contributions",
