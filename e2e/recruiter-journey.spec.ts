@@ -431,7 +431,7 @@ for (const locale of locales) {
     await journals.first().click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/build/[^/]+/[^/]+$`));
     await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Comment ce projet évolue" : "How this project evolved" })).toBeVisible();
-    await expect(page.locator(".build-log-limitation")).toBeVisible();
+    await expect(page.locator(".build-log-limitation").first()).toBeVisible();
     await assertNoHorizontalOverflow(page);
   });
 }
