@@ -42,10 +42,12 @@ function ownedHomepageDemoAllowed(
   url: string,
   homepage: string | undefined,
 ): boolean {
-  if (!homepage || url !== homepage) return false;
+  if (!homepage) return false;
   try {
     const target = new URL(url);
-    return target.protocol === "https:" &&
+    const declared = new URL(homepage);
+    return target.href === declared.href &&
+      target.protocol === "https:" &&
       /^[a-z0-9-]+\.memolabs\.dev$/i.test(target.hostname) &&
       !target.username && !target.password &&
       !target.port && !target.search && !target.hash &&
