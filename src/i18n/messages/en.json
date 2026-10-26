@@ -207,7 +207,11 @@
     "newProjectsEmpty": "No new qualifying public repositories right now.",
     "openContributionsTitle": "Contributions under review",
     "openPr": "Open PR · not yet merged",
-    "allContributions": "All my open-source contributions"
+    "allContributions": "All my open-source contributions",
+    "snapshotSource": "Saved GitHub snapshot",
+    "liveSource": "Live GitHub API (snapshot not yet available)",
+    "syncedAt": "Last full sync",
+    "snapshotStale": "Sync delayed; last known good data retained"
   },
   "build": {
     "eyebrow": "Engineering log · public evidence",
@@ -247,6 +251,10 @@
     "openLabel": "Open PR",
     "empty": "No merged contributions were retrieved right now.",
     "emptyOpen": "No open contributions were retrieved right now.",
-    "disclaimer": "This feed uses public GitHub results (up to 100 most recent PRs per state). It is refreshed on site visits after up to one hour of caching. Merge does not prove production adoption or business impact. GitHub API outages may temporarily limit the displayed items."
+    "disclaimer": "This feed uses public GitHub results (up to 100 most recent PRs per state). It is refreshed on site visits after up to one hour of caching. Merge does not prove production adoption or business impact. GitHub API outages may temporarily limit the displayed items.",
+    "snapshotSource": "Persistent GitHub history",
+    "liveSource": "Direct GitHub data before durable snapshot initialization",
+    "syncedAt": "Last full sync",
+    "snapshotStale": "Sync delayed; previous verified data retained"
   }
 }
