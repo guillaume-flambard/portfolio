@@ -182,3 +182,14 @@ video used as its evidence. The build log then presents two distinct actions:
 **view source evidence** and **try the public demo**. The live demo is only
 represented as accessible public software, **not a claim of user adoption or
 production usage**. Arbitrary outbound links and mismatched projects are rejected.
+
+An owned project can also declare its **registered** public homepage as a demo
+(`"demoUrl": "https://rescue.memolabs.dev/"`) if GitHub's repository homepage
+matches that URL and the URL is on an exact HTTPS `*.memolabs.dev` subdomain
+at the root path. The homepage is rechecked against the public GitHub
+repository metadata; an arbitrary URL, redirect parameter, nonstandard port,
+another project or lookalike host is rejected. The portfolio does **not**
+infer a successful deployment from the homepage field: this link must be used
+only for a real, independently checked public demo, with its source evidence
+and stated verification date in the manifest. An accessible landing page does
+not establish a working authenticated application.
