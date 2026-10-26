@@ -421,3 +421,32 @@ for (const locale of locales) {
     await assertNoHorizontalOverflow(page);
   });
 }
+
+
+for (const locale of locales) {
+  test(locale + ": open-source contributions are accessible and status-labeled", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/" + locale);
+    await expect(page.locator(".github-all-contributions-link")).toBeVisible();
+    await expect(page.locator(".github-discovery-block")).toBeVisible();
+    await page.locator(".github-all-contributions-link").click();
+    await expect(page).toHaveURL(new RegExp("/" + locale + "/open-source$"));
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(
+      locale === "fr" ? "Contributions open source" : "Open-source contributions",
+    );
+    await expect(page.getByRole("heading", { level: 2, name: locale === "fr"
+      ? "Contributions fusionnées" : "Merged contributions" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: locale === "fr"
+      ? "Propositions en cours" : "Work under review" })).toBeVisible();
+    const accepted = page.locator('[data-testid="contributions-merged"] li');
+    const open = page.locator('[data-testid="contributions-open"] li');
+    if ((await accepted.count()) > 0) {
+      await expect(accepted.first()).toContainText(locale === "fr" ? "PR fusionnée" : "Merged PR");
+      await expect(accepted.first().locator("a")).toHaveAttribute("href", /^https:\/\/github\.com\/[^/]+\/[^/]+\/pull\/\d+$/);
+    }
+    if ((await open.count()) > 0) {
+      await expect(open.first()).toContainText(locale === "fr" ? "PR ouverte" : "Open PR");
+    }
+    await assertNoHorizontalOverflow(page);
+  });
+}
