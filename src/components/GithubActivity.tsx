@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { getGithubActivity } from "@/lib/githubActivity";
 
 /**
@@ -45,6 +46,9 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
                         <span>{t("lastCodeUpdate")} {formatter.format(new Date(project.pushedAt))}</span>
                       </span>
                     </a>
+                    <Link className="github-build-log-link" href={`/build/${project.fullName}`}>
+                      {t("buildLogCta")} <span aria-hidden="true">→</span>
+                    </Link>
                   </li>
                 ))}
               </ul>

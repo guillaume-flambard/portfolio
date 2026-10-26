@@ -264,6 +264,44 @@ h1.h .acc { color: var(--accent); }
   .github-block-heading > span { text-align: left; }
 }
 
+/* ── verifiable build logs ────────────────────────────────────────────────── */
+.github-project-list .github-build-log-link {
+  display: inline-flex; align-items: center; gap: 10px; width: fit-content;
+  padding: 0 0 22px; font-size: 14px; font-weight: 500;
+  color: var(--ink); text-decoration: underline; text-underline-offset: 5px;
+}
+.github-project-list .github-build-log-link:hover { color: var(--accent); }
+.build-log-header { border-bottom: 1px solid var(--line); }
+.build-log-header .wrap {
+  padding-top: clamp(70px, 10vw, 130px);
+  padding-bottom: clamp(60px, 8vw, 110px);
+}
+.build-log-header h1.h { overflow-wrap: anywhere; max-width: 20ch; }
+.build-log-header .lede { max-width: 66ch; }
+.build-log-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.build-log-content.sec { padding: clamp(58px, 9vw, 130px) 0; }
+.build-log-content h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); line-height: 1.1; }
+.build-log-intro { max-width: 70ch; margin-top: 20px; font-size: 17px; line-height: 1.5; color: var(--muted); }
+.build-events { list-style: none; padding: 0; margin: 42px 0 0; border-top: 1px solid var(--line); }
+.build-events li {
+  display: grid; grid-template-columns: minmax(128px, 175px) minmax(0, 1fr);
+  gap: 26px; padding: 27px 0; border-bottom: 1px solid var(--line);
+}
+.build-event-date time { color: var(--muted); font-size: 13px; }
+.build-event-kind { font-size: 12px; color: var(--accent); letter-spacing: .07em; text-transform: uppercase; }
+.build-event-content { min-width: 0; }
+.build-event-content h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.22; margin-top: 9px; overflow-wrap: anywhere; }
+.build-event-explanation { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.build-event-content a { display: inline-flex; gap: 10px; margin-top: 14px;
+  color: var(--ink); text-decoration: underline; text-underline-offset: 5px; font-size: 14px; }
+.build-event-content a:hover { color: var(--accent); }
+.build-log-limitation { color: var(--muted); max-width: 75ch; font-size: 14px; line-height: 1.55; margin-top: 25px; }
+@media (max-width: 590px) {
+  .build-events li { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
+  .build-log-header .wrap { padding-top: 56px; padding-bottom: 58px; }
+  .build-log-links .btn { padding: 12px 16px; font-size: 13px; }
+}
+
 /* ── sections ─────────────────────────────────────────────────────────────── */
 .sec { padding: var(--sec-y) 0; }
 .shead { margin-bottom: clamp(48px, 7vw, 80px); }

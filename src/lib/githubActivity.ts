@@ -31,6 +31,7 @@ export type GithubRepository = {
   description: string | null;
   language: string | null;
   pushed_at: string | null;
+  created_at?: string | null;
   topics: string[];
   fork: boolean;
   archived: boolean;
@@ -45,6 +46,7 @@ export type ShowcaseProject = {
   description: string | null;
   language: string | null;
   pushedAt: string;
+  createdAt: string | null;
 };
 
 export type GithubPullRequest = {
@@ -74,6 +76,7 @@ function publicGithubUrl(value: string): boolean {
 export function selectShowcaseProjects(
   repositories: GithubRepository[],
   now = Date.now(),
+  limit = 4,
 ): ShowcaseProject[] {
   const threshold = now - RECENT_DAYS * 24 * 60 * 60 * 1000;
   const seen = new Set<string>();
@@ -95,7 +98,7 @@ export function selectShowcaseProjects(
       return EDITORIAL_REPOS.has(key) || topics.includes(SHOWCASE_TOPIC);
     })
     .sort((a, b) => Date.parse(b.pushed_at!) - Date.parse(a.pushed_at!))
-    .slice(0, 4)
+    .slice(0, Math.max(0, Math.min(limit, 100)))
     .map((repo) => ({
       name: repo.name,
       fullName: repo.full_name,
@@ -104,6 +107,7 @@ export function selectShowcaseProjects(
         ? repo.description.trim().slice(0, 240) : null,
       language: repo.language,
       pushedAt: repo.pushed_at!,
+      createdAt: repo.created_at && Number.isFinite(Date.parse(repo.created_at)) ? repo.created_at : null,
     }));
 }
 
@@ -134,7 +138,7 @@ export function selectMergedContributions(items: GithubPullRequest[]): OpenSourc
     .slice(0, 5);
 }
 
-async function githubJson<T>(url: string): Promise<T | null> {
+export async function githubJson<T>(url: string): Promise<T | null> {
   const token = process.env.GITHUB_READ_TOKEN;
   try {
     const response = await fetch(url, {
@@ -155,26 +159,34 @@ async function githubJson<T>(url: string): Promise<T | null> {
   }
 }
 
-export async function getGithubActivity(): Promise<GithubActivity> {
-  const q = encodeURIComponent(
-    "author:guillaume-flambard is:pr is:merged -user:guillaume-flambard -org:memolabs-dev",
-  );
-  const [personal, organization, search] = await Promise.all([
+/** Public project candidates, including any newly opted-in repository. */
+export async function getShowcaseProjects(limit = 4): Promise<ShowcaseProject[]> {
+  const [personal, organization] = await Promise.all([
     githubJson<GithubRepository[]>(
       `https://api.github.com/users/${GITHUB_USER}/repos?type=owner&sort=pushed&direction=desc&per_page=100`,
     ),
     githubJson<GithubRepository[]>(
       `https://api.github.com/orgs/${GITHUB_ORG}/repos?type=public&sort=pushed&direction=desc&per_page=100`,
     ),
+  ]);
+  return selectShowcaseProjects([
+    ...(Array.isArray(personal) ? personal : []),
+    ...(Array.isArray(organization) ? organization : []),
+  ], Date.now(), limit);
+}
+
+export async function getGithubActivity(): Promise<GithubActivity> {
+  const q = encodeURIComponent(
+    "author:guillaume-flambard is:pr is:merged -user:guillaume-flambard -org:memolabs-dev",
+  );
+  const [projects, search] = await Promise.all([
+    getShowcaseProjects(),
     githubJson<{ items?: GithubPullRequest[] }>(
       `https://api.github.com/search/issues?q=${q}&sort=updated&order=desc&per_page=30`,
     ),
   ]);
   return {
-    projects: selectShowcaseProjects([
-      ...(Array.isArray(personal) ? personal : []),
-      ...(Array.isArray(organization) ? organization : []),
-    ]),
+    projects,
     contributions: selectMergedContributions(
       Array.isArray(search?.items) ? search.items : [],
     ),
