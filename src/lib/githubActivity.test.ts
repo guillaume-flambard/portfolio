@@ -61,8 +61,35 @@ describe("public repository discovery", () => {
       }),
     ], NOW);
     expect(projects.map((project) => project.fullName)).toEqual([
-      "memolabs-dev/new-tool", "memolabs-dev/drop",
+      "memolabs-dev/drop", "memolabs-dev/new-tool",
     ]);
+  });
+
+  it("keeps a deliberate evidence-backed editorial order even when pushes move around", () => {
+    const names = [
+      "guillaume-flambard/foldready",
+      "memolabs-dev/drop",
+      "memolabs-dev/mediterranean-rescue",
+      "memolabs-dev/memo-bridge",
+      "guillaume-flambard/algo-observatory",
+      "guillaume-flambard/paykit",
+    ];
+    const repos = names.map((full_name, index) => repository({
+      name: full_name.split("/")[1],
+      full_name,
+      html_url: "https://github.com/" + full_name,
+      // Push recency intentionally opposes editorial order.
+      pushed_at: "2026-10-" + String(25 - index).padStart(2, "0") + "T10:00:00Z",
+    }));
+    expect(selectShowcaseProjects(repos, NOW).map((p) => p.fullName)).toEqual([
+      "memolabs-dev/mediterranean-rescue",
+      "guillaume-flambard/algo-observatory",
+      "memolabs-dev/memo-bridge",
+      "memolabs-dev/drop",
+      "guillaume-flambard/foldready",
+    ]);
+    // Full archives / build routes are still allowed to retrieve every eligible project.
+    expect(selectShowcaseProjects(repos, NOW, 100)).toHaveLength(6);
   });
 
   it("keeps private, forks, archived, stale and explicitly hidden repositories out", () => {
@@ -86,7 +113,7 @@ describe("public repository discovery", () => {
       html_url: `https://github.com/memolabs-dev/tool-${index}`,
       topics: ["memo-showcase"],
     }));
-    expect(selectShowcaseProjects([repos[0], ...repos], NOW)).toHaveLength(4);
+    expect(selectShowcaseProjects([repos[0], ...repos], NOW)).toHaveLength(5);
   });
 });
 
