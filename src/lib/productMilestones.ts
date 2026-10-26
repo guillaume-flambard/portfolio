@@ -33,6 +33,28 @@ function publicDemoUrlAllowed(url: string, project: ShowcaseProject): boolean {
   return url.toLowerCase() === canonical;
 }
 
+/**
+ * A project maintainer may link its explicitly configured public homepage as
+ * a demo only when it is on a DNS name controlled by Memo Labs. A repository
+ * homepage alone is never interpreted as deployment evidence.
+ */
+function ownedHomepageDemoAllowed(
+  url: string,
+  homepage: string | undefined,
+): boolean {
+  if (!homepage || url !== homepage) return false;
+  try {
+    const target = new URL(url);
+    return target.protocol === "https:" &&
+      /^[a-z0-9-]+\.memolabs\.dev$/i.test(target.hostname) &&
+      !target.username && !target.password &&
+      !target.port && !target.search && !target.hash &&
+      target.pathname === "/";
+  } catch {
+    return false;
+  }
+}
+
 function evidenceAllowed(kind: ProductMilestoneKind, url: string, repoUrl: string): boolean {
   const prefix = repoUrl + "/";
   if (url.startsWith(prefix)) {
@@ -54,6 +76,7 @@ export function validateProductMilestones(
   input: unknown,
   project: ShowcaseProject,
   now = Date.now(),
+  verifiedHomepage?: string,
 ): ProductMilestone[] {
   if (!input || typeof input !== "object" || !Array.isArray((input as Record<string, unknown>).milestones) ||
       (input as Record<string, unknown>).version !== 1) return [];
@@ -81,6 +104,7 @@ export function validateProductMilestones(
     if (entry.demoUrl !== undefined) {
       if (kind !== "demo" || typeof entry.demoUrl !== "string") return [];
       if (!publicDemoUrlAllowed(entry.demoUrl, project) &&
+          !ownedHomepageDemoAllowed(entry.demoUrl, verifiedHomepage) &&
           !(entry.demoUrl === entry.evidenceUrl &&
             evidenceAllowed("demo", entry.evidenceUrl, project.url))) return [];
       demoUrl = entry.demoUrl;
@@ -103,15 +127,23 @@ type GithubContents = {
 export async function getProductMilestones(project: ShowcaseProject): Promise<ProductMilestone[]> {
   if (!/^(guillaume-flambard|memolabs-dev)\/[A-Za-z0-9_.-]+$/.test(project.fullName) ||
       project.url.toLowerCase() !== "https://github.com/" + project.fullName.toLowerCase()) return [];
-  const content = await githubJson<GithubContents>(
-    "https://api.github.com/repos/" + project.fullName + "/contents/.portfolio/milestones.json",
-  );
+  const [content, metadata] = await Promise.all([
+    githubJson<GithubContents>(
+      "https://api.github.com/repos/" + project.fullName + "/contents/.portfolio/milestones.json",
+    ),
+    githubJson<{ homepage?: string | null }>(
+      "https://api.github.com/repos/" + project.fullName,
+    ),
+  ]);
   if (content?.type !== "file" || content.encoding !== "base64" ||
       typeof content.content !== "string" ||
       typeof content.size !== "number" || content.size > 50_000) return [];
   try {
     const decoded = Buffer.from(content.content.replace(/\s/g, ""), "base64").toString("utf8");
-    return validateProductMilestones(JSON.parse(decoded), project);
+    return validateProductMilestones(
+      JSON.parse(decoded), project, Date.now(),
+      typeof metadata?.homepage === "string" ? metadata.homepage : undefined,
+    );
   } catch {
     return [];
   }
