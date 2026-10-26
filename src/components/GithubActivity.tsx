@@ -73,7 +73,52 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
                 ))}
               </ul>
             ) : <p className="github-empty">{t("contributionsEmpty")}</p>}
+            {activity.openContributions.length > 0 && (
+              <div className="github-open-contributions">
+                <p className="github-kicker">{t("openContributionsTitle")}</p>
+                <ul className="github-contribution-list" data-testid="github-open-contributions">
+                  {activity.openContributions.map((contribution) => (
+                    <li key={contribution.url}>
+                      <a href={contribution.url} target="_blank" rel="noopener noreferrer">
+                        <span className="github-contribution-repo">{contribution.repository}</span>
+                        <span className="github-item-title">{contribution.title}<span aria-hidden="true">↗</span></span>
+                        <span className="github-meta">{t("openPr")}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <Link className="github-all-contributions-link" href="/open-source">
+              {t("allContributions")} <span aria-hidden="true">→</span>
+            </Link>
           </div>
+          <div className="github-activity-block github-discovery-block">
+            <div className="github-block-heading">
+              <h3>{t("newProjectsTitle")}</h3>
+              <span>{t("newProjectsCaption")}</span>
+            </div>
+            {activity.newProjects.length > 0 ? (
+              <ul className="github-project-list" data-testid="github-auto-discovered">
+                {activity.newProjects.map((project) => (
+                  <li key={project.fullName}>
+                    <a className="github-project-link" href={project.url} target="_blank" rel="noopener noreferrer">
+                      <span className="github-item-title">{project.name}<span aria-hidden="true">↗</span></span>
+                      {project.description ? <span className="github-project-description">{project.description}</span> : null}
+                      <span className="github-meta">
+                        <span>{t("newRepoStatus")}</span>
+                        {project.createdAt ? <span>{formatter.format(new Date(project.createdAt))}</span> : null}
+                      </span>
+                    </a>
+                    <Link className="github-build-log-link" href={"/build/" + project.fullName}>
+                      {t("buildLogCta")} <span aria-hidden="true">→</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : <p className="github-empty">{t("newProjectsEmpty")}</p>}
+          </div>
+
         </div>
         <p className="github-disclaimer">{t("disclaimer")}</p>
       </div>

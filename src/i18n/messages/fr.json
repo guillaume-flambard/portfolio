@@ -199,8 +199,15 @@
     "mergedPr": "PR fusionnée",
     "projectsEmpty": "Aucun projet qualifié n'est disponible pour le moment. Retrouvez tous mes dépôts publics sur GitHub.",
     "contributionsEmpty": "Les contributions ne sont pas disponibles pour le moment. Consultez leur historique sur GitHub.",
-    "disclaimer": "Une mise à jour de code ne prouve pas un déploiement en production. Seuls les dépôts publics sélectionnés et les PR effectivement fusionnées sont présentés. Synchronisation GitHub mise en cache jusqu'à une heure.",
-    "buildLogCta": "Voir l'évolution vérifiable"
+    "disclaimer": "Synchronisation automatique depuis l’API GitHub (cache jusqu’à une heure). Les nouveaux dépôts sont montrés comme du code public, sans présumer qu’ils sont prêts pour la production. Les PR ouvertes ne sont pas des contributions acceptées ; les PR fusionnées le sont.",
+    "buildLogCta": "Voir l'évolution vérifiable",
+    "newProjectsTitle": "Nouveaux dépôts publics",
+    "newProjectsCaption": "Découverte automatique · 90 jours",
+    "newRepoStatus": "Code public récent · non évalué",
+    "newProjectsEmpty": "Aucun nouveau dépôt public éligible pour le moment.",
+    "openContributionsTitle": "Contributions en cours de revue",
+    "openPr": "PR ouverte · en attente de fusion",
+    "allContributions": "Toutes mes contributions open source"
   },
   "build": {
     "eyebrow": "Journal de développement · preuves publiques",
@@ -226,5 +233,20 @@
     "empty": "Aucune étape publique qualifiée n'est disponible pour ce projet.",
     "incomplete": "L'API GitHub n'a pas répondu à toutes les demandes : ce journal peut être incomplet.",
     "limitations": "Ce journal est volontairement sélectif : il ne mesure pas toutes les heures de travail ni la vitesse réelle de développement. Les prototypes, démonstrations et déploiements ne seront ajoutés comme étapes que lorsqu'un lien et une date vérifiables existent."
+  },
+  "openSource": {
+    "eyebrow": "GitHub · contributions externes",
+    "title": "Contributions open source",
+    "intro": "Des correctifs et fonctionnalités proposés à des projets externes. Les PR acceptées sont distinctes des propositions encore en revue. Chaque ligne est vérifiable directement sur GitHub et se met à jour automatiquement.",
+    "back": "Retour au portfolio",
+    "mergedTitle": "Contributions fusionnées",
+    "mergedSubtitle": "Acceptées dans les projets externes",
+    "mergedLabel": "PR fusionnée",
+    "openTitle": "Propositions en cours",
+    "openSubtitle": "Ouvertes · pas encore acceptées",
+    "openLabel": "PR ouverte",
+    "empty": "Aucune contribution fusionnée récupérée pour le moment.",
+    "emptyOpen": "Aucune proposition ouverte récupérée pour le moment.",
+    "disclaimer": "Cette liste provient des résultats publics GitHub (jusqu’aux 100 PR les plus récentes de chaque statut). Le cache est actualisé jusqu’à une fois par heure après une nouvelle visite. Une contribution fusionnée ne prouve ni l’utilisation en production ni le succès commercial. Une indisponibilité de l’API peut limiter temporairement la liste."
   }
 }
