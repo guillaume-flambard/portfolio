@@ -92,4 +92,49 @@ describe("versioned public product milestones", () => {
     ] }, project)).toEqual([]);
   });
 
+
+  it("accepts a matching Memo Labs homepage only for a labeled public demo", () => {
+    const rescue: ShowcaseProject = {
+      ...project,
+      name: "mediterranean-rescue",
+      fullName: "memolabs-dev/mediterranean-rescue",
+      url: "https://github.com/memolabs-dev/mediterranean-rescue",
+      createdAt: "2026-10-25T11:23:59Z",
+    };
+    const payload = { version: 1, milestones: [{
+      kind: "demo", date: "2026-10-26",
+      title: { fr: "Carte publique", en: "Public map" },
+      evidenceUrl: "https://github.com/memolabs-dev/mediterranean-rescue/pull/6",
+      demoUrl: "https://rescue.memolabs.dev/",
+    }] };
+    const accepted = validateProductMilestones(payload, rescue, Date.parse("2026-10-26T12:00:00Z"), "https://rescue.memolabs.dev");
+    expect(accepted).toHaveLength(1);
+    expect(accepted[0].demoUrl).toBe("https://rescue.memolabs.dev/");
+    expect(validateProductMilestones(payload, rescue, Date.parse("2026-10-26T12:00:00Z"))).toEqual([]);
+  });
+
+  it("rejects untrusted or deceptive site URLs even when a repo claims them as homepage", () => {
+    const badUrls = [
+      "https://rescue.memolabs.dev.evil.com/",
+      "https://memolabs.dev.evil.com/",
+      "https://evil.com/",
+      "https://rescue.memolabs.dev:8443/",
+      "http://rescue.memolabs.dev/",
+      "https://rescue.memolabs.dev/redirect",
+      "https://rescue.memolabs.dev/?redirect=evil",
+      "https://rescue.memolabs.dev/#external",
+      "https://alice:pw@rescue.memolabs.dev/",
+    ];
+    for (const bad of badUrls) {
+      expect(validateProductMilestones({
+        version: 1, milestones: [{
+          kind: "demo", date: "2026-10-26",
+          title: { fr: "Carte publique", en: "Public map" },
+          evidenceUrl: "https://github.com/memolabs-dev/drop/pull/6",
+          demoUrl: bad,
+        }],
+      }, project, Date.parse("2026-10-26T12:00:00Z"), bad)).toEqual([]);
+    }
+  });
+
 });
