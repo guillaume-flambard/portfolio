@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   selectMergedContributions,
   validateSnapshot,
+  preferSnapshot,
   chooseSnapshotOrLive,
   isFreshSnapshotSection,
   selectExternalContributions,
@@ -44,6 +45,35 @@ function pr(overrides: Partial<GithubPullRequest> = {}): GithubPullRequest {
     ...overrides,
   };
 }
+
+describe("credential-free VPS snapshot fallback", () => {
+  const snapshot = (generatedAt: string) => ({
+    version: 1,
+    generatedAt,
+    sections: {
+      repositories: { items: [], healthy: true, syncedAt: generatedAt },
+      merged: { items: [], healthy: true, syncedAt: generatedAt },
+      open: { items: [], healthy: true, syncedAt: generatedAt },
+    },
+  });
+
+  it("chooses the newer valid snapshot without relying on the GitHub cron", () => {
+    const oldGithub = validateSnapshot(snapshot("2026-10-26T09:48:18.642Z"));
+    const newerVps = validateSnapshot(snapshot("2026-10-26T12:47:10.000Z"));
+    expect(preferSnapshot(newerVps, oldGithub)).toBe(newerVps);
+    expect(preferSnapshot(oldGithub, newerVps)).toBe(newerVps);
+    expect(preferSnapshot(null, oldGithub)).toBe(oldGithub);
+    expect(preferSnapshot(newerVps, null)).toBe(newerVps);
+    expect(preferSnapshot(null, null)).toBeNull();
+  });
+
+  it("keeps the GitHub last-known-good when a VPS file fails validation", () => {
+    const saved = validateSnapshot(snapshot("2026-10-26T09:48:18.642Z"));
+    const invalid = validateSnapshot({ ...snapshot("2026-10-26T14:47:10.000Z"), version: 42 });
+    expect(invalid).toBeNull();
+    expect(preferSnapshot(invalid, saved)).toBe(saved);
+  });
+});
 
 describe("public repository discovery", () => {
   it("includes editorially approved work and newly opted-in public projects", () => {
