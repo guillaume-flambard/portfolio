@@ -199,6 +199,32 @@
     "mergedPr": "Merged PR",
     "projectsEmpty": "No qualifying projects are available right now. Explore all public repositories on GitHub.",
     "contributionsEmpty": "Contributions are temporarily unavailable. Explore the history on GitHub.",
-    "disclaimer": "Code activity does not prove a production deployment. Only selected public repositories and genuinely merged PRs appear here. GitHub data is cached for up to one hour."
+    "disclaimer": "Code activity does not prove a production deployment. Only selected public repositories and genuinely merged PRs appear here. GitHub data is cached for up to one hour.",
+    "buildLogCta": "Explore verified progress"
+  },
+  "build": {
+    "eyebrow": "Engineering log · public evidence",
+    "defaultDescription": "A software project developed through continuous iteration.",
+    "repoCta": "View repository",
+    "back": "Back to active projects",
+    "sectionEyebrow": "Releases · changes · evidence",
+    "timelineTitle": "How this project evolved",
+    "timelineIntro": "A chronological selection of actually merged changes, GitHub releases and — where verified — a public project page. Every entry links to its source.",
+    "kind_feature": "Merged feature",
+    "kind_fix": "Merged fix",
+    "kind_change": "Merged code change",
+    "kind_release": "GitHub release published",
+    "kind_origin": "Repository created",
+    "kind_public_page": "Public page checked",
+    "note_feature": "Merged into the source repository; this does not establish production deployment.",
+    "note_fix": "A correction merged into source; production impact is not asserted here.",
+    "note_change": "Merged source-code change; production results are not inferred.",
+    "note_release": "Officially published on GitHub Releases; deployment is not assumed.",
+    "note_origin": "Date the GitHub repository was created, not the verified date of the first prototype.",
+    "note_public_page": "Public page checked on the recorded case-study date; not necessarily a functional demo.",
+    "source": "View evidence",
+    "empty": "No qualifying public events are available for this project.",
+    "incomplete": "Not all GitHub API requests succeeded; this timeline may be incomplete.",
+    "limitations": "This is a selective history, not a measurement of hours worked or engineering speed. Prototype, demo and deployment milestones appear only once a verifiable date and public evidence link exist."
   }
 }
