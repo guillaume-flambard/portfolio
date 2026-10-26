@@ -75,11 +75,13 @@ The isolated `github-activity` snapshot is refreshed by the scheduled
 workflow when GitHub delivers its cron event, and then read by the portfolio
 with a 15-minute revalidation cache. GitHub API access, index latency, job
 scheduling and the 100-item PR search window make this *eventually consistent*,
-not an instantaneous or exhaustive feed. Each snapshot section retains its
-last-known-good contents on an API failure, and the site explicitly labels
-data older than two hours as degraded. Live API fallback is used only when
-the persisted snapshot is unavailable; a site visit does not itself refresh
-an old but structurally valid snapshot.
+not an instantaneous or exhaustive feed. Snapshot sections older than two
+hours or marked unhealthy trigger a bounded live API fallback on the next
+server revalidation. If a live GitHub request fails, the app retains the last
+known good snapshot instead of replacing it with empty or fabricated results.
+The UI still marks the scheduled snapshot as degraded until its source recovers,
+even when live fallback succeeds. Static page revalidation and GitHub's cache
+can delay the display of new evidence; the fallback is not a real-time feed.
 
 This feature reads **public GitHub API data only**. An optional server-side
 `GITHUB_READ_TOKEN` can increase API rate limits; never expose it using a

@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import {
   selectMergedContributions,
   validateSnapshot,
+  chooseSnapshotOrLive,
+  isFreshSnapshotSection,
   selectExternalContributions,
   selectNewPublicProjects,
   selectShowcaseProjects,
@@ -238,5 +240,43 @@ describe("durable GitHub snapshot input validation", () => {
     expect(validateSnapshot({ ...valid, sections: { ...valid.sections, merged: {
       items: [], healthy: true,
     } } })).toBeNull();
+  });
+});
+
+
+describe("stale snapshot recovery", () => {
+  const now = Date.parse("2026-10-26T13:00:00Z");
+
+  it("keeps fresh healthy evidence without touching the live API", async () => {
+    let calls = 0;
+    const result = await chooseSnapshotOrLive([1, 2], true, async () => {
+      calls += 1;
+      return [3];
+    });
+    expect(result).toEqual({ data: [1, 2], source: "snapshot" });
+    expect(calls).toBe(0);
+  });
+
+  it("re-fetches stale data and marks its source as live", async () => {
+    const result = await chooseSnapshotOrLive([1], false, async () => [2, 3]);
+    expect(result).toEqual({ data: [2, 3], source: "live" });
+  });
+
+  it("retains last known good sections when GitHub becomes unavailable", async () => {
+    expect(await chooseSnapshotOrLive([1], false, async () => null))
+      .toEqual({ data: [1], source: "snapshot" });
+    expect(await chooseSnapshotOrLive([1], false, async () => {
+      throw new Error("rate limited");
+    })).toEqual({ data: [1], source: "snapshot" });
+    expect(await chooseSnapshotOrLive<number[]>(null, false, async () => null))
+      .toBeNull();
+  });
+
+  it("treats old, unhealthy and implausibly future-dated sections as stale", () => {
+    const fresh = { healthy: true, syncedAt: "2026-10-26T12:00:00Z" };
+    expect(isFreshSnapshotSection(fresh, now)).toBe(true);
+    expect(isFreshSnapshotSection({ ...fresh, syncedAt: "2026-10-26T10:00:00Z" }, now)).toBe(false);
+    expect(isFreshSnapshotSection({ ...fresh, healthy: false }, now)).toBe(false);
+    expect(isFreshSnapshotSection({ ...fresh, syncedAt: "2026-10-26T13:07:00Z" }, now)).toBe(false);
   });
 });
