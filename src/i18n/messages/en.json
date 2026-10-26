@@ -242,7 +242,8 @@
     "kind_deployment": "Reported deployment",
     "note_prototype": "A repository-authored milestone backed by a GitHub source. A code date alone does not prove the prototype was usable.",
     "note_demo": "A self-reported milestone with a public source. Video or source code alone cannot certify a working user journey.",
-    "note_deployment": "A deployment milestone reported by the maintainer and linked to public evidence. Green CI or a release does not prove a production system is operational."
+    "note_deployment": "A deployment milestone reported by the maintainer and linked to public evidence. Green CI or a release does not prove a production system is operational.",
+    "tryDemo": "Try the live demo"
   },
   "openSource": {
     "eyebrow": "GitHub · external contributions",
