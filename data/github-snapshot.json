@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-27T08:23:51.565Z",
+  "generatedAt": "2026-10-27T14:56:03.281Z",
   "sections": {
     "repositories": {
       "items": [
@@ -987,7 +987,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-27T02:26:40Z",
+          "pushed_at": "2026-10-27T08:23:56Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1486,6 +1486,20 @@
           "size": 158
         },
         {
+          "name": "guilloche-workspace",
+          "full_name": "memolabs-dev/guilloche-workspace",
+          "html_url": "https://github.com/memolabs-dev/guilloche-workspace",
+          "description": "Espace dirigeant et design system « titre guilloché » : Symfony, Twig Components, Stimulus, Turbo, SCSS. Concept indépendant, données fictives.",
+          "language": "PHP",
+          "pushed_at": "2026-10-27T14:10:22Z",
+          "created_at": "2026-10-27T13:04:01Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 326
+        },
+        {
           "name": "mediterranean-rescue",
           "full_name": "memolabs-dev/mediterranean-rescue",
           "html_url": "https://github.com/memolabs-dev/mediterranean-rescue",
@@ -1909,7 +1923,7 @@
           "size": 62
         }
       ],
-      "syncedAt": "2026-10-27T08:23:51.565Z",
+      "syncedAt": "2026-10-27T14:56:03.281Z",
       "healthy": true
     },
     "merged": {
@@ -2307,7 +2321,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-27T08:23:51.565Z",
+      "syncedAt": "2026-10-27T14:56:03.281Z",
       "healthy": true
     },
     "open": {
@@ -2551,7 +2565,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-27T08:23:51.565Z",
+      "syncedAt": "2026-10-27T14:56:03.281Z",
       "healthy": true
     }
   }
