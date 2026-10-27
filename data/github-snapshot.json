@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-27T14:56:03.281Z",
+  "generatedAt": "2026-10-27T20:06:04.821Z",
   "sections": {
     "repositories": {
       "items": [
@@ -987,13 +987,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-27T08:23:56Z",
+          "pushed_at": "2026-10-27T14:56:07Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 7978
+          "size": 7979
         },
         {
           "name": "n8n-nodes-opn",
@@ -1486,18 +1486,32 @@
           "size": 158
         },
         {
+          "name": "guilloche",
+          "full_name": "memolabs-dev/guilloche",
+          "html_url": "https://github.com/memolabs-dev/guilloche",
+          "description": "Kit Guilloche - composants UI Toolkit Symfony (bouton, recette, harnais AssetMapper + Sass)",
+          "language": "PHP",
+          "pushed_at": "2026-10-27T19:30:52Z",
+          "created_at": "2026-10-27T16:22:05Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 475
+        },
+        {
           "name": "guilloche-workspace",
           "full_name": "memolabs-dev/guilloche-workspace",
           "html_url": "https://github.com/memolabs-dev/guilloche-workspace",
           "description": "Espace dirigeant et design system « titre guilloché » : Symfony, Twig Components, Stimulus, Turbo, SCSS. Concept indépendant, données fictives.",
           "language": "PHP",
-          "pushed_at": "2026-10-27T14:10:22Z",
+          "pushed_at": "2026-10-27T17:40:36Z",
           "created_at": "2026-10-27T13:04:01Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 326
+          "size": 560
         },
         {
           "name": "mediterranean-rescue",
@@ -1597,13 +1611,13 @@
           "html_url": "https://github.com/memolabs-dev/memo-bridge",
           "description": "Independent open-source MCP bridge for Memo Labs — secure multi-host control",
           "language": "JavaScript",
-          "pushed_at": "2026-10-26T13:23:36Z",
+          "pushed_at": "2026-10-27T18:29:03Z",
           "created_at": "2026-10-13T15:19:33Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3258
+          "size": 3344
         },
         {
           "name": ".github",
@@ -1611,13 +1625,13 @@
           "html_url": "https://github.com/memolabs-dev/.github",
           "description": "Memo Labs organization automation, GitHub App migration and shared CI",
           "language": "Python",
-          "pushed_at": "2026-10-26T10:59:15Z",
+          "pushed_at": "2026-10-27T16:36:48Z",
           "created_at": "2026-10-13T09:04:40Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 494
+          "size": 501
         },
         {
           "name": "lab-hub",
@@ -1923,7 +1937,7 @@
           "size": 62
         }
       ],
-      "syncedAt": "2026-10-27T14:56:03.281Z",
+      "syncedAt": "2026-10-27T20:06:04.821Z",
       "healthy": true
     },
     "merged": {
@@ -2321,7 +2335,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-27T14:56:03.281Z",
+      "syncedAt": "2026-10-27T20:06:04.821Z",
       "healthy": true
     },
     "open": {
@@ -2565,7 +2579,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-27T14:56:03.281Z",
+      "syncedAt": "2026-10-27T20:06:04.821Z",
       "healthy": true
     }
   }
