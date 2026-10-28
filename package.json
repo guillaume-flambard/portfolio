@@ -11,7 +11,10 @@
     "test:e2e": "npm run build && playwright test e2e/recruiter-journey.spec.ts",
     "audit:evidence": "node scripts/audit-public-evidence.mjs",
     "test:evidence": "node --test scripts/audit-public-evidence.test.mjs",
-    "test:snapshot": "node --test scripts/sync-github-activity.test.mjs"
+    "test:snapshot": "node --test scripts/sync-github-activity.test.mjs",
+    "prepare": "sh scripts/install-git-hooks.sh",
+    "hooks:install": "sh scripts/install-git-hooks.sh",
+    "check:staged": "npm test"
   },
   "dependencies": {
     "next": "16.3.0",
