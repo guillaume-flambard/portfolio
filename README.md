@@ -208,3 +208,10 @@ infer a successful deployment from the homepage field: this link must be used
 only for a real, independently checked public demo, with its source evidence
 and stated verification date in the manifest. An accessible landing page does
 not establish a working authenticated application.
+
+## Local pre-commit checks
+
+After cloning, run `npm install` (or `npm run hooks:install`) to activate
+`.githooks/pre-commit`. It checks staged whitespace and credential-like files;
+source changes run the fast Vitest suite. Production build and real browser
+checks remain in GitHub Actions.
