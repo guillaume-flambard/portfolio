@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-28T17:25:20.217Z",
+  "generatedAt": "2026-10-28T21:54:17.249Z",
   "sections": {
     "repositories": {
       "items": [
@@ -10,7 +10,7 @@
           "html_url": "https://github.com/guillaume-flambard/algo-observatory",
           "description": "Laboratoire interactif : modifiez une règle de classement et voyez 24 recommandations publiques Tournesol changer de rang, avec la raison de chaque mouvement.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-26T13:17:55Z",
+          "pushed_at": "2026-10-28T17:50:17Z",
           "created_at": "2026-10-25T14:38:16Z",
           "topics": [
             "algorithmic-transparency",
@@ -25,7 +25,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1505
+          "size": 1516
         },
         {
           "name": "mediterranean-rescue",
@@ -987,13 +987,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-28T11:40:15Z",
+          "pushed_at": "2026-10-28T17:49:07Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 7981
+          "size": 7995
         },
         {
           "name": "n8n-nodes-opn",
@@ -1491,13 +1491,13 @@
           "html_url": "https://github.com/memolabs-dev/guilloche",
           "description": "Kit Guilloche - composants UI Toolkit Symfony (bouton, recette, harnais AssetMapper + Sass)",
           "language": "SCSS",
-          "pushed_at": "2026-10-28T17:24:03Z",
+          "pushed_at": "2026-10-28T19:09:30Z",
           "created_at": "2026-10-27T16:22:05Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1005
+          "size": 986
         },
         {
           "name": "guilloche-workspace",
@@ -1505,13 +1505,13 @@
           "html_url": "https://github.com/memolabs-dev/guilloche-workspace",
           "description": "Espace dirigeant et design system « titre guilloché » : Symfony, Twig Components, Stimulus, Turbo, SCSS. Concept indépendant, données fictives.",
           "language": "PHP",
-          "pushed_at": "2026-10-28T17:24:07Z",
+          "pushed_at": "2026-10-28T18:14:36Z",
           "created_at": "2026-10-27T13:04:01Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 624
+          "size": 728
         },
         {
           "name": "mediterranean-rescue",
@@ -1519,7 +1519,7 @@
           "html_url": "https://github.com/memolabs-dev/mediterranean-rescue",
           "description": "Rescue operations at sea, documented with their source: SOS MEDITERRANEE's public records on one map, checked by volunteers.",
           "language": "Python",
-          "pushed_at": "2026-10-28T17:22:01Z",
+          "pushed_at": "2026-10-28T19:11:57Z",
           "created_at": "2026-10-25T11:23:59Z",
           "topics": [
             "django",
@@ -1533,7 +1533,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2030
+          "size": 2034
         },
         {
           "name": "freelance-growth",
@@ -1541,13 +1541,13 @@
           "html_url": "https://github.com/memolabs-dev/freelance-growth",
           "description": "Memo Labs freelance strategy, remote mission acquisition, partnerships and technical accompaniment",
           "language": "Python",
-          "pushed_at": "2026-10-23T22:12:51Z",
+          "pushed_at": "2026-10-28T17:47:25Z",
           "created_at": "2026-10-19T17:51:24Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 917
+          "size": 925
         },
         {
           "name": "project-template",
@@ -1555,13 +1555,13 @@
           "html_url": "https://github.com/memolabs-dev/project-template",
           "description": "Template of new Memo Labs projects (memo-bridge project_create): CI, Mergify, gate paths",
           "language": "JavaScript",
-          "pushed_at": "2026-10-28T17:25:19Z",
+          "pushed_at": "2026-10-28T17:45:26Z",
           "created_at": "2026-10-18T13:19:12Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 6
+          "size": 11
         },
         {
           "name": "mergify-config",
@@ -1597,13 +1597,13 @@
           "html_url": "https://github.com/memolabs-dev/rebuild-radar",
           "description": "Evidence-driven tracker of open-source software rebuilds and alternatives",
           "language": "JavaScript",
-          "pushed_at": "2026-10-26T11:45:42Z",
+          "pushed_at": "2026-10-28T17:45:25Z",
           "created_at": "2026-10-16T12:14:17Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 826
+          "size": 830
         },
         {
           "name": "memo-bridge",
@@ -1611,13 +1611,13 @@
           "html_url": "https://github.com/memolabs-dev/memo-bridge",
           "description": "Independent open-source MCP bridge for Memo Labs — secure multi-host control",
           "language": "JavaScript",
-          "pushed_at": "2026-10-28T17:24:36Z",
+          "pushed_at": "2026-10-28T17:44:21Z",
           "created_at": "2026-10-13T15:19:33Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3344
+          "size": 3395
         },
         {
           "name": ".github",
@@ -1653,7 +1653,7 @@
           "html_url": "https://github.com/memolabs-dev/problem-intelligence-engine",
           "description": "Memo Labs Dev — evidence-first problem discovery and corroboration engine",
           "language": "JavaScript",
-          "pushed_at": "2026-10-24T10:59:32Z",
+          "pushed_at": "2026-10-28T17:50:01Z",
           "created_at": "2026-10-12T09:57:47Z",
           "topics": [
             "ai-agents",
@@ -1664,7 +1664,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 507
+          "size": 515
         },
         {
           "name": "drop",
@@ -1705,7 +1705,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 6806
+          "size": 6807
         },
         {
           "name": "agent-reality-bench",
@@ -1734,7 +1734,7 @@
           "html_url": "https://github.com/memolabs-dev/cuesheet",
           "description": "Invariants discovered by running a personal agent control plane, extracted once they survived real work.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-28T16:53:01Z",
+          "pushed_at": "2026-10-28T17:57:25Z",
           "created_at": "2026-09-29T10:22:17Z",
           "topics": [
             "agent-orchestration",
@@ -1748,7 +1748,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2804
+          "size": 2820
         },
         {
           "name": "valve",
@@ -1784,7 +1784,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 601
+          "size": 631
         },
         {
           "name": "kollio-mac",
@@ -1806,7 +1806,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1712
+          "size": 1713
         },
         {
           "name": "intentlane",
@@ -1814,7 +1814,7 @@
           "html_url": "https://github.com/memolabs-dev/intentlane",
           "description": "Audit an iOS or macOS app's Siri and App Intents surface, then generate the native code",
           "language": "TypeScript",
-          "pushed_at": "2026-10-25T10:46:07Z",
+          "pushed_at": "2026-10-28T18:00:04Z",
           "created_at": "2026-09-21T14:17:27Z",
           "topics": [
             "app-intents",
@@ -1829,7 +1829,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2567
+          "size": 2572
         },
         {
           "name": "navirox",
@@ -1837,7 +1837,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-26T15:55:41Z",
+          "pushed_at": "2026-10-28T19:13:56Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1856,7 +1856,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3116
+          "size": 3257
         },
         {
           "name": "uni-protocol",
@@ -1886,13 +1886,13 @@
           "html_url": "https://github.com/memolabs-dev/aidd-guard",
           "description": "Reports which AIDD acceptance criteria are covered by a test. Deterministic, no LLM, never runs your tests.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-19T23:21:13Z",
+          "pushed_at": "2026-10-28T17:49:02Z",
           "created_at": "2026-09-11T06:31:44Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 136
+          "size": 143
         },
         {
           "name": "life-os",
@@ -1937,7 +1937,7 @@
           "size": 62
         }
       ],
-      "syncedAt": "2026-10-28T17:25:20.217Z",
+      "syncedAt": "2026-10-28T21:54:17.249Z",
       "healthy": true
     },
     "merged": {
@@ -2335,7 +2335,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-28T17:25:20.217Z",
+      "syncedAt": "2026-10-28T21:54:17.249Z",
       "healthy": true
     },
     "open": {
@@ -2565,7 +2565,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-28T17:25:20.217Z",
+      "syncedAt": "2026-10-28T21:54:17.249Z",
       "healthy": true
     }
   }
