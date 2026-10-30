@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-30T06:29:36.393Z",
+  "generatedAt": "2026-10-30T13:37:16.944Z",
   "sections": {
     "repositories": {
       "items": [
@@ -987,13 +987,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-30T00:25:12Z",
+          "pushed_at": "2026-10-30T06:29:39Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 7998
+          "size": 7999
         },
         {
           "name": "n8n-nodes-opn",
@@ -1486,6 +1486,20 @@
           "size": 158
         },
         {
+          "name": "json-statham",
+          "full_name": "memolabs-dev/json-statham",
+          "html_url": "https://github.com/memolabs-dev/json-statham",
+          "description": "Deterministic JSON contract validation and conservative compatibility checks",
+          "language": "JavaScript",
+          "pushed_at": "2026-10-30T12:01:27Z",
+          "created_at": "2026-10-30T10:52:47Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 112
+        },
+        {
           "name": "guilloche",
           "full_name": "memolabs-dev/guilloche",
           "html_url": "https://github.com/memolabs-dev/guilloche",
@@ -1937,7 +1951,7 @@
           "size": 62
         }
       ],
-      "syncedAt": "2026-10-30T06:29:36.393Z",
+      "syncedAt": "2026-10-30T13:37:16.944Z",
       "healthy": true
     },
     "merged": {
@@ -2335,7 +2349,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-30T06:29:36.393Z",
+      "syncedAt": "2026-10-30T13:37:16.944Z",
       "healthy": true
     },
     "open": {
@@ -2565,7 +2579,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-30T06:29:36.393Z",
+      "syncedAt": "2026-10-30T13:37:16.944Z",
       "healthy": true
     }
   }
