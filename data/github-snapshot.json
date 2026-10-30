@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-30T13:37:16.944Z",
+  "generatedAt": "2026-10-30T18:52:43.109Z",
   "sections": {
     "repositories": {
       "items": [
@@ -33,13 +33,13 @@
           "html_url": "https://github.com/guillaume-flambard/mediterranean-rescue",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-26T11:00:10Z",
+          "pushed_at": "2026-10-30T16:49:20Z",
           "created_at": "2026-10-24T10:50:52Z",
           "topics": [],
           "fork": true,
           "archived": false,
           "private": false,
-          "size": 1898
+          "size": 2072
         },
         {
           "name": ".github",
@@ -512,20 +512,6 @@
           "size": 75
         },
         {
-          "name": "ctaio-radar",
-          "full_name": "guillaume-flambard/ctaio-radar",
-          "html_url": "https://github.com/guillaume-flambard/ctaio-radar",
-          "description": "Four-step agentic pipeline: real release notes to a publish-ready editorial brief for ctaio.dev. Built for the WTF Sr Agentic Engineer assessment.",
-          "language": "JavaScript",
-          "pushed_at": "2026-08-15T08:47:24Z",
-          "created_at": "2026-08-15T08:10:25Z",
-          "topics": [],
-          "fork": false,
-          "archived": true,
-          "private": false,
-          "size": 13
-        },
-        {
           "name": "python-sdk",
           "full_name": "guillaume-flambard/python-sdk",
           "html_url": "https://github.com/guillaume-flambard/python-sdk",
@@ -873,20 +859,6 @@
           "size": 149341
         },
         {
-          "name": "oss-miner",
-          "full_name": "guillaume-flambard/oss-miner",
-          "html_url": "https://github.com/guillaume-flambard/oss-miner",
-          "description": "Mine GitHub for contributable issues across watched repos, auto-vet them against a 5-gate method, and score on employer leverage, AI/MCP ecosystem, and personal use.",
-          "language": "JavaScript",
-          "pushed_at": "2026-08-08T14:42:55Z",
-          "created_at": "2026-07-27T09:21:40Z",
-          "topics": [],
-          "fork": false,
-          "archived": false,
-          "private": false,
-          "size": 40
-        },
-        {
           "name": "scalar",
           "full_name": "guillaume-flambard/scalar",
           "html_url": "https://github.com/guillaume-flambard/scalar",
@@ -987,7 +959,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-10-30T06:29:39Z",
+          "pushed_at": "2026-10-30T13:37:21Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1318,20 +1290,6 @@
           "size": 2254
         },
         {
-          "name": "agents_liminals",
-          "full_name": "guillaume-flambard/agents_liminals",
-          "html_url": "https://github.com/guillaume-flambard/agents_liminals",
-          "description": "Agents Liminals: an AI-guided spiritual and psychological consultation platform. Next.js 15.",
-          "language": "TypeScript",
-          "pushed_at": "2026-08-08T12:11:39Z",
-          "created_at": "2025-07-14T16:10:13Z",
-          "topics": [],
-          "fork": false,
-          "archived": true,
-          "private": false,
-          "size": 732
-        },
-        {
           "name": "agentfabric",
           "full_name": "guillaume-flambard/agentfabric",
           "html_url": "https://github.com/guillaume-flambard/agentfabric",
@@ -1458,18 +1416,46 @@
           "size": 82
         },
         {
-          "name": "agent-gpt-teacher",
-          "full_name": "guillaume-flambard/agent-gpt-teacher",
-          "html_url": "https://github.com/guillaume-flambard/agent-gpt-teacher",
-          "description": null,
+          "name": "hypebio",
+          "full_name": "guillaume-flambard/hypebio",
+          "html_url": "https://github.com/guillaume-flambard/hypebio",
+          "description": "Hypebio: a link-in-bio page builder.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-24T10:45:01Z",
-          "created_at": "2024-01-10T18:40:28Z",
+          "pushed_at": "2025-03-23T09:08:36Z",
+          "created_at": "2025-03-09T12:29:11Z",
           "topics": [],
           "fork": false,
           "archived": true,
           "private": false,
-          "size": 40542
+          "size": 343
+        },
+        {
+          "name": "conformai",
+          "full_name": "guillaume-flambard/conformai",
+          "html_url": "https://github.com/guillaume-flambard/conformai",
+          "description": "ConformAI: platform that checks AI-generated content for compliance, bias, and plagiarism.",
+          "language": "TypeScript",
+          "pushed_at": "2025-03-08T09:54:43Z",
+          "created_at": "2025-03-08T09:54:40Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 70
+        },
+        {
+          "name": "cobol-bridge",
+          "full_name": "guillaume-flambard/cobol-bridge",
+          "html_url": "https://github.com/guillaume-flambard/cobol-bridge",
+          "description": "COBOL Bridge: a modernization bridge for legacy COBOL systems.",
+          "language": "JavaScript",
+          "pushed_at": "2025-03-06T10:31:27Z",
+          "created_at": "2025-03-06T10:13:09Z",
+          "topics": [],
+          "fork": false,
+          "archived": true,
+          "private": false,
+          "size": 23385
         },
         {
           "name": "mojolink-site",
@@ -1491,13 +1477,13 @@
           "html_url": "https://github.com/memolabs-dev/json-statham",
           "description": "Deterministic JSON contract validation and conservative compatibility checks",
           "language": "JavaScript",
-          "pushed_at": "2026-10-30T12:01:27Z",
+          "pushed_at": "2026-10-30T16:00:31Z",
           "created_at": "2026-10-30T10:52:47Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 112
+          "size": 208
         },
         {
           "name": "guilloche",
@@ -1548,20 +1534,6 @@
           "archived": false,
           "private": false,
           "size": 2043
-        },
-        {
-          "name": "freelance-growth",
-          "full_name": "memolabs-dev/freelance-growth",
-          "html_url": "https://github.com/memolabs-dev/freelance-growth",
-          "description": "Memo Labs freelance strategy, remote mission acquisition, partnerships and technical accompaniment",
-          "language": "Python",
-          "pushed_at": "2026-10-28T17:47:25Z",
-          "created_at": "2026-10-19T17:51:24Z",
-          "topics": [],
-          "fork": false,
-          "archived": false,
-          "private": false,
-          "size": 925
         },
         {
           "name": "project-template",
@@ -1653,13 +1625,13 @@
           "html_url": "https://github.com/memolabs-dev/lab-hub",
           "description": "Memo Labs public website and projects",
           "language": "TypeScript",
-          "pushed_at": "2026-10-19T23:22:44Z",
+          "pushed_at": "2026-10-30T16:06:49Z",
           "created_at": "2026-10-12T21:15:55Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 30
+          "size": 31
         },
         {
           "name": "problem-intelligence-engine",
@@ -1921,37 +1893,9 @@
           "archived": false,
           "private": false,
           "size": 2090
-        },
-        {
-          "name": "stasis",
-          "full_name": "memolabs-dev/stasis",
-          "html_url": "https://github.com/memolabs-dev/stasis",
-          "description": "Multi-project scoring and sprint orchestrator: an anti-scatter meta-layer that scores your projects, tells you which one to commit to, and holds you to it. TypeScript CLI + desktop app.",
-          "language": "TypeScript",
-          "pushed_at": "2026-10-19T23:23:46Z",
-          "created_at": "2026-07-04T11:05:43Z",
-          "topics": [],
-          "fork": false,
-          "archived": false,
-          "private": false,
-          "size": 620
-        },
-        {
-          "name": "memo-cc",
-          "full_name": "memolabs-dev/memo-cc",
-          "html_url": "https://github.com/memolabs-dev/memo-cc",
-          "description": "Guillaume's Claude Code plugin: vault-enrich and new-project skills, plus personal-archivist and vault-librarian agents.",
-          "language": "Shell",
-          "pushed_at": "2026-10-19T23:23:10Z",
-          "created_at": "2026-06-29T07:14:55Z",
-          "topics": [],
-          "fork": false,
-          "archived": false,
-          "private": false,
-          "size": 62
         }
       ],
-      "syncedAt": "2026-10-30T13:37:16.944Z",
+      "syncedAt": "2026-10-30T18:52:43.109Z",
       "healthy": true
     },
     "merged": {
@@ -2349,7 +2293,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-30T13:37:16.944Z",
+      "syncedAt": "2026-10-30T18:52:43.109Z",
       "healthy": true
     },
     "open": {
@@ -2579,7 +2523,7 @@
           }
         }
       ],
-      "syncedAt": "2026-10-30T13:37:16.944Z",
+      "syncedAt": "2026-10-30T18:52:43.109Z",
       "healthy": true
     }
   }
