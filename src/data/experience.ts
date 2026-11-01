@@ -25,8 +25,8 @@ export const EXPERIENCES: Experience[] = [
     dates: { fr: "2025 – aujourd’hui", en: "2025 – present" },
     role: { fr: "Ingénieur logiciel indépendant", en: "Independent software engineer" },
     description: {
-      fr: "Produits web, intégrations d’API et automatisations ; interfaces, services, déploiement et résolution d’incidents.",
-      en: "Web products, API integrations and automation; frontend, services, deployments and production incident investigation.",
+      fr: "Développement d’applications web et d’intégrations API ; prototypes personnels d’automatisation et d’IA présentés séparément des réalisations clients.",
+      en: "Web application and API integration work; independent automation and AI prototypes shown separately from client deliveries.",
     },
     technologies: ["TypeScript", "React", "Node.js"],
   },
