@@ -235,8 +235,8 @@ test("work listing separates delivered references, past collaborations and exper
   await expect(secondary.locator("strong")).toHaveText(["weave", "n8n-nodes-opn"]);
   await expect(page.locator(".work-other img")).toHaveCount(0);
   await expect(cases.locator(".thumb img").first()).toHaveAttribute("sizes", /1056px/);
-  await expect(page.locator(".work-other .proof-legend")).toHaveCount(2);
-  await expect(page.locator(".work-other .proof-legend").first()).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="work-reference-heading"] .proof-legend')).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="work-other-heading"] .proof-legend')).toBeVisible();
 });
 
 for (const locale of locales) {
