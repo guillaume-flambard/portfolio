@@ -72,9 +72,9 @@ export default async function CvPage({ params }: { params: Promise<{ locale: str
           <h2 id="resume-projects">{t("projectsTitle")}</h2>
           <p>{t("projects")}</p>
           <div className="resume-links print-hide">
+            <Link href="/work/emargo">Émargo</Link>
+            <Link href="/work/largo">Largo IA</Link>
             <Link href="/work/echo-travel">Echo Travel</Link>
-            <Link href="/work/paykit">PayKit</Link>
-            <Link href="/work/blueowl">Blue Owl</Link>
           </div>
         </section>
 
