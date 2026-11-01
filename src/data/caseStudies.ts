@@ -15,12 +15,12 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "echo-travel",
     preview: {
-      fr: "Réservations, paiements et opérations pour un transporteur maritime en Thaïlande, avec intégration 12Go.",
-      en: "Booking, payments and operations for a Thai boat-transfer operator, including a 12Go integration.",
+      fr: "Mission client terminée en août 2026 : réservations et paiements pour un opérateur maritime en Thaïlande, avec intégration 12Go.",
+      en: "Past client engagement (ended August 2026): booking and payments for a Thai boat-transfer operator, including 12Go integration.",
     },
     role: {
-      fr: "Développement full-stack pour un client",
-      en: "Full-stack technical contractor",
+      fr: "Ancien prestataire technique full-stack (jusqu’en août 2026)",
+      en: "Former full-stack technical contractor (until August 2026)",
     },
     context: {
       fr: "Une activité de transferts maritimes en Thaïlande avait besoin d’un parcours de réservation, de paiements et d’un suivi opérationnel utilisables au quotidien.",
@@ -39,12 +39,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: "Keep the workflow cohesive with React/Inertia and Laravel; use one-way 12Go synchronisation to reduce conflicting updates between systems.",
     },
     result: {
-      fr: "Plateforme utilisée pour les réservations et l’exploitation. Volume communiqué : environ 150 passagers par jour en saison.",
-      en: "Booking and operations platform used in day-to-day work. Reported volume: around 150 passengers per day in season.",
+      fr: "Une plateforme de réservation et de suivi opérationnel a été développée au cours de la mission, aujourd’hui terminée. Le site reste accessible ; son exploitation actuelle ne relève plus de ma responsabilité.",
+      en: "A booking and operations platform was developed during this now-completed engagement. The site remains accessible, but I am no longer responsible for its operation.",
     },
     caveat: {
-      fr: "Le volume saisonnier provient de l’opérateur et n’a pas fait l’objet d’un audit indépendant. Les écrans internes ne sont pas publics.",
-      en: "The seasonal volume was supplied by the operator and has not been independently audited. Internal operations screens are not public.",
+      fr: "Mission terminée en août 2026. Les écrans internes, le trafic et l’activité actuelle du produit ne sont pas vérifiables publiquement.",
+      en: "Engagement ended in August 2026. Internal screens, traffic and the product’s current business operations are not publicly verifiable.",
     },
   },
   {
@@ -85,12 +85,12 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "blueowl",
     preview: {
-      fr: "Application de génération de leçons : interface Next.js, résultats en streaming et service API TypeScript.",
-      en: "Lesson-generation application: Next.js interface, streamed results and TypeScript API service.",
+      fr: "Ancienne collaboration sur une application de leçons : interface Next.js, streaming et service API TypeScript.",
+      en: "Past collaboration on lesson generation: Next.js interface, streamed results and TypeScript API service.",
     },
     role: {
-      fr: "Interface et service web, en collaboration",
-      en: "Web interface and service, in collaboration",
+      fr: "Ancienne collaboration · terminée en août 2026",
+      en: "Past technical collaboration · ended August 2026",
     },
     context: {
       fr: "Transformer un moteur expérimental de génération de leçons par IA en service web accessible, avec restitution progressive des réponses.",
@@ -109,12 +109,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       en: "TypeScript NestJS/Fastify gateway, engine retained as a submodule, streaming to Next.js, MD/HTML/PDF exports and Docker Compose deployment.",
     },
     result: {
-      fr: "Une expérience web de génération de leçons, depuis la demande jusqu’au rendu et à l’export du contenu.",
-      en: "A lesson-generation web workflow, from user request through streamed result to export.",
+      fr: "Une interface et un service de génération de leçons ont été développés pendant la collaboration, désormais terminée.",
+      en: "A lesson-generation interface and service were developed during the collaboration, which has since ended.",
     },
     caveat: {
-      fr: "La qualité pédagogique ou factuelle du contenu généré n’est pas présentée ici comme mesurée par un benchmark indépendant.",
-      en: "Educational or factual quality of generated lessons is not presented as independently benchmarked.",
+      fr: "Collaboration terminée en août 2026. Ni l’usage actuel, ni la qualité pédagogique ou factuelle des contenus générés n’ont été évalués indépendamment.",
+      en: "Collaboration ended in August 2026. Neither current usage nor the educational or factual quality of generated lessons has been independently assessed.",
     },
   },
 ];
