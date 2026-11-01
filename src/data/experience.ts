@@ -11,6 +11,16 @@ export type Experience = {
 
 export const EXPERIENCES: Experience[] = [
   {
+    organization: "Data for Good · Rescue Atlas",
+    dates: { fr: "Depuis octobre 2026", en: "Oct 2026 – present" },
+    role: { fr: "Tech Lead bénévole · projet SOS Méditerranée", en: "Volunteer Tech Lead · SOS Méditerranée project" },
+    description: {
+      fr: "Co-cadrage technique de la refonte de la carte des sauvetages : architecture, sources et flux de données, découpage des travaux en backlog et préparation de l’accueil des bénévoles. Projet associatif en cours ; aucune livraison officielle revendiquée.",
+      en: "Co-leading technical planning for the rescue map redesign: architecture, data sources and flows, backlog scoping and volunteer onboarding. Ongoing nonprofit project; no official product launch claimed.",
+    },
+    technologies: ["Architecture", "Data", "Open source"],
+  },
+  {
     organization: "Memo Labs",
     dates: { fr: "2025 – aujourd’hui", en: "2025 – present" },
     role: { fr: "Ingénieur logiciel indépendant", en: "Independent software engineer" },
