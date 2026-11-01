@@ -83,12 +83,12 @@ export const FEATURED: Project[] = [
       note: {"fr":"Site de réservation public accessible le 25/10/2026. L'activité et le volume saisonnier sont rapportés par l'opérateur, sans audit indépendant.","en":"Public booking site accessible on 25 Oct 2026. Operations and seasonal volume are operator-reported, not independently audited."},
     },
     tagline: {
-      fr: "Plateforme de réservation et paiements pour un opérateur maritime en Thaïlande.",
-      en: "Booking and payments platform for a Thai boat-transfer operator.",
+      fr: "Ancienne mission client : plateforme de réservation et paiements en Thaïlande (terminée en août 2026).",
+      en: "Past client engagement: booking and payments platform in Thailand (ended August 2026).",
     },
     description: {
-      fr: "Echo Travel est un opérateur de transferts en bateau rapide dans les îles du golfe de Thaïlande. J'ai construit et j'exploite la plateforme de réservation comme prestataire technique : prototypée avec le fondateur Michael, puis passée en code de production par moi. Une app Laravel et React, un flux de paiement Omise et une synchro à sens unique depuis la marketplace 12Go. Elle transporte environ 150 passagers par jour, de vraies réservations et de vrai argent, en saisonnier. En ligne sur echotravel.app.",
-      en: "Echo Travel is a speedboat transfer operator across the Gulf of Thailand islands. I built and run the booking platform as their tech vendor: prototyped with the founder Michael, then written into production code by me. A Laravel and React app with an Omise payment flow and a one-way sync from the 12Go marketplace. It carries around 150 passengers a day, real bookings and real money, seasonal. Live at echotravel.app.",
+      fr: "Mission de développement full-stack réalisée pour un opérateur de transferts maritimes en Thaïlande, terminée en août 2026. J’ai travaillé sur une plateforme Laravel/React de réservation, le paiement Omise et une intégration à sens unique avec 12Go. Le site reste accessible, mais je ne travaille plus pour cet opérateur et ne revendique pas son exploitation actuelle.",
+      en: "Past full-stack engagement with a boat-transfer operator in Thailand, ending in August 2026. I worked on a Laravel/React booking platform, Omise payments and a one-way 12Go integration. The website remains accessible, but I no longer work for this operator and do not claim to run its current operations.",
     },
     stack: ["Laravel", "React", "Inertia", "Omise", "Capacitor"],
     links: [{ label: "live", url: "https://echotravel.app" }],
@@ -113,8 +113,8 @@ export const FEATURED: Project[] = [
       en: "Billing toolkit for AI apps, in early access.",
     },
     description: {
-      fr: "PayKit est un toolkit de facturation conçu pour les apps IA : Stripe Checkout, webhooks, comptage d'usage, soldes de crédits, déduction atomique dans Postgres, SDK React en trois lignes et embed sans code via une balise script. C'est ma preuve la plus forte de jugement produit fullstack pour une audience de développeurs.",
-      en: "PayKit is a billing toolkit designed for AI apps: Stripe Checkout, webhooks, usage metering, credit balances, atomic deduction in Postgres, a three-line React SDK and a no-code script-tag embed. It is my strongest proof of full-stack product judgment for a developer audience.",
+      fr: "PayKit est un prototype indépendant de toolkit de facturation pour applications IA : Stripe Checkout, webhooks, suivi d’usage, crédits PostgreSQL et intégration React ou par script. Le code et la page de présentation sont publics ; le produit reste en accès anticipé, sans client ou revenu revendiqué.",
+      en: "PayKit is an independent billing toolkit prototype for AI applications: Stripe Checkout, webhooks, usage tracking, PostgreSQL credits and React or script-based integration. The code and landing page are public; the product remains in early access, with no customers or revenue claimed.",
     },
     stack: ["TypeScript", "Stripe", "Postgres", "React", "Next.js"],
     links: [
@@ -138,12 +138,12 @@ export const FEATURED: Project[] = [
       note: {"fr":"Le site public du projet éducatif répond (25/10/2026). Le parcours complet du générateur IA n'a pas été validé sans compte.","en":"The education project's public website responds (25 Oct 2026). End-to-end AI generator access was not verified without an account."},
     },
     tagline: {
-      fr: "Plateforme éducative et service Web IA en TypeScript.",
-      en: "Education website and TypeScript AI web service.",
+      fr: "Ancienne collaboration : application éducative et service Web IA en TypeScript (terminée en août 2026).",
+      en: "Past collaboration: TypeScript education app and AI web service (ended August 2026).",
     },
     description: {
-      fr: "Blue Owl est un produit éducatif mondial avec un générateur de leçons par IA. Le moteur d'agents expérimental derrière (2600 fichiers), je l'ai construit avec Michael ; le service de production est de moi seul. J'ai pris ce moteur et l'ai livré en service web : une gateway hexagonale NestJS et Fastify avec le moteur en sous-module git, tenue en TypeScript uniquement, sans file de messages, sans vector DB, sans Kubernetes, déployée en Docker Compose sur une VM. L'application Next.js stream la sortie et exporte en MD, HTML et PDF.",
-      en: "Blue Owl is a global education product with an AI lesson generator. The experimental agent engine behind it (2600 files) I built with Michael; the production service is mine alone. I took that engine and shipped it as a web service: a hexagonal NestJS and Fastify gateway with the engine kept as a git submodule, held to TypeScript only, no queue, no vector DB, no Kubernetes, deployed with Docker Compose on one VM. The Next.js app streams the output and exports to MD, HTML and PDF.",
+      fr: "Collaboration technique terminée en août 2026 sur un produit éducatif intégrant l’IA. J’ai développé le service Web NestJS/Fastify et l’interface Next.js avec streaming et exports documentaires ; le moteur d’agents expérimental avait été conçu en collaboration. Le site public reste accessible, mais je ne participe plus au projet et son usage actuel n’a pas été vérifié.",
+      en: "Past technical collaboration on an AI-assisted education product, ending in August 2026. I developed the NestJS/Fastify web service and Next.js interface with streaming and document exports; the experimental agent engine was a joint effort. The public site remains accessible, but I am no longer involved and its current usage has not been verified.",
     },
     stack: ["NestJS", "Fastify", "Next.js", "TypeScript", "Docker"],
     links: [{ label: "live", url: "https://blueowl.org" }],
