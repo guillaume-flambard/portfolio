@@ -30,7 +30,7 @@
     "project_minerva": "« Retrieval Augmented Consciousness » : plateforme de connaissance/agents RAG. Recherche sémantique à grande échelle.",
     "ctaAbout": "Voir mon CV",
     "identity": "Memo Labs est le nom de mon activité indépendante. Vous travaillez directement avec moi.",
-    "proofLabel": "Expérience",
+    "proofLabel": "Expérience et engagement",
     "proofValue": "Medsharing · Echo Travel · Symbyoz",
     "availabilityLabel": "Disponibilité",
     "availabilityValue": "Missions freelance à distance · ouvert aux postes remote",
@@ -151,7 +151,7 @@
     "f3v": "FR · EN",
     "cta": "Me contacter",
     "experienceTitle": "Parcours professionnel",
-    "experienceIntro": "Des produits en exploitation aux interfaces métier réglementées. Les expériences ci-dessous reflètent mon CV d'octobre 2026.",
+    "experienceIntro": "Parcours professionnel et bénévolat. Rescue Atlas est une mission associative en cours, non un emploi chez Data for Good.",
     "educationTitle": "Formation",
     "educationBody": "OpenClassrooms, développeur front-end RNCP niveau 6 (2023) · WebForce3, développement full-stack (2020).",
     "cvCta": "Voir mon CV"
@@ -173,7 +173,7 @@
   "cv": {
     "eyebrow": "CV · Octobre 2026",
     "role": "Développeur full-stack · React · TypeScript · Node.js",
-    "intro": "Développeur full-stack avec environ cinq ans d'expérience professionnelle. Je livre des interfaces, des services et des intégrations jusqu'à leur utilisation réelle. Missions freelance ou poste remote.",
+    "intro": "Développeur full-stack avec environ cinq ans d’expérience professionnelle. Applications métier, API et automatisations IA. Tech Lead bénévole sur Rescue Atlas (Data for Good pour SOS Méditerranée) depuis octobre 2026. Missions freelance ou postes 100 % remote.",
     "print": "Enregistrer en PDF / imprimer",
     "printHint": "L'export PDF utilise la fonction d'impression de votre navigateur, avec une mise en page dédiée.",
     "contact": "Me contacter",
