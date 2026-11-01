@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { CASE_PROJECTS } from "@/data/projectNavigation";
-import { CASE_BY_SLUG, type Lang } from "@/data/caseStudies";
+import { FEATURED } from "@/data/projects";
+import type { Lang } from "@/data/caseStudies";
 import SiteNav from "@/components/SiteNav";
 import ProjectImage from "@/components/ProjectImage";
 import GithubActivity from "@/components/GithubActivity";
@@ -13,8 +13,8 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Guillaume Flambard — Product engineer React & TypeScript", "Du prototype au produit : ingénierie React et TypeScript, applications utilisables, livraisons et contributions open source vérifiables sur GitHub."]
-    : ["Guillaume Flambard — React & TypeScript product engineer", "From prototype to working software: React and TypeScript engineering, shipped projects and verifiable open-source contributions on GitHub."];
+    ? ["Guillaume Flambard — Développement et modernisation web React / TypeScript", "Développeur full-stack indépendant : modernisation d’applications métier, interfaces React, API et intégrations. Références livrées et prototypes clairement séparés."]
+    : ["Guillaume Flambard — React / TypeScript business application developer", "Independent full-stack developer: business application modernization, React interfaces, APIs and integrations. Delivered references separated from experimental work."];
   return createRouteMetadata(locale, "", title, description);
 }
 
@@ -24,7 +24,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const lang = locale as Lang;
   const t = await getTranslations("home");
   const workText = await getTranslations("work");
-  const caseProjects = CASE_PROJECTS;
+  const deliveredProjects = FEATURED.filter((project) => ["emargo", "largo"].includes(project.slug));
 
   return (
     <>
@@ -49,17 +49,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <dd className="hero-evidence-links">
                 <Link href="/about#experience-medsharing">Medsharing</Link>
                 <span aria-hidden="true">·</span>
-                <Link href="/work/echo-travel">Echo Travel</Link>
+                <Link href="/work/emargo">Émargo</Link>
                 <span aria-hidden="true">·</span>
-                <Link href="/about#experience-symbyoz">Symbyoz</Link>
+                <Link href="/work/largo">Largo IA</Link>
               </dd>
             </div>
             <div><dt>{t("availabilityLabel")}</dt><dd><Link className="hero-recruiter-link" href="/contact#recruitment">{t("availabilityValue")} <span aria-hidden="true">↗</span></Link></dd></div>
           </dl>
         </div>
       </header>
-
-      <GithubActivity locale={lang} />
 
       <section className="focus-section" aria-labelledby="focus-heading">
         <div className="wrap">
@@ -97,27 +95,36 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <p>{t("workSub")}</p>
           </div>
           <div className="grid">
-            {caseProjects.map((p) => {
-              const study = CASE_BY_SLUG[p.slug];
-              return (
-                <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
-                  <div className={`thumb ${p.thumb}`}>
-                    {p.gallery[0] ? <ProjectImage src={p.gallery[0]} alt={`${p.name} — ${study.preview[lang]}`} /> : p.name}
-                  </div>
-                  <div className="cbody">
-                    <h3>{p.name} <span className="arrow" aria-hidden>→</span></h3>
-                    <p>{study.preview[lang]}</p>
-                    <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {study.role[lang]}</p>
-                    <p className="card-proof" aria-label={workText("proofShort")}>{workText(`kind_${p.verification.kind}` as never)} · {workText(`proof_${p.verification.proof}` as never)}</p>
-                    <div className="stack">{p.stack.map((technology) => <span key={technology}>{technology}</span>)}</div>
-                  </div>
-                </Link>
-              );
-            })}
+            <Link className="card" href="/about#experience-medsharing">
+              <div className="thumb t3">Medsharing</div>
+              <div className="cbody">
+                <h3>Medsharing <span className="arrow" aria-hidden="true">→</span></h3>
+                <p>{t("medsharingReference")}</p>
+                <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {t("medsharingRole")}</p>
+                <p className="card-proof">{t("pastEmployment")}</p>
+                <div className="stack"><span>JavaScript</span><span>Bootstrap</span><span>UX métier</span></div>
+              </div>
+            </Link>
+            {deliveredProjects.map((p) => (
+              <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
+                <div className={`thumb ${p.thumb}`}>
+                  {p.gallery[0] ? <ProjectImage src={p.gallery[0]} alt={`${p.name} — ${p.tagline[lang]}`} /> : p.name}
+                </div>
+                <div className="cbody">
+                  <h3>{p.name} <span className="arrow" aria-hidden="true">→</span></h3>
+                  <p>{p.tagline[lang]}</p>
+                  <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {p.slug === "emargo" ? t("emargoRole") : t("largoRole")}</p>
+                  <p className="card-proof" aria-label={workText("proofShort")}>{workText(`kind_${p.verification.kind}` as never)} · {workText(`proof_${p.verification.proof}` as never)}</p>
+                  <div className="stack">{p.stack.map((technology) => <span key={technology}>{technology}</span>)}</div>
+                </div>
+              </Link>
+            ))}
           </div>
           <Link className="btn s maplink" href="/work">{t("workLibrary")}</Link>
         </div>
       </section>
+
+      <GithubActivity locale={lang} />
 
       <section className="end-cta" aria-labelledby="end-cta-title">
         <div className="wrap end-cta-inner">

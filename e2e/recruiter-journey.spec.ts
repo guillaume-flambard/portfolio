@@ -150,13 +150,13 @@ for (const locale of locales) {
 
     test("identifies the engineer, service, experience and next step", async ({ page }) => {
       await page.goto(`/${locale}`);
-      const positioning = locale === "fr" ? "Du prototype au produit" : "From prototype to product";
+      const positioning = locale === "fr" ? "Je développe et modernise" : "I build and modernize";
       await expect(page.getByRole("heading", { level: 1 })).toContainText(positioning);
       await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Ce que je construis maintenant" : "What I'm building now" })).toBeVisible();
       await expect(page.locator("#github-activity a[href=\"https://github.com/guillaume-flambard\"]")).toBeVisible();
       await expect(page.locator(".hero-identity")).toContainText("Memo Labs");
       await expect(page.locator(".hero-facts")).toContainText("Medsharing");
-      await expect(page.locator(".hero-facts")).toContainText("Echo Travel");
+      await expect(page.locator(".hero-facts")).toContainText("Émargo");
       await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Sur quoi je peux vous aider" : "How I can help" })).toBeVisible();
       await expect(page.locator(".focus-grid > li")).toHaveCount(3);
       await expect(page.locator(".featured-section .card")).toHaveCount(3);
@@ -219,7 +219,7 @@ test("gallery requests full-width responsive images and gives unique description
   await expect(page.locator(".project-gallery-intro")).toContainText("ne prouvent pas");
 });
 
-test("work listing leads with the three documented cases and keeps four projects in a compact index", async ({ page }) => {
+test("work listing separates delivered references, past collaborations and experimental work", async ({ page }) => {
   await page.goto("/fr/work");
   const cases = page.locator('[data-testid="case-projects"] .card');
   await expect(cases).toHaveCount(3);
@@ -227,12 +227,16 @@ test("work listing leads with the three documented cases and keeps four projects
   for (const card of await cases.all()) {
     await expect(card).toContainText("Mon rôle");
   }
-  const secondary = page.locator(".work-other-list li");
-  await expect(secondary).toHaveCount(4);
-  await expect(secondary.locator("strong")).toHaveText(["Émargo", "weave", "n8n-nodes-opn", "Largo IA"]);
+  const references = page.locator('[data-testid="reference-projects"] li');
+  await expect(references).toHaveCount(3);
+  await expect(references.locator("strong")).toHaveText(["Medsharing", "Émargo", "Largo IA"]);
+  const secondary = page.locator('[data-testid="other-projects"] li');
+  await expect(secondary).toHaveCount(2);
+  await expect(secondary.locator("strong")).toHaveText(["weave", "n8n-nodes-opn"]);
   await expect(page.locator(".work-other img")).toHaveCount(0);
   await expect(cases.locator(".thumb img").first()).toHaveAttribute("sizes", /1056px/);
-  await expect(page.locator(".work-other .proof-legend")).toBeVisible();
+  await expect(page.locator(".work-other .proof-legend")).toHaveCount(2);
+  await expect(page.locator(".work-other .proof-legend").first()).toBeVisible();
 });
 
 for (const locale of locales) {
@@ -285,15 +289,16 @@ for (const locale of locales) {
   test(`${locale}: evidence-first work index stays readable and navigable at 320px`, async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 720 });
     await page.goto(`/${locale}/work`);
-    const label = locale === "fr" ? "Trois projets expliqués" : "Three projects, explained";
+    const label = locale === "fr" ? "Études de cas, avec leur véritable statut" : "Detailed case studies, with their actual status";
     await expect(page.getByRole("heading", { name: label, level: 2 })).toBeVisible();
-    await expect(page.locator(".work-other-list li")).toHaveCount(4);
+    await expect(page.locator('[data-testid="reference-projects"] li')).toHaveCount(3);
+    await expect(page.locator('[data-testid="other-projects"] li')).toHaveCount(2);
     await expect(page.locator('[data-testid="case-projects"] .card')).toHaveCount(3);
     await assertNoHorizontalOverflow(page);
     await page.locator('[data-testid="case-projects"] .card').first().click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/work/echo-travel$`));
     await page.goto(`/${locale}/work`);
-    await page.locator(".work-other-link").first().click();
+    await page.locator('[data-testid="reference-projects"] .work-other-link').nth(1).click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/work/emargo$`));
   });
 }
@@ -307,17 +312,17 @@ for (const locale of locales) {
       const links = page.locator(".hero-evidence-links");
       await expect(links.getByRole("link")).toHaveCount(3);
       await expect(links.getByRole("link", { name: "Medsharing" })).toHaveAttribute("href", `/${locale}/about#experience-medsharing`);
-      await expect(links.getByRole("link", { name: "Echo Travel" })).toHaveAttribute("href", `/${locale}/work/echo-travel`);
-      await expect(links.getByRole("link", { name: "Symbyoz" })).toHaveAttribute("href", `/${locale}/about#experience-symbyoz`);
+      await expect(links.getByRole("link", { name: "Émargo" })).toHaveAttribute("href", `/${locale}/work/emargo`);
+      await expect(links.getByRole("link", { name: "Largo IA" })).toHaveAttribute("href", `/${locale}/work/largo`);
 
       await links.getByRole("link", { name: "Medsharing" }).click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/about#experience-medsharing$`));
       await expect(page.locator("#experience-medsharing")).toContainText("Medsharing");
 
       await page.goto(`/${locale}`);
-      await links.getByRole("link", { name: "Symbyoz" }).click();
-      await expect(page).toHaveURL(new RegExp(`/${locale}/about#experience-symbyoz$`));
-      await expect(page.locator("#experience-symbyoz")).toContainText("Symbyoz");
+      await links.getByRole("link", { name: "Largo IA" }).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/work/largo$`));
+      await expect(page.getByRole("heading", { name: "Largo IA", level: 1 })).toBeVisible();
       await assertNoHorizontalOverflow(page);
     });
 

@@ -11,8 +11,8 @@ import ProjectImage from "@/components/ProjectImage";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Réalisations et études de cas | Memo Labs", "Trois études de cas détaillées : Echo Travel, PayKit et Blue Owl. Mon rôle, le problème résolu, les résultats et les preuves disponibles. Quatre projets complémentaires."]
-    : ["Selected work and case studies | Memo Labs", "Three documented case studies: Echo Travel, PayKit and Blue Owl, covering my role, problem, outcome and available evidence. Four additional projects."];
+    ? ["Références professionnelles, applications et prototypes | Memo Labs", "Medsharing, Émargo et Largo IA : réalisations et expériences documentées. Collaborations terminées et prototypes présentés séparément."]
+    : ["Professional work, public applications and prototypes | Memo Labs", "Medsharing, Émargo and Largo IA: documented work and experience. Completed collaborations and prototypes shown separately."];
   return createRouteMetadata(locale, "/work", title, description);
 }
 
@@ -25,7 +25,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   // Case studies have a written account of the problem, contribution and outcome.
   // Other projects still belong in the portfolio, but should not look equally substantiated.
   const caseProjects = CASE_PROJECTS;
-  const otherProjects = SUPPORTING_PROJECTS;
+  const referenceProjects = SUPPORTING_PROJECTS.filter((project) => ["emargo", "largo"].includes(project.slug));
+  const otherProjects = SUPPORTING_PROJECTS.filter((project) => !["emargo", "largo"].includes(project.slug));
 
   return (
     <>
@@ -41,6 +42,36 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
       <main className="sec work-page">
         <div className="wrap">
+          <section className="work-group work-other" aria-labelledby="work-reference-heading">
+            <div className="work-group-heading">
+              <div>
+                <p className="work-group-kicker">{t("referenceKicker")}</p>
+                <h2 id="work-reference-heading">{t("referenceTitle")}</h2>
+              </div>
+              <p>{t("referenceIntro")}</p>
+            </div>
+            <ul className="work-other-list" data-testid="reference-projects">
+              <li>
+                <Link href="/about#experience-medsharing" className="work-other-link">
+                  <strong>Medsharing</strong>
+                  <span className="work-other-description">{t("referenceMedsharing")}</span>
+                  <span className="work-other-evidence">{t("referencePastEmployment")}</span>
+                  <span className="work-other-arrow" aria-hidden="true">↗</span>
+                </Link>
+              </li>
+              {referenceProjects.map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/work/${p.slug}`} className="work-other-link">
+                    <strong>{p.name}</strong>
+                    <span className="work-other-description">{p.tagline[lang]}</span>
+                    <span className="work-other-evidence">{t(`kind_${p.verification.kind}` as never)} · {t(`proof_${p.verification.proof}` as never)}</span>
+                    <span className="work-other-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="proof-legend">{t("referenceCaveat")}</p>
+          </section>
           <section className="work-group" aria-labelledby="work-case-heading">
             <div className="work-group-heading">
               <div>
@@ -83,7 +114,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               </div>
               <p>{t("otherListIntro")}</p>
             </div>
-            <ul className="work-other-list">
+            <ul className="work-other-list" data-testid="other-projects">
               {otherProjects.map((p) => (
                 <li key={p.slug}>
                   <Link href={`/work/${p.slug}`} className="work-other-link">
