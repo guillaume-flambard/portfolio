@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return createRouteMetadata(
     locale,
     `/work/${slug}`,
-    `${project.name} — Memo Labs`,
+    `${project.name} · Memo Labs`,
     project.tagline[locale as "fr" | "en"],
   );
 }
@@ -176,7 +176,7 @@ export default async function ProjectPage({ params }: Props) {
       </article>
 
       <footer className="foot">
-        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <span>© 2026 Memo Labs · Guillaume Flambard EI</span>
         <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
       </footer>
     </>

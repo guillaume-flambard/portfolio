@@ -11,8 +11,8 @@ import ProjectImage from "@/components/ProjectImage";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Références professionnelles, applications et prototypes | Memo Labs", "Medsharing, Émargo et Largo IA : réalisations et expériences documentées. Collaborations terminées et prototypes présentés séparément."]
-    : ["Professional work, public applications and prototypes | Memo Labs", "Medsharing, Émargo and Largo IA: documented work and experience. Completed collaborations and prototypes shown separately."];
+    ? ["Références professionnelles, applications et prototypes | Memo Labs", "Medsharing, Echo Travel et Blue Owl : expériences documentées. Collaborations terminées et prototypes présentés séparément."]
+    : ["Professional work, public applications and prototypes | Memo Labs", "Medsharing, Echo Travel and Blue Owl: documented experience. Completed collaborations and prototypes shown separately."];
   return createRouteMetadata(locale, "/work", title, description);
 }
 
@@ -25,8 +25,8 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   // Case studies have a written account of the problem, contribution and outcome.
   // Other projects still belong in the portfolio, but should not look equally substantiated.
   const caseProjects = CASE_PROJECTS;
-  const referenceProjects = SUPPORTING_PROJECTS.filter((project) => ["emargo", "largo"].includes(project.slug));
-  const otherProjects = SUPPORTING_PROJECTS.filter((project) => !["emargo", "largo"].includes(project.slug));
+  const referenceProjects: typeof SUPPORTING_PROJECTS = [];
+  const otherProjects = SUPPORTING_PROJECTS;
 
   return (
     <>
@@ -132,7 +132,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
       </main>
 
       <footer className="foot">
-        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <span>© 2026 Memo Labs · Guillaume Flambard EI</span>
         <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
       </footer>
     </>

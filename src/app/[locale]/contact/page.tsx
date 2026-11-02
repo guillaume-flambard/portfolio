@@ -8,8 +8,8 @@ import SiteNav from "@/components/SiteNav";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Contact — Freelance et recrutement remote | Memo Labs","Contacter Guillaume Flambard pour des missions freelance React/TypeScript ou des postes full-stack remote."]
-    : ["Contact — Freelance and remote hiring | Memo Labs","Contact Guillaume Flambard about remote React/TypeScript freelance projects or full-stack hiring opportunities."];
+    ? ["Contact · Freelance et recrutement remote | Memo Labs","Contacter Guillaume Flambard pour des missions freelance React/TypeScript ou des postes full-stack remote."]
+    : ["Contact · Freelance and remote hiring | Memo Labs","Contact Guillaume Flambard about remote React/TypeScript freelance projects or full-stack hiring opportunities."];
   return createRouteMetadata(locale, "/contact", title, description);
 }
 
@@ -53,13 +53,13 @@ export default async function ContactPage({
           <div className="meta">
             <a href={PUBLIC_LINKS.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href={PUBLIC_LINKS.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href={`https://lab.memolabs.dev/${locale}/`} target="_blank" rel="noopener noreferrer">The Lab</a>
+            <a href={`https://lab.memolabs.dev/${locale}/`}>The Lab</a>
           </div>
         </div>
       </main>
 
       <footer className="foot">
-        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <span>© 2026 Memo Labs · Guillaume Flambard EI</span>
         <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
       </footer>
     </>

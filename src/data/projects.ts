@@ -920,8 +920,8 @@ const mapProjects: MapItem[] = [
     status: "live",
     year: 2026,
     tagline: {
-      fr: "Playground des prototypes et agents en cours — les WIP rendus vivants.",
-      en: "The playground — WIP prototypes and agents made live.",
+      fr: "Playground des prototypes et agents en cours : les WIP rendus vivants.",
+      en: "The playground: WIP prototypes and agents made live.",
     },
     stack: ["TypeScript", "Vite", "nginx"],
     links: [
