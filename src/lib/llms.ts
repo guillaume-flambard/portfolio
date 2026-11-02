@@ -21,6 +21,7 @@ function header(): string[] {
     `- Freelance inquiries: ${SITE}/en/contact#freelance`,
     "- Email: contact@memolabs.dev",
     `- LinkedIn: ${PUBLIC_LINKS.linkedin}`,
+    `- LinkedIn page: ${PUBLIC_LINKS.linkedinCompany}`,
     `- GitHub: ${PUBLIC_LINKS.github}`,
     "- Live demos: https://demos.memolabs.dev/",
     "",
