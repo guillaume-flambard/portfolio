@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-02T06:54:52.908Z",
+  "generatedAt": "2026-11-02T17:05:25.769Z",
   "sections": {
     "repositories": {
       "items": [
@@ -10,7 +10,7 @@
           "html_url": "https://github.com/guillaume-flambard/algo-observatory",
           "description": "Laboratoire interactif : modifiez une règle de classement et voyez 24 recommandations publiques Tournesol changer de rang, avec la raison de chaque mouvement.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-28T17:50:17Z",
+          "pushed_at": "2026-11-02T15:44:09Z",
           "created_at": "2026-10-25T14:38:16Z",
           "topics": [
             "algorithmic-transparency",
@@ -25,7 +25,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1516
+          "size": 1534
         },
         {
           "name": "mediterranean-rescue",
@@ -33,13 +33,13 @@
           "html_url": "https://github.com/guillaume-flambard/mediterranean-rescue",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-11-01T10:39:30Z",
+          "pushed_at": "2026-11-02T16:47:02Z",
           "created_at": "2026-10-24T10:50:52Z",
           "topics": [],
           "fork": true,
           "archived": false,
           "private": false,
-          "size": 2086
+          "size": 2323
         },
         {
           "name": ".github",
@@ -145,13 +145,13 @@
           "html_url": "https://github.com/guillaume-flambard/kollio",
           "description": "Decision workspace for private teams using AI. Parked: the macOS prototype is kollio-mac.",
           "language": "Python",
-          "pushed_at": "2026-10-12T22:46:09Z",
+          "pushed_at": "2026-11-02T15:44:43Z",
           "created_at": "2026-09-11T20:13:11Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 8719
+          "size": 8720
         },
         {
           "name": "OpenSpec",
@@ -173,7 +173,7 @@
           "html_url": "https://github.com/guillaume-flambard/spec-guard",
           "description": "Deterministically report which OpenSpec scenarios are covered by a Vitest or Jest test. Never runs the tests, never calls an LLM.",
           "language": "JavaScript",
-          "pushed_at": "2026-10-02T13:36:09Z",
+          "pushed_at": "2026-11-02T15:44:55Z",
           "created_at": "2026-09-10T18:03:15Z",
           "topics": [
             "jest",
@@ -187,7 +187,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3196
+          "size": 3197
         },
         {
           "name": "ios",
@@ -559,7 +559,7 @@
           "html_url": "https://github.com/guillaume-flambard/foldready",
           "description": "Fold-Ready Score + porting engine for iOS apps on the iPhone Fold (iOS 27). Swift CLI + Next.js web.",
           "language": "HTML",
-          "pushed_at": "2026-10-26T10:43:56Z",
+          "pushed_at": "2026-11-02T15:44:12Z",
           "created_at": "2026-08-10T16:22:59Z",
           "topics": [
             "developer-tools",
@@ -663,7 +663,7 @@
           "html_url": "https://github.com/guillaume-flambard/sku-regulator",
           "description": "From a stubborn EU portal to compliant, multi-country product data. EU health-claims register → Postgres/pgvector → hybrid RAG → compliance dashboard.",
           "language": "Python",
-          "pushed_at": "2026-10-25T10:52:27Z",
+          "pushed_at": "2026-11-02T15:44:27Z",
           "created_at": "2026-08-07T10:44:21Z",
           "topics": [
             "compliance",
@@ -679,7 +679,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1237
+          "size": 1238
         },
         {
           "name": "knockport",
@@ -687,7 +687,7 @@
           "html_url": "https://github.com/guillaume-flambard/knockport",
           "description": "A hiring journey you type into. Candidates explore the company in a terminal before they apply, and recruiters get evidence instead of a score.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-25T10:39:14Z",
+          "pushed_at": "2026-11-02T15:44:30Z",
           "created_at": "2026-08-07T06:11:43Z",
           "topics": [
             "accessibility",
@@ -702,7 +702,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 10862
+          "size": 10863
         },
         {
           "name": "triagepath",
@@ -710,13 +710,13 @@
           "html_url": "https://github.com/guillaume-flambard/triagepath",
           "description": "Automation ROI analyst: ingest brand ops, score time/money, recommend what to automate first, human-reviewed report. Bilingual FR/EN.",
           "language": "Python",
-          "pushed_at": "2026-10-12T07:29:49Z",
+          "pushed_at": "2026-11-02T15:44:46Z",
           "created_at": "2026-08-02T07:00:03Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 464
+          "size": 465
         },
         {
           "name": "memo-ui",
@@ -920,7 +920,7 @@
           "html_url": "https://github.com/guillaume-flambard/n8n-node-vetter",
           "description": "Vet an n8n community node against the verified-node standards and get a severity-ranked review. Zero runtime deps, CI, ships its own AI review layer.",
           "language": "TypeScript",
-          "pushed_at": "2026-07-27T08:30:11Z",
+          "pushed_at": "2026-11-02T15:45:01Z",
           "created_at": "2026-07-23T10:26:27Z",
           "topics": [
             "cli",
@@ -937,7 +937,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 203
+          "size": 204
         },
         {
           "name": "EeveeSpotifyReincarnated",
@@ -959,13 +959,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-11-02T00:45:50Z",
+          "pushed_at": "2026-11-02T15:44:05Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 8081
+          "size": 8385
         },
         {
           "name": "n8n-nodes-opn",
@@ -973,13 +973,13 @@
           "html_url": "https://github.com/guillaume-flambard/n8n-nodes-opn",
           "description": "n8n community node for Opn Payments (formerly Omise): charges, refunds, customers, and a webhook trigger that re-fetches each event before emitting, since Opn webhooks are unsigned. No runtime dependencies.",
           "language": "TypeScript",
-          "pushed_at": "2026-08-08T14:48:23Z",
+          "pushed_at": "2026-11-02T15:44:58Z",
           "created_at": "2026-07-13T12:20:21Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 114
+          "size": 105
         },
         {
           "name": "n8n",
@@ -1001,13 +1001,13 @@
           "html_url": "https://github.com/guillaume-flambard/n8n-community-leverage",
           "description": "Ranks the open n8n backlog by leverage (severity, reach, recency), clusters it into themes, and turns the top ones into contributor-ready briefs. Runs as n8n workflows with a local LLM.",
           "language": "TypeScript",
-          "pushed_at": "2026-07-24T11:04:50Z",
+          "pushed_at": "2026-11-02T15:45:05Z",
           "created_at": "2026-07-07T20:17:59Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 181
+          "size": 186
         },
         {
           "name": "browser-router",
@@ -1029,13 +1029,13 @@
           "html_url": "https://github.com/guillaume-flambard/weave",
           "description": "Cognitive Runtime (prototype MVP) — shared team memory that makes reusable skills emerge from activity, with per-layer provenance (perso→org). Rust, Postgres/pgvector, MCP.",
           "language": "Rust",
-          "pushed_at": "2026-10-12T07:21:37Z",
+          "pushed_at": "2026-11-02T15:44:49Z",
           "created_at": "2026-07-01T22:40:04Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9507
+          "size": 9508
         },
         {
           "name": "paykit",
@@ -1043,13 +1043,13 @@
           "html_url": "https://github.com/guillaume-flambard/paykit",
           "description": "PayKit — drop-in credits, usage metering & subscriptions for AI apps",
           "language": "TypeScript",
-          "pushed_at": "2026-10-12T07:21:33Z",
+          "pushed_at": "2026-11-02T15:44:52Z",
           "created_at": "2026-06-23T12:28:14Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 578
+          "size": 580
         },
         {
           "name": "largo-ai",
@@ -1477,13 +1477,13 @@
           "html_url": "https://github.com/memolabs-dev/json-statham",
           "description": "Deterministic JSON contract validation and conservative compatibility checks",
           "language": "JavaScript",
-          "pushed_at": "2026-10-30T16:00:31Z",
+          "pushed_at": "2026-11-02T15:45:15Z",
           "created_at": "2026-10-30T10:52:47Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 208
+          "size": 209
         },
         {
           "name": "guilloche",
@@ -1491,7 +1491,7 @@
           "html_url": "https://github.com/memolabs-dev/guilloche",
           "description": "Kit Guilloche - composants UI Toolkit Symfony (bouton, recette, harnais AssetMapper + Sass)",
           "language": "SCSS",
-          "pushed_at": "2026-10-28T19:09:30Z",
+          "pushed_at": "2026-11-02T15:45:18Z",
           "created_at": "2026-10-27T16:22:05Z",
           "topics": [],
           "fork": false,
@@ -1505,13 +1505,13 @@
           "html_url": "https://github.com/memolabs-dev/guilloche-workspace",
           "description": "Espace dirigeant et design system « titre guilloché » : Symfony, Twig Components, Stimulus, Turbo, SCSS. Concept indépendant, données fictives.",
           "language": "PHP",
-          "pushed_at": "2026-10-28T18:14:36Z",
+          "pushed_at": "2026-11-02T15:45:20Z",
           "created_at": "2026-10-27T13:04:01Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 728
+          "size": 730
         },
         {
           "name": "mediterranean-rescue",
@@ -1541,13 +1541,13 @@
           "html_url": "https://github.com/memolabs-dev/project-template",
           "description": "Template of new Memo Labs projects (memo-bridge project_create): CI, Mergify, gate paths",
           "language": "JavaScript",
-          "pushed_at": "2026-10-28T17:45:26Z",
+          "pushed_at": "2026-11-02T15:45:31Z",
           "created_at": "2026-10-18T13:19:12Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 11
+          "size": 12
         },
         {
           "name": "mergify-config",
@@ -1569,13 +1569,13 @@
           "html_url": "https://github.com/memolabs-dev/mobile-explorer",
           "description": "Permission-based iOS app observation and specification tool for macOS",
           "language": "Swift",
-          "pushed_at": "2026-10-26T14:06:43Z",
+          "pushed_at": "2026-11-02T15:45:47Z",
           "created_at": "2026-10-16T12:14:27Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 120
+          "size": 117
         },
         {
           "name": "rebuild-radar",
@@ -1583,13 +1583,13 @@
           "html_url": "https://github.com/memolabs-dev/rebuild-radar",
           "description": "Evidence-driven tracker of open-source software rebuilds and alternatives",
           "language": "JavaScript",
-          "pushed_at": "2026-10-28T17:45:25Z",
+          "pushed_at": "2026-11-02T15:45:35Z",
           "created_at": "2026-10-16T12:14:17Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 830
+          "size": 831
         },
         {
           "name": "memo-bridge",
@@ -1597,13 +1597,13 @@
           "html_url": "https://github.com/memolabs-dev/memo-bridge",
           "description": "Independent open-source MCP bridge for Memo Labs — secure multi-host control",
           "language": "JavaScript",
-          "pushed_at": "2026-10-28T17:44:21Z",
+          "pushed_at": "2026-11-02T16:08:25Z",
           "created_at": "2026-10-13T15:19:33Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3395
+          "size": 3433
         },
         {
           "name": ".github",
@@ -1611,7 +1611,7 @@
           "html_url": "https://github.com/memolabs-dev/.github",
           "description": "Memo Labs organization automation, GitHub App migration and shared CI",
           "language": "Python",
-          "pushed_at": "2026-10-27T16:36:48Z",
+          "pushed_at": "2026-11-02T15:47:13Z",
           "created_at": "2026-10-13T09:04:40Z",
           "topics": [],
           "fork": false,
@@ -1624,14 +1624,14 @@
           "full_name": "memolabs-dev/lab-hub",
           "html_url": "https://github.com/memolabs-dev/lab-hub",
           "description": "Memo Labs public website and projects",
-          "language": "TypeScript",
-          "pushed_at": "2026-10-30T16:06:49Z",
+          "language": "CSS",
+          "pushed_at": "2026-11-02T15:47:00Z",
           "created_at": "2026-10-12T21:15:55Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 31
+          "size": 38
         },
         {
           "name": "problem-intelligence-engine",
@@ -1639,7 +1639,7 @@
           "html_url": "https://github.com/memolabs-dev/problem-intelligence-engine",
           "description": "Memo Labs Dev — evidence-first problem discovery and corroboration engine",
           "language": "JavaScript",
-          "pushed_at": "2026-10-28T17:50:01Z",
+          "pushed_at": "2026-11-02T15:47:04Z",
           "created_at": "2026-10-12T09:57:47Z",
           "topics": [
             "ai-agents",
@@ -1650,7 +1650,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 515
+          "size": 422
         },
         {
           "name": "drop",
@@ -1658,7 +1658,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-11-01T22:28:23Z",
+          "pushed_at": "2026-11-02T15:29:46Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1677,7 +1677,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12417
+          "size": 12607
         },
         {
           "name": "trufflo",
@@ -1685,13 +1685,13 @@
           "html_url": "https://github.com/memolabs-dev/trufflo",
           "description": null,
           "language": "Swift",
-          "pushed_at": "2026-10-28T16:27:09Z",
+          "pushed_at": "2026-11-02T15:45:41Z",
           "created_at": "2026-10-04T12:02:00Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 6807
+          "size": 6808
         },
         {
           "name": "agent-reality-bench",
@@ -1699,7 +1699,7 @@
           "html_url": "https://github.com/memolabs-dev/agent-reality-bench",
           "description": "Measuring when an agent's knowledge, observations and actions stop describing the same reality",
           "language": "TypeScript",
-          "pushed_at": "2026-10-19T23:22:55Z",
+          "pushed_at": "2026-11-02T15:46:18Z",
           "created_at": "2026-09-29T12:08:48Z",
           "topics": [
             "ai-agents",
@@ -1712,7 +1712,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 128
+          "size": 129
         },
         {
           "name": "cuesheet",
@@ -1720,7 +1720,7 @@
           "html_url": "https://github.com/memolabs-dev/cuesheet",
           "description": "Invariants discovered by running a personal agent control plane, extracted once they survived real work.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-28T17:57:25Z",
+          "pushed_at": "2026-11-02T15:47:10Z",
           "created_at": "2026-09-29T10:22:17Z",
           "topics": [
             "agent-orchestration",
@@ -1734,7 +1734,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2820
+          "size": 2823
         },
         {
           "name": "valve",
@@ -1742,13 +1742,13 @@
           "html_url": "https://github.com/memolabs-dev/valve",
           "description": "System Zero cognitive scheduler for agentic systems: decide whether cognition should happen, and what kind, before any LLM is called. Research, no trained model yet.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-19T23:23:52Z",
+          "pushed_at": "2026-11-02T15:25:14Z",
           "created_at": "2026-09-27T22:30:55Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 246
+          "size": 247
         },
         {
           "name": "world-kernel",
@@ -1756,7 +1756,7 @@
           "html_url": "https://github.com/memolabs-dev/world-kernel",
           "description": "Rust crate for admitting grounded changes, with receipts and pre-registered stop conditions",
           "language": "Rust",
-          "pushed_at": "2026-10-28T16:28:26Z",
+          "pushed_at": "2026-11-02T15:45:37Z",
           "created_at": "2026-09-27T21:09:31Z",
           "topics": [
             "agents",
@@ -1770,7 +1770,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 631
+          "size": 633
         },
         {
           "name": "kollio-mac",
@@ -1778,7 +1778,7 @@
           "html_url": "https://github.com/memolabs-dev/kollio-mac",
           "description": "Kollio: native macOS SwiftUI canvas for living visual documents and reviewable AI-proposed changes (prototype).",
           "language": "Swift",
-          "pushed_at": "2026-10-28T16:26:29Z",
+          "pushed_at": "2026-11-02T15:45:44Z",
           "created_at": "2026-09-25T18:14:39Z",
           "topics": [
             "ai-agents",
@@ -1792,7 +1792,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 1713
+          "size": 1724
         },
         {
           "name": "intentlane",
@@ -1800,7 +1800,7 @@
           "html_url": "https://github.com/memolabs-dev/intentlane",
           "description": "Audit an iOS or macOS app's Siri and App Intents surface, then generate the native code",
           "language": "TypeScript",
-          "pushed_at": "2026-10-28T18:00:04Z",
+          "pushed_at": "2026-11-02T15:45:23Z",
           "created_at": "2026-09-21T14:17:27Z",
           "topics": [
             "app-intents",
@@ -1815,7 +1815,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2572
+          "size": 2573
         },
         {
           "name": "navirox",
@@ -1823,7 +1823,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-28T19:13:56Z",
+          "pushed_at": "2026-11-02T15:46:57Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1842,7 +1842,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3257
+          "size": 3281
         },
         {
           "name": "uni-protocol",
@@ -1850,7 +1850,7 @@
           "html_url": "https://github.com/memolabs-dev/uni-protocol",
           "description": "Verify that agent work did what it claimed: contracts, verifiers, evidence, deterministic decision.",
           "language": "Rust",
-          "pushed_at": "2026-10-24T11:24:56Z",
+          "pushed_at": "2026-11-02T15:47:16Z",
           "created_at": "2026-09-14T14:05:46Z",
           "topics": [
             "agent-tooling",
@@ -1864,7 +1864,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2866
+          "size": 2875
         },
         {
           "name": "aidd-guard",
@@ -1872,13 +1872,13 @@
           "html_url": "https://github.com/memolabs-dev/aidd-guard",
           "description": "Reports which AIDD acceptance criteria are covered by a test. Deterministic, no LLM, never runs your tests.",
           "language": "TypeScript",
-          "pushed_at": "2026-10-28T17:49:02Z",
+          "pushed_at": "2026-11-02T15:45:26Z",
           "created_at": "2026-09-11T06:31:44Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 143
+          "size": 144
         },
         {
           "name": "life-os",
@@ -1886,7 +1886,7 @@
           "html_url": "https://github.com/memolabs-dev/life-os",
           "description": "Local-first, spec-driven life coach. Human by default, expert optional. AGPL-3.0.",
           "language": "Rust",
-          "pushed_at": "2026-10-19T23:22:55Z",
+          "pushed_at": "2026-11-02T15:46:21Z",
           "created_at": "2026-08-31T15:47:24Z",
           "topics": [],
           "fork": false,
@@ -1895,7 +1895,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-02T06:54:52.908Z",
+      "syncedAt": "2026-11-02T17:05:25.769Z",
       "healthy": true
     },
     "merged": {
@@ -2293,7 +2293,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-02T06:54:52.908Z",
+      "syncedAt": "2026-11-02T17:05:25.769Z",
       "healthy": true
     },
     "open": {
@@ -2523,7 +2523,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-02T06:54:52.908Z",
+      "syncedAt": "2026-11-02T17:05:25.769Z",
       "healthy": true
     }
   }
