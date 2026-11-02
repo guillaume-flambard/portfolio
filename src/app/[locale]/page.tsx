@@ -4,6 +4,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Lang } from "@/data/caseStudies";
 import { EXPERIENCES } from "@/data/experience";
+import { HOME_FAQ, SERVICES } from "@/data/services";
 import SiteNav from "@/components/SiteNav";
 import GithubActivity from "@/components/GithubActivity";
 
@@ -14,8 +15,8 @@ const DEMOS_URL = "https://demos.memolabs.dev/";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Guillaume Flambard · Développeur full-stack, IA et automatisation", "J’intègre l’IA et l’automatisation dans vos produits web, sur votre stack : React, Vue, Laravel, Symfony, .NET. Parcours : Medsharing, Symbyoz, Echo Travel et Blue Owl (CTO), Data for Good. 26 démos en ligne."]
-    : ["Guillaume Flambard · Full-stack developer, AI and automation", "I build AI and automation into your web products, on your stack: React, Vue, Laravel, Symfony, .NET. Track record: Medsharing, Symbyoz, Echo Travel and Blue Owl (CTO), Data for Good. 26 live demos."];
+    ? ["Guillaume Flambard · Développeur full-stack, IA et automatisation", "J’intègre l’IA et l’automatisation dans vos produits web, sur React, Vue, Laravel, Symfony ou .NET. Freelance à distance, ex-CTO d’Echo Travel et Blue Owl."]
+    : ["Guillaume Flambard · Full-stack developer, AI and automation", "I build AI and automation into your web products, on React, Vue, Laravel, Symfony or .NET. Remote freelancer, former CTO at Echo Travel and Blue Owl."];
   return createRouteMetadata(locale, "", title, description);
 }
 
@@ -72,18 +73,21 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <h3>{t("service1Title")}</h3>
               <p>{t("service1Body")}</p>
               <p className="focus-evidence"><Link href="/work/blueowl">{t("service1Evidence")} <span aria-hidden="true">↗</span></Link></p>
+              <p className="focus-more"><Link href="/services/ai-integration">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
             </li>
             <li>
               <span className="focus-number" aria-hidden="true">02</span>
               <h3>{t("service2Title")}</h3>
               <p>{t("service2Body")}</p>
               <p className="focus-evidence"><a href={DEMOS_URL}>{t("service2Evidence")} <span aria-hidden="true">↗</span></a></p>
+              <p className="focus-more"><Link href="/services/automation-n8n">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
             </li>
             <li>
               <span className="focus-number" aria-hidden="true">03</span>
               <h3>{t("service3Title")}</h3>
               <p>{t("service3Body")}</p>
               <p className="focus-evidence"><Link href="/work/echo-travel">{t("service3Evidence")} <span aria-hidden="true">↗</span></Link></p>
+              <p className="focus-more"><Link href="/services/web-development">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
             </li>
           </ol>
         </div>
@@ -131,6 +135,48 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       <GithubActivity locale={lang} />
+
+      <section className="sec faq-section" aria-labelledby="faq-heading">
+        <div className="wrap narrow">
+          <div className="shead">
+            <h2 id="faq-heading">{t("faqTitle")}</h2>
+          </div>
+          <div className="faq">
+            {HOME_FAQ.map((item) => (
+              <details key={item.q.en} className="faq-item">
+                <summary>{item.q[lang]}</summary>
+                <p>{item.a[lang]}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "FAQPage",
+                  mainEntity: HOME_FAQ.map((item) => ({
+                    "@type": "Question",
+                    name: item.q[lang],
+                    acceptedAnswer: { "@type": "Answer", text: item.a[lang] },
+                  })),
+                },
+                {
+                  "@type": "OfferCatalog",
+                  name: lang === "fr" ? "Services freelance" : "Freelance services",
+                  itemListElement: SERVICES.map((service) => ({
+                    "@type": "Offer",
+                    itemOffered: { "@type": "Service", name: service.title[lang], description: service.answer[lang], provider: { "@id": "https://memolabs.dev/#person" } },
+                  })),
+                },
+              ],
+            }),
+          }}
+        />
+      </section>
 
       <section className="end-cta" aria-labelledby="end-cta-title">
         <div className="wrap end-cta-inner">

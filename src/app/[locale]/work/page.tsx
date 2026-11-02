@@ -11,8 +11,8 @@ import ProjectImage from "@/components/ProjectImage";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Références professionnelles, applications et prototypes | Memo Labs", "Medsharing, Echo Travel et Blue Owl : expériences documentées. Collaborations terminées et prototypes présentés séparément."]
-    : ["Professional work, public applications and prototypes | Memo Labs", "Medsharing, Echo Travel and Blue Owl: documented experience. Completed collaborations and prototypes shown separately."];
+    ? ["Réalisations d’un développeur freelance IA et full-stack | Guillaume Flambard", "Études de cas Echo Travel et Blue Owl (CTO), Medsharing, et travaux complémentaires présentés avec leur vrai statut."]
+    : ["Work of a freelance AI and full-stack developer | Guillaume Flambard", "Echo Travel and Blue Owl case studies (CTO), Medsharing, and supporting work shown with its real status."];
   return createRouteMetadata(locale, "/work", title, description);
 }
 

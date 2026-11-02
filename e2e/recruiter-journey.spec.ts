@@ -470,3 +470,37 @@ for (const locale of locales) {
     await assertNoHorizontalOverflow(page);
   });
 }
+
+for (const locale of locales) {
+  test(`${locale}: service pages answer a freelance search and carry their structured data`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(`/${locale}`);
+    const more = page.locator(".focus-more a");
+    await expect(more).toHaveCount(3);
+    await more.first().click();
+    await expect(page).toHaveURL(new RegExp(`/${locale}/services/ai-integration$`));
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(locale === "fr" ? "Développeur freelance IA" : "Freelance AI developer");
+    const types = await page.locator('script[type="application/ld+json"]').evaluateAll((nodes) =>
+      nodes.flatMap((node) => {
+        const data = JSON.parse(node.textContent ?? "{}");
+        return (data["@graph"] ?? [data]).map((item: { "@type": string }) => item["@type"]);
+      }));
+    expect(types).toEqual(expect.arrayContaining(["Person", "Service", "FAQPage", "BreadcrumbList"]));
+    await expect(page.locator(".faq-item")).toHaveCount(3);
+    await assertNoHorizontalOverflow(page);
+    for (const slug of ["automation-n8n", "web-development"]) {
+      const response = await page.goto(`/${locale}/services/${slug}`);
+      expect(response?.status()).toBe(200);
+      await assertNoHorizontalOverflow(page);
+    }
+  });
+}
+
+test("llms.txt and llms-full.txt describe the current offer", async ({ request }) => {
+  for (const path of ["/llms.txt", "/llms-full.txt"]) {
+    const response = await request.get(path);
+    expect(response.status(), path).toBe(200);
+    expect(response.headers()["content-type"]).toMatch(/^text\/plain/);
+    expect(await response.text()).toContain("builds AI and automation into web products");
+  }
+});
