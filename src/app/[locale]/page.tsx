@@ -14,8 +14,8 @@ const DEMOS_URL = "https://demos.memolabs.dev/";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Guillaume Flambard · Développeur full-stack TypeScript freelance", "Je renforce agences et équipes produit sur React, les API et l’automatisation n8n, entièrement à distance. Parcours : Medsharing, Symbyoz, Echo Travel et Blue Owl (CTO), Data for Good. 26 démos en ligne."]
-    : ["Guillaume Flambard · Freelance full-stack TypeScript developer", "I back agencies and product teams on React, APIs and n8n automation, fully remote. Track record: Medsharing, Symbyoz, Echo Travel and Blue Owl (CTO), Data for Good. 26 live demos."];
+    ? ["Guillaume Flambard · Développeur full-stack, IA et automatisation", "J’intègre l’IA et l’automatisation dans vos produits web, sur votre stack : React, Vue, Laravel, Symfony, .NET. Parcours : Medsharing, Symbyoz, Echo Travel et Blue Owl (CTO), Data for Good. 26 démos en ligne."]
+    : ["Guillaume Flambard · Full-stack developer, AI and automation", "I build AI and automation into your web products, on your stack: React, Vue, Laravel, Symfony, .NET. Track record: Medsharing, Symbyoz, Echo Travel and Blue Owl (CTO), Data for Good. 26 live demos."];
   return createRouteMetadata(locale, "", title, description);
 }
 
@@ -71,19 +71,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <span className="focus-number" aria-hidden="true">01</span>
               <h3>{t("service1Title")}</h3>
               <p>{t("service1Body")}</p>
-              <p className="focus-evidence"><Link href="/about#experience-medsharing">{t("service1Evidence")} <span aria-hidden="true">↗</span></Link></p>
+              <p className="focus-evidence"><Link href="/work/blueowl">{t("service1Evidence")} <span aria-hidden="true">↗</span></Link></p>
             </li>
             <li>
               <span className="focus-number" aria-hidden="true">02</span>
               <h3>{t("service2Title")}</h3>
               <p>{t("service2Body")}</p>
-              <p className="focus-evidence"><Link href="/work/echo-travel">{t("service2Evidence")} <span aria-hidden="true">↗</span></Link></p>
+              <p className="focus-evidence"><a href={DEMOS_URL}>{t("service2Evidence")} <span aria-hidden="true">↗</span></a></p>
             </li>
             <li>
               <span className="focus-number" aria-hidden="true">03</span>
               <h3>{t("service3Title")}</h3>
               <p>{t("service3Body")}</p>
-              <p className="focus-evidence"><a href={DEMOS_URL}>{t("service3Evidence")} <span aria-hidden="true">↗</span></a></p>
+              <p className="focus-evidence"><Link href="/work/echo-travel">{t("service3Evidence")} <span aria-hidden="true">↗</span></Link></p>
             </li>
           </ol>
         </div>

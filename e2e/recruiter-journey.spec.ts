@@ -150,7 +150,7 @@ for (const locale of locales) {
 
     test("identifies the engineer, service, experience and next step", async ({ page }) => {
       await page.goto(`/${locale}`);
-      const positioning = locale === "fr" ? "Je renforce agences et équipes produit" : "I back agencies and product teams";
+      const positioning = locale === "fr" ? "J’intègre l’IA et l’automatisation" : "I build AI and automation";
       await expect(page.getByRole("heading", { level: 1 })).toContainText(positioning);
       await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Ce que je construis maintenant" : "What I'm building now" })).toBeVisible();
       await expect(page.locator("#github-activity a[href=\"https://github.com/guillaume-flambard\"]")).toBeVisible();
@@ -334,11 +334,11 @@ for (const locale of locales) {
       await page.goto(`/${locale}`);
       const links = page.locator(".focus-evidence a");
       await expect(links).toHaveCount(3);
-      await expect(links.nth(0)).toHaveAttribute("href", `/${locale}/about#experience-medsharing`);
-      await expect(links.nth(1)).toHaveAttribute("href", `/${locale}/work/echo-travel`);
-      await expect(links.nth(2)).toHaveAttribute("href", "https://demos.memolabs.dev/");
-      await links.nth(1).click();
-      await expect(page).toHaveURL(new RegExp(`/${locale}/work/echo-travel$`));
+      await expect(links.nth(0)).toHaveAttribute("href", `/${locale}/work/blueowl`);
+      await expect(links.nth(1)).toHaveAttribute("href", "https://demos.memolabs.dev/");
+      await expect(links.nth(2)).toHaveAttribute("href", `/${locale}/work/echo-travel`);
+      await links.nth(0).click();
+      await expect(page).toHaveURL(new RegExp(`/${locale}/work/blueowl$`));
       await expect(page.locator(".case-snapshot")).toBeVisible();
     });
 
