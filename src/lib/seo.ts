@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 const SITE = "https://memolabs.dev";
-const OG_IMAGE = `${SITE}/og.png`;
+// Rendered by scripts/og-image.mjs from the homepage copy, one per locale.
+const ogImage = (lang: "fr" | "en") => `${SITE}/og-${lang}.png`;
 const LOCALE_MAP = { fr: "fr_FR", en: "en_US" } as const;
 
 /**
@@ -48,9 +49,9 @@ export function createRouteMetadata(
       locale: LOCALE_MAP[lang],
       alternateLocale: [LOCALE_MAP[locale === "fr" ? "en" : "fr"]],
       images: [{
-        url: OG_IMAGE,
-        width: 1440,
-        height: 900,
+        url: ogImage(lang),
+        width: 1200,
+        height: 630,
         alt: "Memo Labs · Guillaume Flambard",
       }],
     },
@@ -58,7 +59,7 @@ export function createRouteMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE],
+      images: [ogImage(lang)],
     },
   };
 }

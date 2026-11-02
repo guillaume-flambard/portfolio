@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US"],
     images: [
       {
-        url: "https://memolabs.dev/og.png",
-        width: 1440,
-        height: 900,
+        url: "https://memolabs.dev/og-fr.png",
+        width: 1200,
+        height: 630,
         alt: "Guillaume Flambard · React & TypeScript Developer",
       },
     ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Guillaume Flambard · React & TypeScript Developer",
     description:
       "React & TypeScript engineering for business web applications. Guillaume Flambard is available for remote freelance work and remote roles.",
-    images: ["https://memolabs.dev/og.png"],
+    images: ["https://memolabs.dev/og-fr.png"],
   },
 };
 
