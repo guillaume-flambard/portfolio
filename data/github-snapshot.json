@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-01T20:50:47.299Z",
+  "generatedAt": "2026-11-02T00:45:46.652Z",
   "sections": {
     "repositories": {
       "items": [
@@ -959,13 +959,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-11-01T18:57:31Z",
+          "pushed_at": "2026-11-01T20:50:50Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 8080
+          "size": 8081
         },
         {
           "name": "n8n-nodes-opn",
@@ -1658,7 +1658,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-10-26T16:27:58Z",
+          "pushed_at": "2026-11-01T22:28:23Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1677,7 +1677,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12389
+          "size": 12417
         },
         {
           "name": "trufflo",
@@ -1895,7 +1895,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-01T20:50:47.299Z",
+      "syncedAt": "2026-11-02T00:45:46.652Z",
       "healthy": true
     },
     "merged": {
@@ -2293,7 +2293,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-01T20:50:47.299Z",
+      "syncedAt": "2026-11-02T00:45:46.652Z",
       "healthy": true
     },
     "open": {
@@ -2523,7 +2523,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-01T20:50:47.299Z",
+      "syncedAt": "2026-11-02T00:45:46.652Z",
       "healthy": true
     }
   }
