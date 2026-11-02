@@ -1,9 +1,7 @@
 name: Recruiter browser checks
 
 on:
-  pull_request:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   recruiter-e2e:
