@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { createRouteMetadata, routeUrls } from "./seo";
 import sitemap from "@/app/sitemap";
 import { ALL_PROJECTS } from "@/data/projects";
+import { SERVICES } from "@/data/services";
 
 describe("Bilingual SEO URLs", () => {
   it("builds self canonical and reciprocal hreflang for each page, not the homepage", () => {
@@ -31,9 +32,10 @@ describe("Bilingual SEO URLs", () => {
     expect(() => routeUrls("fr", "/about/")).toThrow();
   });
 
-  it("lists all locale routes including the CV and featured case studies", () => {
+  it("lists all locale routes including the CV, services and featured case studies", () => {
     const entries = sitemap();
-    const wantedRoutes = ["", "/about", "/contact", "/legal", "/work", "/cv",
+    const wantedRoutes = ["", "/about", "/contact", "/legal", "/work", "/cv", "/open-source",
+      ...SERVICES.map((s) => `/services/${s.slug}`),
       ...ALL_PROJECTS.map((p) => `/work/${p.slug}`)];
     expect(entries.length).toBe(wantedRoutes.length * 2);
     const map = new Map(entries.map((e) => [e.url, e]));

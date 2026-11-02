@@ -8,8 +8,8 @@ import SiteNav from "@/components/SiteNav";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Contact · Freelance et recrutement remote | Memo Labs","Contacter Guillaume Flambard pour des missions freelance React/TypeScript ou des postes full-stack remote."]
-    : ["Contact · Freelance and remote hiring | Memo Labs","Contact Guillaume Flambard about remote React/TypeScript freelance projects or full-stack hiring opportunities."];
+    ? ["Contacter un développeur freelance IA et full-stack | Guillaume Flambard","Une mission d’intégration IA, d’automatisation n8n ou de développement web ? Écrivez à Guillaume Flambard, freelance à distance. Réponse directe."]
+    : ["Hire a freelance AI and full-stack developer | Guillaume Flambard","An AI integration, n8n automation or web development project? Write to Guillaume Flambard, remote freelancer. Direct reply."];
   return createRouteMetadata(locale, "/contact", title, description);
 }
 

@@ -30,7 +30,7 @@ h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; font-w
   }
   .backdrop svg { width: 100%; height: 100%; }
   /* Text and cards sit on the page colour so the line art passes behind them, never through them. */
-  :where(h1, h2, h3, h4, p, dl, .eyebrow, .herobtns, .stack, .facts, .focus-grid > li, .timeline-row, .end-cta-inner > div) {
+  :where(h1, h2, h3, h4, p, dl, .eyebrow, .herobtns, .stack, .facts, .focus-grid > li, .timeline-row, .end-cta-inner > div, .service-list, .faq) {
     background: var(--bg);
   }
 }
@@ -199,6 +199,26 @@ h1.h .acc { color: var(--accent); }
 .focus-grid h3 { font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.15; margin-top: 18px; }
 .focus-grid p { color: var(--muted); font-size: 16px; line-height: 1.48; margin-top: 16px; }
 .focus-grid .focus-evidence { color: var(--ink); font-size: 14px; margin-top: 22px; }
+.focus-grid .focus-more { margin-top: 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+.focus-grid .focus-more a { color: var(--accent); text-decoration: none; display: inline-block; padding: 10px 0; }
+.focus-grid .focus-more a:hover { color: var(--ink); }
+
+/* ── FAQ and service pages: answer-first, one question per row ─────────── */
+.faq { border-top: 1px solid var(--line); margin-top: 8px; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary { list-style: none; cursor: pointer; padding: 18px 32px 18px 0; position: relative;
+  font-size: 18px; font-weight: 400; color: var(--ink); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; position: absolute; right: 4px; top: 16px; color: var(--accent); }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { color: var(--muted); font-size: 16px; line-height: 1.6; padding: 0 0 20px; max-width: 64ch; }
+.ldesc .faq { margin-top: 18px; }
+.ldesc .faq-item p:first-of-type { color: var(--muted); font-size: 16px; }
+.service-list { margin-top: 14px; border-top: 1px solid var(--line); }
+.service-list li { border-bottom: 1px solid var(--line); padding: 14px 0; font-size: 17px; line-height: 1.45; }
+.service-list a { text-decoration: none; }
+.service-list a:hover { color: var(--ink); }
+.ldesc .stack { margin-top: 14px; }
 .featured-section { padding: clamp(68px, 9vw, 136px) 0; }
 .featured-section .shead p { max-width: 65ch; }
 .cbody p.card-role { color: var(--ink); margin-top: 18px; }

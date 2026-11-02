@@ -10,8 +10,8 @@ import { EXPERIENCES } from "@/data/experience";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["CV · Guillaume Flambard | React et TypeScript","CV de Guillaume Flambard : développeur full-stack React et TypeScript, expériences, formation et réalisations."]
-    : ["Resume · Guillaume Flambard | React and TypeScript","Resume of Guillaume Flambard: full-stack React and TypeScript engineer, professional experience and selected work."];
+    ? ["CV · Guillaume Flambard | Développeur full-stack, IA et automatisation","CV de Guillaume Flambard, développeur full-stack freelance IA et automatisation : CTO d’Echo Travel et de Blue Owl, React, Vue, Laravel, Symfony, .NET, n8n."]
+    : ["Resume · Guillaume Flambard | Full-stack developer, AI and automation","Resume of Guillaume Flambard, freelance full-stack developer for AI and automation: CTO at Echo Travel and Blue Owl, React, Vue, Laravel, Symfony, .NET, n8n."];
   return createRouteMetadata(locale, "/cv", title, description);
 }
 

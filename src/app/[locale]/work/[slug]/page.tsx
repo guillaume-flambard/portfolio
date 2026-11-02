@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return createRouteMetadata(
     locale,
     `/work/${slug}`,
-    `${project.name} · Memo Labs`,
+    `${project.name} · ${locale === "fr" ? "réalisation de Guillaume Flambard, développeur freelance" : "work by Guillaume Flambard, freelance developer"}`,
     project.tagline[locale as "fr" | "en"],
   );
 }

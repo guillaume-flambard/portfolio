@@ -78,6 +78,7 @@ export default async function LocaleLayout({
                   "@type": "Organization",
                   "@id": "https://memolabs.dev/#org",
                   name: "Memo Labs",
+                  founder: { "@id": "https://memolabs.dev/#person" },
                   url: "https://memolabs.dev",
                   description:
                     "Guillaume Flambard builds AI and automation into web products, on the stack teams already run: React, Vue, Laravel, Symfony, .NET. Available for remote freelance work and open to remote roles.",
@@ -97,6 +98,13 @@ export default async function LocaleLayout({
                   name: "Guillaume Flambard",
                   url: "https://memolabs.dev",
                   jobTitle: "Full-stack developer, AI and automation",
+                  description:
+                    "Freelance full-stack developer who builds AI features, AI agents and n8n automations into web products. Former CTO at Echo Travel and Blue Owl.",
+                  knowsAbout: [
+                    "AI integration", "AI agents", "Large language models", "n8n", "Workflow automation",
+                    "TypeScript", "React", "Next.js", "Vue.js", "PHP", "Laravel", "Symfony", ".NET", "Bootstrap", "Docker",
+                  ],
+                  knowsLanguage: ["fr", "en"],
                   worksFor: { "@id": "https://memolabs.dev/#org" },
                   sameAs: [
                     PUBLIC_LINKS.github,

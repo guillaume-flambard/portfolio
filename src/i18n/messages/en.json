@@ -61,7 +61,9 @@
     "demosCta": "Open the gallery",
     "proofD4G": "Rescue Atlas (Data for Good)",
     "footer": "© 2026 Memo Labs · Guillaume Flambard EI",
-    "legalLink": "Legal notice"
+    "legalLink": "Legal notice",
+    "serviceMore": "See the service",
+    "faqTitle": "Frequently asked questions"
   },
   "work": {
     "title": "Selected work",
@@ -282,5 +284,17 @@
     "liveSource": "Direct GitHub data before durable snapshot initialization",
     "syncedAt": "Last full sync",
     "snapshotStale": "Sync delayed; previous verified data retained"
+  },
+  "services": {
+    "eyebrow": "Remote freelance",
+    "cta": "Discuss a project",
+    "demos": "See the 26 demos",
+    "deliverablesTitle": "What I deliver",
+    "proofTitle": "What I have already done",
+    "stackTitle": "Technologies",
+    "faqTitle": "Frequently asked questions",
+    "otherTitle": "Other services",
+    "closingTitle": "Have a specific need in mind?",
+    "closingBody": "Describe the need, the technical context and what is blocking. I answer myself."
   }
 }
