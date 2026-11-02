@@ -12,6 +12,7 @@ const proof = {
   fr: "Medsharing · Symbyoz · Echo Travel et Blue Owl (CTO) · Data for Good",
   en: "Medsharing · Symbyoz · Echo Travel and Blue Owl (CTO) · Data for Good",
 };
+const stacks = "React · Vue · Laravel · Symfony · .NET · n8n";
 const demos = { fr: "26 démos en ligne · entièrement à distance", en: "26 live demos · fully remote" };
 
 const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
@@ -30,6 +31,7 @@ function page(locale) {
   h1 { margin-top: 30px; font-size: 64px; line-height: 1.06; font-weight: 600; text-transform: uppercase; max-width: 22ch; text-wrap: balance; }
   h1 span { color: ${accent}; }
   .proof { margin-top: 26px; color: ${muted}; font-size: 27px; font-weight: 300; }
+  .stacks { margin-top: 10px; color: ${ink}; font-size: 22px; font-weight: 400; letter-spacing: .06em; }
   footer { border-top: 1px solid ${line}; margin: 0 -72px; padding: 24px 72px; display: flex; justify-content: space-between;
     color: ${muted}; font-size: 19px; letter-spacing: .16em; text-transform: uppercase; }
 </style></head><body>
@@ -37,6 +39,7 @@ function page(locale) {
     <p class="eyebrow"><i></i>Guillaume Flambard · Freelance</p>
     <h1>${escape(home.h1a)} <span>${escape(home.h1accent)}</span></h1>
     <p class="proof">${escape(proof[locale])}</p>
+    <p class="stacks">${escape(stacks)}</p>
   </div>
   <footer><span>memolabs.dev</span><span>${escape(demos[locale])}</span></footer>
 </body></html>`;
