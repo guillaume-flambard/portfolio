@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import type { Lang } from "@/data/caseStudies";
 import { EXPERIENCES } from "@/data/experience";
 import SiteNav from "@/components/SiteNav";
+import GithubActivity from "@/components/GithubActivity";
 
 export const revalidate = 3600;
 
@@ -128,6 +129,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <p><Link className="hero-inline-link" href="/open-source">{t("ctaWork")}</Link></p>
         </div>
       </section>
+
+      <GithubActivity locale={lang} />
 
       <section className="end-cta" aria-labelledby="end-cta-title">
         <div className="wrap end-cta-inner">

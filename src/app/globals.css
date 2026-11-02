@@ -222,6 +222,10 @@ h1.h .acc { color: var(--accent); }
   .hero-actions .btn { padding: 13px 16px; font-size: 13px; }
   .hero-inline-link { margin: 8px 0 0; width: 100%; }
 }
+/* "L’AUTOMATISATION." is one unbreakable word; at the floor size it overflows a 320px screen. */
+@media (max-width: 360px) {
+  .hero-home h1.h { font-size: 2.3rem; }
+}
 
 
 /* ── GitHub-backed, evidence-first activity ────────────────────────────────── */
@@ -631,10 +635,10 @@ h1.h .acc { color: var(--accent); }
   .resume-head h1 { font-size: 29px; }
   .resume-role, .resume-intro { margin-top: 7px; font-size: 13px; line-height: 1.38; }
   .resume-links { margin-top: 7px; gap: 9px; font-size: 11px; }
-  .resume-section { margin-top: 18px; break-inside: auto; }
+  .resume-section { margin-top: 14px; break-inside: auto; }
   .resume-section h2 { font-size: 16px; margin-bottom: 7px; }
   .resume-section > p { font-size: 12px; line-height: 1.4; }
-  .resume-section .timeline-row { grid-template-columns: 122px minmax(0, 1fr); padding: 9px 0; gap: 15px; break-inside: avoid; }
+  .resume-section .timeline-row { grid-template-columns: 122px minmax(0, 1fr); padding: 7px 0; gap: 15px; break-inside: avoid; }
   .resume-section .timeline-date { font-size: 11px; }
   .resume-section .timeline-row h3 { font-size: 13.5px; }
   .resume-section .timeline-row p, .resume-section .timeline-row .timeline-role { font-size: 11.5px; margin-top: 3px; line-height: 1.4; }
