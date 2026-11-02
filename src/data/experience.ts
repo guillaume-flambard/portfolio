@@ -22,7 +22,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     organization: "Memo Labs",
-    dates: { fr: "2025 à aujourd’hui", en: "2025 to present" },
+    dates: { fr: "Depuis octobre 2023", en: "Oct 2023 to present" },
     role: { fr: "Développeur indépendant · freelance", en: "Independent developer · freelance" },
     description: {
       fr: "Applications Next.js, intégrations d’API, flux n8n et fonctionnalités IA ; serveur de production opéré en propre et nœud n8n-nodes-opn publié sur npm.",
