@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((entry) => entry.fullName.toLowerCase() === `${owner}/${repo}`.toLowerCase());
   if (!project) return { robots: { index: false } };
   return createRouteMetadata(locale, `/build/${owner}/${repo}`,
-    `${project.name} — Project build log · Memo Labs`,
+    `${project.name} · Project build log · Memo Labs`,
     locale === "fr"
       ? `Historique public de ${project.name} : évolutions fusionnées et versions GitHub vérifiables.`
       : `Public history of ${project.name}: verifiable merged changes and GitHub releases.`);
@@ -99,7 +99,7 @@ export default async function BuildLogPage({ params }: Props) {
         </section>
       </main>
       <footer className="foot">
-        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <span>© 2026 Memo Labs · Guillaume Flambard EI</span>
         <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
       </footer>
     </>

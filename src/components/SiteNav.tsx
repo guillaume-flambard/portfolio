@@ -25,7 +25,8 @@ export default function SiteNav() {
           <div className="navlinks">
             <Link href="/" className={isActive("/") ? "on" : undefined} aria-current={isActive("/") ? "page" : undefined}>{t("home")}</Link>
             <Link href="/work" className={isActive("/work") ? "on" : undefined} aria-current={isActive("/work") ? "page" : undefined}>{t("work")}</Link>
-            <a href={`https://lab.memolabs.dev/${locale}/`} target="_blank" rel="noopener noreferrer">{t("lab")}</a>
+            <a href="https://demos.memolabs.dev/">{t("demos")}</a>
+            <a href={`https://lab.memolabs.dev/${locale}/`}>{t("lab")}</a>
             <Link href="/about" className={isActive("/about") ? "on" : undefined} aria-current={isActive("/about") ? "page" : undefined}>{t("about")}</Link>
             <Link href="/contact" className={isActive("/contact") ? "on" : undefined} aria-current={isActive("/contact") ? "page" : undefined}>{t("contact")}</Link>
           </div>
@@ -34,10 +35,11 @@ export default function SiteNav() {
             <div className="mobile-menu-panel">
               <Link href="/" aria-current={isActive("/") ? "page" : undefined}>{t("home")}</Link>
               <Link href="/work" aria-current={isActive("/work") ? "page" : undefined}>{t("work")}</Link>
+              <a href="https://demos.memolabs.dev/">{t("demos")}</a>
               <Link href="/about" aria-current={isActive("/about") ? "page" : undefined}>{t("about")}</Link>
               <Link href="/cv" aria-current={isActive("/cv") ? "page" : undefined}>{t("cv")}</Link>
               <Link href="/contact" aria-current={isActive("/contact") ? "page" : undefined}>{t("contact")}</Link>
-              <a href={`https://lab.memolabs.dev/${locale}/`} target="_blank" rel="noopener noreferrer">{t("lab")}</a>
+              <a href={`https://lab.memolabs.dev/${locale}/`}>{t("lab")}</a>
             </div>
           </details>
           <div className="navright">

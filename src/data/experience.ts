@@ -12,7 +12,7 @@ export type Experience = {
 export const EXPERIENCES: Experience[] = [
   {
     organization: "Data for Good · Rescue Atlas",
-    dates: { fr: "Depuis octobre 2026", en: "Oct 2026 – present" },
+    dates: { fr: "Depuis octobre 2026", en: "Oct 2026 to present" },
     role: { fr: "Tech Lead bénévole · projet SOS Méditerranée", en: "Volunteer Tech Lead · SOS Méditerranée project" },
     description: {
       fr: "Co-cadrage technique de la refonte de la carte des sauvetages : architecture, sources et flux de données, découpage des travaux en backlog et préparation de l’accueil des bénévoles. Projet associatif en cours ; aucune livraison officielle revendiquée.",
@@ -22,57 +22,57 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     organization: "Memo Labs",
-    dates: { fr: "2025 – aujourd’hui", en: "2025 – present" },
-    role: { fr: "Ingénieur logiciel indépendant", en: "Independent software engineer" },
+    dates: { fr: "2025 à aujourd’hui", en: "2025 to present" },
+    role: { fr: "Développeur indépendant · freelance", en: "Independent developer · freelance" },
     description: {
-      fr: "Développement d’applications web et d’intégrations API ; prototypes personnels d’automatisation et d’IA présentés séparément des réalisations clients.",
-      en: "Web application and API integration work; independent automation and AI prototypes shown separately from client deliveries.",
+      fr: "Missions et produits : applications Next.js, intégrations d’API et flux n8n, fonctionnalités IA. J’opère mon propre serveur de production (Docker, supervision, sauvegardes) et j’ai publié le nœud n8n-nodes-opn sur npm.",
+      en: "Client work and products: Next.js apps, API integrations and n8n flows, AI features. I run my own production server (Docker, monitoring, backups) and published the n8n-nodes-opn node on npm.",
     },
-    technologies: ["TypeScript", "React", "Node.js"],
+    technologies: ["TypeScript", "Next.js", "n8n", "Docker"],
   },
   {
     organization: "Blue Owl",
-    dates: { fr: "Juin – août 2026", en: "Jun – Aug 2026" },
-    role: { fr: "Ingénieur full-stack / CTO", en: "Full-stack engineer / CTO" },
+    dates: { fr: "Juin à août 2026", en: "Jun to Aug 2026" },
+    role: { fr: "CTO", en: "CTO" },
     description: {
-      fr: "Service éducatif intégrant l’IA : passerelle NestJS/Fastify, interface Next.js avec streaming et exports documentaires, au sein d’une petite équipe.",
-      en: "AI education product: NestJS/Fastify gateway, streaming Next.js interface and document exports, within a small team.",
+      fr: "Version web d’un produit éducatif IA, à partir d’un moteur Electron de 2 600 fichiers : passerelle NestJS et Fastify, interface Next.js en streaming, exports de documents. Les contrôles obligatoires du modèle sont passés des prompts au code.",
+      en: "Web version of an AI education product, built from a 2,600-file Electron engine: NestJS and Fastify gateway, streaming Next.js interface, document exports. The model’s mandatory checks moved from prompts into code.",
     },
     technologies: ["Next.js", "NestJS", "Fastify"],
   },
   {
     organization: "Echo Travel",
-    dates: { fr: "2025 – août 2026", en: "2025 – Aug 2026" },
-    role: { fr: "Développeur full-stack · prestataire technique", en: "Full-stack developer · technical contractor" },
+    dates: { fr: "2025 à août 2026", en: "2025 to Aug 2026" },
+    role: { fr: "CTO", en: "CTO" },
     description: {
-      fr: "Plateforme opérationnelle de réservation et paiements pour un transporteur maritime thaïlandais, avec intégration 12Go.",
-      en: "Operational booking and payment platform for a Thai boat-transfer operator, including a 12Go integration.",
+      fr: "Plateforme de réservation et d’exploitation d’un transporteur insulaire, environ 150 passagers par jour : 12Go, cartes, dispatch, billetterie et paiements.",
+      en: "Booking and operations platform for an island transport business, about 150 passengers a day: 12Go, maps, dispatch, ticketing and payments.",
     },
-    technologies: ["React", "Laravel", "Omise"],
+    technologies: ["React", "Laravel", "Inertia", "Omise"],
   },
   {
     organization: "Symbyoz",
-    dates: { fr: "Avril 2024 – janvier 2025", en: "Apr 2024 – Jan 2025" },
+    dates: { fr: "Avril 2024 à janvier 2025", en: "Apr 2024 to Jan 2025" },
     role: { fr: "Développeur full-stack · remote", en: "Full-stack developer · remote" },
     description: {
-      fr: "Création d’un éditeur de jeu et d’un back-office Next.js ; contribution à des API Symfony pour une plateforme de voyage.",
-      en: "Built a Next.js interactive game editor and back-office; contributed Symfony API features for a travel product.",
+      fr: "Création de BananAI en Next.js : routage multilingue, authentification, tableau de bord d’exploitation et éditeur de jeux sans code. API sécurisées pour Flylooping, plateforme Symfony de réservation de vols.",
+      en: "Built BananAI on Next.js: internationalised routing, authentication, an operations dashboard and a no-code game builder. Shipped secure APIs for Flylooping, a Symfony flight-booking platform.",
     },
     technologies: ["Next.js", "Symfony"],
   },
   {
     organization: "Medsharing",
-    dates: { fr: "Septembre 2021 – septembre 2023", en: "Sep 2021 – Sep 2023" },
+    dates: { fr: "Septembre 2021 à septembre 2023", en: "Sep 2021 to Sep 2023" },
     role: { fr: "Développeur front-end · remote", en: "Frontend developer · remote" },
     description: {
-      fr: "Modernisation de plus de 100 écrans d’un SaaS clinique historique et création de tableaux de bord en environnement réglementé.",
-      en: "Modernized 100+ screens of a legacy clinical SaaS and built dashboards in a regulated environment.",
+      fr: "Migration de plus de 100 écrans d’un SaaS clinique réglementé, d’ASP Classic et jQuery vers HTML5, Bootstrap et JavaScript. Tableaux de bord de suivi d’essais cliniques avec D3 et amCharts.",
+      en: "Migrated 100+ screens of a regulated clinical SaaS from ASP Classic and jQuery to HTML5, Bootstrap and JavaScript. Built clinical-trial monitoring dashboards with D3 and amCharts.",
     },
-    technologies: ["JavaScript", "jQuery", "Chart.js"],
+    technologies: ["JavaScript", "Bootstrap", "D3", "amCharts"],
   },
   {
     organization: "Adriver Group",
-    dates: { fr: "Février – juin 2020", en: "Feb – Jun 2020" },
+    dates: { fr: "Février à juin 2020", en: "Feb to Jun 2020" },
     role: { fr: "Stagiaire développement web", en: "Web development intern" },
     description: {
       fr: "Contribution à des interfaces responsives et au suivi de campagnes dans un tableau de bord.",

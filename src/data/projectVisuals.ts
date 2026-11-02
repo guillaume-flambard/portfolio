@@ -72,5 +72,5 @@ export function projectVisualLabel(
   locale: "fr" | "en",
 ): string {
   return PROJECT_VISUALS[source]?.[locale] ??
-    (locale === "fr" ? `Visuel de présentation — ${name}` : `Project visual — ${name}`);
+    (locale === "fr" ? `Visuel de présentation : ${name}` : `Project visual: ${name}`);
 }

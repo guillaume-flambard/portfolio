@@ -20,8 +20,8 @@ describe("Public portfolio screenshot evidence", () => {
 
   it("uses a neutral fallback instead of inventing what unknown media depicts", () => {
     expect(projectVisualLabel("/work/other/unknown.png", "Example", "fr"))
-      .toBe("Visuel de présentation — Example");
+      .toBe("Visuel de présentation : Example");
     expect(projectVisualLabel("/work/other/unknown.png", "Example", "en"))
-      .toBe("Project visual — Example");
+      .toBe("Project visual: Example");
   });
 });

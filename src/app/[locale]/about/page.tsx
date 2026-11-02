@@ -8,8 +8,8 @@ import { EXPERIENCES } from "@/data/experience";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Guillaume Flambard — Parcours et expériences React & TypeScript","Développeur web indépendant React & TypeScript : Medsharing, Echo Travel, Symbyoz, services API et projets web. Découvrez mon parcours et mon CV."]
-    : ["Guillaume Flambard — React & TypeScript developer experience","Independent React & TypeScript developer: Medsharing, Echo Travel, Symbyoz, APIs and real-world web projects. Explore my experience and resume."];
+    ? ["Guillaume Flambard · Parcours et expériences React & TypeScript","Développeur web indépendant React & TypeScript : Medsharing, Echo Travel, Symbyoz, services API et projets web. Découvrez mon parcours et mon CV."]
+    : ["Guillaume Flambard · React & TypeScript developer experience","Independent React & TypeScript developer: Medsharing, Echo Travel, Symbyoz, APIs and real-world web projects. Explore my experience and resume."];
   return createRouteMetadata(locale, "/about", title, description);
 }
 
@@ -85,8 +85,8 @@ export default async function AboutPage({
       </main>
 
       <footer className="foot">
-        <span>© 2026 Memo Labs — Full-Stack Developer</span>
-        <Link href={`/${locale}/legal`}>Mentions légales</Link>
+        <span>© 2026 Memo Labs · Guillaume Flambard EI</span>
+        <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
       </footer>
     </>
   );

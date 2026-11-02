@@ -15,20 +15,20 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "echo-travel",
     preview: {
-      fr: "Mission client terminée en août 2026 : réservations et paiements pour un opérateur maritime en Thaïlande, avec intégration 12Go.",
-      en: "Past client engagement (ended August 2026): booking and payments for a Thai boat-transfer operator, including 12Go integration.",
+      fr: "CTO jusqu’en août 2026 : réservations et paiements pour un opérateur maritime en Thaïlande, avec intégration 12Go.",
+      en: "CTO until August 2026: booking and payments for a Thai boat-transfer operator, including 12Go integration.",
     },
     role: {
-      fr: "Ancien prestataire technique full-stack (jusqu’en août 2026)",
-      en: "Former full-stack technical contractor (until August 2026)",
+      fr: "CTO : réservations et paiements (jusqu’en août 2026)",
+      en: "CTO: bookings and payments (until August 2026)",
     },
     context: {
       fr: "Une activité de transferts maritimes en Thaïlande avait besoin d’un parcours de réservation, de paiements et d’un suivi opérationnel utilisables au quotidien.",
       en: "A Thai boat-transfer operator needed a daily-use booking, payment and operations workflow.",
     },
     ownership: {
-      fr: "Prestataire technique full-stack : passage du prototype au code de production, interface React, back-end Laravel, paiements Omise et intégration avec la marketplace 12Go.",
-      en: "Full-stack technical contractor: moving a prototype into production code, React frontend, Laravel backend, Omise payments and 12Go marketplace integration.",
+      fr: "CTO : passage du prototype au code de production, interface React, back-end Laravel, paiements Omise et intégration avec la marketplace 12Go.",
+      en: "CTO: moving a prototype into production code, React frontend, Laravel backend, Omise payments and 12Go marketplace integration.",
     },
     constraint: {
       fr: "Des réservations et paiements réels, des opérations saisonnières et des données issues de plusieurs canaux.",
@@ -85,12 +85,12 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "blueowl",
     preview: {
-      fr: "Ancienne collaboration sur une application de leçons : interface Next.js, streaming et service API TypeScript.",
-      en: "Past collaboration on lesson generation: Next.js interface, streamed results and TypeScript API service.",
+      fr: "CTO de juin à août 2026 sur un produit éducatif IA : interface Next.js, streaming et service API TypeScript.",
+      en: "CTO from June to August 2026 on an AI education product: Next.js interface, streamed results and TypeScript API service.",
     },
     role: {
-      fr: "Ancienne collaboration · terminée en août 2026",
-      en: "Past technical collaboration · ended August 2026",
+      fr: "CTO : produit éducatif IA (juin à août 2026)",
+      en: "CTO: AI education product (June to August 2026)",
     },
     context: {
       fr: "Transformer un moteur expérimental de génération de leçons par IA en service web accessible, avec restitution progressive des réponses.",

@@ -6,9 +6,13 @@ import { FEATURED } from "./projects";
  * Fully documented cases come first; the rest are supporting work and should
  * never silently intrude into the case-study journey.
  */
-const caseSlugs = new Set<string>(CASE_STUDIES.map((study) => study.slug));
+// PayKit stays published but is no longer presented as a case study: it never had users.
+const NOT_FEATURED_AS_CASE = new Set<string>(["paykit"]);
+const caseSlugs = new Set<string>(
+  CASE_STUDIES.map((study) => study.slug).filter((slug) => !NOT_FEATURED_AS_CASE.has(slug)),
+);
 
-export const CASE_PROJECTS = CASE_STUDIES.flatMap((study) =>
+export const CASE_PROJECTS = CASE_STUDIES.filter((study) => caseSlugs.has(study.slug)).flatMap((study) =>
   FEATURED.filter((project) => project.slug === study.slug),
 );
 export const SUPPORTING_PROJECTS = FEATURED.filter((project) => !caseSlugs.has(project.slug));

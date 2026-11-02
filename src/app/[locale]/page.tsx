@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { FEATURED } from "@/data/projects";
 import type { Lang } from "@/data/caseStudies";
+import { EXPERIENCES } from "@/data/experience";
 import SiteNav from "@/components/SiteNav";
-import ProjectImage from "@/components/ProjectImage";
-import GithubActivity from "@/components/GithubActivity";
 
 export const revalidate = 3600;
+
+const DEMOS_URL = "https://demos.memolabs.dev/";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Guillaume Flambard — Développement et modernisation web React / TypeScript", "Développeur full-stack indépendant : modernisation d’applications métier, interfaces React, API et intégrations. Références livrées et prototypes clairement séparés."]
-    : ["Guillaume Flambard — React / TypeScript business application developer", "Independent full-stack developer: business application modernization, React interfaces, APIs and integrations. Delivered references separated from experimental work."];
+    ? ["Guillaume Flambard · Développeur full-stack TypeScript freelance", "Je renforce agences et équipes produit sur React, les API et l’automatisation n8n, entièrement à distance. Parcours : Medsharing, Symbyoz, Echo Travel et Blue Owl (CTO), Data for Good. 26 démos en ligne."]
+    : ["Guillaume Flambard · Freelance full-stack TypeScript developer", "I back agencies and product teams on React, APIs and n8n automation, fully remote. Track record: Medsharing, Symbyoz, Echo Travel and Blue Owl (CTO), Data for Good. 26 live demos."];
   return createRouteMetadata(locale, "", title, description);
 }
 
@@ -23,8 +23,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   setRequestLocale(locale);
   const lang = locale as Lang;
   const t = await getTranslations("home");
-  const workText = await getTranslations("work");
-  const deliveredProjects = FEATURED.filter((project) => ["emargo", "largo"].includes(project.slug));
 
   return (
     <>
@@ -40,8 +38,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <p className="hero-identity">{t("identity")}</p>
           <div className="herobtns hero-actions">
             <Link className="btn p" href="/contact#freelance">{t("ctaContact")}</Link>
+            <a className="btn s" href={DEMOS_URL}>{t("ctaDemos")}</a>
             <Link className="btn s" href="/cv">{t("ctaAbout")}</Link>
-            <Link className="hero-inline-link" href="#github-activity">{t("ctaWork")}</Link>
           </div>
           <dl className="hero-facts">
             <div>
@@ -49,9 +47,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <dd className="hero-evidence-links">
                 <Link href="/about#experience-medsharing">Medsharing</Link>
                 <span aria-hidden="true">·</span>
-                <Link href="/work/emargo">Émargo</Link>
+                <Link href="/work/echo-travel">Echo Travel</Link>
                 <span aria-hidden="true">·</span>
-                <Link href="/work/largo">Largo IA</Link>
+                <Link href="/work/blueowl">Blue Owl</Link>
+                <span aria-hidden="true">·</span>
+                <Link href="/about">{t("proofD4G")}</Link>
               </dd>
             </div>
             <div><dt>{t("availabilityLabel")}</dt><dd><Link className="hero-recruiter-link" href="/contact#recruitment">{t("availabilityValue")} <span aria-hidden="true">↗</span></Link></dd></div>
@@ -82,9 +82,19 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <span className="focus-number" aria-hidden="true">03</span>
               <h3>{t("service3Title")}</h3>
               <p>{t("service3Body")}</p>
-              <p className="focus-evidence"><Link href="/work/paykit">{t("service3Evidence")} <span aria-hidden="true">↗</span></Link></p>
+              <p className="focus-evidence"><a href={DEMOS_URL}>{t("service3Evidence")} <span aria-hidden="true">↗</span></a></p>
             </li>
           </ol>
+        </div>
+      </section>
+
+      <section className="end-cta" aria-labelledby="demos-heading">
+        <div className="wrap end-cta-inner">
+          <div>
+            <h2 id="demos-heading">{t("demosTitle")}</h2>
+            <p>{t("demosBody")}</p>
+          </div>
+          <a className="btn p" href={DEMOS_URL}>{t("demosCta")}</a>
         </div>
       </section>
 
@@ -94,37 +104,30 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <h2 id="projects-heading" className="display">{t("workTitle")}</h2>
             <p>{t("workSub")}</p>
           </div>
-          <div className="grid">
-            <Link className="card" href="/about#experience-medsharing">
-              <div className="thumb t3">Medsharing</div>
-              <div className="cbody">
-                <h3>Medsharing <span className="arrow" aria-hidden="true">→</span></h3>
-                <p>{t("medsharingReference")}</p>
-                <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {t("medsharingRole")}</p>
-                <p className="card-proof">{t("pastEmployment")}</p>
-                <div className="stack"><span>JavaScript</span><span>Bootstrap</span><span>UX métier</span></div>
-              </div>
-            </Link>
-            {deliveredProjects.map((p) => (
-              <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
-                <div className={`thumb ${p.thumb}`}>
-                  {p.gallery[0] ? <ProjectImage src={p.gallery[0]} alt={`${p.name} — ${p.tagline[lang]}`} /> : p.name}
-                </div>
-                <div className="cbody">
-                  <h3>{p.name} <span className="arrow" aria-hidden="true">→</span></h3>
-                  <p>{p.tagline[lang]}</p>
-                  <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {p.slug === "emargo" ? t("emargoRole") : t("largoRole")}</p>
-                  <p className="card-proof" aria-label={workText("proofShort")}>{workText(`kind_${p.verification.kind}` as never)} · {workText(`proof_${p.verification.proof}` as never)}</p>
-                  <div className="stack">{p.stack.map((technology) => <span key={technology}>{technology}</span>)}</div>
-                </div>
-              </Link>
-            ))}
+          <div className="ldesc">
+            <section className="experience" aria-label={t("workTitle")}>
+              <ol className="timeline">
+                {EXPERIENCES.filter((job) => job.organization !== "Adriver Group").map((job) => (
+                  <li key={job.organization} className="timeline-row">
+                    <div className="timeline-date">{job.dates[lang]}</div>
+                    <div>
+                      <h3>{job.organization}</h3>
+                      <p className="timeline-role">{job.role[lang]}</p>
+                      <p>{job.description[lang]}</p>
+                      <div className="stack">{job.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
           </div>
-          <Link className="btn s maplink" href="/work">{t("workLibrary")}</Link>
+          <div className="herobtns">
+            <Link className="btn s" href="/cv">{t("ctaAbout")}</Link>
+            <Link className="btn s" href="/work">{t("workLibrary")}</Link>
+          </div>
+          <p><Link className="hero-inline-link" href="/open-source">{t("ctaWork")}</Link></p>
         </div>
       </section>
-
-      <GithubActivity locale={lang} />
 
       <section className="end-cta" aria-labelledby="end-cta-title">
         <div className="wrap end-cta-inner">
@@ -137,8 +140,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
 
       <footer className="foot">
-        <span>© 2026 Memo Labs — Full-Stack Developer</span>
-        <Link href="/legal">{locale === "fr" ? "Mentions légales" : "Legal notice"}</Link>
+        <span>{t("footer")}</span>
+        <Link href="/legal">{t("legalLink")}</Link>
       </footer>
     </>
   );

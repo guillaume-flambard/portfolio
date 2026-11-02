@@ -51,7 +51,7 @@ export function createRouteMetadata(
         url: OG_IMAGE,
         width: 1440,
         height: 900,
-        alt: "Memo Labs — Guillaume Flambard",
+        alt: "Memo Labs · Guillaume Flambard",
       }],
     },
     twitter: {

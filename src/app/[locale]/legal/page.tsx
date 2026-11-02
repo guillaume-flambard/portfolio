@@ -49,7 +49,7 @@ export default async function LegalPage({
       </main>
 
       <footer className="foot">
-        <span>© 2026 Memo Labs — Full-Stack Developer</span>
+        <span>© 2026 Memo Labs · Guillaume Flambard EI</span>
       </footer>
     </>
   );
