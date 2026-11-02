@@ -83,6 +83,7 @@ export default async function LocaleLayout({
                   description:
                     "Guillaume Flambard builds AI and automation into web products, on the stack teams already run: React, Vue, Laravel, Symfony, .NET. Available for remote freelance work and open to remote roles.",
                   sameAs: [
+                    PUBLIC_LINKS.linkedinCompany,
                     PUBLIC_LINKS.github,
                     "https://lab.memolabs.dev",
                   ],
