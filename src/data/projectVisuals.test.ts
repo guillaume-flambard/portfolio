@@ -5,7 +5,7 @@ import { PROJECT_VISUALS, projectVisualLabel } from "./projectVisuals";
 describe("Public portfolio screenshot evidence", () => {
   it("provides a specific bilingual caption for every published featured project visual", () => {
     const assets = FEATURED.flatMap((p) => p.gallery);
-    expect(assets).toHaveLength(14);
+    expect(assets).toHaveLength(16);
     expect(new Set(assets).size).toBe(assets.length);
     expect(Object.keys(PROJECT_VISUALS).sort()).toEqual([...assets].sort());
     for (const asset of assets) {

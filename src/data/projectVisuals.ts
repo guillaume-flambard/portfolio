@@ -23,6 +23,14 @@ export const PROJECT_VISUALS: Record<string, VisualLabel> = {
     fr: "Visuel du suivi d’utilisation de PayKit",
     en: "PayKit usage view",
   },
+  "/work/twenty-crm/stages.png": {
+    fr: "Étapes du pipeline commercial dans Twenty",
+    en: "Sales pipeline stages in Twenty",
+  },
+  "/work/twenty-crm/data-model.png": {
+    fr: "Champs de l’objet Opportunité dans Twenty, dont Démo et Canal",
+    en: "Opportunity fields in Twenty, including Demo and Channel",
+  },
   "/work/blueowl/hero.png": {
     fr: "Visuel de présentation de Blue Owl",
     en: "Blue Owl overview visual",

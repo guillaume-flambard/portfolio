@@ -1,7 +1,7 @@
 export type Lang = "fr" | "en";
 type Localized = Record<Lang, string>;
 export type CaseStudy = {
-  slug: "echo-travel" | "paykit" | "blueowl";
+  slug: "echo-travel" | "paykit" | "blueowl" | "twenty-crm";
   preview: Localized;
   role: Localized;
   context: Localized;
@@ -115,6 +115,41 @@ export const CASE_STUDIES: CaseStudy[] = [
     caveat: {
       fr: "Collaboration terminée en août 2026. Ni l’usage actuel, ni la qualité pédagogique ou factuelle des contenus générés n’ont été évalués indépendamment.",
       en: "Collaboration ended in August 2026. Neither current usage nor the educational or factual quality of generated lessons has been independently assessed.",
+    },
+  },
+  {
+    slug: "twenty-crm",
+    preview: {
+      fr: "Implémentation interne de Twenty : CRM auto-hébergé, modèle de données commercial et accès par MCP.",
+      en: "Internal Twenty implementation: self-hosted CRM, sales data model and MCP access.",
+    },
+    role: {
+      fr: "Intégrateur : hébergement, configuration et données (projet interne, novembre 2026)",
+      en: "Implementer: hosting, configuration and data (internal project, November 2026)",
+    },
+    context: {
+      fr: "Mon suivi commercial était éparpillé dans des notes : 22 agences contactées, leurs démos, leurs relances et aucune vue d’ensemble. Il fallait un vrai CRM, hébergé chez moi, que mes outils d’IA puissent aussi lire.",
+      en: "My sales follow-up lived in scattered notes: 22 agencies contacted, their demos, their follow-ups and no overview. I needed a real CRM, hosted on my own server, that my AI tools could also read.",
+    },
+    ownership: {
+      fr: "Tout, en solo : déploiement de Twenty v2.55 (serveur, worker, PostgreSQL 16, Redis), modèle de données, import des données, sauvegardes et accès des agents par MCP et par la CLI officielle.",
+      en: "Everything, solo: deploying Twenty v2.55 (server, worker, PostgreSQL 16, Redis), the data model, the data import, backups, and agent access through MCP and the official CLI.",
+    },
+    constraint: {
+      fr: "Un serveur partagé par une centaine de conteneurs, des données commerciales privées, et une fenêtre d’installation où le premier visiteur peut créer l’espace de travail.",
+      en: "A server shared by about a hundred containers, private sales data, and an install window where the first visitor can create the workspace.",
+    },
+    decision: {
+      fr: "Compose officiel adapté : aucun port publié, images épinglées par digest, plafonds mémoire, télémétrie coupée, Redis protégé par mot de passe. Route fermée jusqu’à la création du compte, puis inscription sur invitation seulement. Étapes du pipeline renommées selon mon cycle, champs Démo et Canal ajoutés pour mesurer quel canal amène des clients. Accès agents en OAuth, sans clé API stockée.",
+      en: "Adapted the official compose: no published port, images pinned by digest, memory caps, telemetry off, password-protected Redis. The route stayed closed until the owner account existed, then sign-up became invitation-only. Pipeline stages renamed to match my sales cycle, plus Demo and Channel fields to measure which channel brings clients. Agent access over OAuth, with no stored API key.",
+    },
+    result: {
+      fr: "Le CRM tourne sur crm.memolabs.dev avec 22 entreprises, 18 contacts et 22 opportunités reliés entre eux, un tableau de bord du pipeline et une sauvegarde nocturne de la base et des fichiers. Claude Code lit et écrit dans le CRM par le serveur MCP de Twenty.",
+      en: "The CRM runs at crm.memolabs.dev with 22 companies, 18 contacts and 22 linked opportunities, a pipeline dashboard and a nightly backup of the database and files. Claude Code reads and writes in the CRM through Twenty’s MCP server.",
+    },
+    caveat: {
+      fr: "Projet interne, sans client. L’instance demande un compte et les données commerciales restent privées : les captures montrent la configuration, pas les prospects.",
+      en: "Internal project, no client. The instance requires an account and the sales data stays private: the screenshots show the configuration, not the prospects.",
     },
   },
 ];
