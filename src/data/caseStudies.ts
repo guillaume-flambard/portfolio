@@ -1,7 +1,7 @@
 export type Lang = "fr" | "en";
 type Localized = Record<Lang, string>;
 export type CaseStudy = {
-  slug: "echo-travel" | "paykit" | "blueowl";
+  slug: "echo-travel" | "paykit" | "blueowl" | "twenty-crm";
   preview: Localized;
   role: Localized;
   context: Localized;
@@ -115,6 +115,41 @@ export const CASE_STUDIES: CaseStudy[] = [
     caveat: {
       fr: "Collaboration terminée en août 2026. Ni l’usage actuel, ni la qualité pédagogique ou factuelle des contenus générés n’ont été évalués indépendamment.",
       en: "Collaboration ended in August 2026. Neither current usage nor the educational or factual quality of generated lessons has been independently assessed.",
+    },
+  },
+  {
+    slug: "twenty-crm",
+    preview: {
+      fr: "Twenty auto-hébergé et un flux n8n : chaque demande entrante devient une fiche complète dans le CRM, sans saisie.",
+      en: "Self-hosted Twenty and an n8n flow: every incoming request becomes a complete CRM record, with no typing.",
+    },
+    role: {
+      fr: "Intégrateur, en solo : hébergement, modèle de données et automatisation (projet interne, novembre 2026)",
+      en: "Implementer, solo: hosting, data model and automation (internal project, November 2026)",
+    },
+    context: {
+      fr: "Une demande arrive par le site, une autre par email, une troisième par un formulaire. Si rien ne relie ces canaux au CRM, quelqu’un recopie à la main, ou la demande se perd. Je voulais pour Memo Labs ce que je propose à mes clients : un CRM où chaque demande arrive seule, rattachée à la bonne entreprise, avec la relance déjà planifiée.",
+      en: "One request comes in through the website, another by email, a third through a form. When nothing links those channels to the CRM, someone copies them by hand, or the request gets lost. I wanted for Memo Labs what I offer my clients: a CRM where every request lands on its own, attached to the right company, with the follow-up already scheduled.",
+    },
+    ownership: {
+      fr: "Tout : déploiement de Twenty v2.55 (serveur, worker, PostgreSQL 16, Redis) derrière Traefik, modèle de données (étapes du pipeline, champs Canal et Démo), flux n8n en six étapes sur l’API GraphQL de Twenty, et accès de Claude Code au CRM par le serveur MCP de Twenty et sa CLI officielle.",
+      en: "Everything: deploying Twenty v2.55 (server, worker, PostgreSQL 16, Redis) behind Traefik, the data model (pipeline stages, Channel and Demo fields), a six-step n8n flow on Twenty’s GraphQL API, and Claude Code access to the CRM through Twenty’s MCP server and its official CLI.",
+    },
+    constraint: {
+      fr: "Aucun doublon quand la même personne écrit deux fois, une clé d’API qui ne doit jamais apparaître en clair, et un serveur partagé par 90 conteneurs.",
+      en: "No duplicates when the same person writes twice, an API key that must never appear in clear, and a server shared by 90 containers.",
+    },
+    decision: {
+      fr: "Créations en mode upsert : l’entreprise est retrouvée par son domaine, le contact par son email. La clé d’API vit dans un identifiant chiffré de n8n, posé côté serveur sans jamais être affichée. L’opportunité s’ouvre à l’étape Contacté avec le canal Demande entrante, le message devient une note et la tâche « Répondre à… » tombe le lendemain matin, toutes deux rattachées à l’opportunité. Côté hébergement : compose officiel adapté, images épinglées, plafonds mémoire, inscription sur invitation seulement.",
+      en: "Records are created as upserts: the company is matched by its domain, the contact by their email. The API key lives in an encrypted n8n credential, set on the server without ever being displayed. The opportunity opens at the Contacted stage with the Inbound request channel, the message becomes a note, and a Reply to… task is due the next morning, both linked to the opportunity. On the hosting side: the official compose adapted, pinned images, memory caps, invitation-only sign-up.",
+    },
+    result: {
+      fr: "Sur mes essais, un message envoyé devient en moins d’une demi-seconde une opportunité complète : entreprise, contact, note du message et tâche de réponse datée. Un second envoi de la même personne ne crée ni entreprise ni contact en double. Je contribue aussi au code de Twenty : trois PR fusionnées dans le dépôt principal (#23323, #23325, #24919).",
+      en: "In my tests, a sent message becomes a complete opportunity in under half a second: company, contact, a note with the message and a dated reply task. A second message from the same person creates no duplicate company or contact. I also contribute to Twenty’s code: three PRs merged into the main repository (#23323, #23325, #24919).",
+    },
+    caveat: {
+      fr: "Projet interne, sans client. Les captures montrent une demande de démonstration (Cabinet Lambert), pas de vrais prospects ; le CRM et le formulaire demandent un compte.",
+      en: "Internal project, no client. The screenshots show a demo request (Cabinet Lambert), not real prospects; the CRM and the form require an account.",
     },
   },
 ];

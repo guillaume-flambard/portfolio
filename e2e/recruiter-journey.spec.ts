@@ -177,7 +177,7 @@ for (const locale of locales) {
 
 for (const locale of locales) {
   test.describe(`${locale}: case study can be understood in one glance`, () => {
-    for (const slug of ["echo-travel", "paykit", "blueowl"]) {
+    for (const slug of ["echo-travel", "paykit", "blueowl", "twenty-crm"]) {
       test(`${slug}: problem, personal contribution, result before technical details`, async ({ page }) => {
         await page.setViewportSize({ width: 390, height: 844 });
         const response = await page.goto(`/${locale}/work/${slug}`);
@@ -225,8 +225,8 @@ test("gallery requests full-width responsive images and gives unique description
 test("work listing separates delivered references, past collaborations and experimental work", async ({ page }) => {
   await page.goto("/fr/work");
   const cases = page.locator('[data-testid="case-projects"] .card');
-  await expect(cases).toHaveCount(2);
-  await expect(cases.locator("h3")).toContainText(["Echo Travel", "Blue Owl"]);
+  await expect(cases).toHaveCount(3);
+  await expect(cases.locator("h3")).toContainText(["Echo Travel", "Blue Owl", "Twenty CRM et n8n"]);
   for (const card of await cases.all()) {
     await expect(card).toContainText("Mon rôle");
   }
@@ -245,7 +245,7 @@ test("work listing separates delivered references, past collaborations and exper
 for (const locale of locales) {
   test(`${locale}: media gallery is accessible and honest on all featured projects`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    for (const slug of ["emargo", "echo-travel", "paykit", "blueowl", "weave", "n8n-nodes-opn", "largo"]) {
+    for (const slug of ["emargo", "echo-travel", "paykit", "blueowl", "weave", "n8n-nodes-opn", "largo", "twenty-crm"]) {
       const response = await page.goto(`/${locale}/work/${slug}`);
       expect(response?.status()).toBe(200);
       const figures = page.locator(".project-gallery .project-figure");
@@ -265,9 +265,9 @@ for (const locale of locales) {
   });
 }
 
-test("all 14 published project media files exist and are served as PNG", async ({ request }) => {
+test("all 17 published project media files exist and are served as PNG", async ({ request }) => {
   const assets = Object.keys(PROJECT_VISUALS);
-  expect(assets).toHaveLength(14);
+  expect(assets).toHaveLength(17);
   for (const url of assets) {
     const response = await request.get(url);
     expect(response.status(), `Missing portfolio asset ${url}`).toBe(200);
@@ -296,7 +296,7 @@ for (const locale of locales) {
     await expect(page.getByRole("heading", { name: label, level: 2 })).toBeVisible();
     await expect(page.locator('[data-testid="reference-projects"] li')).toHaveCount(1);
     await expect(page.locator('[data-testid="other-projects"] li')).toHaveCount(5);
-    await expect(page.locator('[data-testid="case-projects"] .card')).toHaveCount(2);
+    await expect(page.locator('[data-testid="case-projects"] .card')).toHaveCount(3);
     await assertNoHorizontalOverflow(page);
     await page.locator('[data-testid="case-projects"] .card').first().click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/work/echo-travel$`));

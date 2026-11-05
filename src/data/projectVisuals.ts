@@ -23,6 +23,18 @@ export const PROJECT_VISUALS: Record<string, VisualLabel> = {
     fr: "Visuel du suivi d’utilisation de PayKit",
     en: "PayKit usage view",
   },
+  "/work/twenty-crm/01-formulaire.png": {
+    fr: "Formulaire de contact rempli avec une demande de démonstration",
+    en: "Contact form filled in with a demo request",
+  },
+  "/work/twenty-crm/02-fiche-creee.png": {
+    fr: "Opportunité créée dans Twenty, avec l’entreprise, le contact, la note et la tâche dans la chronologie",
+    en: "Opportunity created in Twenty, with the company, contact, note and task in its timeline",
+  },
+  "/work/twenty-crm/03-tache-relance.png": {
+    fr: "Tâche « Répondre à Sophie Lambert » datée du lendemain, rattachée à l’opportunité",
+    en: "Reply to Sophie Lambert task due the next day, linked to the opportunity",
+  },
   "/work/blueowl/hero.png": {
     fr: "Visuel de présentation de Blue Owl",
     en: "Blue Owl overview visual",

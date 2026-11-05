@@ -151,6 +151,35 @@ export const FEATURED: Project[] = [
     thumb: "t2",
   },
   {
+    slug: "twenty-crm",
+    name: "Twenty CRM et n8n",
+    category: "web",
+    featured: true,
+    status: "live",
+    year: 2026,
+    verification: {
+      kind: "independent",
+      proof: "reported-operation",
+      checkedAt: "2026-11-05",
+      note: {"fr":"Flux exécuté le 05/11/2026 : trois exécutions réussies entre 0,27 et 0,46 seconde dans le journal de n8n, et un second envoi de la même personne sans doublon. Le CRM et le formulaire demandent un compte.","en":"Flow run on 5 Nov 2026: three successful executions between 0.27 and 0.46 seconds in the n8n log, and a second message from the same person with no duplicate. The CRM and the form require an account."},
+    },
+    tagline: {
+      fr: "Une demande reçue devient une fiche Twenty complète, sans saisie : entreprise, contact, opportunité, note et relance.",
+      en: "An incoming request becomes a complete Twenty record, with no typing: company, contact, opportunity, note and follow-up.",
+    },
+    description: {
+      fr: "Le CRM de Memo Labs tourne sur Twenty v2.55, auto-hébergé sur mon serveur, et un flux n8n le remplit tout seul. Chaque demande, envoyée par formulaire ou par webhook, retrouve ou crée l’entreprise et le contact sans doublon, ouvre une opportunité, range le message en note et planifie la réponse pour le lendemain matin. C’est le montage que je propose aux PME qui perdent des demandes entre leur site et leur boîte mail.",
+      en: "Memo Labs runs its CRM on Twenty v2.55, self-hosted on my own server, and an n8n flow fills it on its own. Every request, sent through a form or a webhook, finds or creates the company and the contact without duplicates, opens an opportunity, files the message as a note and schedules the reply for the next morning. It is the setup I offer small businesses that lose requests between their website and their inbox.",
+    },
+    stack: ["Twenty", "n8n", "GraphQL", "Docker", "PostgreSQL", "Redis", "MCP"],
+    links: [
+      { label: "live", url: "https://crm.memolabs.dev" },
+      { label: "repo", url: "https://github.com/twentyhq/twenty/pulls?q=is%3Apr+author%3Aguillaume-flambard+is%3Amerged" },
+    ],
+    gallery: ["/work/twenty-crm/01-formulaire.png", "/work/twenty-crm/02-fiche-creee.png", "/work/twenty-crm/03-tache-relance.png"],
+    thumb: "t3",
+  },
+  {
     slug: "weave",
     name: "weave",
     category: "produits",
