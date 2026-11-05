@@ -157,7 +157,7 @@ for (const locale of locales) {
       await expect(page.locator(".hero-identity")).toContainText("Memo Labs");
       await expect(page.locator(".hero-facts")).toContainText("Medsharing");
       await expect(page.locator(".hero-facts")).toContainText("Echo Travel");
-      await expect(page.locator(".hero-actions").getByRole("link", { name: locale === "fr" ? "Voir les 26 démos" : "See the 26 demos" }))
+      await expect(page.locator(".hero-actions").getByRole("link", { name: locale === "fr" ? "Voir les démos" : "See the demos" }))
         .toHaveAttribute("href", "https://demos.memolabs.dev/");
       await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Sur quoi je peux vous aider" : "How I can help" })).toBeVisible();
       await expect(page.locator(".focus-grid > li")).toHaveCount(3);

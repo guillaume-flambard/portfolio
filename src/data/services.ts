@@ -124,7 +124,7 @@ export const SERVICES: Service[] = [
       { label: { fr: "Medsharing : plus de 100 écrans d’un SaaS clinique réglementé migrés", en: "Medsharing: 100+ screens of a regulated clinical SaaS migrated" }, href: "/about#experience-medsharing" },
       { label: { fr: "CTO d’Echo Travel : React, Laravel et paiements, environ 150 passagers par jour", en: "CTO at Echo Travel: React, Laravel and payments, about 150 passengers a day" }, href: "/work/echo-travel" },
       { label: { fr: "Flylooping chez Symbyoz : API sécurisées sur une plateforme Symfony", en: "Flylooping at Symbyoz: secure APIs on a Symfony platform" }, href: "/about#experience-symbyoz" },
-      { label: { fr: "26 démos Bootstrap 6 et .NET refaites pour des agences", en: "26 Bootstrap 6 and .NET demos rebuilt for agencies" }, href: "https://demos.memolabs.dev/" },
+      { label: { fr: "Démos de flux joués pour de vrai", en: "Demos of flows played for real" }, href: "https://demos.memolabs.dev/" },
     ],
     faq: [
       {
