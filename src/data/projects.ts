@@ -151,32 +151,6 @@ export const FEATURED: Project[] = [
     thumb: "t2",
   },
   {
-    slug: "twenty-crm",
-    name: "CRM Twenty de Memo Labs",
-    category: "web",
-    featured: true,
-    status: "live",
-    year: 2026,
-    verification: {
-      kind: "independent",
-      proof: "reported-operation",
-      checkedAt: "2026-11-05",
-      note: {"fr":"Instance en service le 05/11/2026 sur crm.memolabs.dev ; l’accès demande un compte, les données commerciales ne sont pas publiques.","en":"Instance running on 5 Nov 2026 at crm.memolabs.dev; access requires an account and the sales data is not public."},
-    },
-    tagline: {
-      fr: "Implémentation interne de Twenty : hébergement, modèle de données commercial et accès agents.",
-      en: "Internal Twenty implementation: hosting, sales data model and agent access.",
-    },
-    description: {
-      fr: "Le CRM de Memo Labs tourne sur Twenty v2.55, auto-hébergé sur mon serveur. J’ai installé la pile, adapté le modèle de données à mon cycle de vente, importé mes prospects et relié Claude Code au CRM par le serveur MCP de Twenty et sa CLI, en OAuth. C’est un usage interne : aucun client n’utilise cette instance.",
-      en: "Memo Labs runs its CRM on Twenty v2.55, self-hosted on my own server. I installed the stack, shaped the data model around my sales cycle, imported my prospects and connected Claude Code to the CRM through Twenty’s MCP server and CLI over OAuth. It is internal use: no client uses this instance.",
-    },
-    stack: ["Twenty", "Docker", "PostgreSQL", "Redis", "Traefik", "MCP"],
-    links: [{ label: "live", url: "https://crm.memolabs.dev" }],
-    gallery: ["/work/twenty-crm/stages.png", "/work/twenty-crm/data-model.png"],
-    thumb: "t3",
-  },
-  {
     slug: "weave",
     name: "weave",
     category: "produits",

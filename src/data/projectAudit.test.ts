@@ -3,7 +3,7 @@ import { ALL_MAP_ITEMS, FEATURED, MAP } from "./projects";
 
 describe("Project type, access and evidence separation", () => {
   it("keeps a complete audited evidence record for every featured project", () => {
-    expect(FEATURED.length).toBe(8);
+    expect(FEATURED.length).toBe(7);
     for (const project of FEATURED) {
       expect(project.verification.checkedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(project.verification.note.fr.trim().length).toBeGreaterThan(30);

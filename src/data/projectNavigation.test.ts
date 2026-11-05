@@ -4,7 +4,7 @@ import { CASE_PROJECTS, SUPPORTING_PROJECTS, PORTFOLIO_PROJECTS, getProjectJourn
 
 describe("Editorial portfolio navigation", () => {
   it("keeps explained case studies first, followed by distinct supporting work", () => {
-    expect(CASE_PROJECTS.map((project) => project.slug)).toEqual(["echo-travel", "blueowl", "twenty-crm"]);
+    expect(CASE_PROJECTS.map((project) => project.slug)).toEqual(["echo-travel", "blueowl"]);
     expect(SUPPORTING_PROJECTS.map((project) => project.slug)).toEqual(["emargo", "paykit", "weave", "n8n-nodes-opn", "largo"]);
     expect(PORTFOLIO_PROJECTS).toHaveLength(FEATURED.length);
     expect(new Set(PORTFOLIO_PROJECTS.map((project) => project.slug)).size).toBe(FEATURED.length);
@@ -15,8 +15,7 @@ describe("Editorial portfolio navigation", () => {
     expect(getProjectJourney("echo-travel").next?.slug).toBe("blueowl");
     expect(getProjectJourney("blueowl").previous?.slug).toBe("echo-travel");
     expect(getProjectJourney("paykit").isCaseStudy).toBe(false);
-    expect(getProjectJourney("blueowl").next?.slug).toBe("twenty-crm");
-    expect(getProjectJourney("twenty-crm").next).toBeNull();
+    expect(getProjectJourney("blueowl").next).toBeNull();
   });
 
   it("navigates supporting projects without mixing their evidence with case studies", () => {
