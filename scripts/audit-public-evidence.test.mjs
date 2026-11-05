@@ -13,8 +13,8 @@ describe("public evidence audit — conservative classification", () => {
 
   it("uses real featured links, never creates a fake working Weave demo", () => {
     const targets = makeTargets();
-    assert.equal(targets.length, 11);
-    assert.equal(FEATURED.length, 7);
+    assert.equal(targets.length, 12);
+    assert.equal(FEATURED.length, 8);
     assert.equal(targets.filter((t) => t.kind === "npm-registry").length, 1);
     assert.ok(targets.some((t) => t.url === "https://registry.npmjs.org/n8n-nodes-opn/latest"));
     assert.ok(!targets.some((t) => t.url.includes("weave.memolabs.dev")));

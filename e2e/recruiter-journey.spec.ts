@@ -177,7 +177,7 @@ for (const locale of locales) {
 
 for (const locale of locales) {
   test.describe(`${locale}: case study can be understood in one glance`, () => {
-    for (const slug of ["echo-travel", "paykit", "blueowl"]) {
+    for (const slug of ["echo-travel", "paykit", "blueowl", "twenty-crm"]) {
       test(`${slug}: problem, personal contribution, result before technical details`, async ({ page }) => {
         await page.setViewportSize({ width: 390, height: 844 });
         const response = await page.goto(`/${locale}/work/${slug}`);
