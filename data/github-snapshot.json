@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-06T11:31:31.142Z",
+  "generatedAt": "2026-11-06T18:30:05.752Z",
   "sections": {
     "repositories": {
       "items": [
@@ -959,13 +959,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-11-06T03:40:35Z",
+          "pushed_at": "2026-11-06T11:31:35Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9329
+          "size": 9330
         },
         {
           "name": "n8n-nodes-opn",
@@ -1472,6 +1472,26 @@
           "size": 158
         },
         {
+          "name": "storymap-to-github",
+          "full_name": "memolabs-dev/storymap-to-github",
+          "html_url": "https://github.com/memolabs-dev/storymap-to-github",
+          "description": "FigJam plugin: read a story map as a GitHub backlog, create issues and drafts, and keep the two in step.",
+          "language": "TypeScript",
+          "pushed_at": "2026-11-06T16:59:01Z",
+          "created_at": "2026-11-05T23:26:51Z",
+          "topics": [
+            "figjam",
+            "figma-plugin",
+            "github-projects",
+            "product-management",
+            "story-mapping"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 3944
+        },
+        {
           "name": "pr-triage",
           "full_name": "memolabs-dev/pr-triage",
           "html_url": "https://github.com/memolabs-dev/pr-triage",
@@ -1909,11 +1929,39 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-06T11:31:31.142Z",
+      "syncedAt": "2026-11-06T18:30:05.752Z",
       "healthy": true
     },
     "merged": {
       "items": [
+        {
+          "title": "refactor: passer le code du socle en anglais",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/44",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-06T14:33:05Z",
+          "closed_at": "2026-11-06T16:47:05Z",
+          "pull_request": {
+            "merged_at": "2026-11-06T16:47:05Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "fix: corriger cinq points relevés à la relecture du socle",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/42",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-06T10:49:54Z",
+          "closed_at": "2026-11-06T16:43:12Z",
+          "pull_request": {
+            "merged_at": "2026-11-06T16:43:12Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "feat: socle du projet en FastAPI, React et Postgres",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/10",
@@ -2321,25 +2369,11 @@
           }
         }
       ],
-      "syncedAt": "2026-11-06T11:31:31.142Z",
+      "syncedAt": "2026-11-06T18:30:05.752Z",
       "healthy": true
     },
     "open": {
       "items": [
-        {
-          "title": "fix: corriger quatre points relevés à la relecture du socle",
-          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/42",
-          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
-          "state": "open",
-          "created_at": "2026-11-06T10:49:54Z",
-          "closed_at": null,
-          "pull_request": {
-            "merged_at": null
-          },
-          "user": {
-            "login": "guillaume-flambard"
-          }
-        },
         {
           "title": "fix(edge-functions-dev): remove obsolete Deno flag",
           "html_url": "https://github.com/netlify/primitives/pull/790",
@@ -2565,7 +2599,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-06T11:31:31.142Z",
+      "syncedAt": "2026-11-06T18:30:05.752Z",
       "healthy": true
     }
   }
