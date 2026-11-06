@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-06T03:40:32.293Z",
+  "generatedAt": "2026-11-06T11:31:31.142Z",
   "sections": {
     "repositories": {
       "items": [
@@ -959,7 +959,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "Python",
-          "pushed_at": "2026-11-05T23:38:44Z",
+          "pushed_at": "2026-11-06T03:40:35Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1909,11 +1909,25 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-06T03:40:32.293Z",
+      "syncedAt": "2026-11-06T11:31:31.142Z",
       "healthy": true
     },
     "merged": {
       "items": [
+        {
+          "title": "feat: socle du projet en FastAPI, React et Postgres",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/10",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-04T17:46:36Z",
+          "closed_at": "2026-11-06T10:45:27Z",
+          "pull_request": {
+            "merged_at": "2026-11-06T10:45:27Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "fix(contextual-menu): route Tab into the menu when opened with the mouse",
           "html_url": "https://github.com/canonical/react-components/pull/1418",
@@ -2307,17 +2321,17 @@
           }
         }
       ],
-      "syncedAt": "2026-11-06T03:40:32.293Z",
+      "syncedAt": "2026-11-06T11:31:31.142Z",
       "healthy": true
     },
     "open": {
       "items": [
         {
-          "title": "feat: socle du projet en FastAPI, React et Postgres",
-          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/10",
+          "title": "fix: corriger quatre points relevés à la relecture du socle",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/42",
           "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
           "state": "open",
-          "created_at": "2026-11-04T17:46:36Z",
+          "created_at": "2026-11-06T10:49:54Z",
           "closed_at": null,
           "pull_request": {
             "merged_at": null
@@ -2551,7 +2565,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-06T03:40:32.293Z",
+      "syncedAt": "2026-11-06T11:31:31.142Z",
       "healthy": true
     }
   }
