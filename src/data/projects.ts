@@ -98,17 +98,17 @@ export const FEATURED: Project[] = [
     }
   },
   "tagline": {
-    "fr": "API et fonctionnalités sécurisées dans une plateforme de réservation de vols sous Symfony, chez Symbyoz.",
-    "en": "APIs and secure features in a Symfony flight-booking platform, while at Symbyoz."
+    "fr": "Frontend d’une plateforme de réservation de voyages : HTML, CSS et JavaScript, chez Symbyoz.",
+    "en": "Frontend for a travel-booking platform: HTML, CSS and JavaScript, while at Symbyoz."
   },
   "description": {
-    "fr": "Flylooping est une plateforme de recherche et de réservation de voyages multi-destinations. Au sein de Symbyoz, j’ai contribué à ses API et à des fonctionnalités sécurisées en Symfony. Une intervention dans un produit existant, avec une contribution backend délimitée.",
-    "en": "Flylooping is a multi-destination trip search and booking platform. At Symbyoz, I contributed to its APIs and secure Symfony features. This was work within an existing product, with a defined backend contribution."
+    "fr": "Flylooping est une plateforme de recherche et de réservation de voyages multi-destinations. Chez Symbyoz, j’ai travaillé sur l’essentiel de son frontend en HTML, CSS et JavaScript. Une contribution aux interfaces du produit, au sein de l’équipe de l’agence.",
+    "en": "Flylooping is a multi-destination travel search and booking platform. At Symbyoz, I worked across most of its frontend in HTML, CSS and JavaScript, contributing to the product’s interfaces within the agency team."
   },
   "stack": [
-    "PHP",
-    "Symfony",
-    "API"
+    "HTML",
+    "CSS",
+    "JavaScript"
   ],
   "links": [
     {

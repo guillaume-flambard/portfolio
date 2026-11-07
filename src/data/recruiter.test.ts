@@ -2,8 +2,23 @@ import { describe, expect, it } from "vitest";
 import { CASE_STUDIES } from "./caseStudies";
 import { EXPERIENCES } from "./experience";
 import { FEATURED } from "./projects";
+import { SERVICES } from "./services";
 
 describe("Recruiter-facing evidence", () => {
+  it("keeps Flylooping aligned with the owner's confirmed frontend contribution", () => {
+    const study = CASE_STUDIES.find(p => p.slug === "flylooping")!;
+    const project = FEATURED.find(p => p.slug === "flylooping")!;
+    const experience = EXPERIENCES.find(p => p.organization === "Symbyoz")!;
+    const proof = SERVICES.flatMap(p => p.proofs).find(p => p.href === "/work/flylooping")!;
+    for (const locale of ["fr", "en"] as const) {
+      for (const text of [study.ownership[locale], project.tagline[locale], experience.description[locale], proof.label[locale]]) {
+        expect(text).toMatch(/frontend/i);
+        expect(text).not.toMatch(/API sécurisées|secure APIs|secure.feature|fonctionnalités sécurisées/i);
+      }
+      expect(study.ownership[locale]).toMatch(/HTML.*CSS.*JavaScript/);
+    }
+    expect(project.stack).toEqual(expect.arrayContaining(["HTML", "CSS", "JavaScript"]));
+  });
   it("features six unique case studies backed by project entries", () => {
     const expected = ["medsharing", "flylooping", "echo-travel", "paykit", "blueowl", "twenty-crm"];
     expect(CASE_STUDIES.map((study) => study.slug)).toEqual(expected);

@@ -55,10 +55,10 @@ export const EXPERIENCES: Experience[] = [
     dates: { fr: "Avril 2024 à janvier 2025", en: "Apr 2024 to Jan 2025" },
     role: { fr: "Développeur full-stack · remote", en: "Full-stack developer · remote" },
     description: {
-      fr: "BananAI en Next.js (authentification, back-office, éditeur de jeux sans code) ; API sécurisées pour Flylooping, réservation de vols sous Symfony.",
-      en: "Built BananAI on Next.js (auth, back-office, no-code game builder); secure APIs for Flylooping, a Symfony flight-booking platform.",
+      fr: "BananAI en Next.js (authentification, back-office, éditeur de jeux sans code) ; intervention sur l’essentiel du frontend de Flylooping en HTML, CSS et JavaScript.",
+      en: "Built BananAI on Next.js (auth, back-office, no-code game builder); worked across most of Flylooping’s frontend in HTML, CSS and JavaScript.",
     },
-    technologies: ["Next.js", "Symfony"],
+    technologies: ["Next.js", "HTML", "CSS", "JavaScript"],
   },
   {
     organization: "Medsharing",

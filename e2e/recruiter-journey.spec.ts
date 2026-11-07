@@ -198,6 +198,12 @@ for (const locale of locales) {
           ? ["Le besoin", "Mon intervention", "Travail réalisé"]
           : ["The problem", "My contribution", "Work delivered"]);
         await expect(snapshot.locator("dd")).toHaveCount(3);
+        if (slug === "flylooping") {
+          await expect(snapshot).toContainText(/frontend/);
+          await expect(snapshot).toContainText(/HTML, CSS/);
+          await expect(snapshot).toContainText("JavaScript");
+          await expect(snapshot).not.toContainText(/backend|API sécurisées|secure features/);
+        }
         for (const dd of await snapshot.locator("dd").all()) {
           expect((await dd.innerText()).trim().length).toBeGreaterThan(35);
         }

@@ -14,14 +14,14 @@ Pattern inferred for this scope: buyer need → named professional work → exac
 
 Current Lab: 33 public entries, sorted into live/lab/beta, untranslated GitHub descriptions despite localized notes. HTTP 200 does not establish product health (Weave shows offline); FoldReady text describes an old offer; two GitHub identities are obsolete. Preserve the wider public code catalog as a secondary exploration; do not imply deployment or adoption from old status fields.
 
-Career provenance read directly: owner's CV copy (2026-08-18), Experience and ventures, Project attribution map (2026-08-21), current experience.ts. Flylooping: API/security features in Symfony while at Symbyoz in 2024–2025; no claim to building the whole booking platform. Medsharing: frontend role 2021–2023, 100+ screen migration. Public employer/product pages provide context only, not independent attribution. No private screenshots or employer source published.
+Career provenance read directly: owner's CV copy (2026-08-18), Experience and ventures, Project attribution map (2026-08-21), current experience.ts. **Owner correction 2026-11-07 13:08–13:10 Europe/Paris supersedes the old Flylooping description:** mostly frontend, covering approximately all of it, in HTML/CSS/JavaScript; backend was a smaller part. Present the substantial frontend contribution at Symbyoz in 2024–2025, without claiming sole ownership of the whole booking product. Old API/security emphasis must disappear from the case, project data, services and the shared About/CV experience. Medsharing: frontend role 2021–2023, 100+ screen migration. Public employer/product pages provide context only, not independent attribution. No private screenshots or employer source published.
 
 ## Requirements and acceptance
 
 | ID | Outcome / acceptance | Verification |
 |---|---|---|
 | E1 | Home connects buyer needs to four professional references: Medsharing, Flylooping via Symbyoz, Echo Travel, Blue Owl. Demos are separately labelled and secondary. | FR/EN browser and content review |
-| E2 | Flylooping and Medsharing each have a structured bilingual case (need, contribution, work delivered, scope/period). No fabricated image, metric, testimonial or whole-product ownership. | Unit, content review, live link |
+| E2 | Flylooping and Medsharing each have a structured bilingual case (need, contribution, work delivered, scope/period). Flylooping foregrounds the owner's confirmed HTML/CSS/JS frontend contribution consistently in case/services/About/CV. No fabricated image, metric, testimonial or whole-product ownership. | Unit, content review, live link |
 | E3 | Work page puts professional references first and independent/internal work second, with both groups still navigable; existing URLs and contact anchors work. | Unit, E2E, link inspection |
 | E4 | Lab opens with a small need-based selection with localized descriptions, source/package links and honest context. Full public exploration remains secondary; no technical live status is sold as maturity. | Data contract, bilingual browser |
 | E5 | Obsolete/dead/misleading selected links and descriptions are corrected; private/internal projects stay private. Keep public source evidence and distinguish demo/internal/client roles. | Primary URL/repo checks and independent review |
@@ -33,7 +33,7 @@ Career provenance read directly: owner's CV copy (2026-08-18), Experience and ve
 |---|---|---|---|---|
 | S1 benchmark peers and inspect actual career/catalog | P1 | none | DONE | Primary sources above; two independent read-only reports |
 | S2 specify selection and compatibility | P1 | S1 | DONE | E1–E6 and selection below |
-| S3 implement professional cases and buyer-oriented portfolio | P1 | S2 | DONE | 70 unit, 79 unaffected browser cases + 5 corrected work regression cases; new Medsharing/Flylooping routes build |
+| S3 implement professional cases and buyer-oriented portfolio | P1 | S2 | DONE | Owner correction applied consistently in four sources; 71 unit and all 83 browser cases PASS, build/typecheck PASS |
 | S4 implement curated bilingual Lab and secondary exploration | P1 | S2 | DONE | 3 contract tests, Vite build, 27 bilingual responsive page checks and 4 failure/no-JS states |
 | S5 verify independently, publish and reconcile | P1 | S3,S4 | VERIFYING | Independent diff/content review PASS; local checks below; exact-head CI and live rollout pending |
 | S6 owner accepts selection and attribution | P2 | S5 | TODO | #53, updated after technical delivery |
@@ -43,7 +43,7 @@ Career provenance read directly: owner's CV copy (2026-08-18), Experience and ve
 | Buyer need | Primary work | Secondary proof |
 |---|---|---|
 | Modernize business interfaces | Medsharing | UI examples when relevant |
-| Add APIs/backend features to an existing product or support an agency | Flylooping via Symbyoz | BananAI in the career record |
+| Develop the frontend of an existing product or support an agency | Flylooping via Symbyoz | BananAI in the career record |
 | Booking, payments and operations | Echo Travel | n8n payment node, PayKit prototype |
 | Put an AI engine behind a usable web product | Blue Owl | Explicitly simulated public automation demo |
 
@@ -69,5 +69,7 @@ Before publication: portfolio build/typecheck/unit/data tests plus affected brow
 - Humanizer on parsed new copy: no flagged phrases/punctuation. `git diff --check`: PASS in both repositories.
 
 Public-reader delta after the first deployment: remove technical proof-state labels from the four primary cards and the redundant header label on the new employment cases; replace “evidence limits” with context/scope and “outcome” with work delivered. Roles, periods, caveats and sources remain available. This is required presentation cleanup under E3, not a new attribution or business-outcome claim. Independent delta review PASS; build/typecheck and 70 unit tests PASS. Browser regression: 82 passed, one stale legend expectation replaced by asserting four visible roles and absence of audit jargon; its focused rerun passed. All 83 cases covered on this implementation.
+
+Owner correction pass, 2026-11-07 13:10–13:12 Europe/Paris: recent owner facts override the old CV line. Red test confirmed the old backend/API emphasis; updated project, case, service reference and shared career data to frontend HTML/CSS/JavaScript across most of the frontend. No particular booking screen or additional framework invented. `npm test` 71/71, production build/typecheck PASS, final full `playwright test` 83/83 including the frontend snapshot assertion. Independent read-only delta review PASS, `git diff --check` and parsed-copy humanizer PASS. Public deployment of this correction still pending at this entry.
 
 Release evidence and owner acceptance are tracked below after exact revisions are deployed. No technical or commercial acceptance is inferred from an HTTP response or a checked box in #53.

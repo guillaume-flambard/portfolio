@@ -51,34 +51,34 @@ export const CASE_STUDIES: CaseStudy[] = [
 },
 {
   "slug": "flylooping",
-  need: {"fr": "Développer des API dans un produit existant", "en": "Build APIs within an existing product"},
+  need: {"fr": "Développer les interfaces d’un produit existant", "en": "Build interfaces within an existing product"},
   "preview": {
-    "fr": "Chez Symbyoz : développement d’API et de fonctionnalités sécurisées dans une plateforme de réservation de vols sous Symfony.",
-    "en": "At Symbyoz: API and secure-feature development within a Symfony flight-booking platform."
+    "fr": "Chez Symbyoz : intervention sur l’essentiel du frontend de Flylooping, en HTML, CSS et JavaScript.",
+    "en": "At Symbyoz: work across most of Flylooping’s frontend, using HTML, CSS and JavaScript."
   },
   "role": {
-    "fr": "Développeur full-stack chez Symbyoz, 2024 à 2025",
-    "en": "Full-stack developer at Symbyoz, 2024 to 2025"
+    "fr": "Contribution principalement frontend chez Symbyoz, 2024 à 2025",
+    "en": "Primarily frontend work at Symbyoz, 2024 to 2025"
   },
   "context": {
-    "fr": "Faire évoluer le backend d’une plateforme de recherche et de réservation de vols, dans le code Symfony déjà en place.",
-    "en": "Extend the backend of a flight search and booking platform within an existing Symfony codebase."
+    "fr": "Développer les interfaces web d’une plateforme de recherche et de réservation de voyages, au sein d’une équipe d’agence.",
+    "en": "Develop the web interfaces of a travel search and booking platform as part of an agency team."
   },
   "ownership": {
-    "fr": "Chez Symbyoz, j’ai développé des API et des fonctionnalités sécurisées pour Flylooping, sur le backend Symfony existant.",
-    "en": "At Symbyoz, I developed APIs and secure features for Flylooping within its existing Symfony backend."
+    "fr": "Chez Symbyoz, j’ai travaillé sur l’essentiel du frontend de Flylooping en HTML, CSS et JavaScript.",
+    "en": "At Symbyoz, I worked across most of Flylooping’s frontend in HTML, CSS and JavaScript."
   },
   "constraint": {
-    "fr": "Contribuer aux API et aux fonctionnalités sécurisées d’une plateforme Symfony existante, au sein de l’équipe Symbyoz.",
-    "en": "Contribute to APIs and secure features in an existing Symfony platform within the Symbyoz team."
+    "fr": "Intervenir dans un produit existant au sein de l’équipe Symbyoz, avec une contribution principalement frontend.",
+    "en": "Work within an existing product as part of the Symbyoz team, with a primarily frontend contribution."
   },
   "decision": {
-    "fr": "Développer les fonctionnalités backend en Symfony dans l’architecture existante, avec un périmètre d’API délimité.",
-    "en": "Develop backend features in Symfony within the existing architecture, with a defined API scope."
+    "fr": "Développer les interfaces en HTML et CSS, et leurs interactions en JavaScript, dans le produit en place.",
+    "en": "Develop interfaces in HTML and CSS, with JavaScript interactions, within the existing product."
   },
   "result": {
-    "fr": "Travail effectué sur les API et des fonctionnalités sécurisées de la plateforme. Cette expérience illustre le renfort backend sur une application existante, via une agence.",
-    "en": "Work on the platform’s APIs and secure features. This experience illustrates backend support on an existing application through an agency."
+    "fr": "Une intervention couvrant la quasi-totalité du frontend, dans l’équipe Symbyoz. Une expérience de développement d’interfaces sur un produit de réservation.",
+    "en": "Work spanning almost the entire frontend within the Symbyoz team. An example of interface development for a booking product."
   },
   "caveat": {
     "fr": "Contribution chez Symbyoz, dans la période d’avril 2024 à janvier 2025. Le lien public présente le produit actuel.",
