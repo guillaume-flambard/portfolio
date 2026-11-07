@@ -581,6 +581,7 @@ h1.h .acc { color: var(--accent); }
 @media (max-width: 800px) { .github-projects-only .github-activity-columns { grid-template-columns: 1fr; } }
 @media (max-width: 680px) { .client-example { grid-template-columns: 1fr; gap: 16px; } }
 @media (pointer: coarse) {
+  .mobile-menu-trigger { min-width: 44px; min-height: 44px; }
   .nav .logo, .navlinks a, .lang a, .nav .cta,
   .hero-evidence-links a, .focus-evidence a, .focus-more a,
   .client-example a, .client-more a, .client-background a,
