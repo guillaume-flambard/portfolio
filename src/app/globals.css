@@ -548,30 +548,47 @@ h1.h .acc { color: var(--accent); }
 .contact p { color: #b8afa4; margin-top: 24px; font-size: 1.2rem; font-weight: 300; max-width: 44ch; margin-inline: auto; }
 .contact .btn.p { margin-top: 48px; }
 .contact .btn.p:hover { background: var(--bg); color: var(--ink); border-color: var(--bg); }
-.contact-tracks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: left;
-  border-top: 1px solid color-mix(in srgb, var(--bg) 22%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); }
-.contact-track { padding: 32px; }
-.contact-track + .contact-track { border-left: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); }
-.contact-track h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); line-height: 1.15; }
-.contact-track p { font-size: 16px; line-height: 1.5; margin-top: 18px; max-width: 36ch; margin-inline: 0; }
-.contact-tracks .btn.p { margin-top: 28px; }
-.contact-choice summary { cursor: pointer; list-style: none; }
-.contact-choice summary::-webkit-details-marker { display: none; }
-.contact-choice summary.btn.p::after { content: "+"; }
-.contact-choice[open] summary.btn.p::after { content: "−"; }
-.contact-choice-panel { padding-top: 20px; }
-.contact .contact-choice-intro { color: #d8d0c6; font-size: 15px; line-height: 1.5; margin: 0; }
-.contact .contact-choice-address { margin: 12px 0 0; color: var(--bg); font-size: 17px; font-weight: 500; overflow-wrap: anywhere; }
-.contact-choice-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 22px; margin-top: 12px; }
-.contact-choice-links a { color: var(--bg); font-size: 14px; font-weight: 400; min-height: 44px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent-soft); }
+.contact-project, .contact-recruitment { text-align: left; scroll-margin-top: 100px; }
+.hero-contact .wrap { padding-top: clamp(48px, 6vw, 80px); padding-bottom: clamp(40px, 5vw, 64px); }
+.hero-contact .eyebrow { margin-bottom: 24px; }
+.hero-contact .lede { max-width: 62ch; }
+.contact-project h2 { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.15; }
+.contact-project p, .contact-recruitment p { max-width: 62ch; margin-inline: 0; font-size: 18px; line-height: 1.6; }
+.contact .contact-choice-address { margin-top: 32px; color: var(--bg); font-size: clamp(1.6rem, 4.5vw, 2.5rem); font-weight: 500; overflow-wrap: anywhere; }
+.contact-choice-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: 24px; }
+.contact-choice-links a { color: var(--bg); font-size: 16px; font-weight: 400; min-height: 44px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--accent-soft); }
+.contact-choice-links .btn.p { margin-top: 0; text-decoration: none; }
 .contact-choice-links a:hover { color: var(--accent-soft); }
-.contact .contact-direct { margin-top: 32px; font-size: 16px; }
-.contact-direct a { color: var(--bg); text-underline-offset: 4px; }
-@media (max-width: 680px) {
-  .contact-tracks { grid-template-columns: 1fr; }
-  .contact-track { padding: 28px 0; }
-  .contact-track + .contact-track { border-left: 0; border-top: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); }
+.contact .contact-choice-intro, .contact .contact-next { color: color-mix(in srgb, var(--bg) 75%, var(--ink)); font-size: 16px; line-height: 1.6; }
+.contact-recruitment { border-top: 1px solid color-mix(in srgb, var(--bg) 22%, transparent); margin-top: 48px; padding-top: 32px; }
+.contact-recruitment h2 { font-size: 1.35rem; line-height: 1.2; }
+.contact-recruitment > a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; color: var(--bg); text-underline-offset: 4px; }
+
+/* Commercial journey: concrete examples, engagement, secondary background. */
+#examples { scroll-margin-top: 100px; }
+.client-example { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(24px, 5vw, 72px); padding: 32px 0; border-top: 1px solid var(--line); }
+.client-example:last-child { border-bottom: 1px solid var(--line); }
+.client-example h3 { font-size: clamp(1.5rem, 2.6vw, 2.2rem); line-height: 1.2; }
+.client-example p { max-width: 62ch; font-size: 18px; line-height: 1.6; color: var(--muted); }
+.client-example .client-example-context { font-size: 15px; margin-bottom: 12px; color: var(--accent); }
+.client-example a, .client-more a, .client-background a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); text-underline-offset: 4px; }
+.client-example a { margin-top: 12px; }
+.client-more { margin-top: 24px; }
+.client-background { padding: 48px 0; border-top: 1px solid var(--line); }
+.client-background h2 { font-size: 1.35rem; }
+.client-background p { margin-top: 12px; color: var(--muted); font-size: 16px; }
+.github-projects-only .github-activity-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 800px) { .github-projects-only .github-activity-columns { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .client-example { grid-template-columns: 1fr; gap: 16px; } }
+@media (pointer: coarse) {
+  .nav .logo, .navlinks a, .lang a, .nav .cta,
+  .hero-evidence-links a, .focus-evidence a, .focus-more a,
+  .client-example a, .client-more a, .client-background a,
+  .contact .meta a, .foot a {
+    display: inline-flex; align-items: center; min-height: 44px; min-width: 44px;
+  }
+  .lang { display: flex; align-items: center; white-space: nowrap; }
+  .lang a { justify-content: center; }
 }
 .contact .meta { margin-top: 56px; display: flex; gap: 0; justify-content: center; flex-wrap: wrap;
   font-size: 13px; text-transform: uppercase; letter-spacing: 0.09em; }

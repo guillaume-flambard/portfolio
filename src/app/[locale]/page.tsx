@@ -3,10 +3,8 @@ import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Lang } from "@/data/caseStudies";
-import { EXPERIENCES } from "@/data/experience";
 import { HOME_FAQ, SERVICES } from "@/data/services";
 import SiteNav from "@/components/SiteNav";
-import GithubActivity from "@/components/GithubActivity";
 
 export const revalidate = 3600;
 
@@ -15,8 +13,8 @@ const DEMOS_URL = "https://demos.memolabs.dev/";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Guillaume Flambard · Développeur full-stack, IA et automatisation", "J’intègre l’IA et l’automatisation dans vos produits web, sur React, Vue, Laravel, Symfony ou .NET. Freelance à distance, ex-CTO d’Echo Travel et Blue Owl."]
-    : ["Guillaume Flambard · Full-stack developer, AI and automation", "I build AI and automation into your web products, on React, Vue, Laravel, Symfony or .NET. Remote freelancer, former CTO at Echo Travel and Blue Owl."];
+    ? ["Développeur freelance pour agences et entreprises | Guillaume Flambard", "Automatisation, intégrations et applications web. Guillaume Flambard accompagne agences et équipes produit, du cadrage au déploiement, à distance."]
+    : ["Freelance developer for agencies and businesses | Guillaume Flambard", "Automation, integrations and web applications. Guillaume Flambard works with agencies and product teams, from scope to deployment, remotely."];
   return createRouteMetadata(locale, "", title, description);
 }
 
@@ -40,8 +38,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <p className="hero-identity">{t("identity")}</p>
           <div className="herobtns hero-actions">
             <Link className="btn p" href="/contact#freelance">{t("ctaContact")}</Link>
-            <a className="btn s" href={DEMOS_URL}>{t("ctaDemos")}</a>
-            <Link className="btn s" href="/cv">{t("ctaAbout")}</Link>
+            <a className="btn s" href="#examples">{t("ctaDemos")}</a>
           </div>
           <dl className="hero-facts">
             <div>
@@ -56,7 +53,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 <Link href="/about">{t("proofD4G")}</Link>
               </dd>
             </div>
-            <div><dt>{t("availabilityLabel")}</dt><dd><Link className="hero-recruiter-link" href="/contact#recruitment">{t("availabilityValue")} <span aria-hidden="true">↗</span></Link></dd></div>
+            <div><dt>{t("availabilityLabel")}</dt><dd>{t("availabilityValue")}</dd></div>
           </dl>
         </div>
       </header>
@@ -79,7 +76,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <span className="focus-number" aria-hidden="true">02</span>
               <h3>{t("service2Title")}</h3>
               <p>{t("service2Body")}</p>
-              <p className="focus-evidence"><a href={DEMOS_URL}>{t("service2Evidence")} <span aria-hidden="true">↗</span></a></p>
+              <p className="focus-evidence"><a href="https://demos.memolabs.dev/partenaire-automation/">{t("service2Evidence")} <span aria-hidden="true">↗</span></a></p>
               <p className="focus-more"><Link href="/services/automation-n8n">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
             </li>
             <li>
@@ -93,48 +90,38 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
-      <section className="end-cta" aria-labelledby="demos-heading">
-        <div className="wrap end-cta-inner">
-          <div>
-            <h2 id="demos-heading">{t("demosTitle")}</h2>
-            <p>{t("demosBody")}</p>
-          </div>
-          <a className="btn p" href={DEMOS_URL}>{t("demosCta")}</a>
-        </div>
-      </section>
-
-      <section id="projects" className="sec featured-section" aria-labelledby="projects-heading">
+      <section id="examples" className="sec client-examples" aria-labelledby="examples-heading">
         <div className="wrap">
           <div className="shead">
-            <h2 id="projects-heading" className="display">{t("workTitle")}</h2>
-            <p>{t("workSub")}</p>
+            <h2 id="examples-heading">{t("examplesTitle")}</h2>
+            <p>{t("examplesIntro")}</p>
           </div>
-          <div className="ldesc">
-            <section className="experience" aria-label={t("workTitle")}>
-              <ol className="timeline">
-                {EXPERIENCES.filter((job) => job.organization !== "Adriver Group").map((job) => (
-                  <li key={job.organization} className="timeline-row">
-                    <div className="timeline-date">{job.dates[lang]}</div>
-                    <div>
-                      <h3>{job.organization}</h3>
-                      <p className="timeline-role">{job.role[lang]}</p>
-                      <p>{job.description[lang]}</p>
-                      <div className="stack">{job.technologies.map((tech) => <span key={tech}>{tech}</span>)}</div>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </section>
+          <div className="client-example-list">
+            <article className="client-example">
+              <div><p className="client-example-context">{t("example1Context")}</p><h3>{t("example1Title")}</h3></div>
+              <div><p>{t("example1Body")}</p><a href="https://demos.memolabs.dev/partenaire-automation/">{t("example1Cta")}</a></div>
+            </article>
+            <article className="client-example">
+              <div><p className="client-example-context">{t("example2Context")}</p><h3>{t("example2Title")}</h3></div>
+              <div><p>{t("example2Body")}</p><Link href="/work/echo-travel">{t("example2Cta")}</Link></div>
+            </article>
+            <article className="client-example">
+              <div><p className="client-example-context">{t("example3Context")}</p><h3>{t("example3Title")}</h3></div>
+              <div><p>{t("example3Body")}</p><Link href="/work/blueowl">{t("example3Cta")}</Link></div>
+            </article>
           </div>
-          <div className="herobtns">
-            <Link className="btn s" href="/cv">{t("ctaAbout")}</Link>
-            <Link className="btn s" href="/work">{t("workLibrary")}</Link>
-          </div>
-          <p><Link className="hero-inline-link" href="/open-source">{t("ctaWork")}</Link></p>
+          <p className="client-more"><a href={DEMOS_URL}>{t("demosCta")}</a> · <Link href="/work">{t("workLibrary")}</Link></p>
         </div>
       </section>
 
-      <GithubActivity locale={lang} />
+      <section className="focus-section client-process" aria-labelledby="process-heading">
+        <div className="wrap">
+          <div className="shead"><h2 id="process-heading">{t("processTitle")}</h2><p>{t("processIntro")}</p></div>
+          <ol className="focus-grid">
+            {[1, 2, 3].map((step) => <li key={step}><span className="focus-number" aria-hidden="true">0{step}</span><h3>{t(`step${step}Title`)}</h3><p>{t(`step${step}Body`)}</p></li>)}
+          </ol>
+        </div>
+      </section>
 
       <section className="sec faq-section" aria-labelledby="faq-heading">
         <div className="wrap narrow">
@@ -185,6 +172,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <p>{t("closingBody")}</p>
           </div>
           <Link className="btn p" href="/contact#freelance">{t("closingCta")}</Link>
+        </div>
+      </section>
+
+      <section id="github-activity" className="client-background" aria-labelledby="background-heading">
+        <div className="wrap">
+          <h2 id="background-heading">{t("backgroundTitle")}</h2>
+          <p><Link href="/about">{t("backgroundAbout")}</Link> · <Link href="/cv">{t("ctaAbout")}</Link> · <Link href="/open-source">{t("ctaWork")}</Link> · <a href={`https://lab.memolabs.dev/${locale}/`}>{t("nav.lab")}</a></p>
+          <p><Link className="hero-recruiter-link" href="/contact#recruitment">{t("recruitmentLink")}</Link></p>
         </div>
       </section>
 

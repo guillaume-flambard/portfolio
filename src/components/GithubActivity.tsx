@@ -6,7 +6,7 @@ import { getGithubActivity } from "@/lib/githubActivity";
  * Server-rendered evidence. Never equate a code push with a deployment,
  * nor a merged PR with an independent quality certification.
  */
-export default async function GithubActivity({ locale }: { locale: "fr" | "en" }) {
+export default async function GithubActivity({ locale, includeContributions = true }: { locale: "fr" | "en"; includeContributions?: boolean }) {
   const [t, activity] = await Promise.all([
     getTranslations("activity"),
     getGithubActivity(),
@@ -20,7 +20,7 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
   });
 
   return (
-    <section className="github-activity sec" id="github-activity" aria-labelledby="github-heading">
+    <section className={`github-activity sec${includeContributions ? "" : " github-projects-only"}`} id="github-activity" aria-labelledby="github-heading">
       <div className="wrap">
         <div className="github-activity-top">
           <div>
@@ -59,6 +59,7 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
             ) : <p className="github-empty">{t("projectsEmpty")}</p>}
           </div>
 
+          {includeContributions && (
           <div className="github-activity-block">
             <div className="github-block-heading">
               <h3>{t("contributionsTitle")}</h3>
@@ -97,6 +98,7 @@ export default async function GithubActivity({ locale }: { locale: "fr" | "en" }
               {t("allContributions")} <span aria-hidden="true">→</span>
             </Link>
           </div>
+          )}
           <div className="github-activity-block github-discovery-block">
             <div className="github-block-heading">
               <h3>{t("newProjectsTitle")}</h3>

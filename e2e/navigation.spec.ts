@@ -1,12 +1,12 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("navigation", () => {
-  test("nav shows Home · Work · Lab · About · Contact", async ({ page }) => {
+  test("nav shows the main buyer journey", async ({ page }) => {
     await page.goto("/fr");
     const nav = page.locator(".navlinks");
     await expect(nav.getByRole("link", { name: "Accueil" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "Travail" })).toBeVisible();
-    await expect(nav.getByRole("link", { name: "Lab" })).toBeVisible();
+    await expect(nav.getByRole("link", { name: "Démos" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "À propos" })).toBeVisible();
     await expect(nav.getByRole("link", { name: "Contact" })).toBeVisible();
   });
@@ -42,7 +42,7 @@ test.describe("navigation", () => {
 
   test("Lab link points to external lab.memolabs.dev", async ({ page }) => {
     await page.goto("/fr");
-    const lab = page.locator(".navlinks").getByRole("link", { name: "Lab" });
-    expect(await lab.getAttribute("href")).toBe("https://lab.memolabs.dev");
+    const lab = page.locator(".client-background").getByRole("link", { name: "Lab" });
+    expect(await lab.getAttribute("href")).toBe("https://lab.memolabs.dev/fr/");
   });
 });

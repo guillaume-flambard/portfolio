@@ -56,7 +56,7 @@ export default async function BuildLogPage({ params }: Props) {
             <p className="lede">{project.description || t("defaultDescription")}</p>
             <div className="build-log-links">
               <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn p">{t("repoCta")}</a>
-              <Link href="/#github-activity" className="btn s">{t("back")}</Link>
+              <Link href="/open-source#github-activity" className="btn s">{t("back")}</Link>
             </div>
           </div>
         </header>

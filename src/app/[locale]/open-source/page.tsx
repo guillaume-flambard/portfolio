@@ -4,6 +4,7 @@ import { Link } from "@/i18n/navigation";
 import { createRouteMetadata } from "@/lib/seo";
 import { getExternalContributions, getGithubSync, type OpenSourceContribution } from "@/lib/githubActivity";
 import SiteNav from "@/components/SiteNav";
+import GithubActivity from "@/components/GithubActivity";
 
 export const revalidate = 3600;
 
@@ -80,7 +81,7 @@ export default async function OpenSourcePage({ params }: {
               <span>{t("openSubtitle")}</span>
             </div>
             {feed.open.length > 0 ? items(feed.open, "open") : <p className="github-empty">{t("emptyOpen")}</p>}
-            <p className="github-disclaimer" data-testid="github-sync-status">
+            <p className="github-disclaimer" data-testid="contributions-sync-status">
               {sync.source === "snapshot" ? t("snapshotSource") : t("liveSource")}
               {sync.updatedAt ? " · " + t("syncedAt") + " " + formatter.format(new Date(sync.updatedAt)) : ""}
               {sync.degraded ? " · " + t("snapshotStale") : ""}
@@ -88,6 +89,7 @@ export default async function OpenSourcePage({ params }: {
             <p className="github-disclaimer">{t("disclaimer")}</p>
           </div>
         </section>
+        <GithubActivity locale={locale as "fr" | "en"} includeContributions={false} />
       </main>
       <footer className="foot">
         <span>© 2026 Memo Labs · Guillaume Flambard EI</span>
