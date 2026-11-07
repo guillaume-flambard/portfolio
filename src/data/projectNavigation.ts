@@ -1,4 +1,3 @@
-import { CASE_STUDIES } from "./caseStudies";
 import { FEATURED } from "./projects";
 
 /**
@@ -6,16 +5,12 @@ import { FEATURED } from "./projects";
  * Fully documented cases come first; the rest are supporting work and should
  * never silently intrude into the case-study journey.
  */
-// PayKit stays published but is no longer presented as a case study: it never had users.
-const NOT_FEATURED_AS_CASE = new Set<string>(["paykit"]);
-const caseSlugs = new Set<string>(
-  CASE_STUDIES.map((study) => study.slug).filter((slug) => !NOT_FEATURED_AS_CASE.has(slug)),
-);
-
-export const CASE_PROJECTS = CASE_STUDIES.filter((study) => caseSlugs.has(study.slug)).flatMap((study) =>
-  FEATURED.filter((project) => project.slug === study.slug),
-);
-export const SUPPORTING_PROJECTS = FEATURED.filter((project) => !caseSlugs.has(project.slug));
+// Editorial selection follows buyer needs and real professional contributions.
+const PROFESSIONAL_CASES = ["medsharing", "flylooping", "echo-travel", "blueowl"];
+const caseSlugs = new Set(PROFESSIONAL_CASES);
+export const CASE_PROJECTS = PROFESSIONAL_CASES.flatMap((slug) => FEATURED.filter((project) => project.slug === slug));
+const SUPPORTING_CASES = ["emargo", "largo", "n8n-nodes-opn", "paykit", "twenty-crm", "weave"];
+export const SUPPORTING_PROJECTS = SUPPORTING_CASES.flatMap((slug) => FEATURED.filter((project) => project.slug === slug));
 export const PORTFOLIO_PROJECTS = [...CASE_PROJECTS, ...SUPPORTING_PROJECTS];
 
 export function getProjectJourney(slug: string) {

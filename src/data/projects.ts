@@ -1,7 +1,7 @@
 /** Link availability only; never infer production maturity from this status. */
 export type ProjectStatus = "live" | "repo" | "offline";
-export type ProjectKind = "client" | "independent" | "collaboration" | "open-source" | "experimental";
-export type ProjectProof = "reported-operation" | "public-website" | "early-access" | "source-only" | "published-package";
+export type ProjectKind = "client" | "independent" | "collaboration" | "open-source" | "experimental" | "employment" | "internal";
+export type ProjectProof = "reported-operation" | "public-website" | "early-access" | "source-only" | "published-package" | "professional-experience";
 export type ProjectVerification = {
   kind: ProjectKind;
   proof: ProjectProof;
@@ -9,7 +9,7 @@ export type ProjectVerification = {
   note: { fr: string; en: string };
 };
 
-export type LinkLabel = "live" | "repo" | "npm" | "demo";
+export type LinkLabel = "live" | "repo" | "npm" | "demo" | "context";
 
 export type ProjectLink = {
   label: LinkLabel;
@@ -43,6 +43,82 @@ export type Project = {
 export type MapItem = Omit<Project, "description" | "verification">;
 
 export const FEATURED: Project[] = [
+{
+  "slug": "medsharing",
+  "name": "Medsharing",
+  "category": "reference",
+  "featured": true,
+  "status": "live",
+  "year": 2023,
+  "verification": {
+    "kind": "employment",
+    "proof": "professional-experience",
+    "checkedAt": "2026-11-07",
+    "note": {
+      "fr": "Expérience salariée de septembre 2021 à septembre 2023. Le lien public présente l’éditeur ; l’application et son code restent ceux de Medsharing.",
+      "en": "Employment from September 2021 to September 2023. The public link introduces the software vendor; the application and code belong to Medsharing."
+    }
+  },
+  "tagline": {
+    "fr": "Modernisation des interfaces d’un logiciel métier : plus de 100 écrans migrés.",
+    "en": "Modernising business software interfaces: 100+ screens migrated."
+  },
+  "description": {
+    "fr": "Chez Medsharing, j’ai travaillé comme développeur frontend sur un logiciel de suivi d’essais cliniques. Mon intervention portait sur la migration d’écrans ASP Classic et jQuery vers HTML5, JavaScript et Bootstrap, ainsi que sur des tableaux de bord.",
+    "en": "At Medsharing, I worked as a frontend developer on clinical-trial software. My contribution covered migrating ASP Classic and jQuery screens to HTML5, JavaScript and Bootstrap, along with dashboards."
+  },
+  "stack": [
+    "JavaScript",
+    "Bootstrap",
+    "ASP Classic"
+  ],
+  "links": [
+    {
+      "label": "context",
+      "url": "https://www.ecrf-medsharing.com/"
+    }
+  ],
+  "gallery": [],
+  "thumb": "t4"
+},
+{
+  "slug": "flylooping",
+  "name": "Flylooping",
+  "category": "reference",
+  "featured": true,
+  "status": "live",
+  "year": 2025,
+  "verification": {
+    "kind": "employment",
+    "proof": "professional-experience",
+    "checkedAt": "2026-11-07",
+    "note": {
+      "fr": "Intervention comme développeur chez Symbyoz, entre 2024 et 2025. Le site public donne le contexte du produit actuel ; je ne revendique pas l’ensemble de la plateforme.",
+      "en": "Contribution as a developer at Symbyoz during 2024 to 2025. The public site provides current product context; I do not claim ownership of the whole platform."
+    }
+  },
+  "tagline": {
+    "fr": "API et fonctionnalités sécurisées dans une plateforme de réservation de vols sous Symfony, chez Symbyoz.",
+    "en": "APIs and secure features in a Symfony flight-booking platform, while at Symbyoz."
+  },
+  "description": {
+    "fr": "Flylooping est une plateforme de recherche et de réservation de voyages multi-destinations. Au sein de Symbyoz, j’ai contribué à ses API et à des fonctionnalités sécurisées en Symfony. Une intervention dans un produit existant, avec une contribution backend délimitée.",
+    "en": "Flylooping is a multi-destination trip search and booking platform. At Symbyoz, I contributed to its APIs and secure Symfony features. This was work within an existing product, with a defined backend contribution."
+  },
+  "stack": [
+    "PHP",
+    "Symfony",
+    "API"
+  ],
+  "links": [
+    {
+      "label": "context",
+      "url": "https://flylooping.com/"
+    }
+  ],
+  "gallery": [],
+  "thumb": "t2"
+},
   {
     slug: "emargo",
     name: "Émargo",
@@ -158,7 +234,7 @@ export const FEATURED: Project[] = [
     status: "live",
     year: 2026,
     verification: {
-      kind: "independent",
+      kind: "internal",
       proof: "reported-operation",
       checkedAt: "2026-11-05",
       note: {"fr":"Flux exécuté le 05/11/2026 : trois exécutions réussies entre 0,27 et 0,46 seconde dans le journal de n8n, et un second envoi de la même personne sans doublon. Le CRM et le formulaire demandent un compte.","en":"Flow run on 5 Nov 2026: three successful executions between 0.27 and 0.46 seconds in the n8n log, and a second message from the same person with no duplicate. The CRM and the form require an account."},
@@ -900,7 +976,7 @@ const mapProjects: MapItem[] = [
     category: "mobile",
     status: "repo",
     year: 2025,
-    tagline: { fr: "Routing dans un navigateur intégré iOS.", en: "Routing in an embedded iOS browser." },
+    tagline: { fr: "Application de barre de menus macOS pour ouvrir les liens dans le navigateur choisi.", en: "macOS menu-bar app for opening links in the chosen browser." },
     stack: ["Swift"],
     links: [{ label: "repo", url: "https://github.com/guillaume-flambard/browser-router" }],
     gallery: [],

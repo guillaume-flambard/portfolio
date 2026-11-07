@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { createRouteMetadata } from "@/lib/seo";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { CASE_PROJECTS } from "@/data/projectNavigation";
+import { CASE_BY_SLUG } from "@/data/caseStudies";
 import type { Lang } from "@/data/caseStudies";
 import { HOME_FAQ, SERVICES } from "@/data/services";
 import SiteNav from "@/components/SiteNav";
@@ -44,13 +46,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div>
               <dt>{t("proofLabel")}</dt>
               <dd className="hero-evidence-links">
-                <Link href="/about#experience-medsharing">Medsharing</Link>
-                <span aria-hidden="true">·</span>
-                <Link href="/work/echo-travel">Echo Travel</Link>
-                <span aria-hidden="true">·</span>
-                <Link href="/work/blueowl">Blue Owl</Link>
-                <span aria-hidden="true">·</span>
-                <Link href="/about">{t("proofD4G")}</Link>
+                {CASE_PROJECTS.map((project) => <Link key={project.slug} href={`/work/${project.slug}`}>{project.name}</Link>)}
               </dd>
             </div>
             <div><dt>{t("availabilityLabel")}</dt><dd>{t("availabilityValue")}</dd></div>
@@ -66,25 +62,22 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
           <ol className="focus-grid">
             <li>
-              <span className="focus-number" aria-hidden="true">01</span>
-              <h3>{t("service1Title")}</h3>
-              <p>{t("service1Body")}</p>
-              <p className="focus-evidence"><Link href="/work/blueowl">{t("service1Evidence")} <span aria-hidden="true">↗</span></Link></p>
-              <p className="focus-more"><Link href="/services/ai-integration">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
+              <h3>{t("service3Title")}</h3>
+              <p>{t("service3Body")}</p>
+              <p className="focus-evidence"><Link href="/work/medsharing">{t("service3Evidence")} <span aria-hidden="true">↗</span></Link></p>
+              <p className="focus-more"><Link href="/services/web-development">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
             </li>
             <li>
-              <span className="focus-number" aria-hidden="true">02</span>
               <h3>{t("service2Title")}</h3>
               <p>{t("service2Body")}</p>
               <p className="focus-evidence"><a href="https://demos.memolabs.dev/partenaire-automation/">{t("service2Evidence")} <span aria-hidden="true">↗</span></a></p>
               <p className="focus-more"><Link href="/services/automation-n8n">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
             </li>
             <li>
-              <span className="focus-number" aria-hidden="true">03</span>
-              <h3>{t("service3Title")}</h3>
-              <p>{t("service3Body")}</p>
-              <p className="focus-evidence"><Link href="/work/echo-travel">{t("service3Evidence")} <span aria-hidden="true">↗</span></Link></p>
-              <p className="focus-more"><Link href="/services/web-development">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
+              <h3>{t("service1Title")}</h3>
+              <p>{t("service1Body")}</p>
+              <p className="focus-evidence"><Link href="/work/blueowl">{t("service1Evidence")} <span aria-hidden="true">↗</span></Link></p>
+              <p className="focus-more"><Link href="/services/ai-integration">{t("serviceMore")} <span aria-hidden="true">→</span></Link></p>
             </li>
           </ol>
         </div>
@@ -97,18 +90,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <p>{t("examplesIntro")}</p>
           </div>
           <div className="client-example-list">
-            <article className="client-example">
-              <div><p className="client-example-context">{t("example1Context")}</p><h3>{t("example1Title")}</h3></div>
-              <div><p>{t("example1Body")}</p><a href="https://demos.memolabs.dev/partenaire-automation/">{t("example1Cta")}</a></div>
-            </article>
-            <article className="client-example">
-              <div><p className="client-example-context">{t("example2Context")}</p><h3>{t("example2Title")}</h3></div>
-              <div><p>{t("example2Body")}</p><Link href="/work/echo-travel">{t("example2Cta")}</Link></div>
-            </article>
-            <article className="client-example">
-              <div><p className="client-example-context">{t("example3Context")}</p><h3>{t("example3Title")}</h3></div>
-              <div><p>{t("example3Body")}</p><Link href="/work/blueowl">{t("example3Cta")}</Link></div>
-            </article>
+            {CASE_PROJECTS.map((project) => {
+              const study = CASE_BY_SLUG[project.slug];
+              return <article className="client-example" key={project.slug}>
+                <div><p className="client-example-context">{project.name} · {study.role[lang]}</p><h3>{study.need?.[lang]}</h3></div>
+                <div><p>{study.preview[lang]}</p><Link href={`/work/${project.slug}`}>{t("readCase", { name: project.name })}</Link></div>
+              </article>;
+            })}
           </div>
           <p className="client-more"><a href={DEMOS_URL}>{t("demosCta")}</a> · <Link href="/work">{t("workLibrary")}</Link></p>
         </div>

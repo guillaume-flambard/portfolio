@@ -7,8 +7,8 @@ for (const locale of ["fr", "en"] as const) {
     await expect(page.locator(".hero-actions > a")).toHaveCount(2);
     await page.locator('.hero-actions a[href="#examples"]').click();
     await expect(page.locator("#examples")).toBeInViewport();
-    await expect(page.locator(".client-example")).toHaveCount(3);
-    await expect(page.locator('.client-example a[href="https://demos.memolabs.dev/partenaire-automation/"]')).toBeVisible();
+    await expect(page.locator(".client-example")).toHaveCount(4);
+    await expect(page.locator(`.client-example a[href="/${locale}/work/flylooping"]`)).toBeVisible();
     await page.locator(`.client-example a[href="/${locale}/work/echo-travel"]`).click();
     await expect(page.locator(".case-snapshot")).toBeVisible();
     await page.locator(".case-outro .btn.p").click();

@@ -1,7 +1,8 @@
 export type Lang = "fr" | "en";
 type Localized = Record<Lang, string>;
 export type CaseStudy = {
-  slug: "echo-travel" | "paykit" | "blueowl" | "twenty-crm";
+  slug: "medsharing" | "flylooping" | "echo-travel" | "paykit" | "blueowl" | "twenty-crm";
+  need?: Localized;
   preview: Localized;
   role: Localized;
   context: Localized;
@@ -12,8 +13,81 @@ export type CaseStudy = {
   caveat: Localized;
 };
 export const CASE_STUDIES: CaseStudy[] = [
+{
+  "slug": "medsharing",
+  need: {"fr": "Moderniser une interface métier", "en": "Modernise a business interface"},
+  "preview": {
+    "fr": "Reprise d’un logiciel métier existant : migration de plus de 100 écrans et développement de tableaux de bord.",
+    "en": "Improving existing business software: migration of 100+ screens and dashboard development."
+  },
+  "role": {
+    "fr": "Développeur frontend salarié, 2021 à 2023",
+    "en": "Employed frontend developer, 2021 to 2023"
+  },
+  "context": {
+    "fr": "Moderniser les écrans d’un logiciel de suivi d’essais cliniques construit avec ASP Classic et jQuery, tout en conservant les parcours métier.",
+    "en": "Modernise the screens of clinical-trial software built with ASP Classic and jQuery while retaining its business workflows."
+  },
+  "ownership": {
+    "fr": "Migration d’écrans vers HTML5, JavaScript et Bootstrap ; développement de tableaux de bord et travail avec l’équipe sur la séparation frontend/backend.",
+    "en": "Migrating screens to HTML5, JavaScript and Bootstrap; developing dashboards and working with the team on frontend/backend separation."
+  },
+  "constraint": {
+    "fr": "Faire évoluer une application existante avec ses règles métier, ses données et ses habitudes d’utilisation, sans repartir de zéro.",
+    "en": "Improve an existing application with its business rules, data and established workflows, without starting over."
+  },
+  "decision": {
+    "fr": "Migration des interfaces en HTML5, Bootstrap et JavaScript, et séparation frontend/backend avec des échanges XML.",
+    "en": "Interface migration with HTML5, Bootstrap and JavaScript, and frontend/backend separation using XML exchanges."
+  },
+  "result": {
+    "fr": "Plus de 100 écrans migrés et des tableaux de bord développés pendant cette expérience salariée. Une référence de travail sur un logiciel métier existant.",
+    "en": "100+ screens migrated and dashboards developed during this employment. An example of work on an existing business application."
+  },
+  "caveat": {
+    "fr": "Rôle frontend de septembre 2021 à septembre 2023. Les écrans privés et le code de l’employeur ne sont pas publiés ici.",
+    "en": "Frontend role from September 2021 to September 2023. Private screens and employer source code are not published here."
+  }
+},
+{
+  "slug": "flylooping",
+  need: {"fr": "Développer des API dans un produit existant", "en": "Build APIs within an existing product"},
+  "preview": {
+    "fr": "Chez Symbyoz : développement d’API et de fonctionnalités sécurisées dans une plateforme de réservation de vols sous Symfony.",
+    "en": "At Symbyoz: API and secure-feature development within a Symfony flight-booking platform."
+  },
+  "role": {
+    "fr": "Développeur full-stack chez Symbyoz, 2024 à 2025",
+    "en": "Full-stack developer at Symbyoz, 2024 to 2025"
+  },
+  "context": {
+    "fr": "Faire évoluer le backend d’une plateforme de recherche et de réservation de vols, dans le code Symfony déjà en place.",
+    "en": "Extend the backend of a flight search and booking platform within an existing Symfony codebase."
+  },
+  "ownership": {
+    "fr": "Chez Symbyoz, j’ai développé des API et des fonctionnalités sécurisées pour Flylooping, sur le backend Symfony existant.",
+    "en": "At Symbyoz, I developed APIs and secure features for Flylooping within its existing Symfony backend."
+  },
+  "constraint": {
+    "fr": "Contribuer aux API et aux fonctionnalités sécurisées d’une plateforme Symfony existante, au sein de l’équipe Symbyoz.",
+    "en": "Contribute to APIs and secure features in an existing Symfony platform within the Symbyoz team."
+  },
+  "decision": {
+    "fr": "Développer les fonctionnalités backend en Symfony dans l’architecture existante, avec un périmètre d’API délimité.",
+    "en": "Develop backend features in Symfony within the existing architecture, with a defined API scope."
+  },
+  "result": {
+    "fr": "Travail effectué sur les API et des fonctionnalités sécurisées de la plateforme. Cette expérience illustre le renfort backend sur une application existante, via une agence.",
+    "en": "Work on the platform’s APIs and secure features. This experience illustrates backend support on an existing application through an agency."
+  },
+  "caveat": {
+    "fr": "Contribution chez Symbyoz, dans la période d’avril 2024 à janvier 2025. Le lien public présente le produit actuel.",
+    "en": "Contribution at Symbyoz within the April 2024 to January 2025 employment period. The public link presents the current product."
+  }
+},
   {
     slug: "echo-travel",
+  need: {"fr": "Relier réservation, paiement et opérations", "en": "Connect booking, payments and operations"},
     preview: {
       fr: "CTO jusqu’en août 2026 : réservations et paiements pour un opérateur maritime en Thaïlande, avec intégration 12Go.",
       en: "CTO until August 2026: booking and payments for a Thai boat-transfer operator, including 12Go integration.",
@@ -84,6 +158,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: "blueowl",
+  need: {"fr": "Faire passer un moteur IA au web", "en": "Bring an AI engine to the web"},
     preview: {
       fr: "CTO de juin à août 2026 sur un produit éducatif IA : interface Next.js, streaming et service API TypeScript.",
       en: "CTO from June to August 2026 on an AI education product: Next.js interface, streamed results and TypeScript API service.",

@@ -4,15 +4,13 @@ import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { CASE_PROJECTS, SUPPORTING_PROJECTS } from "@/data/projectNavigation";
 import { CASE_BY_SLUG } from "@/data/caseStudies";
-import { projectVisualLabel } from "@/data/projectVisuals";
 import SiteNav from "@/components/SiteNav";
-import ProjectImage from "@/components/ProjectImage";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const [title, description] = locale === "fr"
-    ? ["Réalisations d’un développeur freelance IA et full-stack | Guillaume Flambard", "Études de cas Echo Travel et Blue Owl (CTO), Medsharing, et travaux complémentaires présentés avec leur vrai statut."]
-    : ["Work of a freelance AI and full-stack developer | Guillaume Flambard", "Echo Travel and Blue Owl case studies (CTO), Medsharing, and supporting work shown with its real status."];
+    ? ["Réalisations : interfaces, API et applications web | Guillaume Flambard", "Medsharing, Flylooping via Symbyoz, Echo Travel et Blue Owl : besoins, contributions et réalisations."]
+    : ["Work: interfaces, APIs and web applications | Guillaume Flambard", "Medsharing, Flylooping through Symbyoz, Echo Travel and Blue Owl: needs, contributions and work delivered."];
   return createRouteMetadata(locale, "/work", title, description);
 }
 
@@ -25,7 +23,6 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   // Case studies have a written account of the problem, contribution and outcome.
   // Other projects still belong in the portfolio, but should not look equally substantiated.
   const caseProjects = CASE_PROJECTS;
-  const referenceProjects: typeof SUPPORTING_PROJECTS = [];
   const otherProjects = SUPPORTING_PROJECTS;
 
   return (
@@ -42,36 +39,6 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
 
       <main className="sec work-page">
         <div className="wrap">
-          <section className="work-group work-other" aria-labelledby="work-reference-heading">
-            <div className="work-group-heading">
-              <div>
-                <p className="work-group-kicker">{t("referenceKicker")}</p>
-                <h2 id="work-reference-heading">{t("referenceTitle")}</h2>
-              </div>
-              <p>{t("referenceIntro")}</p>
-            </div>
-            <ul className="work-other-list" data-testid="reference-projects">
-              <li>
-                <Link href="/about#experience-medsharing" className="work-other-link">
-                  <strong>Medsharing</strong>
-                  <span className="work-other-description">{t("referenceMedsharing")}</span>
-                  <span className="work-other-evidence">{t("referencePastEmployment")}</span>
-                  <span className="work-other-arrow" aria-hidden="true">↗</span>
-                </Link>
-              </li>
-              {referenceProjects.map((p) => (
-                <li key={p.slug}>
-                  <Link href={`/work/${p.slug}`} className="work-other-link">
-                    <strong>{p.name}</strong>
-                    <span className="work-other-description">{p.tagline[lang]}</span>
-                    <span className="work-other-evidence">{t(`kind_${p.verification.kind}` as never)} · {t(`proof_${p.verification.proof}` as never)}</span>
-                    <span className="work-other-arrow" aria-hidden="true">↗</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <p className="proof-legend">{t("referenceCaveat")}</p>
-          </section>
           <section className="work-group" aria-labelledby="work-case-heading">
             <div className="work-group-heading">
               <div>
@@ -80,24 +47,17 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               </div>
               <p>{t("caseListIntro")}</p>
             </div>
-            <div className="grid" data-testid="case-projects">
+            <div className="grid professional-cases" data-testid="case-projects">
               {caseProjects.map((p) => {
                 const study = CASE_BY_SLUG[p.slug];
                 return (
                   <Link key={p.slug} className="card" href={`/work/${p.slug}`}>
-                    <div className={`thumb ${p.thumb}`}>
-                      {p.gallery[0] ? (
-                        <ProjectImage
-                          src={p.gallery[0]}
-                          alt={projectVisualLabel(p.gallery[0], p.name, lang)}
-                        />
-                      ) : p.name}
-                    </div>
                     <div className="cbody">
+                      <p className="card-need">{study.need?.[lang]}</p>
                       <h3>{p.name}<span className="arrow" aria-hidden="true">→</span></h3>
                       <p>{study.preview[lang]}</p>
                       <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {study.role[lang]}</p>
-                      <p className="card-proof" aria-label={t("proofShort")}>{t(`kind_${p.verification.kind}` as never)} · {t(`proof_${p.verification.proof}` as never)}</p>
+                      <p className="card-proof">{t(`kind_${p.verification.kind}` as never)} · {t(`proof_${p.verification.proof}` as never)}</p>
                       <div className="stack">{p.stack.map((tech) => <span key={tech}>{tech}</span>)}</div>
                     </div>
                   </Link>

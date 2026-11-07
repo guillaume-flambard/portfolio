@@ -160,7 +160,7 @@ for (const locale of locales) {
 
     test("identifies the engineer, service, experience and next step", async ({ page }) => {
       await page.goto(`/${locale}`);
-      const positioning = locale === "fr" ? "J’automatise vos tâches" : "I automate your workflows";
+      const positioning = locale === "fr" ? "Je développe vos applications" : "I build your web applications";
       await expect(page.getByRole("heading", { level: 1 })).toContainText(positioning);
       await expect(page.locator(".github-activity")).toHaveCount(0);
       await expect(page.locator(".client-background a[href$=\"/open-source\"]")).toBeVisible();
@@ -171,7 +171,7 @@ for (const locale of locales) {
         .toHaveAttribute("href", "#examples");
       await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Ce que vous pouvez me confier" : "What you can hire me for" })).toBeVisible();
       await expect(page.locator(".focus-section:not(.client-process) .focus-grid > li")).toHaveCount(3);
-      await expect(page.locator(".client-example")).toHaveCount(3);
+      await expect(page.locator(".client-example")).toHaveCount(4);
       await expect(page.locator(".client-process ol > li")).toHaveCount(3);
       const contact = page.locator(".hero-actions").getByRole("link", {
         name: locale === "fr" ? "Parler de votre projet" : "Discuss your project"
@@ -186,7 +186,7 @@ for (const locale of locales) {
 
 for (const locale of locales) {
   test.describe(`${locale}: case study can be understood in one glance`, () => {
-    for (const slug of ["echo-travel", "paykit", "blueowl", "twenty-crm"]) {
+    for (const slug of ["medsharing", "flylooping", "echo-travel", "paykit", "blueowl", "twenty-crm"]) {
       test(`${slug}: problem, personal contribution, result before technical details`, async ({ page }) => {
         await page.setViewportSize({ width: 390, height: 844 });
         const response = await page.goto(`/${locale}/work/${slug}`);
@@ -234,20 +234,19 @@ test("gallery requests full-width responsive images and gives unique description
 test("work listing separates delivered references, past collaborations and experimental work", async ({ page }) => {
   await page.goto("/fr/work");
   const cases = page.locator('[data-testid="case-projects"] .card');
-  await expect(cases).toHaveCount(3);
-  await expect(cases.locator("h3")).toContainText(["Echo Travel", "Blue Owl", "Twenty CRM et n8n"]);
+  await expect(cases).toHaveCount(4);
+  await expect(cases.locator("h3")).toContainText(["Medsharing", "Flylooping", "Echo Travel", "Blue Owl"]);
   for (const card of await cases.all()) {
     await expect(card).toContainText("Mon rôle");
   }
   const references = page.locator('[data-testid="reference-projects"] li');
-  await expect(references).toHaveCount(1);
-  await expect(references.locator("strong")).toHaveText(["Medsharing"]);
+  await expect(references).toHaveCount(0);
   // Projects without users stay listed as experimental work, never as references.
   const secondary = page.locator('[data-testid="other-projects"] li');
-  await expect(secondary.locator("strong")).toHaveText(["Émargo", "PayKit", "weave", "n8n-nodes-opn", "Largo IA"]);
+  await expect(secondary.locator("strong")).toHaveText(["Émargo", "Largo IA", "n8n-nodes-opn", "PayKit", "Twenty CRM et n8n", "weave"]);
   await expect(page.locator(".work-other img")).toHaveCount(0);
-  await expect(cases.locator(".thumb img").first()).toHaveAttribute("sizes", /1056px/);
-  await expect(page.locator(".work-other .proof-legend")).toHaveCount(2);
+  await expect(cases.locator("img")).toHaveCount(0);
+  await expect(page.locator(".work-other .proof-legend")).toHaveCount(1);
   await expect(page.locator(".work-other .proof-legend").first()).toBeVisible();
 });
 
@@ -301,14 +300,14 @@ for (const locale of locales) {
   test(`${locale}: evidence-first work index stays readable and navigable at 320px`, async ({ page }) => {
     await page.setViewportSize({ width: 320, height: 720 });
     await page.goto(`/${locale}/work`);
-    const label = locale === "fr" ? "Études de cas, avec leur véritable statut" : "Detailed case studies, with their actual status";
+    const label = locale === "fr" ? "Selon votre besoin" : "Find relevant experience";
     await expect(page.getByRole("heading", { name: label, level: 2 })).toBeVisible();
-    await expect(page.locator('[data-testid="reference-projects"] li')).toHaveCount(1);
-    await expect(page.locator('[data-testid="other-projects"] li')).toHaveCount(5);
-    await expect(page.locator('[data-testid="case-projects"] .card')).toHaveCount(3);
+    await expect(page.locator('[data-testid="reference-projects"] li')).toHaveCount(0);
+    await expect(page.locator('[data-testid="other-projects"] li')).toHaveCount(6);
+    await expect(page.locator('[data-testid="case-projects"] .card')).toHaveCount(4);
     await assertNoHorizontalOverflow(page);
     await page.locator('[data-testid="case-projects"] .card').first().click();
-    await expect(page).toHaveURL(new RegExp(`/${locale}/work/echo-travel$`));
+    await expect(page).toHaveURL(new RegExp(`/${locale}/work/medsharing$`));
     await page.goto(`/${locale}/work`);
     await page.locator('[data-testid="other-projects"] .work-other-link').first().click();
     await expect(page).toHaveURL(new RegExp(`/${locale}/work/emargo$`));
@@ -323,14 +322,15 @@ for (const locale of locales) {
       await page.goto(`/${locale}`);
       const links = page.locator(".hero-evidence-links");
       await expect(links.getByRole("link")).toHaveCount(4);
-      await expect(links.getByRole("link", { name: "Medsharing" })).toHaveAttribute("href", `/${locale}/about#experience-medsharing`);
+      await expect(links.getByRole("link", { name: "Medsharing" })).toHaveAttribute("href", `/${locale}/work/medsharing`);
       await expect(links.getByRole("link", { name: "Echo Travel" })).toHaveAttribute("href", `/${locale}/work/echo-travel`);
       await expect(links.getByRole("link", { name: "Blue Owl" })).toHaveAttribute("href", `/${locale}/work/blueowl`);
-      await expect(links.getByRole("link", { name: "Rescue Atlas (Data for Good)" })).toHaveAttribute("href", `/${locale}/about`);
+      await expect(links.getByRole("link", { name: "Flylooping" })).toHaveAttribute("href", `/${locale}/work/flylooping`);
 
       await links.getByRole("link", { name: "Medsharing" }).click();
-      await expect(page).toHaveURL(new RegExp(`/${locale}/about#experience-medsharing$`));
-      await expect(page.locator("#experience-medsharing")).toContainText("Medsharing");
+      await expect(page).toHaveURL(new RegExp(`/${locale}/work/medsharing$`));
+      await expect(page.getByRole("heading", { level: 1, name: "Medsharing" })).toBeVisible();
+      await expect(page.locator(".case-snapshot")).toBeVisible();
 
       await page.goto(`/${locale}`);
       await links.getByRole("link", { name: "Echo Travel" }).click();
@@ -343,11 +343,11 @@ for (const locale of locales) {
       await page.goto(`/${locale}`);
       const links = page.locator(".focus-evidence a");
       await expect(links).toHaveCount(3);
-      await expect(links.nth(0)).toHaveAttribute("href", `/${locale}/work/blueowl`);
+      await expect(links.nth(0)).toHaveAttribute("href", `/${locale}/work/medsharing`);
       await expect(links.nth(1)).toHaveAttribute("href", "https://demos.memolabs.dev/partenaire-automation/");
-      await expect(links.nth(2)).toHaveAttribute("href", `/${locale}/work/echo-travel`);
+      await expect(links.nth(2)).toHaveAttribute("href", `/${locale}/work/blueowl`);
       await links.nth(0).click();
-      await expect(page).toHaveURL(new RegExp(`/${locale}/work/blueowl$`));
+      await expect(page).toHaveURL(new RegExp(`/${locale}/work/medsharing$`));
       await expect(page.locator(".case-snapshot")).toBeVisible();
     });
 
@@ -398,7 +398,7 @@ for (const locale of locales) {
     test("supporting projects stay in their own sequence", async ({ page }) => {
       await page.setViewportSize({ width: 320, height: 720 });
       await page.goto(`/${locale}/work/emargo`);
-      await expect(page.locator(".ppager").getByRole("link", { name: /PayKit/ })).toHaveAttribute("href", `/${locale}/work/paykit`);
+      await expect(page.locator(".ppager").getByRole("link", { name: /Largo/ })).toHaveAttribute("href", `/${locale}/work/largo`);
       expect(await page.locator(".case-outro").count()).toBe(0);
       expect(await page.locator(".ppager").locator('a[href*="blueowl"]').count()).toBe(0);
       await assertNoHorizontalOverflow(page);
@@ -486,8 +486,8 @@ for (const locale of locales) {
     const more = page.locator(".focus-more a");
     await expect(more).toHaveCount(3);
     await more.first().click();
-    await expect(page).toHaveURL(new RegExp(`/${locale}/services/ai-integration$`));
-    await expect(page.getByRole("heading", { level: 1 })).toContainText(locale === "fr" ? "Développeur freelance IA" : "Freelance AI developer");
+    await expect(page).toHaveURL(new RegExp(`/${locale}/services/web-development$`));
+    await expect(page.getByRole("heading", { level: 1 })).toContainText(locale === "fr" ? "Développeur full-stack freelance" : "Freelance full-stack developer");
     const types = await page.locator('script[type="application/ld+json"]').evaluateAll((nodes) =>
       nodes.flatMap((node) => {
         const data = JSON.parse(node.textContent ?? "{}");
