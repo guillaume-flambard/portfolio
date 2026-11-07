@@ -1,0 +1,29 @@
+{
+  "scope": "client-journey-20261107",
+  "state": "VERIFYING",
+  "risk_tier": "T3",
+  "baseline": "a272deb50fc4d516096fb019c7760c9d39662140",
+  "source": "client-journey.md",
+  "tasks": {
+    "T1": "DONE",
+    "T2": "DONE",
+    "T3": "DONE",
+    "T4": "DONE",
+    "T5": "DONE",
+    "T6": "TODO",
+    "T7": "TODO"
+  },
+  "manual_acceptance": "pending",
+  "updated_at": "2026-11-07",
+  "verification": {
+    "build": "PASS",
+    "typecheck": "PASS",
+    "unit": "70 PASS",
+    "snapshot": "4 PASS",
+    "evidence": "6 PASS",
+    "browser": "74 PASS",
+    "independent_review": "PASS",
+    "deployed_revision": "pending",
+    "manual_mail_receipt": "pending"
+  }
+}

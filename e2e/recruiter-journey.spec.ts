@@ -43,7 +43,7 @@ for (const locale of locales) {
 
     test("home links to a real bilingual resume and offers direct contact", async ({ page }) => {
       await page.goto(`/${locale}`);
-      await page.locator(".hero-actions").getByRole("link", { name: locale === "fr" ? "Voir mon CV" : "View my resume" }).click();
+      await page.locator(".client-background").getByRole("link", { name: locale === "fr" ? "Voir mon CV" : "View my resume" }).click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/cv$`));
       await expect(page.getByRole("heading", { name: "Guillaume Flambard" })).toBeVisible();
       await expect(page.getByText("Medsharing", { exact: true })).toBeVisible();
@@ -84,22 +84,15 @@ test("project case study distinguishes visible evidence from assumptions", async
   expect(links).toBe(0);
 });
 
-test("contact differentiates freelance and employment inquiries", async ({ page }) => {
+test("contact keeps recruitment secondary and uses distinct email subjects", async ({ page }) => {
   await page.goto("/fr/contact");
-  const freelance = page.locator("#freelance details.contact-choice");
-  const hiring = page.locator("#recruitment details.contact-choice");
-  await expect(freelance).not.toHaveAttribute("open", "");
-  await freelance.locator("summary").click();
-  await hiring.locator("summary").click();
-  await expect(freelance).toHaveAttribute("open", "");
-  await expect(hiring).toHaveAttribute("open", "");
-  const freelanceMailto = freelance.locator('a[href^="mailto:"]');
-  const hiringMailto = hiring.locator('a[href^="mailto:"]');
-  await expect(freelanceMailto).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
-  await expect(hiringMailto).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
-  expect(await freelanceMailto.getAttribute("href")).not.toEqual(await hiringMailto.getAttribute("href"));
-  await expect(freelance.getByRole("link", { name: "Ouvrir Gmail" })).toHaveAttribute("href", /^https:\/\/mail\.google\.com\/mail\/\?view=cm/);
-  await expect(hiring.getByRole("link", { name: "Ouvrir Outlook" })).toHaveAttribute("href", /^https:\/\/outlook\.office\.com\/mail\/deeplink\/compose/);
+  const freelance = page.locator('#freelance a[href^="mailto:"]');
+  const hiring = page.locator('#recruitment a[href^="mailto:"]');
+  await expect(freelance).toBeVisible();
+  await expect(hiring).toBeVisible();
+  expect(await freelance.getAttribute("href")).not.toEqual(await hiring.getAttribute("href"));
+  await expect(page.locator(".contact-choice-links").getByRole("link", { name: "Ouvrir Gmail" })).toHaveAttribute("href", /^https:\/\/mail\.google\.com\/mail\/\?view=cm/);
+  await expect(page.locator(".contact-choice-links").getByRole("link", { name: "Ouvrir Outlook" })).toHaveAttribute("href", /^https:\/\/outlook\.office\.com\/mail\/deeplink\/compose/);
 });
 
 test("dark contact backgrounds are transparent at desktop width", async ({ page }) => {
@@ -107,9 +100,7 @@ test("dark contact backgrounds are transparent at desktop width", async ({ page 
   await page.goto("/en/contact");
   await expect(page.locator("#freelance h2")).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
   await expect(page.locator("#freelance p").first()).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
-  await expect(page.locator(".contact-direct")).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
-  await page.locator("#freelance summary").click();
-  await expect(page.locator("#freelance .contact-choice-address")).toHaveText("contact@memolabs.dev");
+  await expect(page.locator(".contact-choice-address")).toHaveText("contact@memolabs.dev");
 });
 
 for (const locale of locales) {
@@ -169,22 +160,21 @@ for (const locale of locales) {
 
     test("identifies the engineer, service, experience and next step", async ({ page }) => {
       await page.goto(`/${locale}`);
-      const positioning = locale === "fr" ? "J’intègre l’IA et l’automatisation" : "I build AI and automation";
+      const positioning = locale === "fr" ? "J’automatise vos tâches" : "I automate your workflows";
       await expect(page.getByRole("heading", { level: 1 })).toContainText(positioning);
-      await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Ce que je construis maintenant" : "What I'm building now" })).toBeVisible();
-      await expect(page.locator("#github-activity a[href=\"https://github.com/guillaume-flambard\"]")).toBeVisible();
+      await expect(page.locator(".github-activity")).toHaveCount(0);
+      await expect(page.locator(".client-background a[href$=\"/open-source\"]")).toBeVisible();
       await expect(page.locator(".hero-identity")).toContainText("Memo Labs");
       await expect(page.locator(".hero-facts")).toContainText("Medsharing");
       await expect(page.locator(".hero-facts")).toContainText("Echo Travel");
-      await expect(page.locator(".hero-actions").getByRole("link", { name: locale === "fr" ? "Voir les démos" : "See the demos" }))
-        .toHaveAttribute("href", "https://demos.memolabs.dev/");
-      await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Sur quoi je peux vous aider" : "How I can help" })).toBeVisible();
-      await expect(page.locator(".focus-grid > li")).toHaveCount(3);
-      const track = page.locator(".featured-section .timeline-row");
-      await expect(track.locator("h3")).toContainText(["Rescue Atlas", "Memo Labs", "Blue Owl", "Echo Travel", "Symbyoz", "Medsharing"]);
-      await expect(track.filter({ hasText: "Echo Travel" }).locator(".timeline-role")).toHaveText("CTO");
+      await expect(page.locator(".hero-actions").getByRole("link", { name: locale === "fr" ? "Voir des exemples" : "See examples" }))
+        .toHaveAttribute("href", "#examples");
+      await expect(page.getByRole("heading", { level: 2, name: locale === "fr" ? "Ce que vous pouvez me confier" : "What you can hire me for" })).toBeVisible();
+      await expect(page.locator(".focus-section:not(.client-process) .focus-grid > li")).toHaveCount(3);
+      await expect(page.locator(".client-example")).toHaveCount(3);
+      await expect(page.locator(".client-process ol > li")).toHaveCount(3);
       const contact = page.locator(".hero-actions").getByRole("link", {
-        name: locale === "fr" ? "Discuter d’une mission" : "Discuss a project"
+        name: locale === "fr" ? "Parler de votre projet" : "Discuss your project"
       });
       await expect(contact).toHaveAttribute("href", new RegExp(`/${locale}/contact#freelance$`));
       await assertNoHorizontalOverflow(page);
@@ -354,7 +344,7 @@ for (const locale of locales) {
       const links = page.locator(".focus-evidence a");
       await expect(links).toHaveCount(3);
       await expect(links.nth(0)).toHaveAttribute("href", `/${locale}/work/blueowl`);
-      await expect(links.nth(1)).toHaveAttribute("href", "https://demos.memolabs.dev/");
+      await expect(links.nth(1)).toHaveAttribute("href", "https://demos.memolabs.dev/partenaire-automation/");
       await expect(links.nth(2)).toHaveAttribute("href", `/${locale}/work/echo-travel`);
       await links.nth(0).click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/work/blueowl$`));
@@ -371,14 +361,12 @@ for (const locale of locales) {
       await page.locator(".hero-recruiter-link").click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/contact#recruitment$`));
       await expect(page.locator("#recruitment")).toBeVisible();
-      await page.locator("#freelance summary.btn.p").click();
-      await page.locator("#recruitment summary.btn.p").click();
       const freelance = await page.locator('#freelance a[href^="mailto:"]').getAttribute("href");
       const recruitment = await page.locator('#recruitment a[href^="mailto:"]').getAttribute("href");
       expect(freelance).toMatch(/^mailto:contact@memolabs\.dev\?subject=/);
       expect(recruitment).toMatch(/^mailto:contact@memolabs\.dev\?subject=/);
       expect(freelance).not.toBe(recruitment);
-      await expect(page.locator(".contact-direct a")).toHaveAttribute("href", "mailto:contact@memolabs.dev");
+      await expect(page.locator(".contact-choice-address")).toHaveText("contact@memolabs.dev");
       await expect(page.locator(".foot").getByRole("link", { name: locale === "fr" ? "Mentions légales" : "Legal notice" }))
         .toHaveAttribute("href", `/${locale}/legal`);
       await assertNoHorizontalOverflow(page);
@@ -432,7 +420,7 @@ test("unlocalized NetNewsWire universal-link fallback has an isolated root layou
 
 for (const locale of locales) {
   test(`${locale}: GitHub sync clearly shows the recorded minute and timezone`, async ({ page }) => {
-    await page.goto("/" + locale);
+    await page.goto("/" + locale + "/open-source");
     const status = page.locator('[data-testid="github-sync-status"]');
     await expect(status).toBeVisible();
     const timestamp = status.locator('[data-testid="github-sync-timestamp"]');
@@ -445,9 +433,9 @@ for (const locale of locales) {
 }
 
 for (const locale of locales) {
-  test(`${locale}: project development journals are accessible from the living homepage`, async ({ page }) => {
+  test(`${locale}: project development journals stay available on the secondary code page`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto(`/${locale}`);
+    await page.goto(`/${locale}/open-source`);
     const journals = page.locator(".github-project-list .github-build-log-link");
     if ((await journals.count()) === 0) {
       // GitHub can rate-limit public unauthenticated requests in CI.
@@ -468,9 +456,8 @@ for (const locale of locales) {
   test(locale + ": open-source contributions are accessible and status-labeled", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto("/" + locale);
-    await expect(page.locator(".github-all-contributions-link")).toBeVisible();
+    await page.locator('.client-background a[href$="/open-source"]').click();
     await expect(page.locator(".github-discovery-block")).toBeVisible();
-    await page.locator(".github-all-contributions-link").click();
     await expect(page).toHaveURL(new RegExp("/" + locale + "/open-source$"));
     await expect(page.getByRole("heading", { level: 1 })).toContainText(
       locale === "fr" ? "Contributions open source" : "Open-source contributions",

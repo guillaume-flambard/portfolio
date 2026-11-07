@@ -82,7 +82,7 @@ export const SERVICES: Service[] = [
     stack: ["n8n", "TypeScript", "Node.js", "Webhooks", "PostgreSQL", "Docker"],
     proofs: [
       { label: { fr: "n8n-nodes-opn : mon nœud n8n publié sur npm", en: "n8n-nodes-opn: my n8n node published on npm" }, href: "/work/n8n-nodes-opn" },
-      { label: { fr: "Six flux n8n joués pour de vrai, avec leurs preuves d’exécution, dans les démos", en: "Six n8n flows played for real, with execution evidence, in the demos" }, href: "https://demos.memolabs.dev/" },
+      { label: { fr: "Automatisations n8n : démos, scénarios et preuves d’exécution", en: "n8n automations: demos, scenarios and execution evidence" }, href: "https://demos.memolabs.dev/" },
       { label: { fr: "Echo Travel : synchronisation à sens unique avec la marketplace 12Go", en: "Echo Travel: one-way sync with the 12Go marketplace" }, href: "/work/echo-travel" },
     ],
     faq: [
