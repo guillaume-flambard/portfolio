@@ -36,8 +36,8 @@ Applicable: normal/empty static content, UX, accessibility, compatibility, email
 | T3 simplify contact and align FR/EN copy | P1 | T2 | DONE | Contact server markup, bilingual copy, 74 browser checks |
 | T4 focus home on offer, examples and engagement | P1 | T2 | DONE | Home examples/process and secondary code page, independent review |
 | T5 update relevant checks and verify independently | P1 | T3,T4 | DONE | Verification results below |
-| T6 publish, verify runtime, reconcile tracker | P1 | T5 | TODO | pending |
-| T7 owner manual acceptance | P2 | T6 | TODO | Owner checks offer and real mailbox flow |
+| T6 publish, verify runtime, reconcile tracker | P1 | T5 | DONE | PR #52 merged, CI/image build green, VPS revision and six live browser scenarios verified |
+| T7 owner manual acceptance | P2 | T6 | TODO | https://github.com/guillaume-flambard/portfolio/issues/53, Guillaume checks offer and real mailbox flow |
 
 ## Risks and mitigation
 
@@ -75,3 +75,14 @@ GitHub main → existing image build → GHCR → VPS autodeploy. No manual serv
 - No physical mobile device or Safari receipt test claimed. External email delivery and commercial acceptance remain manual.
 
 The initial new contact test failed against the previous cached build (zero visible address/options), then passed against the new production build. The first regression run passed 68/74; six tests still expected GitHub activity on the homepage. The activity and corresponding tests were moved to the secondary open-source page, preserving access rather than removing those checks. Final run passes 74/74.
+
+### Production evidence and closure
+
+- Delivery PR: https://github.com/guillaume-flambard/portfolio/pull/52, MERGED at 2026-11-07T11:18:17Z. Delivery revision: `0c7f062a639b67820e6f90da0b91ac93717f8acd`.
+- Exact-head CI: https://github.com/guillaume-flambard/portfolio/actions/runs/42367607692 SUCCESS. Image build/push: https://github.com/guillaume-flambard/portfolio/actions/runs/42367607699 SUCCESS. Security and Vercel preview passed; CodeRabbit skipped, independent agent review completed instead.
+- VPS container image revision confirmed as the delivery revision, running since 2026-11-07T11:21:52Z. Native autodeploy journal at 11:21:55Z: portfolio deployed and healthy. No manual server mutation or hold bypass.
+- CUA live observation: English home → primary contact CTA → single visible email/provider group; both recruitment and freelance intents intact.
+- `PW_BASE_URL=https://memolabs.dev npx playwright test e2e/client-journey.spec.ts --workers=2`: 6/6 PASS against production, including both locales, touch/no-JS contact and responsive rendering.
+- Owner-only acceptance remains OPEN: https://github.com/guillaume-flambard/portfolio/issues/53. Owner: Guillaume. Next action: read the offer, follow an example and verify actual email receipt. No lost-lead count, delivery success or business conversion claimed.
+- Tracker reconciliation: PR #52 merged, no open technical PR or issue for this scope. #53 is explicitly manual acceptance. Work branch is published and merged; no worktree created. Remote branches preserved per owner storage policy.
+- Final controlled state: READY_FOR_MANUAL_ACCEPTANCE. R1–R6 pass. No open critical/high implementation risk or unverified technical acceptance criterion remains. Residual uncertainty is commercial response and manual email receipt, recorded separately.

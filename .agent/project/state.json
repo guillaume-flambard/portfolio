@@ -1,6 +1,6 @@
 {
   "scope": "client-journey-20261107",
-  "state": "VERIFYING",
+  "state": "READY_FOR_MANUAL_ACCEPTANCE",
   "risk_tier": "T3",
   "baseline": "a272deb50fc4d516096fb019c7760c9d39662140",
   "source": "client-journey.md",
@@ -10,11 +10,11 @@
     "T3": "DONE",
     "T4": "DONE",
     "T5": "DONE",
-    "T6": "TODO",
+    "T6": "DONE",
     "T7": "TODO"
   },
   "manual_acceptance": "pending",
-  "updated_at": "2026-11-07",
+  "updated_at": "2026-11-07T11:23:20.858461+00:00",
   "verification": {
     "build": "PASS",
     "typecheck": "PASS",
@@ -23,7 +23,17 @@
     "evidence": "6 PASS",
     "browser": "74 PASS",
     "independent_review": "PASS",
-    "deployed_revision": "pending",
-    "manual_mail_receipt": "pending"
+    "deployed_revision": "0c7f062a639b67820e6f90da0b91ac93717f8acd",
+    "manual_mail_receipt": "pending",
+    "live_browser": "6 PASS"
+  },
+  "manual_acceptance_issue": "https://github.com/guillaume-flambard/portfolio/issues/53",
+  "risks": {
+    "critical_open": 0,
+    "high_open": 0,
+    "residuals": [
+      "Owner acceptance of commercial copy",
+      "Actual email receipt untested by agent"
+    ]
   }
 }
