@@ -247,7 +247,7 @@ test("work listing separates delivered references, past collaborations and exper
   await expect(page.locator(".work-other img")).toHaveCount(0);
   await expect(cases.locator("img")).toHaveCount(0);
   await expect(cases.locator(".card-role")).toHaveCount(4);
-  await expect(cases).not.toContainText(/Exploitation déclarée|Site public accessible|certification indépendante/);
+  await expect(cases.filter({ hasText: /Exploitation déclarée|Site public accessible|certification indépendante/ })).toHaveCount(0);
   await expect(page.locator(".proof-legend")).toHaveCount(0);
 });
 
