@@ -95,11 +95,11 @@ test("contact differentiates freelance and employment inquiries", async ({ page 
   await expect(hiring).toHaveAttribute("open", "");
   const freelanceMailto = freelance.locator('a[href^="mailto:"]');
   const hiringMailto = hiring.locator('a[href^="mailto:"]');
-  await expect(freelanceMailto).toHaveAttribute("href", /mailto:contact@memolabs\\.dev\\?subject=/);
-  await expect(hiringMailto).toHaveAttribute("href", /mailto:contact@memolabs\\.dev\\?subject=/);
+  await expect(freelanceMailto).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
+  await expect(hiringMailto).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
   expect(await freelanceMailto.getAttribute("href")).not.toEqual(await hiringMailto.getAttribute("href"));
-  await expect(freelance.getByRole("link", { name: "Ouvrir Gmail" })).toHaveAttribute("href", /^https:\/\/mail\\.google\\.com\/mail\/\?view=cm/);
-  await expect(hiring.getByRole("link", { name: "Ouvrir Outlook" })).toHaveAttribute("href", /^https:\/\/outlook\\.office\\.com\/mail\/deeplink\/compose/);
+  await expect(freelance.getByRole("link", { name: "Ouvrir Gmail" })).toHaveAttribute("href", /^https:\/\/mail\.google\.com\/mail\/\?view=cm/);
+  await expect(hiring.getByRole("link", { name: "Ouvrir Outlook" })).toHaveAttribute("href", /^https:\/\/outlook\.office\.com\/mail\/deeplink\/compose/);
 });
 
 test("dark contact backgrounds are transparent at desktop width", async ({ page }) => {
