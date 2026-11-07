@@ -195,8 +195,8 @@ for (const locale of locales) {
         await expect(snapshot).toBeVisible();
         await expect(snapshot.locator("dl > div")).toHaveCount(3);
         await expect(snapshot.locator("dt")).toHaveText(locale === "fr"
-          ? ["Le besoin", "Mon intervention", "Le résultat"]
-          : ["The problem", "My contribution", "The outcome"]);
+          ? ["Le besoin", "Mon intervention", "Travail réalisé"]
+          : ["The problem", "My contribution", "Work delivered"]);
         await expect(snapshot.locator("dd")).toHaveCount(3);
         for (const dd of await snapshot.locator("dd").all()) {
           expect((await dd.innerText()).trim().length).toBeGreaterThan(35);
@@ -246,8 +246,9 @@ test("work listing separates delivered references, past collaborations and exper
   await expect(secondary.locator("strong")).toHaveText(["Émargo", "Largo IA", "n8n-nodes-opn", "PayKit", "Twenty CRM et n8n", "weave"]);
   await expect(page.locator(".work-other img")).toHaveCount(0);
   await expect(cases.locator("img")).toHaveCount(0);
-  await expect(page.locator(".work-other .proof-legend")).toHaveCount(1);
-  await expect(page.locator(".work-other .proof-legend").first()).toBeVisible();
+  await expect(cases.locator(".card-role")).toHaveCount(4);
+  await expect(cases).not.toContainText(/Exploitation déclarée|Site public accessible|certification indépendante/);
+  await expect(page.locator(".proof-legend")).toHaveCount(0);
 });
 
 for (const locale of locales) {

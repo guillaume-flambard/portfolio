@@ -57,7 +57,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                       <h3>{p.name}<span className="arrow" aria-hidden="true">→</span></h3>
                       <p>{study.preview[lang]}</p>
                       <p className="card-role"><strong>{t("cardRoleLabel")} :</strong> {study.role[lang]}</p>
-                      <p className="card-proof">{t(`kind_${p.verification.kind}` as never)} · {t(`proof_${p.verification.proof}` as never)}</p>
+                      <p className="card-proof">{t(`kind_${p.verification.kind}` as never)}</p>
                       <div className="stack">{p.stack.map((tech) => <span key={tech}>{tech}</span>)}</div>
                     </div>
                   </Link>
@@ -86,7 +86,6 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
                 </li>
               ))}
             </ul>
-            <p className="proof-legend">{t("proofLegend")}</p>
           </section>
         </div>
       </main>

@@ -68,4 +68,6 @@ Before publication: portfolio build/typecheck/unit/data tests plus affected brow
 - Independent reviewer read final source/text diff in both repositories: PASS, no blocking attribution, privacy or navigation defect. Product contribution stays bounded to documented role and period; no employer/private image or code added.
 - Humanizer on parsed new copy: no flagged phrases/punctuation. `git diff --check`: PASS in both repositories.
 
+Public-reader delta after the first deployment: remove technical proof-state labels from the four primary cards and the redundant header label on the new employment cases; replace “evidence limits” with context/scope and “outcome” with work delivered. Roles, periods, caveats and sources remain available. This is required presentation cleanup under E3, not a new attribution or business-outcome claim. Independent delta review PASS; build/typecheck and 70 unit tests PASS. Browser regression: 82 passed, one stale legend expectation replaced by asserting four visible roles and absence of audit jargon; its focused rerun passed. All 83 cases covered on this implementation.
+
 Release evidence and owner acceptance are tracked below after exact revisions are deployed. No technical or commercial acceptance is inferred from an HTTP response or a checked box in #53.
