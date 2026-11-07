@@ -86,11 +86,30 @@ test("project case study distinguishes visible evidence from assumptions", async
 
 test("contact differentiates freelance and employment inquiries", async ({ page }) => {
   await page.goto("/fr/contact");
-  const freelance = page.getByRole("link", { name: "Décrire votre mission" });
-  const hiring = page.getByRole("link", { name: "Proposer un poste" });
-  await expect(freelance).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
-  await expect(hiring).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
-  expect(await freelance.getAttribute("href")).not.toEqual(await hiring.getAttribute("href"));
+  const freelance = page.locator("#freelance details.contact-choice");
+  const hiring = page.locator("#recruitment details.contact-choice");
+  await expect(freelance).not.toHaveAttribute("open", "");
+  await freelance.locator("summary").click();
+  await hiring.locator("summary").click();
+  await expect(freelance).toHaveAttribute("open", "");
+  await expect(hiring).toHaveAttribute("open", "");
+  const freelanceMailto = freelance.locator('a[href^="mailto:"]');
+  const hiringMailto = hiring.locator('a[href^="mailto:"]');
+  await expect(freelanceMailto).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
+  await expect(hiringMailto).toHaveAttribute("href", /mailto:contact@memolabs\.dev\?subject=/);
+  expect(await freelanceMailto.getAttribute("href")).not.toEqual(await hiringMailto.getAttribute("href"));
+  await expect(freelance.getByRole("link", { name: "Ouvrir Gmail" })).toHaveAttribute("href", /^https:\/\/mail\.google\.com\/mail\/\?view=cm/);
+  await expect(hiring.getByRole("link", { name: "Ouvrir Outlook" })).toHaveAttribute("href", /^https:\/\/outlook\.office\.com\/mail\/deeplink\/compose/);
+});
+
+test("dark contact backgrounds are transparent at desktop width", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("/en/contact");
+  await expect(page.locator("#freelance h2")).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+  await expect(page.locator("#freelance p").first()).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+  await expect(page.locator(".contact-direct")).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+  await page.locator("#freelance summary").click();
+  await expect(page.locator("#freelance .contact-choice-address")).toHaveText("contact@memolabs.dev");
 });
 
 for (const locale of locales) {
@@ -352,8 +371,10 @@ for (const locale of locales) {
       await page.locator(".hero-recruiter-link").click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/contact#recruitment$`));
       await expect(page.locator("#recruitment")).toBeVisible();
-      const freelance = await page.locator("#freelance .btn.p").getAttribute("href");
-      const recruitment = await page.locator("#recruitment .btn.p").getAttribute("href");
+      await page.locator("#freelance summary.btn.p").click();
+      await page.locator("#recruitment summary.btn.p").click();
+      const freelance = await page.locator('#freelance a[href^="mailto:"]').getAttribute("href");
+      const recruitment = await page.locator('#recruitment a[href^="mailto:"]').getAttribute("href");
       expect(freelance).toMatch(/^mailto:contact@memolabs\.dev\?subject=/);
       expect(recruitment).toMatch(/^mailto:contact@memolabs\.dev\?subject=/);
       expect(freelance).not.toBe(recruitment);

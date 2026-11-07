@@ -189,7 +189,11 @@
     "jobTitle": "For hiring teams",
     "jobBody": "For a remote React frontend or TypeScript full-stack role, share the team, responsibilities and working arrangements.",
     "jobCta": "Discuss a position",
-    "jobSubject": "Remote role · Memo Labs"
+    "jobSubject": "Remote role · Memo Labs",
+    "contactOptionsIntro": "Choose how to write to me. You can also copy the address below.",
+    "contactEmailApp": "Email app",
+    "contactGmail": "Open Gmail",
+    "contactOutlook": "Open Outlook"
   },
   "cv": {
     "eyebrow": "Resume · November 2026",

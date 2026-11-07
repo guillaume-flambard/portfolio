@@ -189,7 +189,11 @@
     "jobTitle": "Pour un recrutement",
     "jobBody": "Pour un poste remote frontend React ou full-stack TypeScript, indiquez l’équipe, les responsabilités et le fonctionnement du poste.",
     "jobCta": "Proposer un poste",
-    "jobSubject": "Recrutement remote · Memo Labs"
+    "jobSubject": "Recrutement remote · Memo Labs",
+    "contactOptionsIntro": "Choisissez comment m’écrire. Vous pouvez aussi copier l’adresse ci-dessous.",
+    "contactEmailApp": "Application e-mail",
+    "contactGmail": "Ouvrir Gmail",
+    "contactOutlook": "Ouvrir Outlook"
   },
   "cv": {
     "eyebrow": "CV · Novembre 2026",
