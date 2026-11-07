@@ -3,14 +3,14 @@ import { ALL_MAP_ITEMS, FEATURED, MAP } from "./projects";
 
 describe("Project type, access and evidence separation", () => {
   it("keeps a complete audited evidence record for every featured project", () => {
-    expect(FEATURED.length).toBe(8);
+    expect(FEATURED.length).toBe(10);
     for (const project of FEATURED) {
       expect(project.verification.checkedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(project.verification.note.fr.trim().length).toBeGreaterThan(30);
       expect(project.verification.note.en.trim().length).toBeGreaterThan(30);
-      expect(["client", "independent", "collaboration", "open-source", "experimental"])
+      expect(["client", "independent", "collaboration", "open-source", "experimental", "employment", "internal"])
         .toContain(project.verification.kind);
-      expect(["reported-operation", "public-website", "early-access", "source-only", "published-package"])
+      expect(["reported-operation", "public-website", "early-access", "source-only", "published-package", "professional-experience"])
         .toContain(project.verification.proof);
       if (["public-website", "reported-operation", "early-access"].includes(project.verification.proof)) {
         expect(project.links.some((link) => link.label === "live")).toBe(true);
@@ -39,7 +39,7 @@ describe("Project type, access and evidence separation", () => {
     const slugs = items.map((p) => p.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
     for (const item of items) {
-      if (item.status === "live") expect(item.links.some((link) => link.label === "live")).toBe(true);
+      if (item.status === "live") expect(item.links.some((link) => link.label === "live" || (link.label === "context" && FEATURED.find(project => project.slug === item.slug)?.verification.proof === "professional-experience"))).toBe(true);
       if (item.status === "repo") expect(item.links.some((link) => link.label === "repo" || link.label === "npm")).toBe(true);
       if (item.status === "offline") expect(item.links.length).toBe(0);
       for (const link of item.links) {

@@ -81,11 +81,19 @@ export default async function ProjectPage({ params }: Props) {
             {study && <Link className="btn s" href="/contact#freelance">{t("caseContact")}</Link>}
           </div>
 
+          {project.verification.proof === "professional-experience" ? (
+            <details className="evidence-note professional-context">
+              <summary>{t("contextAndSources")}</summary>
+              <p>{project.verification.note[lang]}</p>
+              <p className="evidence-date">{t("checkedOn")} <time dateTime={project.verification.checkedAt}>{project.verification.checkedAt}</time></p>
+            </details>
+          ) : (
           <section className="evidence-note" aria-labelledby="evidence-title">
             <h2 id="evidence-title">{t("verificationTitle")}</h2>
             <p>{project.verification.note[lang]}</p>
             <p className="evidence-date">{t("checkedOn")} <time dateTime={project.verification.checkedAt}>{project.verification.checkedAt}</time></p>
           </section>
+          )}
 
           {study ? (
             <details className="case-technical">
