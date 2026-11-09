@@ -1,4 +1,5 @@
 import { PUBLIC_LINKS } from "@/data/publicLinks";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -126,6 +127,8 @@ export default async function LocaleLayout({
         />
         <Backdrop />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        {/* Cookieless page views, same-origin script: fits the CSP's 'self'. */}
+        <Analytics />
       </body>
     </html>
   );
