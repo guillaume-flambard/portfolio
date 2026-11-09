@@ -1,6 +1,7 @@
 import { PUBLIC_LINKS } from "@/data/publicLinks";
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
+import Script from "next/script";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -126,6 +127,12 @@ export default async function LocaleLayout({
         />
         <Backdrop />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        {/* Umami on the lab: cookieless page views. The website ID is public by design. */}
+        <Script
+          src="https://stats.memolabs.dev/script.js"
+          data-website-id="6e2465b8-7d5f-4933-9fa4-d68330e9e31a"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

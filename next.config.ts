@@ -18,11 +18,12 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+              // stats.memolabs.dev: Umami, self-hosted on the lab (tracker + page-view beacon).
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://stats.memolabs.dev",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https:",
-              "connect-src 'self'",
+              "connect-src 'self' https://stats.memolabs.dev",
               "frame-ancestors 'self'",
             ].join("; "),
           },
