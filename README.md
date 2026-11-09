@@ -7,12 +7,13 @@ generated with Next.js.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000 → redirects to /fr
+npm run dev      # http://localhost:3000 → /fr for French browsers, /en for all others
 ```
 
 ```bash
 npm run build    # production build
 npm test         # vitest
+npm run indexnow # after a deploy that adds pages: pings Bing and other IndexNow engines
 ```
 
 ## Design
@@ -28,7 +29,7 @@ Design tokens live in [`src/styles/tokens.css`](src/styles/tokens.css); componen
 
 Copy is in [`src/i18n/messages/fr.json`](src/i18n/messages/fr.json) and
 [`en.json`](src/i18n/messages/en.json), in sentence case (uppercase is applied by CSS). Routes are
-prefixed: `/fr`, `/en`. Projects shown on the homepage are the `PROJECTS` array in
+prefixed: `/fr`, `/en`; English is the default and the hreflang x-default. Projects shown on the homepage are the `PROJECTS` array in
 [`src/app/[locale]/page.tsx`](src/app/%5Blocale%5D/page.tsx).
 
 Notes for AI assistants: [`AGENTS.md`](AGENTS.md).
