@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-09T09:48:58.602Z",
+  "generatedAt": "2026-11-09T20:45:03.041Z",
   "sections": {
     "repositories": {
       "items": [
@@ -958,14 +958,14 @@
           "full_name": "guillaume-flambard/portfolio",
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
-          "language": "Python",
-          "pushed_at": "2026-11-09T01:59:35Z",
+          "language": "TypeScript",
+          "pushed_at": "2026-11-09T11:40:20Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9400
+          "size": 9441
         },
         {
           "name": "n8n-nodes-opn",
@@ -1692,7 +1692,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-11-02T15:29:46Z",
+          "pushed_at": "2026-11-09T11:38:49Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1711,7 +1711,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12607
+          "size": 12608
         },
         {
           "name": "trufflo",
@@ -1857,7 +1857,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-02T15:46:57Z",
+          "pushed_at": "2026-11-09T11:24:06Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1876,7 +1876,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3281
+          "size": 3560
         },
         {
           "name": "uni-protocol",
@@ -1929,7 +1929,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-09T09:48:58.602Z",
+      "syncedAt": "2026-11-09T20:45:03.041Z",
       "healthy": true
     },
     "merged": {
@@ -2369,11 +2369,25 @@
           }
         }
       ],
-      "syncedAt": "2026-11-09T09:48:58.602Z",
+      "syncedAt": "2026-11-09T20:45:03.041Z",
       "healthy": true
     },
     "open": {
       "items": [
+        {
+          "title": "fix: corriger les petits défauts du socle avant l'arrivée des bénévoles",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/48",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-09T10:39:55Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "fix(edge-functions-dev): remove obsolete Deno flag",
           "html_url": "https://github.com/netlify/primitives/pull/790",
@@ -2599,7 +2613,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-09T09:48:58.602Z",
+      "syncedAt": "2026-11-09T20:45:03.041Z",
       "healthy": true
     }
   }
