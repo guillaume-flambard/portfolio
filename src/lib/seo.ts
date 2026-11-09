@@ -21,8 +21,8 @@ export function routeUrls(locale: string, pathname = "") {
     canonical: `${SITE}/${locale}${segment}`,
     languages: {
       "fr-FR": `${SITE}/fr${segment}`,
-      "en-US": `${SITE}/en${segment}`,
-      "x-default": `${SITE}/fr${segment}`,
+      "en": `${SITE}/en${segment}`,
+      "x-default": `${SITE}/en${segment}`,
     },
   };
 }

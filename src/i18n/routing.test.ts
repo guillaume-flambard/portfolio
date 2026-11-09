@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { routing } from "./routing";
 
 describe("routing", () => {
-  it("has locales fr and en with fr as default", () => {
+  it("has locales fr and en with en as default, so non-French visitors read English", () => {
     expect(routing.locales).toEqual(["fr", "en"]);
-    expect(routing.defaultLocale).toBe("fr");
+    expect(routing.defaultLocale).toBe("en");
   });
 });

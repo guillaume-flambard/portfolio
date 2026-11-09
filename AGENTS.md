@@ -1,6 +1,6 @@
 # AGENTS.md — portfolio
 
-Personal portfolio of Guillaume Flambard. Bilingual (FR default, EN), statically generated.
+Personal portfolio of Guillaume Flambard. Bilingual (FR, EN). French browsers get /fr, every other browser gets /en (default and x-default). Statically generated.
 
 ## Stack
 

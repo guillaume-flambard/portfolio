@@ -12,9 +12,11 @@ describe("Bilingual SEO URLs", () => {
       expect(fr.canonical).toBe(`https://memolabs.dev/fr${segment}`);
       expect(en.canonical).toBe(`https://memolabs.dev/en${segment}`);
       expect(fr.languages["fr-FR"]).toBe(fr.canonical);
-      expect(en.languages["en-US"]).toBe(en.canonical);
-      expect(fr.languages["en-US"]).toBe(en.canonical);
+      expect(en.languages["en"]).toBe(en.canonical);
+      expect(fr.languages["en"]).toBe(en.canonical);
       expect(en.languages["fr-FR"]).toBe(fr.canonical);
+      expect(fr.languages["x-default"]).toBe(en.canonical);
+      expect(en.languages["x-default"]).toBe(en.canonical);
     }
   });
 
@@ -43,7 +45,7 @@ describe("Bilingual SEO URLs", () => {
     for (const path of wantedRoutes) {
       const fr = `https://memolabs.dev/fr${path}`;
       const en = `https://memolabs.dev/en${path}`;
-      expect(map.get(fr)?.alternates?.languages?.["en-US"]).toBe(en);
+      expect(map.get(fr)?.alternates?.languages?.["en"]).toBe(en);
       expect(map.get(en)?.alternates?.languages?.["fr-FR"]).toBe(fr);
       expect(map.get(fr)?.lastModified).toBeUndefined();
     }
