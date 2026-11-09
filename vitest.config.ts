@@ -7,6 +7,8 @@ export default defineConfig({
     globals: true,
     passWithNoTests: true,
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
+    // next-intl imports "next/server" without an extension; let Vite resolve it.
+    server: { deps: { inline: ["next-intl"] } },
   },
   resolve: {
     alias: {
