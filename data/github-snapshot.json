@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-10T02:57:24.962Z",
+  "generatedAt": "2026-11-10T11:13:53.192Z",
   "sections": {
     "repositories": {
       "items": [
@@ -959,7 +959,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-09T20:45:09Z",
+          "pushed_at": "2026-11-10T02:57:28Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1929,7 +1929,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-10T02:57:24.962Z",
+      "syncedAt": "2026-11-10T11:13:53.192Z",
       "healthy": true
     },
     "merged": {
@@ -2369,11 +2369,25 @@
           }
         }
       ],
-      "syncedAt": "2026-11-10T02:57:24.962Z",
+      "syncedAt": "2026-11-10T11:13:53.192Z",
       "healthy": true
     },
     "open": {
       "items": [
+        {
+          "title": "docs: ouvrir l'espace pocs/ pour les essais des bénévoles",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/50",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-10T10:28:14Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "fix: corriger les petits défauts du socle avant l'arrivée des bénévoles",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/48",
@@ -2613,7 +2627,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-10T02:57:24.962Z",
+      "syncedAt": "2026-11-10T11:13:53.192Z",
       "healthy": true
     }
   }
