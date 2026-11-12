@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-11T18:42:26.705Z",
+  "generatedAt": "2026-11-12T01:01:44.951Z",
   "sections": {
     "repositories": {
       "items": [
@@ -959,7 +959,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-11T10:59:12Z",
+          "pushed_at": "2026-11-11T18:42:33Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1472,6 +1472,26 @@
           "size": 158
         },
         {
+          "name": "brightdesk-connector",
+          "full_name": "memolabs-dev/brightdesk-connector",
+          "html_url": "https://github.com/memolabs-dev/brightdesk-connector",
+          "description": "A working MCP connector (ChatGPT app / Claude connector) for a made-up invoicing product: OAuth sign-in, permission parity, preview before send, idempotent actions.",
+          "language": "JavaScript",
+          "pushed_at": "2026-11-11T20:46:00Z",
+          "created_at": "2026-11-11T20:45:56Z",
+          "topics": [
+            "chatgpt-apps",
+            "claude-connector",
+            "mcp",
+            "model-context-protocol",
+            "oauth"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 33
+        },
+        {
           "name": "storymap-to-github",
           "full_name": "memolabs-dev/storymap-to-github",
           "html_url": "https://github.com/memolabs-dev/storymap-to-github",
@@ -1929,7 +1949,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-11T18:42:26.705Z",
+      "syncedAt": "2026-11-12T01:01:44.951Z",
       "healthy": true
     },
     "merged": {
@@ -2369,7 +2389,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-11T18:42:26.705Z",
+      "syncedAt": "2026-11-12T01:01:44.951Z",
       "healthy": true
     },
     "open": {
@@ -2627,7 +2647,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-11T18:42:26.705Z",
+      "syncedAt": "2026-11-12T01:01:44.951Z",
       "healthy": true
     }
   }
