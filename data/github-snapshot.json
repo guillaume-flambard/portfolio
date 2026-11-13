@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-13T10:59:32.683Z",
+  "generatedAt": "2026-11-13T18:31:07.037Z",
   "sections": {
     "repositories": {
       "items": [
@@ -959,7 +959,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-13T02:57:04Z",
+          "pushed_at": "2026-11-13T10:59:40Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1712,7 +1712,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-11-09T11:38:49Z",
+          "pushed_at": "2026-11-13T15:31:48Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1731,7 +1731,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12608
+          "size": 12654
         },
         {
           "name": "trufflo",
@@ -1877,7 +1877,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-12T05:16:10Z",
+          "pushed_at": "2026-11-13T17:47:11Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1949,7 +1949,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-13T10:59:32.683Z",
+      "syncedAt": "2026-11-13T18:31:07.037Z",
       "healthy": true
     },
     "merged": {
@@ -2417,11 +2417,39 @@
           }
         }
       ],
-      "syncedAt": "2026-11-13T10:59:32.683Z",
+      "syncedAt": "2026-11-13T18:31:07.037Z",
       "healthy": true
     },
     "open": {
       "items": [
+        {
+          "title": "docs: mettre CONTRIBUTING et TECHNICAL à jour des décisions",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/88",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-13T17:54:05Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "docs: renvoyer vers le design system depuis CONTRIBUTING",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/86",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-13T17:38:48Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "fix(edge-functions-dev): remove obsolete Deno flag",
           "html_url": "https://github.com/netlify/primitives/pull/790",
@@ -2647,7 +2675,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-13T10:59:32.683Z",
+      "syncedAt": "2026-11-13T18:31:07.037Z",
       "healthy": true
     }
   }
