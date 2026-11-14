@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-14T13:48:50.882Z",
+  "generatedAt": "2026-11-14T19:11:11.303Z",
   "sections": {
     "repositories": {
       "items": [
@@ -484,6 +484,20 @@
           "size": 14846
         },
         {
+          "name": "usine",
+          "full_name": "guillaume-flambard/usine",
+          "html_url": "https://github.com/guillaume-flambard/usine",
+          "description": "L'usine agentique — des agents qui écrivent une application et la remplacent à chaud pendant que vous l'utilisez. Memo Labs.",
+          "language": "Python",
+          "pushed_at": "2026-11-14T19:10:24Z",
+          "created_at": "2026-08-21T18:34:16Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 5025
+        },
+        {
           "name": "clausework",
           "full_name": "guillaume-flambard/clausework",
           "html_url": "https://github.com/guillaume-flambard/clausework",
@@ -959,7 +973,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-14T06:24:33Z",
+          "pushed_at": "2026-11-14T13:48:54Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1444,20 +1458,6 @@
           "size": 70
         },
         {
-          "name": "cobol-bridge",
-          "full_name": "guillaume-flambard/cobol-bridge",
-          "html_url": "https://github.com/guillaume-flambard/cobol-bridge",
-          "description": "COBOL Bridge: a modernization bridge for legacy COBOL systems.",
-          "language": "JavaScript",
-          "pushed_at": "2025-03-06T10:31:27Z",
-          "created_at": "2025-03-06T10:13:09Z",
-          "topics": [],
-          "fork": false,
-          "archived": true,
-          "private": false,
-          "size": 23385
-        },
-        {
           "name": "mojolink-site",
           "full_name": "guillaume-flambard/mojolink-site",
           "html_url": "https://github.com/guillaume-flambard/mojolink-site",
@@ -1571,9 +1571,9 @@
           "name": "mediterranean-rescue",
           "full_name": "memolabs-dev/mediterranean-rescue",
           "html_url": "https://github.com/memolabs-dev/mediterranean-rescue",
-          "description": "Rescue operations at sea, documented with their source: SOS MEDITERRANEE's public records on one map, checked by volunteers.",
+          "description": "Prototype, now continued in dataforgoodfr/mediterranean-rescue (Data for Good x SOS MEDITERRANEE).",
           "language": "Python",
-          "pushed_at": "2026-11-08T12:54:25Z",
+          "pushed_at": "2026-11-14T15:06:38Z",
           "created_at": "2026-10-25T11:23:59Z",
           "topics": [
             "django",
@@ -1585,9 +1585,9 @@
             "search-and-rescue"
           ],
           "fork": false,
-          "archived": false,
+          "archived": true,
           "private": false,
-          "size": 2133
+          "size": 2082
         },
         {
           "name": "project-template",
@@ -1949,7 +1949,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-14T13:48:50.882Z",
+      "syncedAt": "2026-11-14T19:11:11.303Z",
       "healthy": true
     },
     "merged": {
@@ -2417,7 +2417,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-14T13:48:50.882Z",
+      "syncedAt": "2026-11-14T19:11:11.303Z",
       "healthy": true
     },
     "open": {
@@ -2675,7 +2675,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-14T13:48:50.882Z",
+      "syncedAt": "2026-11-14T19:11:11.303Z",
       "healthy": true
     }
   }
