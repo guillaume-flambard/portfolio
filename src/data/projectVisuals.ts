@@ -47,9 +47,9 @@ export const PROJECT_VISUALS: Record<string, VisualLabel> = {
     fr: "Visuel associé à la mission Blue Owl",
     en: "Blue Owl mission visual",
   },
-  "/work/weave/hero.png": {
-    fr: "Visuel de présentation de Weave",
-    en: "Weave overview visual",
+  "/work/usine/hero.png": {
+    fr: "Page d'accueil de l'usine, avant connexion",
+    en: "Usine home page, before signing in",
   },
   "/work/n8n-nodes-opn/hero.png": {
     fr: "Visuel de présentation du nœud n8n Opn",

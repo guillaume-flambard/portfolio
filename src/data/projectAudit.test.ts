@@ -24,12 +24,11 @@ describe("Project type, access and evidence separation", () => {
     }
   });
 
-  it("does not present Weave as an operational demo or PayKit as shipped billing", () => {
-    const weave = FEATURED.find((p) => p.slug === "weave");
+  it("does not present the usine or PayKit as having users", () => {
+    const usine = FEATURED.find((p) => p.slug === "usine");
     const paykit = FEATURED.find((p) => p.slug === "paykit");
-    expect(weave?.status).toBe("repo");
-    expect(weave?.verification.proof).toBe("source-only");
-    expect(weave?.links.some((link) => link.url.includes("weave.memolabs.dev"))).toBe(false);
+    expect(usine?.verification.kind).toBe("experimental");
+    expect(usine?.verification.proof).toBe("early-access");
     expect(paykit?.verification.proof).toBe("early-access");
   });
 

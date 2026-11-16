@@ -5,7 +5,7 @@ import { CASE_PROJECTS, SUPPORTING_PROJECTS, PORTFOLIO_PROJECTS, getProjectJourn
 describe("Editorial portfolio navigation", () => {
   it("keeps explained case studies first, followed by distinct supporting work", () => {
     expect(CASE_PROJECTS.map((project) => project.slug)).toEqual(["medsharing", "flylooping", "echo-travel", "blueowl"]);
-    expect(SUPPORTING_PROJECTS.map((project) => project.slug)).toEqual(["emargo", "largo", "n8n-nodes-opn", "paykit", "twenty-crm", "weave"]);
+    expect(SUPPORTING_PROJECTS.map((project) => project.slug)).toEqual(["emargo", "largo", "n8n-nodes-opn", "paykit", "twenty-crm", "usine"]);
     expect(PORTFOLIO_PROJECTS).toHaveLength(FEATURED.length);
     expect(new Set(PORTFOLIO_PROJECTS.map((project) => project.slug)).size).toBe(FEATURED.length);
   });
@@ -19,7 +19,7 @@ describe("Editorial portfolio navigation", () => {
     expect(getProjectJourney("paykit").isCaseStudy).toBe(false);
     expect(getProjectJourney("blueowl").next).toBeNull();
     expect(getProjectJourney("twenty-crm").isCaseStudy).toBe(false);
-    expect(getProjectJourney("twenty-crm").next?.slug).toBe("weave");
+    expect(getProjectJourney("twenty-crm").next?.slug).toBe("usine");
   });
 
   it("navigates supporting projects without mixing their evidence with case studies", () => {
@@ -27,7 +27,7 @@ describe("Editorial portfolio navigation", () => {
     expect(getProjectJourney("emargo").previous).toBeNull();
     expect(getProjectJourney("emargo").next?.slug).toBe("largo");
     expect(getProjectJourney("largo").next?.slug).toBe("n8n-nodes-opn");
-    expect(getProjectJourney("weave").next).toBeNull();
+    expect(getProjectJourney("usine").next).toBeNull();
     expect(getProjectJourney("non-existent")).toEqual({ isCaseStudy: false, previous: null, next: null });
   });
 });

@@ -32,7 +32,7 @@ describe("Recruiter-facing evidence", () => {
     const explained = FEATURED.filter((project) => CASE_STUDIES.some((study) => study.slug === project.slug));
     const supporting = FEATURED.filter((project) => !CASE_STUDIES.some((study) => study.slug === project.slug));
     expect(explained.map((project) => project.slug)).toEqual(["medsharing", "flylooping", "echo-travel", "paykit", "blueowl", "twenty-crm"]);
-    expect(supporting.map((project) => project.slug)).toEqual(["emargo", "weave", "n8n-nodes-opn", "largo"]);
+    expect(supporting.map((project) => project.slug)).toEqual(["emargo", "usine", "n8n-nodes-opn", "largo"]);
     expect(new Set([...explained, ...supporting].map((project) => project.slug)).size).toBe(FEATURED.length);
   });
 
