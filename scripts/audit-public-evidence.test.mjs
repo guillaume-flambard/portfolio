@@ -11,9 +11,9 @@ describe("public evidence audit — conservative classification", () => {
     for (const status of [500, 503]) assert.equal(classifyHttpStatus(status), "inconclusive");
   });
 
-  it("uses real featured links, never creates a fake working Weave demo", () => {
+  it("uses real featured links, never creates a fake working demo", () => {
     const targets = makeTargets();
-    assert.equal(targets.length, 15);
+    assert.equal(targets.length, 16);
     assert.equal(FEATURED.length, 10);
     assert.ok(targets.some((t) => t.url === "https://flylooping.com/"));
     assert.ok(targets.some((t) => t.url === "https://www.ecrf-medsharing.com/"));
