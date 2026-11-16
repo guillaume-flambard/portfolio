@@ -1,9 +1,23 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-16T09:45:17.864Z",
+  "generatedAt": "2026-11-16T19:53:33.612Z",
   "sections": {
     "repositories": {
       "items": [
+        {
+          "name": "selvage",
+          "full_name": "guillaume-flambard/selvage",
+          "html_url": "https://github.com/guillaume-flambard/selvage",
+          "description": "Guillaume Flambard's design system: threads for agents, a knot for the human gate. DTCG tokens, Vue 3 on Nuxt UI 4.",
+          "language": "Vue",
+          "pushed_at": "2026-11-16T12:09:55Z",
+          "created_at": "2026-11-16T10:51:43Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 625
+        },
         {
           "name": "algo-observatory",
           "full_name": "guillaume-flambard/algo-observatory",
@@ -489,13 +503,13 @@
           "html_url": "https://github.com/guillaume-flambard/usine",
           "description": "The agentic factory: agents write an application and hot-swap it while you use it. Memo Labs.",
           "language": "Python",
-          "pushed_at": "2026-11-16T07:57:56Z",
+          "pushed_at": "2026-11-16T18:37:52Z",
           "created_at": "2026-08-21T18:34:16Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 5950
+          "size": 6035
         },
         {
           "name": "clausework",
@@ -736,13 +750,13 @@
           "name": "memo-ui",
           "full_name": "guillaume-flambard/memo-ui",
           "html_url": "https://github.com/guillaume-flambard/memo-ui",
-          "description": "Personal design system with soul: precision + warmth (React, Tailwind v4, Storybook, Vitest)",
+          "description": "Archived 2026-11-16. Superseded by Selvage: https://github.com/guillaume-flambard/selvage",
           "language": "TypeScript",
           "pushed_at": "2026-10-12T07:29:59Z",
           "created_at": "2026-08-01T13:26:25Z",
           "topics": [],
           "fork": false,
-          "archived": false,
+          "archived": true,
           "private": false,
           "size": 472
         },
@@ -973,7 +987,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-16T08:02:57Z",
+          "pushed_at": "2026-11-16T09:45:23Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1444,20 +1458,6 @@
           "size": 343
         },
         {
-          "name": "conformai",
-          "full_name": "guillaume-flambard/conformai",
-          "html_url": "https://github.com/guillaume-flambard/conformai",
-          "description": "ConformAI: platform that checks AI-generated content for compliance, bias, and plagiarism.",
-          "language": "TypeScript",
-          "pushed_at": "2025-03-08T09:54:43Z",
-          "created_at": "2025-03-08T09:54:40Z",
-          "topics": [],
-          "fork": false,
-          "archived": true,
-          "private": false,
-          "size": 70
-        },
-        {
           "name": "mojolink-site",
           "full_name": "guillaume-flambard/mojolink-site",
           "html_url": "https://github.com/guillaume-flambard/mojolink-site",
@@ -1712,7 +1712,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-11-13T15:31:48Z",
+          "pushed_at": "2026-11-16T11:38:49Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1731,7 +1731,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12654
+          "size": 12662
         },
         {
           "name": "trufflo",
@@ -1877,7 +1877,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-13T17:47:11Z",
+          "pushed_at": "2026-11-16T11:23:24Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1896,7 +1896,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3701
+          "size": 3724
         },
         {
           "name": "uni-protocol",
@@ -1949,7 +1949,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-16T09:45:17.864Z",
+      "syncedAt": "2026-11-16T19:53:33.612Z",
       "healthy": true
     },
     "merged": {
@@ -2445,7 +2445,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-16T09:45:17.864Z",
+      "syncedAt": "2026-11-16T19:53:33.612Z",
       "healthy": true
     },
     "open": {
@@ -2675,7 +2675,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-16T09:45:17.864Z",
+      "syncedAt": "2026-11-16T19:53:33.612Z",
       "healthy": true
     }
   }
