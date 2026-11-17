@@ -1,9 +1,23 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-16T19:53:33.612Z",
+  "generatedAt": "2026-11-17T02:56:16.724Z",
   "sections": {
     "repositories": {
       "items": [
+        {
+          "name": "rescue-atlas-avancement",
+          "full_name": "guillaume-flambard/rescue-atlas-avancement",
+          "html_url": "https://github.com/guillaume-flambard/rescue-atlas-avancement",
+          "description": "Où en est Rescue Atlas (Data for Good × SOS MEDITERRANEE) : objectifs, sprint, chantiers et carte 3D des tâches, lus sur GitHub.",
+          "language": "TypeScript",
+          "pushed_at": "2026-11-16T19:59:02Z",
+          "created_at": "2026-11-16T19:57:19Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 81
+        },
         {
           "name": "selvage",
           "full_name": "guillaume-flambard/selvage",
@@ -987,13 +1001,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-16T09:45:23Z",
+          "pushed_at": "2026-11-16T19:53:38Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9661
+          "size": 9662
         },
         {
           "name": "n8n-nodes-opn",
@@ -1444,20 +1458,6 @@
           "size": 82
         },
         {
-          "name": "hypebio",
-          "full_name": "guillaume-flambard/hypebio",
-          "html_url": "https://github.com/guillaume-flambard/hypebio",
-          "description": "Hypebio: a link-in-bio page builder.",
-          "language": "TypeScript",
-          "pushed_at": "2025-03-23T09:08:36Z",
-          "created_at": "2025-03-09T12:29:11Z",
-          "topics": [],
-          "fork": false,
-          "archived": true,
-          "private": false,
-          "size": 343
-        },
-        {
           "name": "mojolink-site",
           "full_name": "guillaume-flambard/mojolink-site",
           "html_url": "https://github.com/guillaume-flambard/mojolink-site",
@@ -1470,6 +1470,34 @@
           "archived": true,
           "private": false,
           "size": 158
+        },
+        {
+          "name": "project-quest-sandbox",
+          "full_name": "memolabs-dev/project-quest-sandbox",
+          "html_url": "https://github.com/memolabs-dev/project-quest-sandbox",
+          "description": "Invented project (FICTIF) used to test project-quest. Nothing here is real.",
+          "language": null,
+          "pushed_at": "2026-11-16T22:26:59Z",
+          "created_at": "2026-11-16T22:26:57Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 0
+        },
+        {
+          "name": "project-quest",
+          "full_name": "memolabs-dev/project-quest",
+          "html_url": "https://github.com/memolabs-dev/project-quest",
+          "description": "A 3D video game to manage a GitHub project: every move in the game is a real, confirmed change on the board.",
+          "language": "TypeScript",
+          "pushed_at": "2026-11-17T01:23:04Z",
+          "created_at": "2026-11-16T20:57:24Z",
+          "topics": [],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 105504
         },
         {
           "name": "brightdesk-connector",
@@ -1949,7 +1977,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-16T19:53:33.612Z",
+      "syncedAt": "2026-11-17T02:56:16.724Z",
       "healthy": true
     },
     "merged": {
@@ -2445,7 +2473,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-16T19:53:33.612Z",
+      "syncedAt": "2026-11-17T02:56:16.724Z",
       "healthy": true
     },
     "open": {
@@ -2675,7 +2703,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-16T19:53:33.612Z",
+      "syncedAt": "2026-11-17T02:56:16.724Z",
       "healthy": true
     }
   }
