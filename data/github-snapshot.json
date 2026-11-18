@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-18T11:44:05.821Z",
+  "generatedAt": "2026-11-18T19:37:29.483Z",
   "sections": {
     "repositories": {
       "items": [
@@ -1001,13 +1001,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-18T02:54:27Z",
+          "pushed_at": "2026-11-18T11:44:11Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9665
+          "size": 9666
         },
         {
           "name": "n8n-nodes-opn",
@@ -1491,13 +1491,13 @@
           "html_url": "https://github.com/memolabs-dev/project-quest",
           "description": "A 3D video game to manage a GitHub project: every move in the game is a real, confirmed change on the board.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-18T11:31:27Z",
+          "pushed_at": "2026-11-18T15:38:39Z",
           "created_at": "2026-11-16T20:57:24Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 117479
+          "size": 117830
         },
         {
           "name": "brightdesk-connector",
@@ -1977,11 +1977,25 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-18T11:44:05.821Z",
+      "syncedAt": "2026-11-18T19:37:29.483Z",
       "healthy": true
     },
     "merged": {
       "items": [
+        {
+          "title": "docs: demander l'écran de 360 px dans le modèle de PR",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/136",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-18T14:49:25Z",
+          "closed_at": "2026-11-18T15:15:04Z",
+          "pull_request": {
+            "merged_at": "2026-11-18T15:15:04Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "docs: dire d'activer mise après l'installation",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/131",
@@ -2529,7 +2543,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-18T11:44:05.821Z",
+      "syncedAt": "2026-11-18T19:37:29.483Z",
       "healthy": true
     },
     "open": {
@@ -2787,7 +2801,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-18T11:44:05.821Z",
+      "syncedAt": "2026-11-18T19:37:29.483Z",
       "healthy": true
     }
   }
