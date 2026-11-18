@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-18T02:54:23.719Z",
+  "generatedAt": "2026-11-18T11:44:05.821Z",
   "sections": {
     "repositories": {
       "items": [
@@ -1001,13 +1001,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-17T20:56:25Z",
+          "pushed_at": "2026-11-18T02:54:27Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9664
+          "size": 9665
         },
         {
           "name": "n8n-nodes-opn",
@@ -1491,7 +1491,7 @@
           "html_url": "https://github.com/memolabs-dev/project-quest",
           "description": "A 3D video game to manage a GitHub project: every move in the game is a real, confirmed change on the board.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-17T20:18:45Z",
+          "pushed_at": "2026-11-18T11:31:27Z",
           "created_at": "2026-11-16T20:57:24Z",
           "topics": [],
           "fork": false,
@@ -1977,11 +1977,67 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-18T02:54:23.719Z",
+      "syncedAt": "2026-11-18T11:44:05.821Z",
       "healthy": true
     },
     "merged": {
       "items": [
+        {
+          "title": "docs: dire d'activer mise après l'installation",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/131",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-18T10:06:42Z",
+          "closed_at": "2026-11-18T10:28:06Z",
+          "pull_request": {
+            "merged_at": "2026-11-18T10:28:06Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "chore: installer les outils avec mise et lancer les commandes avec Task",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/126",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-18T09:09:44Z",
+          "closed_at": "2026-11-18T09:54:55Z",
+          "pull_request": {
+            "merged_at": "2026-11-18T09:54:55Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "chore: désigner les tech leads comme code owners",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/116",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-18T07:08:49Z",
+          "closed_at": "2026-11-18T09:25:02Z",
+          "pull_request": {
+            "merged_at": "2026-11-18T09:25:02Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "feat: créer le modèle des opérations et charger le jeu fictif",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/125",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-18T08:08:37Z",
+          "closed_at": "2026-11-18T09:20:12Z",
+          "pull_request": {
+            "merged_at": "2026-11-18T09:20:12Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "docs: mettre CONTRIBUTING et TECHNICAL à jour des décisions",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/88",
@@ -2473,11 +2529,39 @@
           }
         }
       ],
-      "syncedAt": "2026-11-18T02:54:23.719Z",
+      "syncedAt": "2026-11-18T11:44:05.821Z",
       "healthy": true
     },
     "open": {
       "items": [
+        {
+          "title": "feat(poc): tester les approches pour protéger le back-office",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/132",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-18T11:13:35Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "docs: décrire les onglets et les colonnes du Monster",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/124",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-18T07:56:55Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "fix(edge-functions-dev): remove obsolete Deno flag",
           "html_url": "https://github.com/netlify/primitives/pull/790",
@@ -2703,7 +2787,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-18T02:54:23.719Z",
+      "syncedAt": "2026-11-18T11:44:05.821Z",
       "healthy": true
     }
   }
