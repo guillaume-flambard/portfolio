@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-22T07:29:11.308Z",
+  "generatedAt": "2026-11-22T15:41:30.614Z",
   "sections": {
     "repositories": {
       "items": [
@@ -1001,13 +1001,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-22T00:21:03Z",
+          "pushed_at": "2026-11-22T07:29:14Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9671
+          "size": 9638
         },
         {
           "name": "n8n-nodes-opn",
@@ -1977,7 +1977,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-22T07:29:11.308Z",
+      "syncedAt": "2026-11-22T15:41:30.614Z",
       "healthy": true
     },
     "merged": {
@@ -2557,11 +2557,25 @@
           }
         }
       ],
-      "syncedAt": "2026-11-22T07:29:11.308Z",
+      "syncedAt": "2026-11-22T15:41:30.614Z",
       "healthy": true
     },
     "open": {
       "items": [
+        {
+          "title": "feat(poc): atlas des issues, l'arbre des épopées et les issues posées sur les maquettes",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/160",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-22T10:56:51Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "docs: décrire les onglets et les colonnes du Monster",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/124",
@@ -2815,7 +2829,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-22T07:29:11.308Z",
+      "syncedAt": "2026-11-22T15:41:30.614Z",
       "healthy": true
     }
   }
