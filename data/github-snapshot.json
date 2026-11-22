@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-22T15:41:30.614Z",
+  "generatedAt": "2026-11-22T21:16:58.046Z",
   "sections": {
     "repositories": {
       "items": [
@@ -1001,7 +1001,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-22T07:29:14Z",
+          "pushed_at": "2026-11-22T15:41:34Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1977,7 +1977,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-22T15:41:30.614Z",
+      "syncedAt": "2026-11-22T21:16:58.046Z",
       "healthy": true
     },
     "merged": {
@@ -2557,7 +2557,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-22T15:41:30.614Z",
+      "syncedAt": "2026-11-22T21:16:58.046Z",
       "healthy": true
     },
     "open": {
@@ -2582,20 +2582,6 @@
           "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
           "state": "open",
           "created_at": "2026-11-18T07:56:55Z",
-          "closed_at": null,
-          "pull_request": {
-            "merged_at": null
-          },
-          "user": {
-            "login": "guillaume-flambard"
-          }
-        },
-        {
-          "title": "feat(poc): tester les approches pour protéger le back-office",
-          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/132",
-          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
-          "state": "open",
-          "created_at": "2026-11-18T11:13:35Z",
           "closed_at": null,
           "pull_request": {
             "merged_at": null
@@ -2829,7 +2815,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-22T15:41:30.614Z",
+      "syncedAt": "2026-11-22T21:16:58.046Z",
       "healthy": true
     }
   }
