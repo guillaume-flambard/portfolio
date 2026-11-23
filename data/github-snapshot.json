@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-23T10:46:32.321Z",
+  "generatedAt": "2026-11-23T22:15:42.663Z",
   "sections": {
     "repositories": {
       "items": [
@@ -1001,13 +1001,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-23T01:49:31Z",
+          "pushed_at": "2026-11-23T10:46:37Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9639
+          "size": 9640
         },
         {
           "name": "n8n-nodes-opn",
@@ -1740,7 +1740,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-11-16T11:38:49Z",
+          "pushed_at": "2026-11-23T11:39:22Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1759,7 +1759,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12662
+          "size": 12663
         },
         {
           "name": "trufflo",
@@ -1905,7 +1905,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-16T11:23:24Z",
+          "pushed_at": "2026-11-23T11:25:38Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1924,7 +1924,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3724
+          "size": 3725
         },
         {
           "name": "uni-protocol",
@@ -1977,11 +1977,39 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-23T10:46:32.321Z",
+      "syncedAt": "2026-11-23T22:15:42.663Z",
       "healthy": true
     },
     "merged": {
       "items": [
+        {
+          "title": "fix(poc): rafraîchir les identifiants des vignettes Penpot de l'atlas des issues",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/162",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-23T13:35:08Z",
+          "closed_at": "2026-11-23T18:13:17Z",
+          "pull_request": {
+            "merged_at": "2026-11-23T18:13:17Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
+        {
+          "title": "feat(poc): atlas des issues, l'arbre des épopées et les issues posées sur les maquettes",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/160",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-22T10:56:51Z",
+          "closed_at": "2026-11-23T13:32:14Z",
+          "pull_request": {
+            "merged_at": "2026-11-23T13:32:14Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "feat: afficher la carte de la Méditerranée centrale",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/143",
@@ -2557,7 +2585,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-23T10:46:32.321Z",
+      "syncedAt": "2026-11-23T22:15:42.663Z",
       "healthy": true
     },
     "open": {
@@ -2568,20 +2596,6 @@
           "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
           "state": "open",
           "created_at": "2026-11-23T09:48:56Z",
-          "closed_at": null,
-          "pull_request": {
-            "merged_at": null
-          },
-          "user": {
-            "login": "guillaume-flambard"
-          }
-        },
-        {
-          "title": "feat(poc): atlas des issues, l'arbre des épopées et les issues posées sur les maquettes",
-          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/160",
-          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
-          "state": "open",
-          "created_at": "2026-11-22T10:56:51Z",
           "closed_at": null,
           "pull_request": {
             "merged_at": null
@@ -2829,7 +2843,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-23T10:46:32.321Z",
+      "syncedAt": "2026-11-23T22:15:42.663Z",
       "healthy": true
     }
   }
