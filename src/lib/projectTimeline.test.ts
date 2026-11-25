@@ -64,15 +64,15 @@ describe("verifiable project timeline", () => {
   });
 
   it("uses existing verified landing-page evidence without calling it a functional demo", () => {
-    const paykit: ShowcaseProject = {
-      ...project, name: "PayKit", fullName: "guillaume-flambard/paykit",
-      url: "https://github.com/guillaume-flambard/paykit",
+    const usine: ShowcaseProject = {
+      ...project, name: "usine", fullName: "guillaume-flambard/usine",
+      url: "https://github.com/guillaume-flambard/usine",
     };
-    const history = buildProjectTimeline(paykit, [], []);
+    const history = buildProjectTimeline(usine, [], []);
     const site = history.events.find((event) => event.kind === "public-page");
     expect(site).toMatchObject({
-      url: "https://paykit-landing.vercel.app",
-      date: "2026-10-25",
+      url: "https://usine.memolabs.dev",
+      date: "2026-11-16",
     });
   });
 

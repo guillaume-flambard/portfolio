@@ -19,19 +19,19 @@ describe("Recruiter-facing evidence", () => {
     }
     expect(project.stack).toEqual(expect.arrayContaining(["HTML", "CSS", "JavaScript"]));
   });
-  it("features six unique case studies backed by project entries", () => {
-    const expected = ["medsharing", "flylooping", "echo-travel", "paykit", "blueowl", "twenty-crm"];
+  it("features five unique case studies backed by project entries", () => {
+    const expected = ["medsharing", "flylooping", "echo-travel", "blueowl", "twenty-crm"];
     expect(CASE_STUDIES.map((study) => study.slug)).toEqual(expected);
-    expect(new Set(CASE_STUDIES.map((study) => study.slug)).size).toBe(6);
+    expect(new Set(CASE_STUDIES.map((study) => study.slug)).size).toBe(5);
     for (const slug of expected) {
       expect(FEATURED.some((project) => project.slug === slug)).toBe(true);
     }
   });
 
-  it("separates six explained case studies from four supporting projects", () => {
+  it("separates five explained case studies from four supporting projects", () => {
     const explained = FEATURED.filter((project) => CASE_STUDIES.some((study) => study.slug === project.slug));
     const supporting = FEATURED.filter((project) => !CASE_STUDIES.some((study) => study.slug === project.slug));
-    expect(explained.map((project) => project.slug)).toEqual(["medsharing", "flylooping", "echo-travel", "paykit", "blueowl", "twenty-crm"]);
+    expect(explained.map((project) => project.slug)).toEqual(["medsharing", "flylooping", "echo-travel", "blueowl", "twenty-crm"]);
     expect(supporting.map((project) => project.slug)).toEqual(["emargo", "usine", "n8n-nodes-opn", "largo"]);
     expect(new Set([...explained, ...supporting].map((project) => project.slug)).size).toBe(FEATURED.length);
   });

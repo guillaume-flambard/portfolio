@@ -104,7 +104,6 @@ describe("public repository discovery", () => {
       "memolabs-dev/mediterranean-rescue",
       "memolabs-dev/memo-bridge",
       "guillaume-flambard/algo-observatory",
-      "guillaume-flambard/paykit",
     ];
     const repos = names.map((full_name, index) => repository({
       name: full_name.split("/")[1],
@@ -121,7 +120,7 @@ describe("public repository discovery", () => {
       "guillaume-flambard/foldready",
     ]);
     // Full archives / build routes are still allowed to retrieve every eligible project.
-    expect(selectShowcaseProjects(repos, NOW, 100)).toHaveLength(6);
+    expect(selectShowcaseProjects(repos, NOW, 100)).toHaveLength(5);
   });
 
   it("keeps private, forks, archived, stale and explicitly hidden repositories out", () => {

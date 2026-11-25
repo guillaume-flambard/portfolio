@@ -5,7 +5,7 @@ import { CASE_PROJECTS, SUPPORTING_PROJECTS, PORTFOLIO_PROJECTS, getProjectJourn
 describe("Editorial portfolio navigation", () => {
   it("keeps explained case studies first, followed by distinct supporting work", () => {
     expect(CASE_PROJECTS.map((project) => project.slug)).toEqual(["medsharing", "flylooping", "echo-travel", "blueowl"]);
-    expect(SUPPORTING_PROJECTS.map((project) => project.slug)).toEqual(["emargo", "largo", "n8n-nodes-opn", "paykit", "twenty-crm", "usine"]);
+    expect(SUPPORTING_PROJECTS.map((project) => project.slug)).toEqual(["emargo", "largo", "n8n-nodes-opn", "twenty-crm", "usine"]);
     expect(PORTFOLIO_PROJECTS).toHaveLength(FEATURED.length);
     expect(new Set(PORTFOLIO_PROJECTS.map((project) => project.slug)).size).toBe(FEATURED.length);
   });
@@ -16,7 +16,6 @@ describe("Editorial portfolio navigation", () => {
     expect(getProjectJourney("echo-travel").previous?.slug).toBe("flylooping");
     expect(getProjectJourney("echo-travel").next?.slug).toBe("blueowl");
     expect(getProjectJourney("blueowl").previous?.slug).toBe("echo-travel");
-    expect(getProjectJourney("paykit").isCaseStudy).toBe(false);
     expect(getProjectJourney("blueowl").next).toBeNull();
     expect(getProjectJourney("twenty-crm").isCaseStudy).toBe(false);
     expect(getProjectJourney("twenty-crm").next?.slug).toBe("usine");

@@ -15,14 +15,6 @@ export const PROJECT_VISUALS: Record<string, VisualLabel> = {
     fr: "Visuel de présentation d’Echo Travel",
     en: "Echo Travel overview visual",
   },
-  "/work/paykit/hero.png": {
-    fr: "Visuel de présentation de PayKit",
-    en: "PayKit overview visual",
-  },
-  "/work/paykit/usage.png": {
-    fr: "Visuel du suivi d’utilisation de PayKit",
-    en: "PayKit usage view",
-  },
   "/work/twenty-crm/01-formulaire.png": {
     fr: "Formulaire de contact rempli avec une demande de démonstration",
     en: "Contact form filled in with a demo request",

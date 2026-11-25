@@ -172,35 +172,6 @@ export const FEATURED: Project[] = [
     thumb: "t2",
   },
   {
-    slug: "paykit",
-    name: "PayKit",
-    category: "produits",
-    featured: true,
-    status: "live",
-    year: 2026,
-    verification: {
-      kind: "independent",
-      proof: "early-access",
-      checkedAt: "2026-10-25",
-      note: {"fr":"La page publique propose un accès anticipé (25/10/2026). Le site ne démontre ni clients actifs ni revenus.","en":"The public page offers early access (25 Oct 2026). It does not establish paying customers or production adoption."},
-    },
-    tagline: {
-      fr: "Kit de facturation pour applications IA, en accès anticipé.",
-      en: "Billing toolkit for AI apps, in early access.",
-    },
-    description: {
-      fr: "PayKit est un prototype indépendant de toolkit de facturation pour applications IA : Stripe Checkout, webhooks, suivi d’usage, crédits PostgreSQL et intégration React ou par script. Le code et la page de présentation sont publics ; le produit reste en accès anticipé, sans client ou revenu revendiqué.",
-      en: "PayKit is an independent billing toolkit prototype for AI applications: Stripe Checkout, webhooks, usage tracking, PostgreSQL credits and React or script-based integration. The code and landing page are public; the product remains in early access, with no customers or revenue claimed.",
-    },
-    stack: ["TypeScript", "Stripe", "Postgres", "React", "Next.js"],
-    links: [
-      { label: "live", url: "https://paykit-landing.vercel.app" },
-      { label: "repo", url: "https://github.com/guillaume-flambard/paykit" },
-    ],
-    gallery: ["/work/paykit/hero.png", "/work/paykit/usage.png"],
-    thumb: "t3",
-  },
-  {
     slug: "blueowl",
     name: "Blue Owl",
     category: "produits",

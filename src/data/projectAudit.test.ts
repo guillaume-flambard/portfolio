@@ -3,7 +3,7 @@ import { ALL_MAP_ITEMS, FEATURED, MAP } from "./projects";
 
 describe("Project type, access and evidence separation", () => {
   it("keeps a complete audited evidence record for every featured project", () => {
-    expect(FEATURED.length).toBe(10);
+    expect(FEATURED.length).toBe(9);
     for (const project of FEATURED) {
       expect(project.verification.checkedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(project.verification.note.fr.trim().length).toBeGreaterThan(30);
@@ -24,12 +24,14 @@ describe("Project type, access and evidence separation", () => {
     }
   });
 
-  it("does not present the usine or PayKit as having users", () => {
+  it("does not present the usine as having users", () => {
     const usine = FEATURED.find((p) => p.slug === "usine");
-    const paykit = FEATURED.find((p) => p.slug === "paykit");
     expect(usine?.verification.kind).toBe("experimental");
     expect(usine?.verification.proof).toBe("early-access");
-    expect(paykit?.verification.proof).toBe("early-access");
+  });
+
+  it("no longer lists PayKit, withdrawn on 2026-11-20", () => {
+    expect(FEATURED.some((p) => p.slug === "paykit")).toBe(false);
   });
 
   it("keeps live, source and private labels consistent with their actual links", () => {

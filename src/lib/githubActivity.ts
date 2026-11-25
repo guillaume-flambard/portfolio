@@ -21,7 +21,6 @@ const EDITORIAL_ORDER = [
   "memolabs-dev/memo-bridge",
   "memolabs-dev/drop",
   "guillaume-flambard/foldready",
-  "guillaume-flambard/paykit",
 ] as const;
 const EDITORIAL_REPOS = new Set<string>(EDITORIAL_ORDER);
 const EDITORIAL_RANK = new Map<string, number>(

@@ -75,9 +75,9 @@ for (const locale of locales) {
 }
 
 test("project case study distinguishes visible evidence from assumptions", async ({ page }) => {
-  await page.goto("/fr/work/paykit");
+  await page.goto("/fr/work/usine");
   await expect(page.locator(".pdetail .eyebrow").first()).toContainText("Accès anticipé");
-  await expect(page.locator(".evidence-note")).toContainText("La page publique propose un accès anticipé");
+  await expect(page.locator(".evidence-note")).toContainText("Pas encore d'utilisateur externe");
   await page.goto("/fr/work/weave");
   await expect(page.locator(".pdetail .eyebrow").first()).toContainText("Code source uniquement");
   const links = await page.locator('a[href="https://weave.memolabs.dev"]').count();
@@ -186,7 +186,7 @@ for (const locale of locales) {
 
 for (const locale of locales) {
   test.describe(`${locale}: case study can be understood in one glance`, () => {
-    for (const slug of ["medsharing", "flylooping", "echo-travel", "paykit", "blueowl", "twenty-crm"]) {
+    for (const slug of ["medsharing", "flylooping", "echo-travel", "blueowl", "twenty-crm"]) {
       test(`${slug}: problem, personal contribution, result before technical details`, async ({ page }) => {
         await page.setViewportSize({ width: 390, height: 844 });
         const response = await page.goto(`/${locale}/work/${slug}`);
@@ -225,14 +225,14 @@ for (const locale of locales) {
 }
 
 test("gallery requests full-width responsive images and gives unique descriptions", async ({ page }) => {
-  await page.goto("/fr/work/paykit");
+  await page.goto("/fr/work/echo-travel");
   const images = page.locator(".pgallery img");
   expect(await images.count()).toBeGreaterThan(0);
   await expect(images.first()).toHaveAttribute("sizes", /1184px/);
-  await expect(images.first()).toHaveAttribute("alt", /Visuel de présentation de PayKit/);
-  await expect(page.locator(".project-figure")).toHaveCount(2);
-  await expect(page.locator(".project-figure figcaption").first()).toContainText("Visuel de présentation de PayKit");
-  await expect(page.locator(".project-visual-link").first()).toHaveAttribute("href", "/work/paykit/hero.png");
+  await expect(images.first()).toHaveAttribute("alt", /Visuel de présentation d.Echo Travel/);
+  await expect(page.locator(".project-figure")).toHaveCount(1);
+  await expect(page.locator(".project-figure figcaption").first()).toContainText("Echo Travel");
+  await expect(page.locator(".project-visual-link").first()).toHaveAttribute("href", "/work/echo-travel/hero.png");
   await expect(page.locator(".project-visual-link").first()).toHaveAttribute("target", "_blank");
   await expect(page.locator(".project-gallery-intro")).toContainText("ne prouvent pas");
 });
@@ -249,7 +249,7 @@ test("work listing separates delivered references, past collaborations and exper
   await expect(references).toHaveCount(0);
   // Projects without users stay listed as experimental work, never as references.
   const secondary = page.locator('[data-testid="other-projects"] li');
-  await expect(secondary.locator("strong")).toHaveText(["Émargo", "Largo IA", "n8n-nodes-opn", "PayKit", "Twenty CRM et n8n", "weave"]);
+  await expect(secondary.locator("strong")).toHaveText(["Émargo", "Largo IA", "n8n-nodes-opn", "Twenty CRM et n8n", "weave"]);
   await expect(page.locator(".work-other img")).toHaveCount(0);
   await expect(cases.locator("img")).toHaveCount(0);
   await expect(cases.locator(".card-role")).toHaveCount(4);
@@ -260,7 +260,7 @@ test("work listing separates delivered references, past collaborations and exper
 for (const locale of locales) {
   test(`${locale}: media gallery is accessible and honest on all featured projects`, async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    for (const slug of ["emargo", "echo-travel", "paykit", "blueowl", "weave", "n8n-nodes-opn", "largo", "twenty-crm"]) {
+    for (const slug of ["emargo", "echo-travel", "blueowl", "weave", "n8n-nodes-opn", "largo", "twenty-crm"]) {
       const response = await page.goto(`/${locale}/work/${slug}`);
       expect(response?.status()).toBe(200);
       const figures = page.locator(".project-gallery .project-figure");
@@ -390,7 +390,7 @@ for (const locale of locales) {
       const pager = page.locator(".ppager");
       await expect(pager).toHaveAttribute("aria-label", locale === "fr" ? "Parcourir les réalisations" : "Browse portfolio projects");
       await expect(pager.getByRole("link", { name: /Blue Owl/ })).toHaveAttribute("href", `/${locale}/work/blueowl`);
-      expect(await pager.locator('a[href*="emargo"], a[href*="paykit"]').count()).toBe(0);
+      expect(await pager.locator('a[href*="emargo"]').count()).toBe(0);
 
       await pager.getByRole("link", { name: /Blue Owl/ }).click();
       await expect(page).toHaveURL(new RegExp(`/${locale}/work/blueowl$`));

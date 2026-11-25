@@ -9,7 +9,7 @@ import { FEATURED } from "./projects";
 const PROFESSIONAL_CASES = ["medsharing", "flylooping", "echo-travel", "blueowl"];
 const caseSlugs = new Set(PROFESSIONAL_CASES);
 export const CASE_PROJECTS = PROFESSIONAL_CASES.flatMap((slug) => FEATURED.filter((project) => project.slug === slug));
-const SUPPORTING_CASES = ["emargo", "largo", "n8n-nodes-opn", "paykit", "twenty-crm", "usine"];
+const SUPPORTING_CASES = ["emargo", "largo", "n8n-nodes-opn", "twenty-crm", "usine"];
 export const SUPPORTING_PROJECTS = SUPPORTING_CASES.flatMap((slug) => FEATURED.filter((project) => project.slug === slug));
 export const PORTFOLIO_PROJECTS = [...CASE_PROJECTS, ...SUPPORTING_PROJECTS];
 

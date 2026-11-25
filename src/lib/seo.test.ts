@@ -6,7 +6,7 @@ import { SERVICES } from "@/data/services";
 
 describe("Bilingual SEO URLs", () => {
   it("builds self canonical and reciprocal hreflang for each page, not the homepage", () => {
-    for (const segment of ["", "/about", "/contact", "/work", "/legal", "/cv", "/work/echo-travel", "/work/paykit"]) {
+    for (const segment of ["", "/about", "/contact", "/work", "/legal", "/cv", "/work/echo-travel", "/work/blueowl"]) {
       const fr = routeUrls("fr", segment);
       const en = routeUrls("en", segment);
       expect(fr.canonical).toBe(`https://memolabs.dev/fr${segment}`);

@@ -1,7 +1,7 @@
 export type Lang = "fr" | "en";
 type Localized = Record<Lang, string>;
 export type CaseStudy = {
-  slug: "medsharing" | "flylooping" | "echo-travel" | "paykit" | "blueowl" | "twenty-crm";
+  slug: "medsharing" | "flylooping" | "echo-travel" | "blueowl" | "twenty-crm";
   need?: Localized;
   preview: Localized;
   role: Localized;
@@ -119,41 +119,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     caveat: {
       fr: "Mission terminée en août 2026. Les écrans internes, le trafic et l’activité actuelle du produit ne sont pas vérifiables publiquement.",
       en: "Engagement ended in August 2026. Internal screens, traffic and the product’s current business operations are not publicly verifiable.",
-    },
-  },
-  {
-    slug: "paykit",
-    preview: {
-      fr: "Kit de facturation pour développeurs : Stripe Checkout, webhooks et crédits PostgreSQL. Accès anticipé.",
-      en: "Developer billing toolkit: Stripe Checkout, webhooks and PostgreSQL credits. In early access.",
-    },
-    role: {
-      fr: "Conception et développement du produit",
-      en: "Product design and development",
-    },
-    context: {
-      fr: "Les applications avec consommation de crédits et facturation à l’usage doivent coordonner paiements Stripe, événements webhook et comptabilité des crédits.",
-      en: "Apps with credits and usage billing need to coordinate Stripe payments, webhooks and credit accounting.",
-    },
-    ownership: {
-      fr: "Produit développeur construit en solo : intégration Stripe Checkout, traitement des webhooks, suivi d’usage, crédits PostgreSQL et interface d’intégration React.",
-      en: "Solo-built developer product: Stripe Checkout integration, webhook processing, usage metering, PostgreSQL credits and React integration surface.",
-    },
-    constraint: {
-      fr: "Éviter qu’une déduction de crédits concurrente crée un solde incohérent ; proposer une intégration suffisamment simple pour d’autres développeurs.",
-      en: "Avoid inconsistent balances when credits are deducted concurrently; keep integration accessible to other developers.",
-    },
-    decision: {
-      fr: "Opérations de crédit atomiques dans PostgreSQL, séparation des webhooks et du code client, SDK React et variante intégrable par script.",
-      en: "Atomic PostgreSQL credit operations, separation of webhooks from client code, a React SDK and script-based integration.",
-    },
-    result: {
-      fr: "Code source consultable et interface de présentation publique. Ce projet démontre la conception d’une API de facturation et d’une intégration TypeScript.",
-      en: "Public source code and project landing page. The project demonstrates billing API design and TypeScript integration.",
-    },
-    caveat: {
-      fr: "La présence d’une landing page ne prouve pas une adoption en production ; aucun chiffre de clients ou de revenus n’est revendiqué.",
-      en: "A landing page does not prove production adoption; no customer or revenue metrics are claimed.",
     },
   },
   {
