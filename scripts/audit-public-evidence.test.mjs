@@ -13,8 +13,8 @@ describe("public evidence audit — conservative classification", () => {
 
   it("uses real featured links, never creates a fake working demo", () => {
     const targets = makeTargets();
-    assert.equal(targets.length, 16);
-    assert.equal(FEATURED.length, 10);
+    assert.equal(targets.length, 14);
+    assert.equal(FEATURED.length, 9);
     assert.ok(targets.some((t) => t.url === "https://flylooping.com/"));
     assert.ok(targets.some((t) => t.url === "https://www.ecrf-medsharing.com/"));
     assert.equal(targets.filter((t) => t.kind === "npm-registry").length, 1);
