@@ -219,6 +219,12 @@ h1.h .acc { color: var(--accent); }
 .service-list a { text-decoration: none; }
 .service-list a:hover { color: var(--ink); }
 .ldesc .stack { margin-top: 14px; }
+/* Fixed-scope offers: numbered steps and short format facts. */
+.service-steps li { color: var(--muted); }
+.service-steps b { color: var(--ink); font-weight: 500; }
+.step-n { color: var(--accent); letter-spacing: .12em; font-size: 13px; margin-right: 12px; }
+.ldesc .service-facts { margin-top: 14px; }
+.service-facts b { text-align: right; }
 .featured-section { padding: clamp(68px, 9vw, 136px) 0; }
 .featured-section .shead p { max-width: 65ch; }
 .cbody p.card-role { color: var(--ink); margin-top: 18px; }

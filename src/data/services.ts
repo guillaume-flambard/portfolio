@@ -3,9 +3,11 @@ import type { Lang } from "./caseStudies";
 type Localized = Record<Lang, string>;
 type Proof = { label: Localized; href: string };
 type Faq = { q: Localized; a: Localized };
+type Step = { title: Localized; body: Localized };
+type Fact = { label: Localized; value: Localized };
 
 export type Service = {
-  slug: "ai-integration" | "automation-n8n" | "web-development";
+  slug: "ai-integration" | "automation-n8n" | "web-development" | "erp-cutover-proof";
   /** Search phrase this page answers, used in the title and the first sentence. */
   title: Localized;
   metaTitle: Localized;
@@ -13,6 +15,10 @@ export type Service = {
   h1: Localized;
   /** Answer-first paragraph: what, for whom, how, in two sentences. */
   answer: Localized;
+  /** Optional: how the engagement runs, for fixed-scope offers. */
+  steps?: Step[];
+  /** Optional: short format facts (who, when, duration, price). Keep each value short. */
+  facts?: Fact[];
   deliverables: Localized[];
   stack: string[];
   proofs: Proof[];
@@ -138,6 +144,75 @@ export const SERVICES: Service[] = [
       {
         q: { fr: "Quel est le format d’une mission ?", en: "What does an engagement look like?" },
         a: { fr: "Une fonctionnalité au périmètre clair, ou un renfort sur plusieurs semaines. Tout se fait à distance, en français ou en anglais.", en: "A clearly scoped feature, or backup over several weeks. Everything happens remotely, in French or English." },
+      },
+    ],
+  },
+  {
+    slug: "erp-cutover-proof",
+    title: { fr: "Preuve de bascule ERP", en: "ERP cutover proof" },
+    metaTitle: { fr: "Preuve de bascule ERP : vérifier une migration Odoo ou Business Central", en: "ERP cutover proof: check an Odoo or Business Central migration" },
+    metaDescription: {
+      fr: "Vos opérations réelles rejouées sur le nouvel ERP, chaque écart expliqué, un rapport à signer avant la bascule. Forfait de 1 à 2 semaines, à distance.",
+      en: "Your real operations replayed on the new ERP, every difference explained, a report to sign before cutover. Fixed price, 1 to 2 weeks, remote.",
+    },
+    h1: { fr: "Avant la bascule, la preuve que le nouvel ERP fait ce que faisait l’ancien.", en: "Before cutover, proof that the new ERP does what the old one did." },
+    answer: {
+      fr: "Pendant votre migration vers Odoo ou Business Central, je rejoue vos opérations réelles sur le nouveau système et je compare les résultats à ceux de l’ancien : soldes, stock, factures, pièces ouvertes. Chaque écart arrive avec sa cause, et vous signez un rapport avant la date de bascule.",
+      en: "During your move to Odoo or Business Central, I replay your real operations on the new system and compare the results with the old one: balances, stock, invoices, open documents. Every difference comes with its cause, and you sign a report before the cutover date.",
+    },
+    steps: [
+      {
+        title: { fr: "Relever", en: "Record" },
+        body: { fr: "Je relève ce que fait l’ancien système sur une période réelle : les opérations passées, et les données avant et après chacune.", en: "I record what the old system does over a real period: the operations it ran, and the data before and after each one." },
+      },
+      {
+        title: { fr: "Cartographier", en: "Map" },
+        body: { fr: "Des agents IA en tirent les règles et les cas de test. Je les relis avec les personnes qui font le travail, et vous obtenez une carte de vos processus.", en: "AI agents derive the rules and test cases from it. I review them with the people who do the work, and you get a map of your processes." },
+      },
+      {
+        title: { fr: "Rejouer", en: "Replay" },
+        body: { fr: "Les mêmes opérations sont rejouées sur le nouveau système à chaque migration d’essai. Chaque écart est listé avec sa cause : paramétrage, reprise de données ou règle oubliée.", en: "The same operations are replayed on the new system at every trial migration. Each difference is listed with its cause: configuration, data load or a missing rule." },
+      },
+      {
+        title: { fr: "Signer", en: "Sign" },
+        body: { fr: "Le rapport dit ce qui est identique, ce qui diffère et pourquoi, et ce qui n’a pas été testé. Vous le signez avant la bascule, ou vous décalez la date.", en: "The report states what matches, what differs and why, and what was not tested. You sign it before cutover, or you move the date." },
+      },
+    ],
+    facts: [
+      { label: { fr: "Pour qui", en: "For" }, value: { fr: "PME, ETI et leurs intégrateurs", en: "SMEs, mid-size firms, their integrators" } },
+      { label: { fr: "Quand", en: "When" }, value: { fr: "Avant la date de bascule", en: "Before the cutover date" } },
+      { label: { fr: "Durée", en: "Length" }, value: { fr: "1 à 2 semaines au forfait", en: "1 to 2 weeks, fixed price" } },
+      { label: { fr: "Prix", en: "Price" }, value: { fr: "À partir de 3 500 € HT", en: "From €3,500 excl. VAT" } },
+      { label: { fr: "Accès", en: "Access" }, value: { fr: "Lecture seule, rien en production", en: "Read-only, nothing in production" } },
+    ],
+    deliverables: [
+      { fr: "La carte de vos processus, avec les règles métier tirées de vos données", en: "A map of your processes, with the business rules drawn from your data" },
+      { fr: "Les cas de test, rejouables à chaque nouvelle migration d’essai", en: "Test cases you can replay at every new trial migration" },
+      { fr: "La liste des écarts, chacun avec sa cause et la personne qui doit le corriger", en: "The list of differences, each with its cause and who should fix it" },
+      { fr: "Un rapport de conformité à signer avant la bascule, qui dit aussi ce qui n’a pas été vérifié", en: "A conformance report to sign before cutover, which also states what was not checked" },
+    ],
+    stack: ["PostgreSQL", "SQL", "Python", "TypeScript", "Docker"],
+    proofs: [
+      { label: { fr: "CTO d’Echo Travel : réservations sorties de Zapier et Google Sheets vers une application, environ 150 passagers par jour à mon départ", en: "CTO at Echo Travel: bookings moved off Zapier and Google Sheets into an application, about 150 passengers a day when I left" }, href: "/work/echo-travel" },
+      { label: { fr: "Medsharing : plus de 100 écrans d’un SaaS clinique réglementé migrés", en: "Medsharing: 100+ screens of a regulated clinical SaaS migrated" }, href: "/about#experience-medsharing" },
+      { label: { fr: "CTO de Blue Owl : un moteur Electron de 2 600 fichiers porté vers le web", en: "CTO at Blue Owl: a 2,600-file Electron engine taken to the web" }, href: "/work/blueowl" },
+    ],
+    faq: [
+      {
+        q: { fr: "Mon intégrateur teste déjà. Pourquoi un regard extérieur ?", en: "My integrator already tests. Why an outside check?" },
+        a: { fr: "Les deux se complètent. L’intégrateur vérifie ce qu’il a paramétré ; je vérifie que les résultats sont ceux de l’ancien système, sur vos opérations réelles. Je peux aussi travailler pour l’intégrateur, qui remet alors le rapport à son client.", en: "The two fit together. The integrator checks what it configured; I check that the results match the old system, on your real operations. I can also work for the integrator, who then hands the report to its client." },
+      },
+      {
+        q: { fr: "Quels systèmes ?", en: "Which systems?" },
+        a: { fr: "Au départ : Sage, Dynamics NAV, EBP, Dolibarr, ERPNext ou des tableurs. À l’arrivée : Odoo ou Business Central. Le premier échange sert à vérifier que je peux lire vos deux systèmes.", en: "From Sage, Dynamics NAV, EBP, Dolibarr, ERPNext or spreadsheets, to Odoo or Business Central. The first call is there to check that I can read both of your systems." },
+      },
+      {
+        q: { fr: "Mes données passent-elles par une IA ?", en: "Does my data go through an AI?" },
+        a: { fr: "Seulement avec votre accord et dans le cadre que vous fixez : un modèle sous contrat avec votre entreprise, ou un modèle ouvert sur une machine à vous. Le rapport dit quel modèle a vu quelles données.", en: "Only with your consent and within the limits you set: a model under contract with your company, or an open model on a machine you control. The report states which model saw which data." },
+      },
+      {
+        q: { fr: "Et si le rapport montre des écarts ?", en: "What if the report shows differences?" },
+        a: { fr: "C’est son rôle. Chaque écart est corrigé par la personne indiquée, on rejoue, et la bascule se décide sur un rapport à jour.", en: "That is its job. Each difference is fixed by the person named, the operations are replayed, and cutover is decided on an up-to-date report." },
       },
     ],
   },

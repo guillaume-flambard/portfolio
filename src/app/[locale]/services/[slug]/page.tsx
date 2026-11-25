@@ -87,6 +87,31 @@ export default async function ServicePage({ params }: Props) {
       <main className="sec">
         <div className="wrap narrow">
           <div className="ldesc">
+            {service.steps && (
+              <>
+                <h2>{t("stepsTitle")}</h2>
+                <ol className="service-list service-steps">
+                  {service.steps.map((step, i) => (
+                    <li key={step.title.en}>
+                      <span className="step-n" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                      <b>{step.title[lang]}.</b> {step.body[lang]}
+                    </li>
+                  ))}
+                </ol>
+              </>
+            )}
+
+            {service.facts && (
+              <>
+                <h2>{t("formatTitle")}</h2>
+                <div className="facts service-facts">
+                  {service.facts.map((fact) => (
+                    <div key={fact.label.en}><span>{fact.label[lang]}</span><b>{fact.value[lang]}</b></div>
+                  ))}
+                </div>
+              </>
+            )}
+
             <h2>{t("deliverablesTitle")}</h2>
             <ul className="service-list">
               {service.deliverables.map((item) => <li key={item.en}>{item[lang]}</li>)}
