@@ -1,9 +1,30 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-25T10:30:49.392Z",
+  "generatedAt": "2026-11-25T20:12:55.877Z",
   "sections": {
     "repositories": {
       "items": [
+        {
+          "name": "fec-reconcile",
+          "full_name": "guillaume-flambard/fec-reconcile",
+          "html_url": "https://github.com/guillaume-flambard/fec-reconcile",
+          "description": "Compare two FEC files (French accounting export) before an ERP cutover: gaps per account and third party, reconciliation table. Java, Spring Boot, Angular.",
+          "language": "TypeScript",
+          "pushed_at": "2026-11-25T15:03:23Z",
+          "created_at": "2026-11-25T14:13:28Z",
+          "topics": [
+            "accounting",
+            "angular",
+            "erp-migration",
+            "fec",
+            "java",
+            "spring-boot"
+          ],
+          "fork": false,
+          "archived": false,
+          "private": false,
+          "size": 607
+        },
         {
           "name": "rescue-atlas-avancement",
           "full_name": "guillaume-flambard/rescue-atlas-avancement",
@@ -1001,13 +1022,13 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-25T01:38:26Z",
+          "pushed_at": "2026-11-25T13:49:05Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 9642
+          "size": 9652
         },
         {
           "name": "n8n-nodes-opn",
@@ -1083,13 +1104,13 @@
           "name": "paykit",
           "full_name": "guillaume-flambard/paykit",
           "html_url": "https://github.com/guillaume-flambard/paykit",
-          "description": "PayKit — drop-in credits, usage metering & subscriptions for AI apps",
+          "description": "Archived. Early prototype, never used in production.",
           "language": "TypeScript",
           "pushed_at": "2026-11-02T15:44:52Z",
           "created_at": "2026-06-23T12:28:14Z",
           "topics": [],
           "fork": false,
-          "archived": false,
+          "archived": true,
           "private": false,
           "size": 580
         },
@@ -1444,20 +1465,6 @@
           "size": 115
         },
         {
-          "name": "stripe2telegram",
-          "full_name": "guillaume-flambard/stripe2telegram",
-          "html_url": "https://github.com/guillaume-flambard/stripe2telegram",
-          "description": "Forward Stripe payment events to Telegram notifications.",
-          "language": "TypeScript",
-          "pushed_at": "2025-04-20T06:10:49Z",
-          "created_at": "2025-04-20T06:09:35Z",
-          "topics": [],
-          "fork": false,
-          "archived": true,
-          "private": false,
-          "size": 82
-        },
-        {
           "name": "mojolink-site",
           "full_name": "guillaume-flambard/mojolink-site",
           "html_url": "https://github.com/guillaume-flambard/mojolink-site",
@@ -1707,13 +1714,13 @@
           "html_url": "https://github.com/memolabs-dev/lab-hub",
           "description": "Memo Labs public website and projects",
           "language": "TypeScript",
-          "pushed_at": "2026-11-07T12:04:52Z",
+          "pushed_at": "2026-11-25T10:54:26Z",
           "created_at": "2026-10-12T21:15:55Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 49
+          "size": 50
         },
         {
           "name": "problem-intelligence-engine",
@@ -1977,11 +1984,25 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-25T10:30:49.392Z",
+      "syncedAt": "2026-11-25T20:12:55.877Z",
       "healthy": true
     },
     "merged": {
       "items": [
+        {
+          "title": "docs: décrire les onglets et les colonnes du Monster",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/124",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "closed",
+          "created_at": "2026-11-18T07:56:55Z",
+          "closed_at": "2026-11-25T13:47:06Z",
+          "pull_request": {
+            "merged_at": "2026-11-25T13:47:06Z"
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "fix(poc): rafraîchir les identifiants des vignettes Penpot de l'atlas des issues",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/162",
@@ -2585,7 +2606,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-25T10:30:49.392Z",
+      "syncedAt": "2026-11-25T20:12:55.877Z",
       "healthy": true
     },
     "open": {
@@ -2596,20 +2617,6 @@
           "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
           "state": "open",
           "created_at": "2026-11-23T09:48:56Z",
-          "closed_at": null,
-          "pull_request": {
-            "merged_at": null
-          },
-          "user": {
-            "login": "guillaume-flambard"
-          }
-        },
-        {
-          "title": "docs: décrire les onglets et les colonnes du Monster",
-          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/124",
-          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
-          "state": "open",
-          "created_at": "2026-11-18T07:56:55Z",
           "closed_at": null,
           "pull_request": {
             "merged_at": null
@@ -2843,7 +2850,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-25T10:30:49.392Z",
+      "syncedAt": "2026-11-25T20:12:55.877Z",
       "healthy": true
     }
   }
