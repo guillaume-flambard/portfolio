@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-26T12:35:35.679Z",
+  "generatedAt": "2026-11-26T21:56:46.121Z",
   "sections": {
     "repositories": {
       "items": [
@@ -1022,7 +1022,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-26T02:52:05Z",
+          "pushed_at": "2026-11-26T12:35:40Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1686,13 +1686,13 @@
           "html_url": "https://github.com/memolabs-dev/memo-bridge",
           "description": "Independent open-source MCP bridge for Memo Labs — secure multi-host control",
           "language": "JavaScript",
-          "pushed_at": "2026-11-19T12:02:01Z",
+          "pushed_at": "2026-11-26T17:52:13Z",
           "created_at": "2026-10-13T15:19:33Z",
           "topics": [],
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2780
+          "size": 2783
         },
         {
           "name": ".github",
@@ -1747,7 +1747,7 @@
           "html_url": "https://github.com/memolabs-dev/drop",
           "description": "Get the answer, not the access: agents ask bounded questions to capabilities their owners approve once",
           "language": "TypeScript",
-          "pushed_at": "2026-11-23T11:39:22Z",
+          "pushed_at": "2026-11-26T17:43:19Z",
           "created_at": "2026-10-08T14:17:18Z",
           "topics": [
             "a2a",
@@ -1766,7 +1766,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 12663
+          "size": 13078
         },
         {
           "name": "trufflo",
@@ -1809,7 +1809,7 @@
           "html_url": "https://github.com/memolabs-dev/cuesheet",
           "description": "Invariants discovered by running a personal agent control plane, extracted once they survived real work.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-02T15:47:10Z",
+          "pushed_at": "2026-11-26T17:36:54Z",
           "created_at": "2026-09-29T10:22:17Z",
           "topics": [
             "agent-orchestration",
@@ -1823,7 +1823,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2823
+          "size": 2818
         },
         {
           "name": "valve",
@@ -1912,7 +1912,7 @@
           "html_url": "https://github.com/memolabs-dev/navirox",
           "description": "Navirox: the framework-agnostic Web to Native Mobile platform, Vue first.",
           "language": "TypeScript",
-          "pushed_at": "2026-11-23T11:25:38Z",
+          "pushed_at": "2026-11-26T17:40:06Z",
           "created_at": "2026-09-17T11:38:39Z",
           "topics": [
             "android",
@@ -1931,7 +1931,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 3725
+          "size": 3480
         },
         {
           "name": "uni-protocol",
@@ -1939,7 +1939,7 @@
           "html_url": "https://github.com/memolabs-dev/uni-protocol",
           "description": "Verify that agent work did what it claimed: contracts, verifiers, evidence, deterministic decision.",
           "language": "Rust",
-          "pushed_at": "2026-11-02T15:47:16Z",
+          "pushed_at": "2026-11-26T17:52:29Z",
           "created_at": "2026-09-14T14:05:46Z",
           "topics": [
             "agent-tooling",
@@ -1953,7 +1953,7 @@
           "fork": false,
           "archived": false,
           "private": false,
-          "size": 2875
+          "size": 2879
         },
         {
           "name": "aidd-guard",
@@ -1984,7 +1984,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-26T12:35:35.679Z",
+      "syncedAt": "2026-11-26T21:56:46.121Z",
       "healthy": true
     },
     "merged": {
@@ -2606,7 +2606,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-26T12:35:35.679Z",
+      "syncedAt": "2026-11-26T21:56:46.121Z",
       "healthy": true
     },
     "open": {
@@ -2850,7 +2850,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-26T12:35:35.679Z",
+      "syncedAt": "2026-11-26T21:56:46.121Z",
       "healthy": true
     }
   }
