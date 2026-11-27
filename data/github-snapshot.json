@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-27T13:57:52.768Z",
+  "generatedAt": "2026-11-27T22:43:29.804Z",
   "sections": {
     "repositories": {
       "items": [
@@ -1022,7 +1022,7 @@
           "html_url": "https://github.com/guillaume-flambard/portfolio",
           "description": null,
           "language": "TypeScript",
-          "pushed_at": "2026-11-27T04:15:55Z",
+          "pushed_at": "2026-11-27T13:57:57Z",
           "created_at": "2026-07-15T12:55:26Z",
           "topics": [],
           "fork": false,
@@ -1984,7 +1984,7 @@
           "size": 2090
         }
       ],
-      "syncedAt": "2026-11-27T13:57:52.768Z",
+      "syncedAt": "2026-11-27T22:43:29.804Z",
       "healthy": true
     },
     "merged": {
@@ -2606,11 +2606,25 @@
           }
         }
       ],
-      "syncedAt": "2026-11-27T13:57:52.768Z",
+      "syncedAt": "2026-11-27T22:43:29.804Z",
       "healthy": true
     },
     "open": {
       "items": [
+        {
+          "title": "docs: retirer la structure du Monster de la doc des données",
+          "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/181",
+          "repository_url": "https://api.github.com/repos/dataforgoodfr/mediterranean-rescue",
+          "state": "open",
+          "created_at": "2026-11-27T15:56:48Z",
+          "closed_at": null,
+          "pull_request": {
+            "merged_at": null
+          },
+          "user": {
+            "login": "guillaume-flambard"
+          }
+        },
         {
           "title": "feat(poc): le back-office de Rescue Atlas en plugin WordPress",
           "html_url": "https://github.com/dataforgoodfr/mediterranean-rescue/pull/161",
@@ -2850,7 +2864,7 @@
           }
         }
       ],
-      "syncedAt": "2026-11-27T13:57:52.768Z",
+      "syncedAt": "2026-11-27T22:43:29.804Z",
       "healthy": true
     }
   }
